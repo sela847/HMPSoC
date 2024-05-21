@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity AverageCalculator is
+    Port (
+        clk         : in  STD_LOGIC;
+        reset       : in  STD_LOGIC;
+        adc_data    : in  STD_LOGIC_VECTOR(15 downto 0);
+        adc_data_rdy: in  STD_LOGIC;
+        avg_result  : out STD_LOGIC_VECTOR(15 downto 0);
+        avg_rdy     : out STD_LOGIC;
+        L_sel       : in  STD_LOGIC  -- '0' is for electing L=4 and '1' is for selecting L=8
+    );
+end AverageCalculator;
+
+architecture Behavior of AverageCalculator is
+    signal sum         : STD_LOGIC_VECTOR(19 downto 0); -- 16-bit + 4-bit for sum (to cover the range for L=8)
+    signal samples     : array (0 to 7) of STD_LOGIC_VECTOR(15 downto 0);
+    signal counter     : INTEGER range 0 to 7 := 0;
+    signal L           : INTEGER := 4;
+    signal avg         : STD_LOGIC_VECTOR(15 downto 0);
+    signal mem_addr    : INTEGER range 0 to 1023 := 0;
+    signal mem_write_en: STD_LOGIC := '0';
+begin
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            sum <= (others => '0');
+            counter <= 0;
+            for i in 0 to 7 loop
+                samples(i) <= (others => '0');
+            end loop;
+            avg_result <= (others => '0');
+            avg_rdy <= '0';
+            mem_addr <= 0;
+            mem_write_en <= '0';
+        elsif rising_edge(clk) then
+            if adc_data_rdy = '1' then
+                if L_sel = '0' then
+                    L <= 4;
+                else
+                    L <= 8;
+                end if;
+
+                -- Update the sum by subtracting the oldest sample and adding the new sample
+                sum <= sum - samples(counter) + adc_data;
+                -- Store the new sample
+                samples(counter) <= adc_data;
+
+                -- Compute the average
+                if L = 4 then
+                    avg <= sum(19 downto 2); -- Divide by 4 (shift right by 2)
+                    counter <= (counter + 1) mod 4;
+                else
+                    avg <= sum(19 downto 3); -- Divide by 8 (shift right by 3)
+                    counter <= (counter + 1) mod 8;
+                end if;
+
+                -- Output the current average
+                avg_result <= avg;
+                avg_rdy <= '1';
+
+                -- Store the average result in memory
+                mem_write_en <= '1';
+                mem_addr <= mem_addr + 1;
+            else
+                avg_rdy <= '0';
+                mem_write_en <= '0';
+            end if;
+        end if;
+    end process;
+end Behavior;
