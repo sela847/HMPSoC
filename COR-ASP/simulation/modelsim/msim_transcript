@@ -1,0 +1,184 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do COR_ASP_TopLevel_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TdmaMinFifo
+# -- Compiling architecture SYN of tdmaminfifo
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package TdmaMinTypes
+# -- Compiling package body TdmaMinTypes
+# -- Loading package TdmaMinTypes
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TdmaMinSlots
+# -- Compiling architecture rtl of TdmaMinSlots
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinSwitch
+# -- Compiling architecture rtl of TdmaMinSwitch
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinInterface
+# -- Compiling architecture rtl of TdmaMinInterface
+# -- Loading entity TdmaMinFifo
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinStage
+# -- Compiling architecture rtl of TdmaMinStage
+# -- Loading entity TdmaMinSwitch
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinFabric
+# -- Compiling architecture rtl of TdmaMinFabric
+# -- Loading entity TdmaMinStage
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMin
+# -- Compiling architecture rtl of TdmaMin
+# -- Loading entity TdmaMinSlots
+# -- Loading entity TdmaMinFabric
+# -- Loading entity TdmaMinInterface
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:35 on May 21,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:22:47 on May 21,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 23:22:47 on May 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 23:22:52 on May 21,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# ** Fatal: (vsim-3382) New library format is incompatible with this version of the simulator.  Design unit 'C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/modelsim/ip.tdmaminfifo(syn)'
+#    Time: 0 ps  Iteration: 0  Instance: /cor_asp_toplevel_tb/uut/tdma_min/interfaces(0)/interface/fifo File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 53
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 23:22:53 on May 21,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
