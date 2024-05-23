@@ -1,74 +1,114 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+library work;
+use work.TdmaMinTypes.all;
+
 
 entity AverageCalculator is
     Port (
-        clk         : in  STD_LOGIC;
-        reset       : in  STD_LOGIC;
         adc_data    : in  STD_LOGIC_VECTOR(15 downto 0);
         adc_data_rdy: in  STD_LOGIC;
+        clk         : in  STD_LOGIC;
+        reset       : in  STD_LOGIC;
+        L_sel       : in  STD_LOGIC;  -- '0' for L=4 and '1' for L=8
         avg_result  : out STD_LOGIC_VECTOR(15 downto 0);
         avg_rdy     : out STD_LOGIC;
-        L_sel       : in  STD_LOGIC  -- '0' is for electing L=4 and '1' is for selecting L=8
+        recv     	  : in  tdma_min_port;    -- Config mode from tdamin, possibly from Avg-Asp, still have to sus out
+		  enable_out  : out STD_LOGIC
     );
 end AverageCalculator;
 
-architecture Behavior of AverageCalculator is
-    signal sum         : STD_LOGIC_VECTOR(19 downto 0); -- 16-bit + 4-bit for sum (to cover the range for L=8)
-    signal samples     : array (0 to 7) of STD_LOGIC_VECTOR(15 downto 0);
-    signal counter     : INTEGER range 0 to 7 := 0;
-    signal L           : INTEGER := 4;
-    signal avg         : STD_LOGIC_VECTOR(15 downto 0);
-    signal mem_addr    : INTEGER range 0 to 1023 := 0;
-    signal mem_write_en: STD_LOGIC := '0';
+architecture Behavioral of AverageCalculator is
+    variable sum : signed(15 downto 0):= x"0000"; -- 16-bit signed
+    type bit15Array is array(0 to 7) of signed(15 downto 0);
+    signal fifo : bit15Array:=(others => (others => '0')); -- FIFO buffer
+    signal enable: std_logic:='0';
 begin
-    process(clk, reset)
+
+	 process(clk, enable, recv)
+	 begin
+	if rising_edge(clk) then
+            if recv.data(31 downto 28) = "1100" then
+                if recv.data(17) = '1' then
+                    enable <= '1';
+                else
+                    enable <= '0';
+                end if;
+	   end if;
+            
+        end if;
+	 
+	 end process;
+	 
+    process(clk, reset, enable)
+        variable fifo_var : bit15Array; -- Use a variable for immediate updates
+		  variable size: integer:=0;
     begin
+		if(enable = '1') then
         if reset = '1' then
-            sum <= (others => '0');
-            counter <= 0;
+            sum := (others => '0');
             for i in 0 to 7 loop
-                samples(i) <= (others => '0');
+                fifo(i) <= (others => '0');
             end loop;
             avg_result <= (others => '0');
             avg_rdy <= '0';
-            mem_addr <= 0;
-            mem_write_en <= '0';
         elsif rising_edge(clk) then
             if adc_data_rdy = '1' then
                 if L_sel = '0' then
-                    L <= 4;
+						  size:=3;
                 else
-                    L <= 8;
+						  size:=7;
                 end if;
 
-                -- Update the sum by subtracting the oldest sample and adding the new sample
-                sum <= sum - samples(counter) + adc_data;
-                -- Store the new sample
-                samples(counter) <= adc_data;
+                -- Copy fifo to fifo_var for immediate update
+                fifo_var := fifo;
 
-                -- Compute the average
-                if L = 4 then
-                    avg <= sum(19 downto 2); -- Divide by 4 (shift right by 2)
-                    counter <= (counter + 1) mod 4;
-                else
-                    avg <= sum(19 downto 3); -- Divide by 8 (shift right by 3)
-                    counter <= (counter + 1) mod 8;
-                end if;
+                -- Subtract the oldest sample (last element of the FIFO) from the sum
+                sum := sum - fifo_var(size);
+
+                -- Shift the FIFO to the right
+                for i in 7 downto 0 loop
+						if(i<=size) then
+							if(i = 0) then
+								fifo_var(0) := signed(adc_data);
+							else
+							  fifo_var(i) := fifo_var(i-1);
+							end if;
+						end if;
+                end loop;
+
+
+                -- Update fifo with the new values from fifo_var
+                for i in 0 to 7 loop
+						if(i<=size) then
+                    fifo(i) <= fifo_var(i);
+						end if;
+                end loop;
+
+                -- Add the new sample to the sum
+                sum := sum + signed(adc_data);
 
                 -- Output the current average
-                avg_result <= avg;
-                avg_rdy <= '1';
-
-                -- Store the average result in memory
-                mem_write_en <= '1';
-                mem_addr <= mem_addr + 1;
+                if L_sel = '0' then
+                    avg_result <= std_logic_vector(shift_right(sum, 2));  -- Divide by 4 (shift right by 2)
+                    avg_rdy <= '1';
+                else
+                    avg_result <= std_logic_vector(shift_right(sum, 3));  -- Divide by 8 (shift right by 3)
+                    avg_rdy <= '1';
+                end if;
             else
                 avg_rdy <= '0';
-                mem_write_en <= '0';
+					  for i in 7 downto 0 loop
+						 if(i<=size) then
+                    fifo_var(i) := fifo_var(i);
+						  fifo(i)<=fifo(i);
+						 end if;
+                end loop;
             end if;
         end if;
+		 end if;
+		 enable_out<=enable;
     end process;
-end Behavior;
+end Behavioral;

@@ -2,6 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+library work;
+use work.TdmaMinTypes.all;
+
+
 entity AverageCalculator is
     Port (
         adc_data    : in  STD_LOGIC_VECTOR(15 downto 0);
@@ -11,32 +15,40 @@ entity AverageCalculator is
         L_sel       : in  STD_LOGIC;  -- '0' for L=4 and '1' for L=8
         avg_result  : out STD_LOGIC_VECTOR(15 downto 0);
         avg_rdy     : out STD_LOGIC;
-        fifo_out_0  : out STD_LOGIC_VECTOR(15 downto 0);  -- Output the FIFO buffer
-        fifo_out_1  : out STD_LOGIC_VECTOR(15 downto 0);  -- Output the FIFO buffer
-        fifo_out_2  : out STD_LOGIC_VECTOR(15 downto 0);  -- Output the FIFO buffer
-        fifo_out_3  : out STD_LOGIC_VECTOR(15 downto 0);  -- Output the FIFO buffer
-        fifo_out_4  : out STD_LOGIC_VECTOR(15 downto 0)   -- Output the FIFO buffer
+        recv     	  : in  tdma_min_port;    -- Config mode from tdamin, possibly from Avg-Asp, still have to sus out
+		  enable_out  : out STD_LOGIC
     );
 end AverageCalculator;
 
 architecture Behavioral of AverageCalculator is
-    signal sum : signed(15 downto 0); -- 16-bit signed
     type bit15Array is array(0 to 7) of signed(15 downto 0);
-    signal fifo : bit15Array; -- FIFO buffer
+    signal fifo : bit15Array:=(others => (others => '0')); -- FIFO buffer
+    signal enable: std_logic:='0';
 begin
-    -- Convert signed to std_logic_vector for FIFO output
-    fifo_out_0 <= std_logic_vector(fifo(0));
-    fifo_out_1 <= std_logic_vector(fifo(1));
-    fifo_out_2 <= std_logic_vector(fifo(2));
-    fifo_out_3 <= std_logic_vector(fifo(3));
-    fifo_out_4 <= std_logic_vector(fifo(4));
 
-    process(clk, reset)
+	 process(clk, enable, recv)
+	 begin
+	if rising_edge(clk) then
+            if recv.data(31 downto 28) = "1100" then
+                if recv.data(17) = '1' then
+                    enable <= '1';
+                else
+                    enable <= '0';
+                end if;
+	   end if;
+            
+        end if;
+	 
+	 end process;
+	 
+    process(clk, reset, enable)
         variable fifo_var : bit15Array; -- Use a variable for immediate updates
 		  variable size: integer:=0;
+variable sum : signed(15 downto 0):= x"0000"; -- 16-bit signed
     begin
+		if(enable = '1') then
         if reset = '1' then
-            sum <= (others => '0');
+            sum := (others => '0');
             for i in 0 to 7 loop
                 fifo(i) <= (others => '0');
             end loop;
@@ -54,7 +66,7 @@ begin
                 fifo_var := fifo;
 
                 -- Subtract the oldest sample (last element of the FIFO) from the sum
-                sum <= sum - fifo_var(size);
+                sum := sum - fifo_var(size);
 
                 -- Shift the FIFO to the right
                 for i in 7 downto 0 loop
@@ -76,7 +88,7 @@ begin
                 end loop;
 
                 -- Add the new sample to the sum
-                sum <= sum + signed(adc_data);
+                sum := sum + signed(adc_data);
 
                 -- Output the current average
                 if L_sel = '0' then
@@ -96,5 +108,7 @@ begin
                 end loop;
             end if;
         end if;
+		 end if;
+		 enable_out<=enable;
     end process;
 end Behavioral;

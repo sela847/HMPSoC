@@ -3,7 +3,7 @@ $comment
 		vcd file AveragingFilter.msim.vcd -direction
 $end
 $date
-	Thu May 23 16:17:10 2024
+	Thu May 23 20:25:10 2024
 $end
 $version
 	ModelSim Version 10.5b

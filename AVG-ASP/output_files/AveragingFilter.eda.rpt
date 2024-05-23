@@ -1,5 +1,5 @@
 EDA Netlist Writer report for AveragingFilter
-Thu May 23 16:17:09 2024
+Thu May 23 20:25:07 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 23 16:17:09 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu May 23 20:25:07 2024 ;
 ; Revision Name             ; AveragingFilter                       ;
-; Top-level Entity Name     ; testing                               ;
+; Top-level Entity Name     ; AVGASP_Wave_Test                      ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -93,14 +93,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu May 23 16:17:08 2024
+    Info: Processing started: Thu May 23 20:25:06 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/ AveragingFilter -c AveragingFilter
 Info (119006): Selected device 5CSEMA5F31C6 for design "AveragingFilter"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file AveragingFilter.vho in folder "C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4717 megabytes
-    Info: Processing ended: Thu May 23 16:17:09 2024
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4729 megabytes
+    Info: Processing ended: Thu May 23 20:25:07 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

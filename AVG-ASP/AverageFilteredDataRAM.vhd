@@ -10,6 +10,7 @@ entity AverageFilteredDataRAM is
         write_en  : in  STD_LOGIC;
         write_addr: in  INTEGER range 0 to 1023; --10 bits
         read_addr : in  INTEGER range 0 to 1023; --10 bits 
+		  enable		: in STD_LOGIC;
         data_out  : out STD_LOGIC_VECTOR(15 downto 0)
     );
 end AverageFilteredDataRAM;
@@ -20,11 +21,13 @@ architecture Behavioral of AverageFilteredDataRAM is
 begin
     process(clk)
     begin
+		if(enable = '1') then
         if rising_edge(clk) then
             if write_en = '1' then
                 ram(write_addr) <= data_in;
             end if;
             data_out <= ram(read_addr);
         end if;
+		 end if;
     end process;
 end Behavioral;

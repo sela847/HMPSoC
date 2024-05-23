@@ -107,6 +107,13 @@ refer to the applicable agreement for further details.
 		(text "fifo_out_4[15..0]" (rect 145 123 211 135)(font "Arial" ))
 		(line (pt 232 128)(pt 216 128)(line_width 3))
 	)
+	(port
+		(pt 232 144)
+		(output)
+		(text "enable_out" (rect 0 0 42 12)(font "Arial" ))
+		(text "enable_out" (rect 169 139 211 151)(font "Arial" ))
+		(line (pt 232 144)(pt 216 144)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 216 160)(line_width 1))
 	)

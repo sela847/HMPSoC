@@ -8,6 +8,7 @@ entity nextAddressGenerator is
         clk       : in  STD_LOGIC;
         reset     : in STD_LOGIC;
         result_rdy: in  STD_LOGIC;
+		  enable		: in STD_LOGIC;
         write_addr: out  INTEGER range 0 to 1023 -- 10 bits
     );
 end entity nextAddressGenerator;
@@ -17,6 +18,7 @@ architecture behavior of nextAddressGenerator is
 begin
     process(clk, reset)
     begin
+		if(enable = '1') then
         if reset = '1' then
             address <= 0;
         elsif rising_edge(clk) then
@@ -31,5 +33,6 @@ begin
 					address<=address;
             end if;
         end if;
+		 end if;
     end process;
 end architecture behavior;
