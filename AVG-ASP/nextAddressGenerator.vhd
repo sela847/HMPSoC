@@ -27,6 +27,8 @@ begin
                 else
                     address <= address + 1;
                 end if;
+				else
+					address<=address;
             end if;
         end if;
     end process;

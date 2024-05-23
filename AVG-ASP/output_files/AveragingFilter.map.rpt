@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AveragingFilter
-Wed May 22 01:15:42 2024
+Thu May 23 16:16:15 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,14 +42,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 22 01:15:42 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 23 16:16:15 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; AveragingFilter                             ;
 ; Top-level Entity Name           ; testing                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 113                                         ;
-; Total pins                      ; 117                                         ;
+; Total registers                 ; 133                                         ;
+; Total pins                      ; 127                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -166,14 +166,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; AverageCalculator.vhd            ; yes             ; User VHDL File                     ; C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/AverageCalculator.vhd ;         ;
-; testing.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/testing.bdf           ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
+; AverageCalculator.vhd            ; yes             ; User VHDL File                     ; C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/AverageCalculator.vhd    ;         ;
+; testing.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/testing.bdf              ;         ;
+; nextAddressGenerator.vhd         ; yes             ; User VHDL File                     ; C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/nextAddressGenerator.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -181,36 +182,37 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 57        ;
+; Estimate of Logic utilization (ALMs needed) ; 68        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 17        ;
+; Combinational ALUT usage for logic          ; 31        ;
 ;     -- 7 input functions                    ; 0         ;
 ;     -- 6 input functions                    ; 0         ;
 ;     -- 5 input functions                    ; 0         ;
-;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 17        ;
+;     -- 4 input functions                    ; 3         ;
+;     -- <=3 input functions                  ; 28        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 113       ;
+; Dedicated logic registers                   ; 133       ;
 ;                                             ;           ;
-; I/O pins                                    ; 117       ;
+; I/O pins                                    ; 127       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 113       ;
-; Total fan-out                               ; 740       ;
-; Average fan-out                             ; 2.03      ;
+; Maximum fan-out                             ; 133       ;
+; Total fan-out                               ; 873       ;
+; Average fan-out                             ; 2.09      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name       ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------------+--------------+
-; |testing                    ; 17 (0)              ; 113 (0)                   ; 0                 ; 0          ; 117  ; 0            ; |testing                        ; testing           ; work         ;
-;    |AverageCalculator:inst| ; 17 (17)             ; 113 (113)                 ; 0                 ; 0          ; 0    ; 0            ; |testing|AverageCalculator:inst ; AverageCalculator ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name          ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------------+--------------+
+; |testing                        ; 31 (0)              ; 133 (0)                   ; 0                 ; 0          ; 127  ; 0            ; |testing                            ; testing              ; work         ;
+;    |AverageCalculator:inst|     ; 17 (17)             ; 113 (113)                 ; 0                 ; 0          ; 0    ; 0            ; |testing|AverageCalculator:inst     ; AverageCalculator    ; work         ;
+;    |nextAddressGenerator:inst1| ; 14 (14)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |testing|nextAddressGenerator:inst1 ; nextAddressGenerator ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -219,12 +221,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 113   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 133   ;
+; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 13    ;
-; Number of registers using Asynchronous Clear ; 113   ;
+; Number of registers using Asynchronous Clear ; 123   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 112   ;
+; Number of registers using Clock Enable       ; 132   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -234,19 +236,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 113                         ;
+; arriav_ff             ; 133                         ;
 ;     CLR               ; 1                           ;
+;     ENA               ; 10                          ;
 ;     ENA CLR           ; 99                          ;
+;     ENA CLR SCLR      ; 10                          ;
 ;     ENA CLR SLD       ; 13                          ;
-; arriav_lcell_comb     ; 17                          ;
-;     arith             ; 16                          ;
+; arriav_lcell_comb     ; 31                          ;
+;     arith             ; 26                          ;
+;         1 data inputs ; 10                          ;
 ;         2 data inputs ; 16                          ;
-;     normal            ; 1                           ;
-;         2 data inputs ; 1                           ;
-; boundary_port         ; 117                         ;
+;     normal            ; 5                           ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 3                           ;
+; boundary_port         ; 127                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.50                        ;
-; Average LUT depth     ; 0.75                        ;
+; Average LUT depth     ; 0.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -255,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -265,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 22 01:15:28 2024
+    Info: Processing started: Thu May 23 16:16:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AveragingFilter -c AveragingFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -277,19 +283,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file average
     Info (12023): Found entity 1: AverageCalculator File: C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/AverageCalculator.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file testing.bdf
     Info (12023): Found entity 1: testing
+Info (12021): Found 2 design units, including 1 entities, in source file nextaddressgenerator.vhd
+    Info (12022): Found design unit 1: nextAddressGenerator-behavior File: C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/nextAddressGenerator.vhd Line: 15
+    Info (12023): Found entity 1: nextAddressGenerator File: C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/nextAddressGenerator.vhd Line: 6
 Info (12127): Elaborating entity "testing" for the top level hierarchy
 Info (12128): Elaborating entity "AverageCalculator" for hierarchy "AverageCalculator:inst"
+Info (12128): Elaborating entity "nextAddressGenerator" for hierarchy "nextAddressGenerator:inst1"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 97 output pins
-    Info (21061): Implemented 114 logic cells
+    Info (21059): Implemented 107 output pins
+    Info (21061): Implemented 138 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Wed May 22 01:15:42 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Thu May 23 16:16:15 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:08
 
 

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim
 Etesting
-Z1 w1716295839
+Z1 w1716437829
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,13 +24,13 @@ Z11 8AveragingFilter.vho
 Z12 FAveragingFilter.vho
 l0
 L38
-VhPa9kSe<N=9g>gMN2o6JL3
-!s100 VI`4;ARo>YTEfFeBf1@jG1
+VSSQHQ>K056b=^9RYQCM2=0
+!s100 Ua6@6zGLMF7`=W=A0PCAF2
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1716295840
+Z14 !s110 1716437830
 !i10b 1
-Z15 !s108 1716295840.000000
+Z15 !s108 1716437829.000000
 Z16 !s90 -work|work|AveragingFilter.vho|
 Z17 !s107 AveragingFilter.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 7 testing 0 22 hPa9kSe<N=9g>gMN2o6JL3
-l330
-L55
-VMH>j:czjG5HzYYm?o4ePB3
-!s100 Qj_>`g4XMCIUI=3aAL;110
+DEx4 work 7 testing 0 22 SSQHQ>K056b=^9RYQCM2=0
+l371
+L56
+VQ7KTc?>I25CYR?RSJiCja2
+!s100 z]=^W>DjGIWjXcXHe?a<>2
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Etesting_vhd_vec_tst
-Z20 w1716295838
+Z20 w1716437828
 R8
 R9
 R0
@@ -76,27 +76,27 @@ R13
 32
 R14
 !i10b 1
-R15
-Z23 !s90 -work|work|Waveform1.vwf.vht|
-Z24 !s107 Waveform1.vwf.vht|
+Z23 !s108 1716437830.000000
+Z24 !s90 -work|work|Waveform1.vwf.vht|
+Z25 !s107 Waveform1.vwf.vht|
 !i113 1
 R18
 R19
 Atesting_arch
 R8
 R9
-Z25 DEx4 work 19 testing_vhd_vec_tst 0 22 QgYbabJFSTXiR>EIh56d61
-l64
+Z26 DEx4 work 19 testing_vhd_vec_tst 0 22 QgYbabJFSTXiR>EIh56d61
+l66
 L33
-VioacJ<Po]OZB9z_@YUR@13
-!s100 M3W8oIiY7KMO2c14IeCNk3
+Z27 VIZjB==7FU6Eo36EzF6GLC2
+Z28 !s100 3iO`;>DP9a:G1U74bmVMj0
 R13
 32
 R14
 !i10b 1
-R15
 R23
 R24
+R25
 !i113 1
 R18
 R19

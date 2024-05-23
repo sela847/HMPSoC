@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/22/2024 00:50:38"
+-- Generated on "05/23/2024 16:17:08"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          testing
 -- 
@@ -45,6 +45,7 @@ SIGNAL fifo_out_3 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL fifo_out_4 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL L_sel : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
+SIGNAL write_addr : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT testing
 	PORT (
 	adc_data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -58,7 +59,8 @@ COMPONENT testing
 	fifo_out_3 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	fifo_out_4 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	L_sel : IN STD_LOGIC;
-	reset : IN STD_LOGIC
+	reset : IN STD_LOGIC;
+	write_addr : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -76,7 +78,8 @@ BEGIN
 	fifo_out_3 => fifo_out_3,
 	fifo_out_4 => fifo_out_4,
 	L_sel => L_sel,
-	reset => reset
+	reset => reset,
+	write_addr => write_addr
 	);
 -- adc_data[15]
 t_prcs_adc_data_15: PROCESS
@@ -124,13 +127,19 @@ END PROCESS t_prcs_adc_data_9;
 t_prcs_adc_data_8: PROCESS
 BEGIN
 	adc_data(8) <= '0';
+	WAIT FOR 630000 ps;
+	adc_data(8) <= '1';
 WAIT;
 END PROCESS t_prcs_adc_data_8;
 -- adc_data[7]
 t_prcs_adc_data_7: PROCESS
 BEGIN
 	adc_data(7) <= '0';
-	WAIT FOR 640000 ps;
+	WAIT FOR 310000 ps;
+	adc_data(7) <= '1';
+	WAIT FOR 320000 ps;
+	adc_data(7) <= '0';
+	WAIT FOR 320000 ps;
 	adc_data(7) <= '1';
 WAIT;
 END PROCESS t_prcs_adc_data_7;
@@ -138,50 +147,65 @@ END PROCESS t_prcs_adc_data_7;
 t_prcs_adc_data_6: PROCESS
 BEGIN
 	adc_data(6) <= '0';
-	WAIT FOR 320000 ps;
+	WAIT FOR 150000 ps;
+	FOR i IN 1 TO 2
+	LOOP
+		adc_data(6) <= '1';
+		WAIT FOR 160000 ps;
+		adc_data(6) <= '0';
+		WAIT FOR 160000 ps;
+	END LOOP;
 	adc_data(6) <= '1';
-	WAIT FOR 320000 ps;
+	WAIT FOR 160000 ps;
 	adc_data(6) <= '0';
-	WAIT FOR 320000 ps;
-	adc_data(6) <= '1';
 WAIT;
 END PROCESS t_prcs_adc_data_6;
 -- adc_data[5]
 t_prcs_adc_data_5: PROCESS
 BEGIN
-	FOR i IN 1 TO 3
+	adc_data(5) <= '0';
+	WAIT FOR 70000 ps;
+	FOR i IN 1 TO 5
 	LOOP
-		adc_data(5) <= '0';
-		WAIT FOR 160000 ps;
 		adc_data(5) <= '1';
-		WAIT FOR 160000 ps;
+		WAIT FOR 80000 ps;
+		adc_data(5) <= '0';
+		WAIT FOR 80000 ps;
 	END LOOP;
+	adc_data(5) <= '1';
+	WAIT FOR 80000 ps;
 	adc_data(5) <= '0';
 WAIT;
 END PROCESS t_prcs_adc_data_5;
 -- adc_data[4]
 t_prcs_adc_data_4: PROCESS
 BEGIN
-	FOR i IN 1 TO 6
-	LOOP
-		adc_data(4) <= '0';
-		WAIT FOR 80000 ps;
-		adc_data(4) <= '1';
-		WAIT FOR 80000 ps;
-	END LOOP;
 	adc_data(4) <= '0';
+	WAIT FOR 30000 ps;
+	FOR i IN 1 TO 12
+	LOOP
+		adc_data(4) <= '1';
+		WAIT FOR 40000 ps;
+		adc_data(4) <= '0';
+		WAIT FOR 40000 ps;
+	END LOOP;
+	adc_data(4) <= '1';
 WAIT;
 END PROCESS t_prcs_adc_data_4;
 -- adc_data[3]
 t_prcs_adc_data_3: PROCESS
 BEGIN
-	FOR i IN 1 TO 12
+	adc_data(3) <= '0';
+	WAIT FOR 10000 ps;
+	FOR i IN 1 TO 24
 	LOOP
-		adc_data(3) <= '0';
-		WAIT FOR 40000 ps;
 		adc_data(3) <= '1';
-		WAIT FOR 40000 ps;
+		WAIT FOR 20000 ps;
+		adc_data(3) <= '0';
+		WAIT FOR 20000 ps;
 	END LOOP;
+	adc_data(3) <= '1';
+	WAIT FOR 20000 ps;
 	adc_data(3) <= '0';
 WAIT;
 END PROCESS t_prcs_adc_data_3;
@@ -189,10 +213,10 @@ END PROCESS t_prcs_adc_data_3;
 t_prcs_adc_data_2: PROCESS
 BEGIN
 LOOP
-	adc_data(2) <= '0';
-	WAIT FOR 20000 ps;
 	adc_data(2) <= '1';
-	WAIT FOR 20000 ps;
+	WAIT FOR 10000 ps;
+	adc_data(2) <= '0';
+	WAIT FOR 10000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_adc_data_2;
@@ -239,6 +263,15 @@ END PROCESS t_prcs_reset;
 t_prcs_adc_data_rd: PROCESS
 BEGIN
 	adc_data_rd <= '1';
+	WAIT FOR 50000 ps;
+	FOR i IN 1 TO 9
+	LOOP
+		adc_data_rd <= '0';
+		WAIT FOR 50000 ps;
+		adc_data_rd <= '1';
+		WAIT FOR 50000 ps;
+	END LOOP;
+	adc_data_rd <= '0';
 WAIT;
 END PROCESS t_prcs_adc_data_rd;
 END testing_arch;

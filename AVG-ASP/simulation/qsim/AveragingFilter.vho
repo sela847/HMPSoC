@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/22/2024 00:50:39"
+-- DATE "05/23/2024 16:17:09"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -48,7 +48,8 @@ ENTITY 	testing IS
 	fifo_out_1 : OUT std_logic_vector(15 DOWNTO 0);
 	fifo_out_2 : OUT std_logic_vector(15 DOWNTO 0);
 	fifo_out_3 : OUT std_logic_vector(15 DOWNTO 0);
-	fifo_out_4 : OUT std_logic_vector(15 DOWNTO 0)
+	fifo_out_4 : OUT std_logic_vector(15 DOWNTO 0);
+	write_addr : OUT std_logic_vector(9 DOWNTO 0)
 	);
 END testing;
 
@@ -74,6 +75,7 @@ SIGNAL ww_fifo_out_1 : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_fifo_out_2 : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_fifo_out_3 : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_fifo_out_4 : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_write_addr : std_logic_vector(9 DOWNTO 0);
 SIGNAL \avg_rdy~output_o\ : std_logic;
 SIGNAL \avg_result[15]~output_o\ : std_logic;
 SIGNAL \avg_result[14]~output_o\ : std_logic;
@@ -171,6 +173,16 @@ SIGNAL \fifo_out_4[3]~output_o\ : std_logic;
 SIGNAL \fifo_out_4[2]~output_o\ : std_logic;
 SIGNAL \fifo_out_4[1]~output_o\ : std_logic;
 SIGNAL \fifo_out_4[0]~output_o\ : std_logic;
+SIGNAL \write_addr[9]~output_o\ : std_logic;
+SIGNAL \write_addr[8]~output_o\ : std_logic;
+SIGNAL \write_addr[7]~output_o\ : std_logic;
+SIGNAL \write_addr[6]~output_o\ : std_logic;
+SIGNAL \write_addr[5]~output_o\ : std_logic;
+SIGNAL \write_addr[4]~output_o\ : std_logic;
+SIGNAL \write_addr[3]~output_o\ : std_logic;
+SIGNAL \write_addr[2]~output_o\ : std_logic;
+SIGNAL \write_addr[1]~output_o\ : std_logic;
+SIGNAL \write_addr[0]~output_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \adc_data_rd~input_o\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
@@ -304,9 +316,35 @@ SIGNAL \inst|fifo[4][3]~q\ : std_logic;
 SIGNAL \inst|fifo[4][2]~q\ : std_logic;
 SIGNAL \inst|fifo[4][1]~q\ : std_logic;
 SIGNAL \inst|fifo[4][0]~q\ : std_logic;
+SIGNAL \inst1|Add0~37_sumout\ : std_logic;
+SIGNAL \inst1|Equal0~0_combout\ : std_logic;
+SIGNAL \inst1|Equal0~1_combout\ : std_logic;
+SIGNAL \inst1|Equal0~2_combout\ : std_logic;
+SIGNAL \inst1|Add0~38\ : std_logic;
+SIGNAL \inst1|Add0~33_sumout\ : std_logic;
+SIGNAL \inst1|Add0~34\ : std_logic;
+SIGNAL \inst1|Add0~29_sumout\ : std_logic;
+SIGNAL \inst1|Add0~30\ : std_logic;
+SIGNAL \inst1|Add0~25_sumout\ : std_logic;
+SIGNAL \inst1|Add0~26\ : std_logic;
+SIGNAL \inst1|Add0~21_sumout\ : std_logic;
+SIGNAL \inst1|Add0~22\ : std_logic;
+SIGNAL \inst1|Add0~17_sumout\ : std_logic;
+SIGNAL \inst1|Add0~18\ : std_logic;
+SIGNAL \inst1|Add0~13_sumout\ : std_logic;
+SIGNAL \inst1|Add0~14\ : std_logic;
+SIGNAL \inst1|Add0~9_sumout\ : std_logic;
+SIGNAL \inst1|Add0~10\ : std_logic;
+SIGNAL \inst1|Add0~5_sumout\ : std_logic;
+SIGNAL \inst1|Add0~6\ : std_logic;
+SIGNAL \inst1|Add0~1_sumout\ : std_logic;
+SIGNAL \inst1|write_addr[9]~0_combout\ : std_logic;
+SIGNAL \inst1|address\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst|avg_result\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst1|write_addr\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst|sum\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst|ALT_INV_sum\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst|ALT_INV_avg_rdy~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_address\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \ALT_INV_adc_data[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_adc_data[1]~input_o\ : std_logic;
 SIGNAL \ALT_INV_adc_data[2]~input_o\ : std_logic;
@@ -326,6 +364,9 @@ SIGNAL \ALT_INV_adc_data[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_L_sel~input_o\ : std_logic;
 SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \ALT_INV_adc_data_rd~input_o\ : std_logic;
+SIGNAL \inst|ALT_INV_sum\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst1|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \inst1|ALT_INV_Equal0~0_combout\ : std_logic;
 
 BEGIN
 
@@ -341,25 +382,21 @@ fifo_out_1 <= ww_fifo_out_1;
 fifo_out_2 <= ww_fifo_out_2;
 fifo_out_3 <= ww_fifo_out_3;
 fifo_out_4 <= ww_fifo_out_4;
+write_addr <= ww_write_addr;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\inst|ALT_INV_sum\(0) <= NOT \inst|sum\(0);
-\inst|ALT_INV_sum\(1) <= NOT \inst|sum\(1);
-\inst|ALT_INV_sum\(2) <= NOT \inst|sum\(2);
-\inst|ALT_INV_sum\(3) <= NOT \inst|sum\(3);
-\inst|ALT_INV_sum\(4) <= NOT \inst|sum\(4);
-\inst|ALT_INV_sum\(5) <= NOT \inst|sum\(5);
-\inst|ALT_INV_sum\(6) <= NOT \inst|sum\(6);
-\inst|ALT_INV_sum\(7) <= NOT \inst|sum\(7);
-\inst|ALT_INV_sum\(8) <= NOT \inst|sum\(8);
-\inst|ALT_INV_sum\(9) <= NOT \inst|sum\(9);
-\inst|ALT_INV_sum\(10) <= NOT \inst|sum\(10);
-\inst|ALT_INV_sum\(11) <= NOT \inst|sum\(11);
-\inst|ALT_INV_sum\(12) <= NOT \inst|sum\(12);
-\inst|ALT_INV_sum\(13) <= NOT \inst|sum\(13);
-\inst|ALT_INV_sum\(14) <= NOT \inst|sum\(14);
-\inst|ALT_INV_sum\(15) <= NOT \inst|sum\(15);
+\inst|ALT_INV_avg_rdy~q\ <= NOT \inst|avg_rdy~q\;
+\inst1|ALT_INV_address\(0) <= NOT \inst1|address\(0);
+\inst1|ALT_INV_address\(1) <= NOT \inst1|address\(1);
+\inst1|ALT_INV_address\(2) <= NOT \inst1|address\(2);
+\inst1|ALT_INV_address\(3) <= NOT \inst1|address\(3);
+\inst1|ALT_INV_address\(4) <= NOT \inst1|address\(4);
+\inst1|ALT_INV_address\(5) <= NOT \inst1|address\(5);
+\inst1|ALT_INV_address\(6) <= NOT \inst1|address\(6);
+\inst1|ALT_INV_address\(7) <= NOT \inst1|address\(7);
+\inst1|ALT_INV_address\(8) <= NOT \inst1|address\(8);
+\inst1|ALT_INV_address\(9) <= NOT \inst1|address\(9);
 \ALT_INV_adc_data[0]~input_o\ <= NOT \adc_data[0]~input_o\;
 \ALT_INV_adc_data[1]~input_o\ <= NOT \adc_data[1]~input_o\;
 \ALT_INV_adc_data[2]~input_o\ <= NOT \adc_data[2]~input_o\;
@@ -379,6 +416,24 @@ ww_devpor <= devpor;
 \ALT_INV_L_sel~input_o\ <= NOT \L_sel~input_o\;
 \ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 \ALT_INV_adc_data_rd~input_o\ <= NOT \adc_data_rd~input_o\;
+\inst|ALT_INV_sum\(0) <= NOT \inst|sum\(0);
+\inst|ALT_INV_sum\(1) <= NOT \inst|sum\(1);
+\inst1|ALT_INV_Equal0~1_combout\ <= NOT \inst1|Equal0~1_combout\;
+\inst1|ALT_INV_Equal0~0_combout\ <= NOT \inst1|Equal0~0_combout\;
+\inst|ALT_INV_sum\(2) <= NOT \inst|sum\(2);
+\inst|ALT_INV_sum\(3) <= NOT \inst|sum\(3);
+\inst|ALT_INV_sum\(4) <= NOT \inst|sum\(4);
+\inst|ALT_INV_sum\(5) <= NOT \inst|sum\(5);
+\inst|ALT_INV_sum\(6) <= NOT \inst|sum\(6);
+\inst|ALT_INV_sum\(7) <= NOT \inst|sum\(7);
+\inst|ALT_INV_sum\(8) <= NOT \inst|sum\(8);
+\inst|ALT_INV_sum\(9) <= NOT \inst|sum\(9);
+\inst|ALT_INV_sum\(10) <= NOT \inst|sum\(10);
+\inst|ALT_INV_sum\(11) <= NOT \inst|sum\(11);
+\inst|ALT_INV_sum\(12) <= NOT \inst|sum\(12);
+\inst|ALT_INV_sum\(13) <= NOT \inst|sum\(13);
+\inst|ALT_INV_sum\(14) <= NOT \inst|sum\(14);
+\inst|ALT_INV_sum\(15) <= NOT \inst|sum\(15);
 
 \avg_rdy~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -1543,6 +1598,126 @@ PORT MAP (
 	i => \inst|fifo[4][0]~q\,
 	devoe => ww_devoe,
 	o => \fifo_out_4[0]~output_o\);
+
+\write_addr[9]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(9),
+	devoe => ww_devoe,
+	o => \write_addr[9]~output_o\);
+
+\write_addr[8]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(8),
+	devoe => ww_devoe,
+	o => \write_addr[8]~output_o\);
+
+\write_addr[7]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(7),
+	devoe => ww_devoe,
+	o => \write_addr[7]~output_o\);
+
+\write_addr[6]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(6),
+	devoe => ww_devoe,
+	o => \write_addr[6]~output_o\);
+
+\write_addr[5]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(5),
+	devoe => ww_devoe,
+	o => \write_addr[5]~output_o\);
+
+\write_addr[4]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(4),
+	devoe => ww_devoe,
+	o => \write_addr[4]~output_o\);
+
+\write_addr[3]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(3),
+	devoe => ww_devoe,
+	o => \write_addr[3]~output_o\);
+
+\write_addr[2]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(2),
+	devoe => ww_devoe,
+	o => \write_addr[2]~output_o\);
+
+\write_addr[1]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(1),
+	devoe => ww_devoe,
+	o => \write_addr[1]~output_o\);
+
+\write_addr[0]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst1|write_addr\(0),
+	devoe => ww_devoe,
+	o => \write_addr[0]~output_o\);
 
 \clk~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -3765,6 +3940,540 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|fifo[4][0]~q\);
 
+\inst1|Add0~37\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~37_sumout\ = SUM(( \inst1|address\(0) ) + ( VCC ) + ( !VCC ))
+-- \inst1|Add0~38\ = CARRY(( \inst1|address\(0) ) + ( VCC ) + ( !VCC ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000000000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(0),
+	cin => GND,
+	sumout => \inst1|Add0~37_sumout\,
+	cout => \inst1|Add0~38\);
+
+\inst1|Equal0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Equal0~0_combout\ = (\inst1|address\(9) & (\inst1|address\(8) & (\inst1|address\(7) & \inst1|address\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000001000000000000000100000000000000010000000000000001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst1|ALT_INV_address\(9),
+	datab => \inst1|ALT_INV_address\(8),
+	datac => \inst1|ALT_INV_address\(7),
+	datad => \inst1|ALT_INV_address\(6),
+	combout => \inst1|Equal0~0_combout\);
+
+\inst1|Equal0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Equal0~1_combout\ = (\inst1|address\(3) & (\inst1|address\(2) & (\inst1|address\(1) & \inst1|address\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000001000000000000000100000000000000010000000000000001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst1|ALT_INV_address\(3),
+	datab => \inst1|ALT_INV_address\(2),
+	datac => \inst1|ALT_INV_address\(1),
+	datad => \inst1|ALT_INV_address\(0),
+	combout => \inst1|Equal0~1_combout\);
+
+\inst1|Equal0~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Equal0~2_combout\ = (\inst1|address\(5) & (\inst1|address\(4) & (\inst1|Equal0~0_combout\ & \inst1|Equal0~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000001000000000000000100000000000000010000000000000001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst1|ALT_INV_address\(5),
+	datab => \inst1|ALT_INV_address\(4),
+	datac => \inst1|ALT_INV_Equal0~0_combout\,
+	datad => \inst1|ALT_INV_Equal0~1_combout\,
+	combout => \inst1|Equal0~2_combout\);
+
+\inst1|address[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~37_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(0));
+
+\inst1|Add0~33\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~33_sumout\ = SUM(( \inst1|address\(1) ) + ( GND ) + ( \inst1|Add0~38\ ))
+-- \inst1|Add0~34\ = CARRY(( \inst1|address\(1) ) + ( GND ) + ( \inst1|Add0~38\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(1),
+	cin => \inst1|Add0~38\,
+	sumout => \inst1|Add0~33_sumout\,
+	cout => \inst1|Add0~34\);
+
+\inst1|address[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~33_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(1));
+
+\inst1|Add0~29\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~29_sumout\ = SUM(( \inst1|address\(2) ) + ( GND ) + ( \inst1|Add0~34\ ))
+-- \inst1|Add0~30\ = CARRY(( \inst1|address\(2) ) + ( GND ) + ( \inst1|Add0~34\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(2),
+	cin => \inst1|Add0~34\,
+	sumout => \inst1|Add0~29_sumout\,
+	cout => \inst1|Add0~30\);
+
+\inst1|address[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~29_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(2));
+
+\inst1|Add0~25\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~25_sumout\ = SUM(( \inst1|address\(3) ) + ( GND ) + ( \inst1|Add0~30\ ))
+-- \inst1|Add0~26\ = CARRY(( \inst1|address\(3) ) + ( GND ) + ( \inst1|Add0~30\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(3),
+	cin => \inst1|Add0~30\,
+	sumout => \inst1|Add0~25_sumout\,
+	cout => \inst1|Add0~26\);
+
+\inst1|address[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~25_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(3));
+
+\inst1|Add0~21\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~21_sumout\ = SUM(( \inst1|address\(4) ) + ( GND ) + ( \inst1|Add0~26\ ))
+-- \inst1|Add0~22\ = CARRY(( \inst1|address\(4) ) + ( GND ) + ( \inst1|Add0~26\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(4),
+	cin => \inst1|Add0~26\,
+	sumout => \inst1|Add0~21_sumout\,
+	cout => \inst1|Add0~22\);
+
+\inst1|address[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~21_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(4));
+
+\inst1|Add0~17\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~17_sumout\ = SUM(( \inst1|address\(5) ) + ( GND ) + ( \inst1|Add0~22\ ))
+-- \inst1|Add0~18\ = CARRY(( \inst1|address\(5) ) + ( GND ) + ( \inst1|Add0~22\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(5),
+	cin => \inst1|Add0~22\,
+	sumout => \inst1|Add0~17_sumout\,
+	cout => \inst1|Add0~18\);
+
+\inst1|address[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~17_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(5));
+
+\inst1|Add0~13\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~13_sumout\ = SUM(( \inst1|address\(6) ) + ( GND ) + ( \inst1|Add0~18\ ))
+-- \inst1|Add0~14\ = CARRY(( \inst1|address\(6) ) + ( GND ) + ( \inst1|Add0~18\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(6),
+	cin => \inst1|Add0~18\,
+	sumout => \inst1|Add0~13_sumout\,
+	cout => \inst1|Add0~14\);
+
+\inst1|address[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~13_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(6));
+
+\inst1|Add0~9\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~9_sumout\ = SUM(( \inst1|address\(7) ) + ( GND ) + ( \inst1|Add0~14\ ))
+-- \inst1|Add0~10\ = CARRY(( \inst1|address\(7) ) + ( GND ) + ( \inst1|Add0~14\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(7),
+	cin => \inst1|Add0~14\,
+	sumout => \inst1|Add0~9_sumout\,
+	cout => \inst1|Add0~10\);
+
+\inst1|address[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~9_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(7));
+
+\inst1|Add0~5\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~5_sumout\ = SUM(( \inst1|address\(8) ) + ( GND ) + ( \inst1|Add0~10\ ))
+-- \inst1|Add0~6\ = CARRY(( \inst1|address\(8) ) + ( GND ) + ( \inst1|Add0~10\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(8),
+	cin => \inst1|Add0~10\,
+	sumout => \inst1|Add0~5_sumout\,
+	cout => \inst1|Add0~6\);
+
+\inst1|address[8]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~5_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(8));
+
+\inst1|Add0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~1_sumout\ = SUM(( \inst1|address\(9) ) + ( GND ) + ( \inst1|Add0~6\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \inst1|ALT_INV_address\(9),
+	cin => \inst1|Add0~6\,
+	sumout => \inst1|Add0~1_sumout\);
+
+\inst1|address[9]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|Add0~1_sumout\,
+	clrn => \ALT_INV_reset~input_o\,
+	sclr => \inst1|Equal0~2_combout\,
+	ena => \inst|avg_rdy~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|address\(9));
+
+\inst1|write_addr[9]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|write_addr[9]~0_combout\ = (\inst|avg_rdy~q\ & !\reset~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100010001000100010001000100010001000100010001000100010001000100",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_avg_rdy~q\,
+	datab => \ALT_INV_reset~input_o\,
+	combout => \inst1|write_addr[9]~0_combout\);
+
+\inst1|write_addr[9]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(9),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(9));
+
+\inst1|write_addr[8]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(8),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(8));
+
+\inst1|write_addr[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(7),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(7));
+
+\inst1|write_addr[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(6),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(6));
+
+\inst1|write_addr[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(5),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(5));
+
+\inst1|write_addr[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(4),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(4));
+
+\inst1|write_addr[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(3),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(3));
+
+\inst1|write_addr[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(2),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(2));
+
+\inst1|write_addr[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(1),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(1));
+
+\inst1|write_addr[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|address\(0),
+	ena => \inst1|write_addr[9]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|write_addr\(0));
+
 ww_avg_rdy <= \avg_rdy~output_o\;
 
 ww_avg_result(15) <= \avg_result[15]~output_o\;
@@ -3958,6 +4667,26 @@ ww_fifo_out_4(2) <= \fifo_out_4[2]~output_o\;
 ww_fifo_out_4(1) <= \fifo_out_4[1]~output_o\;
 
 ww_fifo_out_4(0) <= \fifo_out_4[0]~output_o\;
+
+ww_write_addr(9) <= \write_addr[9]~output_o\;
+
+ww_write_addr(8) <= \write_addr[8]~output_o\;
+
+ww_write_addr(7) <= \write_addr[7]~output_o\;
+
+ww_write_addr(6) <= \write_addr[6]~output_o\;
+
+ww_write_addr(5) <= \write_addr[5]~output_o\;
+
+ww_write_addr(4) <= \write_addr[4]~output_o\;
+
+ww_write_addr(3) <= \write_addr[3]~output_o\;
+
+ww_write_addr(2) <= \write_addr[2]~output_o\;
+
+ww_write_addr(1) <= \write_addr[1]~output_o\;
+
+ww_write_addr(0) <= \write_addr[0]~output_o\;
 END structure;
 
 
