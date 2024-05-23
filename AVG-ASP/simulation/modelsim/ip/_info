@@ -1,0 +1,240 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dH:/Documents/COMPSYS_701/Lab2COMPSYS701/CS701/simulation/modelsim
+valtera_up_avalon_reset_from_locked_signal
+Z0 !s110 1716451021
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OV;L;2020.1;71
+r1
+!s85 0
+!i10b 1
+31
+!s100 21LY9FTb`4C4iU[D9:fdD3
+IgZN=:PG_2^2STbb?<4C0e2
+Z3 dC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/simulation/modelsim
+Z4 w1640998800
+8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/altera_up_avalon_reset_from_locked_signal.v
+FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/altera_up_avalon_reset_from_locked_signal.v
+L0 28
+Z5 !s108 1716451021.000000
+!s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/altera_up_avalon_reset_from_locked_signal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|ip|+incdir+C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/altera_up_avalon_reset_from_locked_signal.v|
+!i113 1
+Z6 o-vlog01compat -work ip
+Z7 !s92 -vlog01compat -work ip +incdir+C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules
+Z8 tCvgOpt 0
+Eaudioclock
+Z9 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z11 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z12 OV;C;2020.1;71
+31
+Z13 !s110 1716451022
+!i10b 1
+R4
+R3
+Z14 8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/AudioClock.vhd
+Z15 FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/AudioClock.vhd
+l0
+L9
+VU>AG7VTJY1VYJP@Gh3mFH2
+!s100 ?]V=nD1YN]MfnMQ9ZF@XP2
+Z16 !s108 1716451022.000000
+Z17 !s90 -reportprogress|300|-93|-work|ip|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/AudioClock.vhd|
+Z18 !s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/AudioClock.vhd|
+!i113 1
+Z19 o-93 -work ip
+Z20 tExplicit 1 CvgOpt 0
+Artl
+R9
+R10
+R11
+DEx4 work 10 audioclock 0 22 U>AG7VTJY1VYJP@Gh3mFH2
+R12
+31
+R13
+!i10b 1
+l28
+L18
+VmHnFGi3Nced^BiM<RhZQa0
+!s100 gEa:]G7l6k;X7AW=Y70TR0
+R16
+R17
+R18
+!i113 1
+R19
+R20
+vAudioClock_audio_pll_0
+R0
+R1
+R2
+r1
+!s85 0
+!i10b 1
+31
+!s100 TBHV>5R<hmM:Gcze@0P[n1
+I_H>KofGz<OMV;ZzbhecTM0
+R3
+R4
+8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0.v
+FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0.v
+L0 9
+R5
+!s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|ip|+incdir+C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0.v|
+!i113 1
+R6
+R7
+R8
+n@audio@clock_audio_pll_0
+vAudioClock_audio_pll_0_audio_pll
+R13
+R1
+R2
+r1
+!s85 0
+!i10b 1
+31
+!s100 9F[[ZW0oOIAa3@>?EzTXd0
+IcGVhg8:3ai8EVg5lli<5n2
+R3
+R4
+8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0_audio_pll.v
+FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0_audio_pll.v
+L0 2
+R16
+!s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0_audio_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|ip|+incdir+C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioClock_1/submodules/AudioClock_audio_pll_0_audio_pll.v|
+!i113 1
+R6
+R7
+R8
+n@audio@clock_audio_pll_0_audio_pll
+Eaudiofifo
+R10
+R11
+R12
+31
+R13
+!i10b 1
+R4
+R3
+Z21 8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioFifo/AudioFifo.vhd
+Z22 FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioFifo/AudioFifo.vhd
+l0
+L43
+ViC1KFCc6e0?C]fPoU3Yi>1
+!s100 hzfBADS2jz8efhYoW2WSO2
+R16
+Z23 !s90 -reportprogress|300|-93|-work|ip|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioFifo/AudioFifo.vhd|
+Z24 !s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioFifo/AudioFifo.vhd|
+!i113 1
+R19
+R20
+Asyn
+R10
+R11
+DEx4 work 9 audiofifo 0 22 iC1KFCc6e0?C]fPoU3Yi>1
+R12
+31
+R13
+!i10b 1
+l92
+L58
+VWTFZRZX3ohDLGgLdKTG9n2
+!s100 DFEC5]6nd;^@Gjg`?;L]o3
+R16
+R23
+R24
+!i113 1
+R19
+R20
+Eaudiorom
+Z25 DPx9 altera_mf 20 altera_mf_components 0 22 z693OcI2YmSdfbRXMZge[3
+R10
+R11
+R12
+31
+R13
+!i10b 1
+R4
+R3
+Z26 8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioRom/AudioRom.vhd
+Z27 FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioRom/AudioRom.vhd
+l0
+L43
+V`:UmgG:5ifIRG^02a:7cz3
+!s100 `zhij<A8?O;TTj8[PRKke3
+R16
+Z28 !s90 -reportprogress|300|-93|-work|ip|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioRom/AudioRom.vhd|
+Z29 !s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/AudioRom/AudioRom.vhd|
+!i113 1
+R19
+R20
+Asyn
+R25
+R10
+R11
+DEx4 work 8 audiorom 0 22 `:UmgG:5ifIRG^02a:7cz3
+R12
+31
+R13
+!i10b 1
+l57
+L53
+V74Z][<OG0oleWLIHETcVa3
+!s100 >haM?bMIA8m3IF:F1EmdN1
+R16
+R28
+R29
+!i113 1
+R19
+R20
+Etdmaminfifo
+R10
+R11
+R12
+31
+R13
+!i10b 1
+R4
+R3
+Z30 8C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/TdmaMinFifo/TdmaMinFifo.vhd
+Z31 FC:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/TdmaMinFifo/TdmaMinFifo.vhd
+l0
+L43
+VNk?TlPcP_[9g3Kn[mNkNJ1
+!s100 8FemG`GCM5dSE;ZO1MWzf2
+R16
+Z32 !s90 -reportprogress|300|-93|-work|ip|C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/TdmaMinFifo/TdmaMinFifo.vhd|
+Z33 !s107 C:/Users/shaar/Downloads/Lab2COMPSYS701/CS701/ip/TdmaMinFifo/TdmaMinFifo.vhd|
+!i113 1
+R19
+R20
+Asyn
+R10
+R11
+DEx4 work 11 tdmaminfifo 0 22 Nk?TlPcP_[9g3Kn[mNkNJ1
+R12
+31
+R13
+!i10b 1
+l89
+L57
+V4OmT6jL[6DjS6JfW>bgzI2
+!s100 nV:U_b?O:ZbYEG97<H`3G1
+R16
+R32
+R33
+!i113 1
+R19
+R20

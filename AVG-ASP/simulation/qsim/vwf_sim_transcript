@@ -1,0 +1,304 @@
+Determining the location of the ModelSim executable...
+
+Using: C:\intelFPGA\18.1\modelsim_ase\win32aloem
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off AveragingFilter -c AveragingFilter --vector_source="C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/Waveform1.vwf" --testbench_file="C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/Waveform1.vwf.vht"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Thu May 23 20:25:05 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off AveragingFilter -c AveragingFilter --vector_source=C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/Waveform1.vwf --testbench_file=C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/Waveform1.vwf.vht
+Info (119006): Selected device 5CSEMA5F31C6 for design "AveragingFilter"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+hen writing test bench files
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/" AveragingFilter -c AveragingFilter
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Thu May 23 20:25:06 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/ AveragingFilter -c AveragingFilter
+Info (119006): Selected device 5CSEMA5F31C6 for design "AveragingFilter"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file AveragingFilter.vho in folder "C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4729 megabytes
+    Info: Processing ended: Thu May 23 20:25:07 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/AveragingFilter.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+C:/intelFPGA/18.1/modelsim_ase/win32aloem/vsim -c -do AveragingFilter.do
+
+Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do AveragingFilter.do
+# ** Warning: (vlib-34) Library already exists at "work".
+
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:25:08 on May 23,2024
+# vcom -work work AveragingFilter.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package altera_lnsim_components
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity AVGASP_Wave_Test
+# -- Compiling architecture structure of AVGASP_Wave_Test
+
+# End time: 20:25:09 on May 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:25:09 on May 23,2024
+# vcom -work work Waveform1.vwf.vht 
+# -- Loading package STANDARD
+
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AVGASP_Wave_Test_vhd_vec_tst
+# -- Compiling architecture AVGASP_Wave_Test_arch of AVGASP_Wave_Test_vhd_vec_tst
+# End time: 20:25:09 on May 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.testing_vhd_vec_tst 
+# Start time: 20:25:09 on May 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testing_vhd_vec_tst(testing_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading altera_lnsim.altera_lnsim_components
+# Loading cyclonev.cyclonev_atom_pack(body)
+# Loading cyclonev.cyclonev_components
+# Loading work.testing(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cyclonev.cyclonev_io_obuf(arch)
+# Loading cyclonev.cyclonev_io_ibuf(arch)
+# Loading altera.dffeas(vital_dffeas)
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# ** Warning: Design size of 39129 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#34
+
+# End time: 20:25:10 on May 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/Waveform1.vwf...
+
+Reading C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/AveragingFilter.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: adc_data[15] - signal not found in VCD.
+
+Warning: adc_data[14] - signal not found in VCD.
+
+Warning: adc_data[13] - signal not found in VCD.
+
+Warning: adc_data[12] - signal not found in VCD.
+
+Warning: adc_data[11] - signal not found in VCD.
+
+Warning: adc_data[10] - signal not found in VCD.
+
+Warning: adc_data[9] - signal not found in VCD.
+
+Warning: adc_data[8] - signal not found in VCD.
+
+Warning: adc_data[7] - signal not found in VCD.
+
+Warning: adc_data[6] - signal not found in VCD.
+
+Warning: adc_data[5] - signal not found in VCD.
+
+Warning: adc_data[4] - signal not found in VCD.
+
+Warning: adc_data[3] - signal not found in VCD.
+
+Warning: adc_data[2] - signal not found in VCD.
+
+Warning: adc_data[1] - signal not found in VCD.
+
+Warning: adc_data[0] - signal not found in VCD.
+
+Warning: adc_data_rdy - signal not found in VCD.
+
+Warning: avg_rdy - signal not found in VCD.
+
+Warning: avg_result[15] - signal not found in VCD.
+
+Warning: avg_result[14] - signal not found in VCD.
+
+Warning: avg_result[13] - signal not found in VCD.
+
+Warning: avg_result[12] - signal not found in VCD.
+
+Warning: avg_result[11] - signal not found in VCD.
+
+Warning: avg_result[10] - signal not found in VCD.
+
+Warning: avg_result[9] - signal not found in VCD.
+
+Warning: avg_result[8] - signal not found in VCD.
+
+Warning: avg_result[7] - signal not found in VCD.
+
+Warning: avg_result[6] - signal not found in VCD.
+
+Warning: avg_result[5] - signal not found in VCD.
+
+Warning: avg_result[4] - signal not found in VCD.
+
+Warning: avg_result[3] - signal not found in VCD.
+
+Warning: avg_result[2] - signal not found in VCD.
+
+Warning: avg_result[1] - signal not found in VCD.
+
+Warning: avg_result[0] - signal not found in VCD.
+
+Warning: clk - signal not found in VCD.
+
+Warning: enable_out - signal not found in VCD.
+
+Warning: L_sel - signal not found in VCD.
+
+Warning: recvOut[31] - signal not found in VCD.
+
+Warning: recvOut[30] - signal not found in VCD.
+
+Warning: recvOut[29] - signal not found in VCD.
+
+Warning: recvOut[28] - signal not found in VCD.
+
+Warning: recvOut[27] - signal not found in VCD.
+
+Warning: recvOut[26] - signal not found in VCD.
+
+Warning: recvOut[25] - signal not found in VCD.
+
+Warning: recvOut[24] - signal not found in VCD.
+
+Warning: recvOut[23] - signal not found in VCD.
+
+Warning: recvOut[22] - signal not found in VCD.
+
+Warning: recvOut[21] - signal not found in VCD.
+
+Warning: recvOut[20] - signal not found in VCD.
+
+Warning: recvOut[19] - signal not found in VCD.
+
+Warning: recvOut[18] - signal not found in VCD.
+
+Warning: recvOut[17] - signal not found in VCD.
+
+Warning: recvOut[16] - signal not found in VCD.
+
+Warning: recvOut[15] - signal not found in VCD.
+
+Warning: recvOut[14] - signal not found in VCD.
+
+Warning: recvOut[13] - signal not found in VCD.
+
+Warning: recvOut[12] - signal not found in VCD.
+
+Warning: recvOut[11] - signal not found in VCD.
+
+Warning: recvOut[10] - signal not found in VCD.
+
+Warning: recvOut[9] - signal not found in VCD.
+
+Warning: recvOut[8] - signal not found in VCD.
+
+Warning: recvOut[7] - signal not found in VCD.
+
+Warning: recvOut[6] - signal not found in VCD.
+
+Warning: recvOut[5] - signal not found in VCD.
+
+Warning: recvOut[4] - signal not found in VCD.
+
+Warning: recvOut[3] - signal not found in VCD.
+
+Warning: recvOut[2] - signal not found in VCD.
+
+Warning: recvOut[1] - signal not found in VCD.
+
+Warning: recvOut[0] - signal not found in VCD.
+
+Warning: reset - signal not found in VCD.
+
+Writing the resulting VWF to C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/simulation/qsim/AveragingFilter_20240523202510.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.
