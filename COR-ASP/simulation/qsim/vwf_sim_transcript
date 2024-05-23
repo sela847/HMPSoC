@@ -25,14 +25,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 22 00:29:37 2024
+    Info: Processing started: Thu May 23 19:12:16 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off COR_ASP -c COR_ASP_TopLevel --vector_source=C:/Users/shaar/Downloads/HMPSoC/COR-ASP/Waveform1.vwf --testbench_file=C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim/Waveform1.vwf.vht
 Info (119006): Selected device 5CSEMA5F31C6 for design "COR_ASP_TopLevel"
 Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
     Info (119043): Atom "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-"recvOut[8]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -56,7 +54,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 22 00:29:39 2024
+    Info: Processing started: Thu May 23 19:12:17 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim/ COR_ASP -c COR_ASP_TopLevel
 Info (119006): Selected device 5CSEMA5F31C6 for design "COR_ASP_TopLevel"
 Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
@@ -64,8 +62,8 @@ Warning (18550): Found RAM instances implemented as ROM because the write logic 
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file COR_ASP_TopLevel.vho in folder "C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Wed May 22 00:29:40 2024
+    Info: Peak virtual memory: 4729 megabytes
+    Info: Processing ended: Thu May 23 19:12:18 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -83,15 +81,14 @@ C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vsim -c -do COR_ASP.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do COR_ASP.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:29:40 on May 22,2024
+# Start time: 19:12:19 on May 23,2024
 # vcom -work work COR_ASP_TopLevel.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -99,29 +96,30 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
+
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity CORASP_Wave_Test
 # -- Compiling architecture structure of CORASP_Wave_Test
 
-# End time: 00:29:41 on May 22,2024, Elapsed time: 0:00:01
+# End time: 19:12:19 on May 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:29:41 on May 22,2024
-# vcom -work work Waveform1.vwf.vht 
 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:12:19 on May 23,2024
+# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity CORASP_Wave_Test_vhd_vec_tst
 # -- Compiling architecture CORASP_Wave_Test_arch of CORASP_Wave_Test_vhd_vec_tst
-
-# End time: 00:29:41 on May 22,2024, Elapsed time: 0:00:00
+# End time: 19:12:20 on May 23,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.CORASP_Wave_Test_vhd_vec_tst 
-# Start time: 00:29:41 on May 22,2024
+# Start time: 19:12:20 on May 23,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -179,7 +177,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 #    Time: 0 ps  Iteration: 0  Protected: /corasp_wave_test_vhd_vec_tst/i1/\cor_asp|Mult9~mac\/inst/ File: nofile
 # ** Warning: (vsim-3015) (): [PCDPC] - Port size () does not match connection size () for .
 #    Time: 0 ps  Iteration: 0  Protected: /corasp_wave_test_vhd_vec_tst/i1/\cor_asp|Mult9~mac\/inst/ File: nofile
-# ** Warning: Design size of 295006 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 297268 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
@@ -195,7 +193,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # Simulation time: 0 ps
 
-# End time: 00:30:00 on May 22,2024, Elapsed time: 0:00:19
+# End time: 19:12:36 on May 23,2024, Elapsed time: 0:00:16
 # Errors: 0, Warnings: 17
 
 Completed successfully. 
@@ -208,7 +206,7 @@ Reading C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim/COR_ASP.msim.vcd
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim/COR_ASP_20240522003001.sim.vwf
+Writing the resulting VWF to C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/qsim/COR_ASP_20240523191237.sim.vwf
 
 Finished VCD to VWF conversion.
 

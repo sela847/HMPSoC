@@ -13,6 +13,7 @@ entity CORASP_Wave_Test is
         clock   : in std_logic;
         avgVal  : in std_logic_vector(15 downto 0);
         calc    : in std_logic;
+		  flag	 : in std_logic;
 		  recvOut : out std_logic_vector(31 downto 0);
         sendCorr: out std_logic_vector(31 downto 0)
     );
@@ -48,6 +49,7 @@ begin
 	 test_cor: entity work.testCor
 			port map(
 				clock => clock,
+				flag => flag,
 				send => send_port(1),
 				recv => recv_port(1)
 			);

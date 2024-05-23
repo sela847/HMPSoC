@@ -11,8 +11,9 @@ vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlot
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd}
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd}
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd}
+vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd}
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd}
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd}
 vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd}
-vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd}
+vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd}
 

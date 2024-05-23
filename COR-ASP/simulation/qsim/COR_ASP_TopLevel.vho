@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/22/2024 00:29:40"
+-- DATE "05/23/2024 19:12:18"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -40,6 +40,7 @@ ENTITY 	CORASP_Wave_Test IS
 	clock : IN std_logic;
 	avgVal : IN std_logic_vector(15 DOWNTO 0);
 	calc : IN std_logic;
+	flag : IN std_logic;
 	recvOut : OUT std_logic_vector(31 DOWNTO 0);
 	sendCorr : OUT std_logic_vector(31 DOWNTO 0)
 	);
@@ -58,6 +59,7 @@ SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clock : std_logic;
 SIGNAL ww_avgVal : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_calc : std_logic;
+SIGNAL ww_flag : std_logic;
 SIGNAL ww_recvOut : std_logic_vector(31 DOWNTO 0);
 SIGNAL ww_sendCorr : std_logic_vector(31 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\ : std_logic_vector(0 DOWNTO 0);
@@ -1891,7 +1893,7 @@ SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpf
 SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|_~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|empty_dff~q\ : std_logic;
 SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_comb_bita0~sumout\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_comb_bita0~COUT\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_comb_bita1~sumout\ : std_logic;
@@ -1963,6 +1965,8 @@ SIGNAL \tdma_min|interfaces:1:interface|ack~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|_~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|_~1_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|full_dff~q\ : std_logic;
+SIGNAL \flag~input_o\ : std_logic;
+SIGNAL \test_cor|send.data[17]~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0~sumout\ : std_logic;
 SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_lsb~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:5:interface|ack~combout\ : std_logic;
@@ -2104,10 +2108,27 @@ SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpf
 SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|_~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|empty_dff~q\ : std_logic;
 SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~1_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~2_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\ : std_logic;
+SIGNAL \cor_asp|enable~0_combout\ : std_logic;
+SIGNAL \cor_asp|enable~q\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~1_combout\ : std_logic;
+SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~2_combout\ : std_logic;
 SIGNAL \avgVal[1]~input_o\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~3_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~4_combout\ : std_logic;
@@ -2171,9 +2192,6 @@ SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[15]~47_combout\ : st
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~48_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~49_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~50_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~54_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~55_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~56_combout\ : std_logic;
@@ -2204,36 +2222,24 @@ SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[26]~80_combout\ : st
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~81_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~82_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~83_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\ : std_logic;
-SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\ : std_logic;
 SIGNAL \calc~input_o\ : std_logic;
 SIGNAL \cor_asp|flag~0_combout\ : std_logic;
 SIGNAL \cor_asp|flag~q\ : std_logic;
 SIGNAL \cor_asp|process_0~0_combout\ : std_logic;
-SIGNAL \cor_asp|Add0~53_sumout\ : std_logic;
-SIGNAL \cor_asp|index~1_combout\ : std_logic;
-SIGNAL \cor_asp|Add0~54\ : std_logic;
-SIGNAL \cor_asp|Add0~65_sumout\ : std_logic;
-SIGNAL \cor_asp|correlation[0]~7_combout\ : std_logic;
-SIGNAL \cor_asp|Add0~66\ : std_logic;
-SIGNAL \cor_asp|Add0~57_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~58\ : std_logic;
-SIGNAL \cor_asp|Add0~61_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~62\ : std_logic;
-SIGNAL \cor_asp|Add0~33_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~109_sumout\ : std_logic;
 SIGNAL \cor_asp|index~0_combout\ : std_logic;
-SIGNAL \cor_asp|Decoder0~0_combout\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[0][2]~0_combout\ : std_logic;
+SIGNAL \cor_asp|Add0~110\ : std_logic;
+SIGNAL \cor_asp|Add0~113_sumout\ : std_logic;
+SIGNAL \cor_asp|index~1_combout\ : std_logic;
+SIGNAL \cor_asp|Add0~114\ : std_logic;
+SIGNAL \cor_asp|Add0~117_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~118\ : std_logic;
+SIGNAL \cor_asp|Add0~121_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~122\ : std_logic;
+SIGNAL \cor_asp|Add0~125_sumout\ : std_logic;
+SIGNAL \cor_asp|index~2_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[0][0]~0_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[0][0]~1_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][2]~q\ : std_logic;
@@ -2250,8 +2256,8 @@ SIGNAL \cor_asp|avgBuffer[0][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[0][15]~q\ : std_logic;
-SIGNAL \cor_asp|Decoder0~1_combout\ : std_logic;
-SIGNAL \cor_asp|avgBuffer~1_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[19][0]~2_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[19][0]~3_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][2]~q\ : std_logic;
@@ -2268,8 +2274,8 @@ SIGNAL \cor_asp|avgBuffer[19][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[19][15]~q\ : std_logic;
-SIGNAL \cor_asp|Decoder0~2_combout\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[1][7]~2_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[1][0]~4_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[1][0]~5_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][2]~q\ : std_logic;
@@ -2286,7 +2292,8 @@ SIGNAL \cor_asp|avgBuffer[1][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[1][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[18][2]~3_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[18][0]~6_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[18][0]~7_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][2]~q\ : std_logic;
@@ -2303,7 +2310,8 @@ SIGNAL \cor_asp|avgBuffer[18][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[18][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[2][1]~4_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[2][0]~8_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[2][0]~9_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][2]~q\ : std_logic;
@@ -2320,7 +2328,7 @@ SIGNAL \cor_asp|avgBuffer[2][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[2][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[17][7]~5_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[17][0]~10_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][2]~q\ : std_logic;
@@ -2337,8 +2345,8 @@ SIGNAL \cor_asp|avgBuffer[17][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[17][15]~q\ : std_logic;
-SIGNAL \cor_asp|Decoder0~3_combout\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[3][13]~6_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[3][0]~11_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[3][0]~12_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][2]~q\ : std_logic;
@@ -2355,7 +2363,7 @@ SIGNAL \cor_asp|avgBuffer[3][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[3][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[16][1]~7_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[16][0]~13_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][2]~q\ : std_logic;
@@ -2372,7 +2380,7 @@ SIGNAL \cor_asp|avgBuffer[16][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[16][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[4][9]~8_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[4][0]~14_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][2]~q\ : std_logic;
@@ -2389,7 +2397,8 @@ SIGNAL \cor_asp|avgBuffer[4][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[4][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[15][4]~9_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[15][0]~15_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[15][0]~16_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][2]~q\ : std_logic;
@@ -2406,7 +2415,7 @@ SIGNAL \cor_asp|avgBuffer[15][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[15][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[5][0]~10_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[5][0]~17_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][2]~q\ : std_logic;
@@ -2423,7 +2432,8 @@ SIGNAL \cor_asp|avgBuffer[5][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[5][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[14][14]~11_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[10][0]~18_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[14][0]~19_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][2]~q\ : std_logic;
@@ -2440,7 +2450,8 @@ SIGNAL \cor_asp|avgBuffer[14][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[14][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[6][12]~12_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[6][0]~20_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[6][0]~21_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][2]~q\ : std_logic;
@@ -2457,7 +2468,7 @@ SIGNAL \cor_asp|avgBuffer[6][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[6][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[13][2]~13_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[13][0]~22_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][2]~q\ : std_logic;
@@ -2474,7 +2485,8 @@ SIGNAL \cor_asp|avgBuffer[13][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[13][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[7][0]~14_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[7][0]~23_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[7][0]~24_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][2]~q\ : std_logic;
@@ -2491,7 +2503,7 @@ SIGNAL \cor_asp|avgBuffer[7][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[7][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[12][0]~15_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[12][0]~25_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][2]~q\ : std_logic;
@@ -2508,7 +2520,7 @@ SIGNAL \cor_asp|avgBuffer[12][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[12][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[8][2]~16_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[8][0]~26_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][2]~q\ : std_logic;
@@ -2525,7 +2537,7 @@ SIGNAL \cor_asp|avgBuffer[8][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[8][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[11][5]~17_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[11][0]~27_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][2]~q\ : std_logic;
@@ -2542,7 +2554,7 @@ SIGNAL \cor_asp|avgBuffer[11][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[11][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[9][5]~18_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[9][0]~28_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][2]~q\ : std_logic;
@@ -2559,7 +2571,7 @@ SIGNAL \cor_asp|avgBuffer[9][12]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][13]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][14]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[9][15]~q\ : std_logic;
-SIGNAL \cor_asp|avgBuffer[10][15]~19_combout\ : std_logic;
+SIGNAL \cor_asp|avgBuffer[10][0]~29_combout\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[10][0]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[10][1]~q\ : std_logic;
 SIGNAL \cor_asp|avgBuffer[10][2]~q\ : std_logic;
@@ -2833,21 +2845,29 @@ SIGNAL \cor_asp|Mult8~337\ : std_logic;
 SIGNAL \cor_asp|Mult8~338\ : std_logic;
 SIGNAL \cor_asp|Mult8~339\ : std_logic;
 SIGNAL \cor_asp|Mult9~mac_resulta\ : std_logic;
-SIGNAL \cor_asp|Add0~34\ : std_logic;
-SIGNAL \cor_asp|Add0~109_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~110\ : std_logic;
-SIGNAL \cor_asp|Add0~113_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~114\ : std_logic;
-SIGNAL \cor_asp|Add0~117_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~118\ : std_logic;
-SIGNAL \cor_asp|Add0~121_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~122\ : std_logic;
-SIGNAL \cor_asp|Add0~125_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~126\ : std_logic;
+SIGNAL \cor_asp|Add0~53_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~54\ : std_logic;
+SIGNAL \cor_asp|Add0~57_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~58\ : std_logic;
+SIGNAL \cor_asp|Add0~61_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~62\ : std_logic;
+SIGNAL \cor_asp|Add0~65_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~66\ : std_logic;
+SIGNAL \cor_asp|Add0~33_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~34\ : std_logic;
 SIGNAL \cor_asp|Add0~89_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~90\ : std_logic;
+SIGNAL \cor_asp|Add0~93_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~94\ : std_logic;
+SIGNAL \cor_asp|Add0~97_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~98\ : std_logic;
+SIGNAL \cor_asp|Add0~101_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~102\ : std_logic;
 SIGNAL \cor_asp|Add0~37_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~38\ : std_logic;
+SIGNAL \cor_asp|Add0~105_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~106\ : std_logic;
 SIGNAL \cor_asp|Add0~41_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~42\ : std_logic;
 SIGNAL \cor_asp|Add0~45_sumout\ : std_logic;
@@ -2856,18 +2876,18 @@ SIGNAL \cor_asp|Add0~49_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~50\ : std_logic;
 SIGNAL \cor_asp|Add0~13_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~14\ : std_logic;
-SIGNAL \cor_asp|Add0~93_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~94\ : std_logic;
-SIGNAL \cor_asp|Add0~97_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~98\ : std_logic;
-SIGNAL \cor_asp|Add0~101_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~102\ : std_logic;
-SIGNAL \cor_asp|Add0~105_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~106\ : std_logic;
 SIGNAL \cor_asp|Add0~69_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~70\ : std_logic;
+SIGNAL \cor_asp|Add0~73_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~74\ : std_logic;
+SIGNAL \cor_asp|Add0~77_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~78\ : std_logic;
+SIGNAL \cor_asp|Add0~81_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~82\ : std_logic;
 SIGNAL \cor_asp|Add0~17_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~18\ : std_logic;
+SIGNAL \cor_asp|Add0~85_sumout\ : std_logic;
+SIGNAL \cor_asp|Add0~86\ : std_logic;
 SIGNAL \cor_asp|Add0~21_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~22\ : std_logic;
 SIGNAL \cor_asp|Add0~25_sumout\ : std_logic;
@@ -2876,14 +2896,6 @@ SIGNAL \cor_asp|Add0~29_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~30\ : std_logic;
 SIGNAL \cor_asp|Add0~5_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~6\ : std_logic;
-SIGNAL \cor_asp|Add0~73_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~74\ : std_logic;
-SIGNAL \cor_asp|Add0~77_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~78\ : std_logic;
-SIGNAL \cor_asp|Add0~81_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~82\ : std_logic;
-SIGNAL \cor_asp|Add0~85_sumout\ : std_logic;
-SIGNAL \cor_asp|Add0~86\ : std_logic;
 SIGNAL \cor_asp|Add0~9_sumout\ : std_logic;
 SIGNAL \cor_asp|Add0~10\ : std_logic;
 SIGNAL \cor_asp|Add0~1_sumout\ : std_logic;
@@ -2894,6 +2906,7 @@ SIGNAL \cor_asp|correlation[0]~3_combout\ : std_logic;
 SIGNAL \cor_asp|correlation[0]~4_combout\ : std_logic;
 SIGNAL \cor_asp|correlation[0]~5_combout\ : std_logic;
 SIGNAL \cor_asp|correlation[0]~6_combout\ : std_logic;
+SIGNAL \cor_asp|correlation[0]~7_combout\ : std_logic;
 SIGNAL \cor_asp|Mult9~309\ : std_logic;
 SIGNAL \cor_asp|Mult9~310\ : std_logic;
 SIGNAL \cor_asp|Mult9~311\ : std_logic;
@@ -2958,6 +2971,7 @@ SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpf
 SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \test_cor|send.data\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\ : std_logic_vector(7 DOWNTO 0);
@@ -2970,21 +2984,120 @@ SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpf
 SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|aneb_result_wire\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|aneb_result_wire\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|aneb_result_wire\ : std_logic_vector(0 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \ALT_INV_flag~input_o\ : std_logic;
+SIGNAL \ALT_INV_calc~input_o\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[7][0]~23_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[6][0]~20_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[10][0]~18_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[15][0]~15_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[3][0]~11_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[2][0]~8_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \cor_asp|ALT_INV_avgBuffer[18][0]~6_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[19][0]~2_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_process_0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_2_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_0_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_2_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_0_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \cor_asp|ALT_INV_index\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_ack~combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_ack~1_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_ack~0_combout\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_correlation[0]~6_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~5_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~4_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~3_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~2_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~1_combout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_correlation[0]~0_combout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_process_0~0_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_enable~q\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_flag~q\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~94_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~93_combout\ : std_logic;
@@ -3051,30 +3164,15 @@ SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[1]~3_combout
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~1_combout\ : std_logic;
 SIGNAL \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~0_combout\ : std_logic;
 SIGNAL \tdma_min|slots|ALT_INV_count\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \cor_asp|ALT_INV_index\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
 SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
-SIGNAL \cor_asp|ALT_INV_Add0~125_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~121_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~117_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~113_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~109_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~105_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~101_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~97_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~93_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~89_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~85_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~81_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~77_sumout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Add0~73_sumout\ : std_logic;
+SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\ : std_logic_vector(39 DOWNTO 0);
+SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_recv.data\ : std_logic_vector(31 DOWNTO 17);
 SIGNAL \cor_asp|ALT_INV_Add0~69_sumout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_Add0~65_sumout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_Add0~61_sumout\ : std_logic;
@@ -3093,101 +3191,28 @@ SIGNAL \cor_asp|ALT_INV_Add0~13_sumout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_Add0~9_sumout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_Add0~5_sumout\ : std_logic;
 SIGNAL \cor_asp|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \ALT_INV_calc~input_o\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Decoder0~3_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \cor_asp|ALT_INV_Decoder0~2_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Decoder0~1_combout\ : std_logic;
-SIGNAL \cor_asp|ALT_INV_Decoder0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_2_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_0_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_2_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_0_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_ack~combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|ALT_INV_ack~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ : std_logic;
+SIGNAL \tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~125_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~121_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~117_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~113_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~109_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~105_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~101_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~97_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~93_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~89_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~85_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~81_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~77_sumout\ : std_logic;
+SIGNAL \cor_asp|ALT_INV_Add0~73_sumout\ : std_logic;
 
 BEGIN
 
 ww_clock <= clock;
 ww_avgVal <= avgVal;
 ww_calc <= calc;
+ww_flag <= flag;
 recvOut <= ww_recvOut;
 sendCorr <= ww_sendCorr;
 ww_devoe <= devoe;
@@ -3246,7 +3271,7 @@ ww_devpor <= devpor;
 
 \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) <= \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\(0);
 
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\(0) <= \~GND~combout\;
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\(0) <= \test_cor|send.data\(0);
 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\ <= (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7) & 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6) & \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5) & 
@@ -5014,7 +5039,7 @@ ww_devpor <= devpor;
 
 \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) <= \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\(0);
 
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\(0) <= \~GND~combout\;
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\(0) <= \test_cor|send.data\(17);
 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\ <= (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7) & 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6) & \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5) & 
@@ -6158,7 +6183,7 @@ ww_devpor <= devpor;
 
 \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) <= \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\(0);
 
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\(0) <= \~GND~combout\;
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\(0) <= vcc;
 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\ <= (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7) & 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6) & \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5) & 
@@ -6366,7 +6391,7 @@ ww_devpor <= devpor;
 
 \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) <= \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\(0);
 
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\(0) <= \~GND~combout\;
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\(0) <= vcc;
 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\ <= (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7) & 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6) & \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5) & 
@@ -8066,480 +8091,14 @@ ww_devpor <= devpor;
 \cor_asp|Add1~69\ <= \cor_asp|Add1~8_RESULTA_bus\(61);
 \cor_asp|Add1~70\ <= \cor_asp|Add1~8_RESULTA_bus\(62);
 \cor_asp|Add1~71\ <= \cor_asp|Add1~8_RESULTA_bus\(63);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\(0);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\(0);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_lsb~q\;
-\tdma_min|interfaces:2:interface|ALT_INV_ack~1_combout\ <= NOT \tdma_min|interfaces:2:interface|ack~1_combout\;
-\tdma_min|interfaces:2:interface|ALT_INV_ack~0_combout\ <= NOT \tdma_min|interfaces:2:interface|ack~0_combout\;
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|empty_dff~q\;
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(7) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(6) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(5) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(4) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(4);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(3) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(3);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(2) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(2);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(1);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(0);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|full_dff~q\;
-\cor_asp|ALT_INV_correlation[0]~5_combout\ <= NOT \cor_asp|correlation[0]~5_combout\;
-\cor_asp|ALT_INV_correlation[0]~4_combout\ <= NOT \cor_asp|correlation[0]~4_combout\;
-\cor_asp|ALT_INV_correlation[0]~3_combout\ <= NOT \cor_asp|correlation[0]~3_combout\;
-\cor_asp|ALT_INV_correlation[0]~2_combout\ <= NOT \cor_asp|correlation[0]~2_combout\;
-\cor_asp|ALT_INV_correlation[0]~1_combout\ <= NOT \cor_asp|correlation[0]~1_combout\;
-\cor_asp|ALT_INV_correlation[0]~0_combout\ <= NOT \cor_asp|correlation[0]~0_combout\;
-\cor_asp|ALT_INV_process_0~0_combout\ <= NOT \cor_asp|process_0~0_combout\;
-\cor_asp|ALT_INV_flag~q\ <= NOT \cor_asp|flag~q\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~94_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~93_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~91_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~90_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~88_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~87_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~85_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~84_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[27]~82_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~82_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[27]~81_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~81_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[26]~79_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[26]~79_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[26]~78_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[26]~78_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[25]~76_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[25]~76_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[25]~75_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[25]~75_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[24]~73_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[24]~73_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[24]~72_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[24]~72_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[23]~70_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[23]~70_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[23]~69_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[23]~69_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[22]~67_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[22]~67_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[22]~66_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[22]~66_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[21]~64_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[21]~64_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[21]~63_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[21]~63_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[20]~61_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[20]~61_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[20]~60_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[20]~60_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[19]~58_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[19]~58_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[19]~57_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[19]~57_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[18]~55_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~55_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[18]~54_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~54_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~52_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~51_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[16]~49_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~49_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[16]~48_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~48_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[15]~46_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[15]~46_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[15]~45_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[15]~45_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[14]~43_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[14]~43_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[14]~42_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[14]~42_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[13]~40_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[13]~40_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[13]~39_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[13]~39_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[12]~37_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[12]~37_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[12]~36_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[12]~36_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[11]~34_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[11]~34_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[11]~33_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[11]~33_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[10]~31_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[10]~31_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[10]~30_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[10]~30_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[9]~28_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[9]~28_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[9]~27_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[9]~27_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[8]~25_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[8]~25_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[8]~24_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[8]~24_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[7]~22_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[7]~22_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[7]~21_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[7]~21_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[6]~19_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[6]~19_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[6]~18_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[6]~18_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[5]~16_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[5]~16_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[5]~15_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[5]~15_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[4]~13_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[4]~13_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[4]~12_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[4]~12_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[3]~10_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[3]~10_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[3]~9_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[3]~9_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[2]~7_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[2]~7_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[2]~6_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[2]~6_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[1]~4_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~4_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[1]~3_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~3_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~1_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~1_combout\;
-\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~0_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\;
-\tdma_min|slots|ALT_INV_count\(1) <= NOT \tdma_min|slots|count\(1);
-\tdma_min|slots|ALT_INV_count\(2) <= NOT \tdma_min|slots|count\(2);
-\tdma_min|slots|ALT_INV_count\(0) <= NOT \tdma_min|slots|count\(0);
-\cor_asp|ALT_INV_index\(9) <= NOT \cor_asp|index\(9);
-\cor_asp|ALT_INV_index\(8) <= NOT \cor_asp|index\(8);
-\cor_asp|ALT_INV_index\(7) <= NOT \cor_asp|index\(7);
-\cor_asp|ALT_INV_index\(6) <= NOT \cor_asp|index\(6);
-\cor_asp|ALT_INV_index\(5) <= NOT \cor_asp|index\(5);
-\cor_asp|ALT_INV_index\(19) <= NOT \cor_asp|index\(19);
-\cor_asp|ALT_INV_index\(18) <= NOT \cor_asp|index\(18);
-\cor_asp|ALT_INV_index\(17) <= NOT \cor_asp|index\(17);
-\cor_asp|ALT_INV_index\(16) <= NOT \cor_asp|index\(16);
-\cor_asp|ALT_INV_index\(10) <= NOT \cor_asp|index\(10);
-\cor_asp|ALT_INV_index\(29) <= NOT \cor_asp|index\(29);
-\cor_asp|ALT_INV_index\(28) <= NOT \cor_asp|index\(28);
-\cor_asp|ALT_INV_index\(27) <= NOT \cor_asp|index\(27);
-\cor_asp|ALT_INV_index\(26) <= NOT \cor_asp|index\(26);
-\cor_asp|ALT_INV_index\(20) <= NOT \cor_asp|index\(20);
-\cor_asp|ALT_INV_index\(3) <= NOT \cor_asp|index\(3);
-\cor_asp|ALT_INV_index\(2) <= NOT \cor_asp|index\(2);
-\cor_asp|ALT_INV_index\(14) <= NOT \cor_asp|index\(14);
-\cor_asp|ALT_INV_index\(13) <= NOT \cor_asp|index\(13);
-\cor_asp|ALT_INV_index\(12) <= NOT \cor_asp|index\(12);
-\cor_asp|ALT_INV_index\(11) <= NOT \cor_asp|index\(11);
-\cor_asp|ALT_INV_index\(24) <= NOT \cor_asp|index\(24);
-\cor_asp|ALT_INV_index\(23) <= NOT \cor_asp|index\(23);
-\cor_asp|ALT_INV_index\(22) <= NOT \cor_asp|index\(22);
-\cor_asp|ALT_INV_index\(21) <= NOT \cor_asp|index\(21);
-\cor_asp|ALT_INV_index\(15) <= NOT \cor_asp|index\(15);
-\cor_asp|ALT_INV_index\(30) <= NOT \cor_asp|index\(30);
-\cor_asp|ALT_INV_index\(25) <= NOT \cor_asp|index\(25);
-\cor_asp|ALT_INV_index\(31) <= NOT \cor_asp|index\(31);
-\tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\ <= NOT \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\;
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
-\cor_asp|ALT_INV_Add0~125_sumout\ <= NOT \cor_asp|Add0~125_sumout\;
-\cor_asp|ALT_INV_Add0~121_sumout\ <= NOT \cor_asp|Add0~121_sumout\;
-\cor_asp|ALT_INV_Add0~117_sumout\ <= NOT \cor_asp|Add0~117_sumout\;
-\cor_asp|ALT_INV_Add0~113_sumout\ <= NOT \cor_asp|Add0~113_sumout\;
-\cor_asp|ALT_INV_Add0~109_sumout\ <= NOT \cor_asp|Add0~109_sumout\;
-\cor_asp|ALT_INV_Add0~105_sumout\ <= NOT \cor_asp|Add0~105_sumout\;
-\cor_asp|ALT_INV_Add0~101_sumout\ <= NOT \cor_asp|Add0~101_sumout\;
-\cor_asp|ALT_INV_Add0~97_sumout\ <= NOT \cor_asp|Add0~97_sumout\;
-\cor_asp|ALT_INV_Add0~93_sumout\ <= NOT \cor_asp|Add0~93_sumout\;
-\cor_asp|ALT_INV_Add0~89_sumout\ <= NOT \cor_asp|Add0~89_sumout\;
-\cor_asp|ALT_INV_Add0~85_sumout\ <= NOT \cor_asp|Add0~85_sumout\;
-\cor_asp|ALT_INV_Add0~81_sumout\ <= NOT \cor_asp|Add0~81_sumout\;
-\cor_asp|ALT_INV_Add0~77_sumout\ <= NOT \cor_asp|Add0~77_sumout\;
-\cor_asp|ALT_INV_Add0~73_sumout\ <= NOT \cor_asp|Add0~73_sumout\;
-\cor_asp|ALT_INV_Add0~69_sumout\ <= NOT \cor_asp|Add0~69_sumout\;
-\cor_asp|ALT_INV_Add0~65_sumout\ <= NOT \cor_asp|Add0~65_sumout\;
-\cor_asp|ALT_INV_Add0~61_sumout\ <= NOT \cor_asp|Add0~61_sumout\;
-\cor_asp|ALT_INV_Add0~57_sumout\ <= NOT \cor_asp|Add0~57_sumout\;
-\cor_asp|ALT_INV_Add0~53_sumout\ <= NOT \cor_asp|Add0~53_sumout\;
-\cor_asp|ALT_INV_Add0~49_sumout\ <= NOT \cor_asp|Add0~49_sumout\;
-\cor_asp|ALT_INV_Add0~45_sumout\ <= NOT \cor_asp|Add0~45_sumout\;
-\cor_asp|ALT_INV_Add0~41_sumout\ <= NOT \cor_asp|Add0~41_sumout\;
-\cor_asp|ALT_INV_Add0~37_sumout\ <= NOT \cor_asp|Add0~37_sumout\;
-\cor_asp|ALT_INV_Add0~33_sumout\ <= NOT \cor_asp|Add0~33_sumout\;
-\cor_asp|ALT_INV_Add0~29_sumout\ <= NOT \cor_asp|Add0~29_sumout\;
-\cor_asp|ALT_INV_Add0~25_sumout\ <= NOT \cor_asp|Add0~25_sumout\;
-\cor_asp|ALT_INV_Add0~21_sumout\ <= NOT \cor_asp|Add0~21_sumout\;
-\cor_asp|ALT_INV_Add0~17_sumout\ <= NOT \cor_asp|Add0~17_sumout\;
-\cor_asp|ALT_INV_Add0~13_sumout\ <= NOT \cor_asp|Add0~13_sumout\;
-\cor_asp|ALT_INV_Add0~9_sumout\ <= NOT \cor_asp|Add0~9_sumout\;
-\cor_asp|ALT_INV_Add0~5_sumout\ <= NOT \cor_asp|Add0~5_sumout\;
-\cor_asp|ALT_INV_Add0~1_sumout\ <= NOT \cor_asp|Add0~1_sumout\;
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\ALT_INV_flag~input_o\ <= NOT \flag~input_o\;
 \ALT_INV_calc~input_o\ <= NOT \calc~input_o\;
-\cor_asp|ALT_INV_Decoder0~3_combout\ <= NOT \cor_asp|Decoder0~3_combout\;
+\cor_asp|ALT_INV_avgBuffer[7][0]~23_combout\ <= NOT \cor_asp|avgBuffer[7][0]~23_combout\;
+\cor_asp|ALT_INV_avgBuffer[6][0]~20_combout\ <= NOT \cor_asp|avgBuffer[6][0]~20_combout\;
+\cor_asp|ALT_INV_avgBuffer[10][0]~18_combout\ <= NOT \cor_asp|avgBuffer[10][0]~18_combout\;
+\cor_asp|ALT_INV_avgBuffer[15][0]~15_combout\ <= NOT \cor_asp|avgBuffer[15][0]~15_combout\;
+\cor_asp|ALT_INV_avgBuffer[3][0]~11_combout\ <= NOT \cor_asp|avgBuffer[3][0]~11_combout\;
+\cor_asp|ALT_INV_avgBuffer[2][0]~8_combout\ <= NOT \cor_asp|avgBuffer[2][0]~8_combout\;
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|ALT_INV_aneb_result_wire[0]~0_combout\ <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|three_comparison|aneb_result_wire[0]~0_combout\;
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(4) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(4);
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(5) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(5);
@@ -8594,13 +8153,15 @@ ww_devpor <= devpor;
 \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(1) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(1);
 \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(2) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(2);
 \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(3) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(3);
-\cor_asp|ALT_INV_Decoder0~2_combout\ <= NOT \cor_asp|Decoder0~2_combout\;
+\cor_asp|ALT_INV_avgBuffer[18][0]~6_combout\ <= NOT \cor_asp|avgBuffer[18][0]~6_combout\;
+\cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\ <= NOT \cor_asp|avgBuffer[1][0]~4_combout\;
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|_~7_combout\;
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|_~6_combout\;
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~7_combout\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|_~7_combout\;
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV__~6_combout\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|_~6_combout\;
-\cor_asp|ALT_INV_Decoder0~1_combout\ <= NOT \cor_asp|Decoder0~1_combout\;
-\cor_asp|ALT_INV_Decoder0~0_combout\ <= NOT \cor_asp|Decoder0~0_combout\;
+\cor_asp|ALT_INV_avgBuffer[19][0]~2_combout\ <= NOT \cor_asp|avgBuffer[19][0]~2_combout\;
+\cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\ <= NOT \cor_asp|avgBuffer[0][0]~0_combout\;
+\cor_asp|ALT_INV_process_0~0_combout\ <= NOT \cor_asp|process_0~0_combout\;
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_is_1_dff~q\;
 \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_is_1_dff~q\;
 \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_usedw_is_1_dff~q\ <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_is_1_dff~q\;
@@ -8635,9 +8196,9 @@ ww_devpor <= devpor;
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(7) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(7);
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(0);
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|ALT_INV_counter_reg_bit\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|usedw_counter|counter_reg_bit\(1);
+\cor_asp|ALT_INV_index\(4) <= NOT \cor_asp|index\(4);
 \cor_asp|ALT_INV_index\(1) <= NOT \cor_asp|index\(1);
 \cor_asp|ALT_INV_index\(0) <= NOT \cor_asp|index\(0);
-\cor_asp|ALT_INV_index\(4) <= NOT \cor_asp|index\(4);
 \tdma_min|interfaces:1:interface|ALT_INV_ack~combout\ <= NOT \tdma_min|interfaces:1:interface|ack~combout\;
 \tdma_min|interfaces:3:interface|ALT_INV_ack~combout\ <= NOT \tdma_min|interfaces:3:interface|ack~combout\;
 \tdma_min|interfaces:5:interface|ALT_INV_ack~combout\ <= NOT \tdma_min|interfaces:5:interface|ack~combout\;
@@ -8797,6 +8358,484 @@ ww_devpor <= devpor;
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(2) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\(2);
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\(1);
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\(1);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|ALT_INV_counter_reg_bit\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_reg_bit\(0);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|low_addressa\(0);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_rd_ptr_lsb~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_lsb~q\;
+\tdma_min|interfaces:2:interface|ALT_INV_ack~1_combout\ <= NOT \tdma_min|interfaces:2:interface|ack~1_combout\;
+\tdma_min|interfaces:2:interface|ALT_INV_ack~0_combout\ <= NOT \tdma_min|interfaces:2:interface|ack~0_combout\;
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_empty_dff~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|empty_dff~q\;
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(7) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(7);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(6) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(6);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(5) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(5);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(4) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(4);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(3) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(3);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(2) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(2);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(1);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|ALT_INV_counter_reg_bit\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_reg_bit\(0);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\ <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|full_dff~q\;
+\cor_asp|ALT_INV_correlation[0]~6_combout\ <= NOT \cor_asp|correlation[0]~6_combout\;
+\cor_asp|ALT_INV_correlation[0]~5_combout\ <= NOT \cor_asp|correlation[0]~5_combout\;
+\cor_asp|ALT_INV_correlation[0]~4_combout\ <= NOT \cor_asp|correlation[0]~4_combout\;
+\cor_asp|ALT_INV_correlation[0]~3_combout\ <= NOT \cor_asp|correlation[0]~3_combout\;
+\cor_asp|ALT_INV_correlation[0]~2_combout\ <= NOT \cor_asp|correlation[0]~2_combout\;
+\cor_asp|ALT_INV_correlation[0]~1_combout\ <= NOT \cor_asp|correlation[0]~1_combout\;
+\cor_asp|ALT_INV_correlation[0]~0_combout\ <= NOT \cor_asp|correlation[0]~0_combout\;
+\cor_asp|ALT_INV_enable~q\ <= NOT \cor_asp|enable~q\;
+\cor_asp|ALT_INV_flag~q\ <= NOT \cor_asp|flag~q\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~94_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~93_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~91_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~90_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~88_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~87_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~85_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~84_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[27]~82_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~82_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[27]~81_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[27]~81_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[26]~79_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[26]~79_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[26]~78_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[26]~78_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[25]~76_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[25]~76_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[25]~75_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[25]~75_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[24]~73_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[24]~73_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[24]~72_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[24]~72_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[23]~70_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[23]~70_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[23]~69_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[23]~69_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[22]~67_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[22]~67_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[22]~66_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[22]~66_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[21]~64_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[21]~64_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[21]~63_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[21]~63_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[20]~61_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[20]~61_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[20]~60_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[20]~60_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[19]~58_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[19]~58_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[19]~57_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[19]~57_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[18]~55_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~55_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[18]~54_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[18]~54_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~52_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~51_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[16]~49_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~49_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[16]~48_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[16]~48_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[15]~46_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[15]~46_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[15]~45_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[15]~45_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[14]~43_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[14]~43_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[14]~42_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[14]~42_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[13]~40_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[13]~40_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[13]~39_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[13]~39_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[12]~37_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[12]~37_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[12]~36_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[12]~36_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[11]~34_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[11]~34_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[11]~33_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[11]~33_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[10]~31_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[10]~31_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[10]~30_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[10]~30_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[9]~28_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[9]~28_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[9]~27_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[9]~27_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[8]~25_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[8]~25_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[8]~24_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[8]~24_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[7]~22_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[7]~22_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[7]~21_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[7]~21_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[6]~19_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[6]~19_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[6]~18_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[6]~18_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[5]~16_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[5]~16_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[5]~15_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[5]~15_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[4]~13_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[4]~13_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[4]~12_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[4]~12_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[3]~10_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[3]~10_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[3]~9_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[3]~9_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[2]~7_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[2]~7_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[2]~6_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[2]~6_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[1]~4_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~4_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[1]~3_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[1]~3_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~1_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~1_combout\;
+\tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~0_combout\ <= NOT \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\;
+\tdma_min|slots|ALT_INV_count\(1) <= NOT \tdma_min|slots|count\(1);
+\tdma_min|slots|ALT_INV_count\(2) <= NOT \tdma_min|slots|count\(2);
+\tdma_min|slots|ALT_INV_count\(0) <= NOT \tdma_min|slots|count\(0);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(11) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(11);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(10) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(10);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(9) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(9);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(8) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(8);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(7) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(7);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(6) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(6);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(5) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(5);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(4) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(4);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(3) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(3);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(2) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(2);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(1) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(1);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data\(31) <= NOT \tdma_min|interfaces:2:interface|recv.data\(31);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data\(30) <= NOT \tdma_min|interfaces:2:interface|recv.data\(30);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data\(29) <= NOT \tdma_min|interfaces:2:interface|recv.data\(29);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data\(28) <= NOT \tdma_min|interfaces:2:interface|recv.data\(28);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data\(17) <= NOT \tdma_min|interfaces:2:interface|recv.data\(17);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(27) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(27);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(26) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(26);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(25) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(25);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(24) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(24);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(23) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(23);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(22) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(22);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(21) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(21);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(20) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(20);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(19) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(19);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(18) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(18);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(16) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(16);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(15) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(15);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(14) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(14);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(13) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(13);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(12) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(12);
+\cor_asp|ALT_INV_Add0~69_sumout\ <= NOT \cor_asp|Add0~69_sumout\;
+\cor_asp|ALT_INV_Add0~65_sumout\ <= NOT \cor_asp|Add0~65_sumout\;
+\cor_asp|ALT_INV_Add0~61_sumout\ <= NOT \cor_asp|Add0~61_sumout\;
+\cor_asp|ALT_INV_Add0~57_sumout\ <= NOT \cor_asp|Add0~57_sumout\;
+\cor_asp|ALT_INV_Add0~53_sumout\ <= NOT \cor_asp|Add0~53_sumout\;
+\cor_asp|ALT_INV_Add0~49_sumout\ <= NOT \cor_asp|Add0~49_sumout\;
+\cor_asp|ALT_INV_Add0~45_sumout\ <= NOT \cor_asp|Add0~45_sumout\;
+\cor_asp|ALT_INV_Add0~41_sumout\ <= NOT \cor_asp|Add0~41_sumout\;
+\cor_asp|ALT_INV_Add0~37_sumout\ <= NOT \cor_asp|Add0~37_sumout\;
+\cor_asp|ALT_INV_Add0~33_sumout\ <= NOT \cor_asp|Add0~33_sumout\;
+\cor_asp|ALT_INV_Add0~29_sumout\ <= NOT \cor_asp|Add0~29_sumout\;
+\cor_asp|ALT_INV_Add0~25_sumout\ <= NOT \cor_asp|Add0~25_sumout\;
+\cor_asp|ALT_INV_Add0~21_sumout\ <= NOT \cor_asp|Add0~21_sumout\;
+\cor_asp|ALT_INV_Add0~17_sumout\ <= NOT \cor_asp|Add0~17_sumout\;
+\cor_asp|ALT_INV_Add0~13_sumout\ <= NOT \cor_asp|Add0~13_sumout\;
+\cor_asp|ALT_INV_Add0~9_sumout\ <= NOT \cor_asp|Add0~9_sumout\;
+\cor_asp|ALT_INV_Add0~5_sumout\ <= NOT \cor_asp|Add0~5_sumout\;
+\cor_asp|ALT_INV_Add0~1_sumout\ <= NOT \cor_asp|Add0~1_sumout\;
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28);
+\tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\ <= NOT \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\;
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(33) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(33);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(32) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(32);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(34) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(34);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(35) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(35);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(36) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(36);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(37) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(37);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(38) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(38);
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(39) <= NOT \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(39);
+\cor_asp|ALT_INV_Add0~125_sumout\ <= NOT \cor_asp|Add0~125_sumout\;
+\cor_asp|ALT_INV_Add0~121_sumout\ <= NOT \cor_asp|Add0~121_sumout\;
+\cor_asp|ALT_INV_Add0~117_sumout\ <= NOT \cor_asp|Add0~117_sumout\;
+\cor_asp|ALT_INV_Add0~113_sumout\ <= NOT \cor_asp|Add0~113_sumout\;
+\cor_asp|ALT_INV_Add0~109_sumout\ <= NOT \cor_asp|Add0~109_sumout\;
+\cor_asp|ALT_INV_Add0~105_sumout\ <= NOT \cor_asp|Add0~105_sumout\;
+\cor_asp|ALT_INV_Add0~101_sumout\ <= NOT \cor_asp|Add0~101_sumout\;
+\cor_asp|ALT_INV_Add0~97_sumout\ <= NOT \cor_asp|Add0~97_sumout\;
+\cor_asp|ALT_INV_Add0~93_sumout\ <= NOT \cor_asp|Add0~93_sumout\;
+\cor_asp|ALT_INV_Add0~89_sumout\ <= NOT \cor_asp|Add0~89_sumout\;
+\cor_asp|ALT_INV_Add0~85_sumout\ <= NOT \cor_asp|Add0~85_sumout\;
+\cor_asp|ALT_INV_Add0~81_sumout\ <= NOT \cor_asp|Add0~81_sumout\;
+\cor_asp|ALT_INV_Add0~77_sumout\ <= NOT \cor_asp|Add0~77_sumout\;
+\cor_asp|ALT_INV_Add0~73_sumout\ <= NOT \cor_asp|Add0~73_sumout\;
+\cor_asp|ALT_INV_index\(3) <= NOT \cor_asp|index\(3);
+\cor_asp|ALT_INV_index\(2) <= NOT \cor_asp|index\(2);
+\cor_asp|ALT_INV_index\(15) <= NOT \cor_asp|index\(15);
+\cor_asp|ALT_INV_index\(13) <= NOT \cor_asp|index\(13);
+\cor_asp|ALT_INV_index\(12) <= NOT \cor_asp|index\(12);
+\cor_asp|ALT_INV_index\(11) <= NOT \cor_asp|index\(11);
+\cor_asp|ALT_INV_index\(10) <= NOT \cor_asp|index\(10);
+\cor_asp|ALT_INV_index\(25) <= NOT \cor_asp|index\(25);
+\cor_asp|ALT_INV_index\(23) <= NOT \cor_asp|index\(23);
+\cor_asp|ALT_INV_index\(22) <= NOT \cor_asp|index\(22);
+\cor_asp|ALT_INV_index\(21) <= NOT \cor_asp|index\(21);
+\cor_asp|ALT_INV_index\(20) <= NOT \cor_asp|index\(20);
+\cor_asp|ALT_INV_index\(8) <= NOT \cor_asp|index\(8);
+\cor_asp|ALT_INV_index\(7) <= NOT \cor_asp|index\(7);
+\cor_asp|ALT_INV_index\(6) <= NOT \cor_asp|index\(6);
+\cor_asp|ALT_INV_index\(5) <= NOT \cor_asp|index\(5);
+\cor_asp|ALT_INV_index\(18) <= NOT \cor_asp|index\(18);
+\cor_asp|ALT_INV_index\(17) <= NOT \cor_asp|index\(17);
+\cor_asp|ALT_INV_index\(16) <= NOT \cor_asp|index\(16);
+\cor_asp|ALT_INV_index\(14) <= NOT \cor_asp|index\(14);
+\cor_asp|ALT_INV_index\(9) <= NOT \cor_asp|index\(9);
+\cor_asp|ALT_INV_index\(28) <= NOT \cor_asp|index\(28);
+\cor_asp|ALT_INV_index\(27) <= NOT \cor_asp|index\(27);
+\cor_asp|ALT_INV_index\(26) <= NOT \cor_asp|index\(26);
+\cor_asp|ALT_INV_index\(24) <= NOT \cor_asp|index\(24);
+\cor_asp|ALT_INV_index\(19) <= NOT \cor_asp|index\(19);
+\cor_asp|ALT_INV_index\(30) <= NOT \cor_asp|index\(30);
+\cor_asp|ALT_INV_index\(29) <= NOT \cor_asp|index\(29);
+\cor_asp|ALT_INV_index\(31) <= NOT \cor_asp|index\(31);
 
 \recvOut[0]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -11474,20 +11513,7 @@ PORT MAP (
 	i => ww_avgVal(0),
 	o => \avgVal[0]~input_o\);
 
-\cor_asp|send.data[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \avgVal[0]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \cor_asp|send.data\(0));
-
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -11503,7 +11529,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -11515,7 +11541,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -11529,12 +11555,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -12901,7 +12927,7 @@ PORT MAP (
 	datae => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -12917,7 +12943,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -12929,7 +12955,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -12943,12 +12969,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -14315,7 +14341,7 @@ PORT MAP (
 	datae => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -14331,7 +14357,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -14343,7 +14369,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -14357,12 +14383,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -15729,7 +15755,7 @@ PORT MAP (
 	datae => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -15745,7 +15771,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -15757,7 +15783,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -15771,19 +15797,19 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0\ : cyclonev_lcell_comb
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51\ : cyclonev_lcell_comb
 -- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) )
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15792,13 +15818,13 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
 	datae => \tdma_min|slots|ALT_INV_count\(2),
 	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\);
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\);
 
 \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|wr_ptr|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -17591,7 +17617,44 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|full_dff~q\);
 
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\flag~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_flag,
+	o => \flag~input_o\);
+
+\test_cor|send.data[17]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \test_cor|send.data[17]~0_combout\ = !\flag~input_o\
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_flag~input_o\,
+	combout => \test_cor|send.data[17]~0_combout\);
+
+\test_cor|send.data[17]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \test_cor|send.data[17]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \test_cor|send.data\(17));
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -17607,7 +17670,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -17619,7 +17682,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -17633,12 +17696,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -19005,7 +19068,7 @@ PORT MAP (
 	datae => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -19021,7 +19084,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -19033,7 +19096,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -19047,12 +19110,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -20419,7 +20482,7 @@ PORT MAP (
 	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -20435,7 +20498,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
+	port_a_first_bit_number => 17,
 	port_a_last_address => 255,
 	port_a_logical_ram_depth => 256,
 	port_a_logical_ram_width => 40,
@@ -20447,7 +20510,7 @@ GENERIC MAP (
 	port_b_data_out_clock => "none",
 	port_b_data_width => 1,
 	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
+	port_b_first_bit_number => 17,
 	port_b_last_address => 255,
 	port_b_logical_ram_depth => 256,
 	port_b_logical_ram_width => 40,
@@ -20461,12 +20524,12 @@ PORT MAP (
 	clk0 => \clock~input_o\,
 	clk1 => \clock~input_o\,
 	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
 
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|rd_ptr_msb|counter_comb_bita0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -21833,6 +21896,2482 @@ PORT MAP (
 	datae => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_low_addressa\(0),
 	combout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|ram_read_address[0]~0_combout\);
 
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 17,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 17,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
+-- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( 
+-- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))) 
+-- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(2),
+	datab => \tdma_min|slots|ALT_INV_count\(1),
+	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\)) # (\tdma_min|slots|count\(0) & 
+-- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(0),
+	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~51_combout\,
+	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~52_combout\,
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[2]~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ = ( !\tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(2) & (((!\tdma_min|interfaces:2:interface|ack~combout\ & !\tdma_min|slots|count\(0))))) # (\tdma_min|slots|count\(2) & 
+-- ((!\tdma_min|interfaces:6:interface|ack~combout\) # ((\tdma_min|slots|count\(0)))))) ) ) # ( \tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(2) & (((!\tdma_min|interfaces:0:interface|ack~combout\ & !\tdma_min|slots|count\(0))))) # 
+-- (\tdma_min|slots|count\(2) & ((!\tdma_min|interfaces:4:interface|ack~combout\) # ((\tdma_min|slots|count\(0)))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "1111000010101010111100001100110000000000111111110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:6:interface|ALT_INV_ack~combout\,
+	datab => \tdma_min|interfaces:4:interface|ALT_INV_ack~combout\,
+	datac => \tdma_min|interfaces:0:interface|ALT_INV_ack~combout\,
+	datad => \tdma_min|slots|ALT_INV_count\(2),
+	datae => \tdma_min|slots|ALT_INV_count\(1),
+	dataf => \tdma_min|slots|ALT_INV_count\(0),
+	datag => \tdma_min|interfaces:2:interface|ALT_INV_ack~combout\,
+	combout => \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[2]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\ = ( !\tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(0) & (((\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\)))) # (\tdma_min|slots|count\(0) & 
+-- ((!\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & ((!\tdma_min|interfaces:3:interface|ack~combout\))) # (\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & (!\tdma_min|interfaces:7:interface|ack~combout\))))) ) ) # ( 
+-- \tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(0) & (((\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\)))) # (\tdma_min|slots|count\(0) & ((!\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & 
+-- ((!\tdma_min|interfaces:1:interface|ack~combout\))) # (\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & (!\tdma_min|interfaces:5:interface|ack~combout\))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "0000000011110000000000001111000011111111101010101111111111001100",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:7:interface|ALT_INV_ack~combout\,
+	datab => \tdma_min|interfaces:5:interface|ALT_INV_ack~combout\,
+	datac => \tdma_min|interfaces:1:interface|ALT_INV_ack~combout\,
+	datad => \tdma_min|slots|ALT_INV_count\(0),
+	datae => \tdma_min|slots|ALT_INV_count\(1),
+	dataf => \tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\,
+	datag => \tdma_min|interfaces:3:interface|ALT_INV_ack~combout\,
+	combout => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[17]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\,
+	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \tdma_min|interfaces:2:interface|recv.data\(17));
+
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datae => \tdma_min|slots|ALT_INV_count\(2),
+	dataf => \tdma_min|slots|ALT_INV_count\(1),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\);
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 28,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 28,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
+-- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( 
+-- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))) 
+-- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(2),
+	datab => \tdma_min|slots|ALT_INV_count\(1),
+	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\)) # (\tdma_min|slots|count\(0) & 
+-- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(0),
+	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~84_combout\,
+	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~85_combout\,
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[28]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\,
+	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \tdma_min|interfaces:2:interface|recv.data\(28));
+
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datae => \tdma_min|slots|ALT_INV_count\(2),
+	dataf => \tdma_min|slots|ALT_INV_count\(1),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\);
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 29,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
+-- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( 
+-- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))) 
+-- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(2),
+	datab => \tdma_min|slots|ALT_INV_count\(1),
+	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\)) # (\tdma_min|slots|count\(0) & 
+-- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(0),
+	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~87_combout\,
+	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~88_combout\,
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[29]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\,
+	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \tdma_min|interfaces:2:interface|recv.data\(29));
+
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datae => \tdma_min|slots|ALT_INV_count\(2),
+	dataf => \tdma_min|slots|ALT_INV_count\(1),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\);
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 30,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 30,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
+-- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( 
+-- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))) 
+-- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(2),
+	datab => \tdma_min|slots|ALT_INV_count\(1),
+	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\)) # (\tdma_min|slots|count\(0) & 
+-- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(0),
+	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~90_combout\,
+	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~91_combout\,
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[30]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\,
+	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \tdma_min|interfaces:2:interface|recv.data\(30));
+
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datae => \tdma_min|slots|ALT_INV_count\(2),
+	dataf => \tdma_min|slots|ALT_INV_count\(1),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\);
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 31,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 31,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
+-- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( 
+-- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
+-- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
+-- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
+-- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))) 
+-- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(2),
+	datab => \tdma_min|slots|ALT_INV_count\(1),
+	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\)) # (\tdma_min|slots|count\(0) & 
+-- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|slots|ALT_INV_count\(0),
+	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~93_combout\,
+	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~94_combout\,
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\);
+
+\tdma_min|interfaces:2:interface|recv.data[31]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\,
+	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \tdma_min|interfaces:2:interface|recv.data\(31));
+
+\cor_asp|enable~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|enable~0_combout\ = ( \tdma_min|interfaces:2:interface|recv.data\(31) & ( \cor_asp|enable~q\ & ( ((!\tdma_min|interfaces:2:interface|recv.data\(28)) # ((!\tdma_min|interfaces:2:interface|recv.data\(30)) # 
+-- (\tdma_min|interfaces:2:interface|recv.data\(29)))) # (\tdma_min|interfaces:2:interface|recv.data\(17)) ) ) ) # ( !\tdma_min|interfaces:2:interface|recv.data\(31) & ( \cor_asp|enable~q\ ) ) # ( \tdma_min|interfaces:2:interface|recv.data\(31) & ( 
+-- !\cor_asp|enable~q\ & ( (\tdma_min|interfaces:2:interface|recv.data\(17) & (\tdma_min|interfaces:2:interface|recv.data\(28) & (!\tdma_min|interfaces:2:interface|recv.data\(29) & \tdma_min|interfaces:2:interface|recv.data\(30)))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000001000011111111111111111111111111011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|ALT_INV_recv.data\(17),
+	datab => \tdma_min|interfaces:2:interface|ALT_INV_recv.data\(28),
+	datac => \tdma_min|interfaces:2:interface|ALT_INV_recv.data\(29),
+	datad => \tdma_min|interfaces:2:interface|ALT_INV_recv.data\(30),
+	datae => \tdma_min|interfaces:2:interface|ALT_INV_recv.data\(31),
+	dataf => \cor_asp|ALT_INV_enable~q\,
+	combout => \cor_asp|enable~0_combout\);
+
+\cor_asp|enable\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \cor_asp|enable~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \cor_asp|enable~q\);
+
+\cor_asp|send.data[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \avgVal[0]~input_o\,
+	ena => \cor_asp|enable~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \cor_asp|send.data\(0));
+
+\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( 
+-- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
+-- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(0) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
+	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
+	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
+	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(0),
+	datae => \tdma_min|slots|ALT_INV_count\(2),
+	dataf => \tdma_min|slots|ALT_INV_count\(1),
+	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~0_combout\);
+
+\test_cor|send.data[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clock~input_o\,
+	d => \flag~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \test_cor|send.data\(0));
+
+\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
+	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
+\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 8,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 255,
+	port_a_logical_ram_depth => 256,
+	port_a_logical_ram_width => 40,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 8,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 255,
+	port_b_logical_ram_depth => 256,
+	port_b_logical_ram_width => 40,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => GND,
+	portbre => VCC,
+	clk0 => \clock~input_o\,
+	clk1 => \clock~input_o\,
+	ena0 => GND,
+	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTADATAIN_bus\,
+	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTAADDR_bus\,
+	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0_PORTBDATAOUT_bus\);
+
 \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a0\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -21927,51 +24466,6 @@ PORT MAP (
 	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[0]~1_combout\,
 	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[0]~2_combout\);
 
-\tdma_min|interfaces:2:interface|recv.data[2]~4\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ = ( !\tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(2) & (((!\tdma_min|interfaces:2:interface|ack~combout\ & !\tdma_min|slots|count\(0))))) # (\tdma_min|slots|count\(2) & 
--- ((!\tdma_min|interfaces:6:interface|ack~combout\) # ((\tdma_min|slots|count\(0)))))) ) ) # ( \tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(2) & (((!\tdma_min|interfaces:0:interface|ack~combout\ & !\tdma_min|slots|count\(0))))) # 
--- (\tdma_min|slots|count\(2) & ((!\tdma_min|interfaces:4:interface|ack~combout\) # ((\tdma_min|slots|count\(0)))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "on",
-	lut_mask => "1111000010101010111100001100110000000000111111110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:6:interface|ALT_INV_ack~combout\,
-	datab => \tdma_min|interfaces:4:interface|ALT_INV_ack~combout\,
-	datac => \tdma_min|interfaces:0:interface|ALT_INV_ack~combout\,
-	datad => \tdma_min|slots|ALT_INV_count\(2),
-	datae => \tdma_min|slots|ALT_INV_count\(1),
-	dataf => \tdma_min|slots|ALT_INV_count\(0),
-	datag => \tdma_min|interfaces:2:interface|ALT_INV_ack~combout\,
-	combout => \tdma_min|interfaces:2:interface|recv.data[2]~4_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[2]~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\ = ( !\tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(0) & (((\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\)))) # (\tdma_min|slots|count\(0) & 
--- ((!\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & ((!\tdma_min|interfaces:3:interface|ack~combout\))) # (\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & (!\tdma_min|interfaces:7:interface|ack~combout\))))) ) ) # ( 
--- \tdma_min|slots|count\(1) & ( ((!\tdma_min|slots|count\(0) & (((\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\)))) # (\tdma_min|slots|count\(0) & ((!\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & 
--- ((!\tdma_min|interfaces:1:interface|ack~combout\))) # (\tdma_min|interfaces:2:interface|recv.data[2]~4_combout\ & (!\tdma_min|interfaces:5:interface|ack~combout\))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "on",
-	lut_mask => "0000000011110000000000001111000011111111101010101111111111001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:7:interface|ALT_INV_ack~combout\,
-	datab => \tdma_min|interfaces:5:interface|ALT_INV_ack~combout\,
-	datac => \tdma_min|interfaces:1:interface|ALT_INV_ack~combout\,
-	datad => \tdma_min|slots|ALT_INV_count\(0),
-	datae => \tdma_min|slots|ALT_INV_count\(1),
-	dataf => \tdma_min|interfaces:2:interface|ALT_INV_recv.data[2]~4_combout\,
-	datag => \tdma_min|interfaces:3:interface|ALT_INV_ack~combout\,
-	combout => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\);
-
 \tdma_min|interfaces:2:interface|recv.data[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -22005,6 +24499,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(1));
@@ -22501,6 +24996,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(2));
@@ -22997,6 +25493,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(3));
@@ -23493,6 +25990,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(4));
@@ -23989,6 +26487,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(5));
@@ -24485,6 +26984,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(6));
@@ -24981,6 +27481,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(7));
@@ -25477,6 +27978,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(8));
@@ -25973,6 +28475,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(9));
@@ -26469,6 +28972,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(10));
@@ -26966,6 +29470,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(11));
@@ -27463,6 +29968,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(12));
@@ -27960,6 +30466,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(13));
@@ -28457,6 +30964,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(14));
@@ -28954,6 +31462,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(15));
@@ -29441,6 +31950,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \tdma_min|interfaces:2:interface|recv.data\(16),
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|send.data\(16));
@@ -29918,480 +32428,6 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \tdma_min|interfaces:2:interface|recv.data\(16));
-
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datae => \tdma_min|slots|ALT_INV_count\(2),
-	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\);
-
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 17,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 17,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a17_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
--- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( 
--- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17))) 
--- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(17)))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(2),
-	datab => \tdma_min|slots|ALT_INV_count\(1),
-	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(17),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~51_combout\)) # (\tdma_min|slots|count\(0) & 
--- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~52_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(0),
-	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~51_combout\,
-	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[17]~52_combout\,
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[17]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[17]~53_combout\,
-	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \tdma_min|interfaces:2:interface|recv.data\(17));
 
 \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a18\ : cyclonev_ram_block
 -- pragma translate_off
@@ -35133,1902 +37169,6 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \tdma_min|interfaces:2:interface|recv.data\(27));
 
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datae => \tdma_min|slots|ALT_INV_count\(2),
-	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\);
-
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 28,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 28,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a28_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
--- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( 
--- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28))) 
--- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(28)))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(2),
-	datab => \tdma_min|slots|ALT_INV_count\(1),
-	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(28),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~84_combout\)) # (\tdma_min|slots|count\(0) & 
--- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~85_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(0),
-	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~84_combout\,
-	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[28]~85_combout\,
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[28]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[28]~86_combout\,
-	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \tdma_min|interfaces:2:interface|recv.data\(28));
-
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datae => \tdma_min|slots|ALT_INV_count\(2),
-	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\);
-
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 29,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a29_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
--- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( 
--- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29))) 
--- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(29)))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(2),
-	datab => \tdma_min|slots|ALT_INV_count\(1),
-	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(29),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~87_combout\)) # (\tdma_min|slots|count\(0) & 
--- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~88_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(0),
-	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~87_combout\,
-	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[29]~88_combout\,
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[29]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[29]~89_combout\,
-	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \tdma_min|interfaces:2:interface|recv.data\(29));
-
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datae => \tdma_min|slots|ALT_INV_count\(2),
-	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\);
-
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 30,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 30,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a30_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
--- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( 
--- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30))) 
--- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(30)))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(2),
-	datab => \tdma_min|slots|ALT_INV_count\(1),
-	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(30),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~90_combout\)) # (\tdma_min|slots|count\(0) & 
--- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~91_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(0),
-	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~90_combout\,
-	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[30]~91_combout\,
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[30]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[30]~92_combout\,
-	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \tdma_min|interfaces:2:interface|recv.data\(30));
-
-\tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\ = ( \tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( 
--- !\tdma_min|slots|count\(2) & ( \tdma_min|slots|count\(1) & ( \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( \tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) ) # ( !\tdma_min|slots|count\(2) & ( !\tdma_min|slots|count\(1) & ( 
--- \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|interfaces:2:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datab => \tdma_min|interfaces:6:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datac => \tdma_min|interfaces:0:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datad => \tdma_min|interfaces:4:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datae => \tdma_min|slots|ALT_INV_count\(2),
-	dataf => \tdma_min|slots|ALT_INV_count\(1),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\);
-
-\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|ALT_INV_full_dff~q\,
-	portadatain => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 8,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 31,
-	port_a_last_address => 255,
-	port_a_logical_ram_depth => 256,
-	port_a_logical_ram_width => 40,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 8,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 31,
-	port_b_last_address => 255,
-	port_b_logical_ram_depth => 256,
-	port_b_logical_ram_width => 40,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => GND,
-	portbre => VCC,
-	clk0 => \clock~input_o\,
-	clk1 => \clock~input_o\,
-	ena0 => GND,
-	portadatain => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ram_block1a31_PORTBDATAOUT_bus\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\ = ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
--- \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(1)) # ((!\tdma_min|slots|count\(2) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))) # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( 
--- !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31)))) # (\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (!\tdma_min|slots|count\(2) & ((!\tdma_min|slots|count\(1)) # 
--- ((\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) # (\tdma_min|slots|count\(2) & (\tdma_min|slots|count\(1) & 
--- ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))))) ) ) ) # ( !\tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( 
--- !\tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31) & ( (\tdma_min|slots|count\(1) & ((!\tdma_min|slots|count\(2) & (\tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31))) 
--- # (\tdma_min|slots|count\(2) & ((\tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|q_b\(31)))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(2),
-	datab => \tdma_min|slots|ALT_INV_count\(1),
-	datac => \tdma_min|interfaces:1:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datad => \tdma_min|interfaces:5:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	datae => \tdma_min|interfaces:3:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	dataf => \tdma_min|interfaces:7:interface|fifo|scfifo_component|auto_generated|dpfifo|FIFOram|ALT_INV_q_b\(31),
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\);
-
-\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95\ : cyclonev_lcell_comb
--- Equation(s):
--- \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\ = (!\tdma_min|slots|count\(0) & (\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~93_combout\)) # (\tdma_min|slots|count\(0) & 
--- ((\tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~94_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \tdma_min|slots|ALT_INV_count\(0),
-	datab => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~93_combout\,
-	datac => \tdma_min|fabric|staging:0:stage|switches:1:switch|ALT_INV_x[31]~94_combout\,
-	combout => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\);
-
-\tdma_min|interfaces:2:interface|recv.data[31]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clock~input_o\,
-	d => \tdma_min|fabric|staging:0:stage|switches:1:switch|x[31]~95_combout\,
-	sclr => \tdma_min|interfaces:2:interface|recv.data[2]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \tdma_min|interfaces:2:interface|recv.data\(31));
-
 \calc~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -37041,17 +37181,18 @@ PORT MAP (
 
 \cor_asp|flag~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|flag~0_combout\ = (!\calc~input_o\) # (\cor_asp|flag~q\)
+-- \cor_asp|flag~0_combout\ = ((!\calc~input_o\ & \cor_asp|enable~q\)) # (\cor_asp|flag~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1011101110111011101110111011101110111011101110111011101110111011",
+	lut_mask => "0011101100111011001110110011101100111011001110110011101100111011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
+	datac => \cor_asp|ALT_INV_enable~q\,
 	combout => \cor_asp|flag~0_combout\);
 
 \cor_asp|flag\ : dffeas
@@ -37082,10 +37223,10 @@ PORT MAP (
 	datab => \cor_asp|ALT_INV_flag~q\,
 	combout => \cor_asp|process_0~0_combout\);
 
-\cor_asp|Add0~53\ : cyclonev_lcell_comb
+\cor_asp|Add0~109\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~53_sumout\ = SUM(( !\cor_asp|index\(0) ) + ( VCC ) + ( !VCC ))
--- \cor_asp|Add0~54\ = CARRY(( !\cor_asp|index\(0) ) + ( VCC ) + ( !VCC ))
+-- \cor_asp|Add0~109_sumout\ = SUM(( !\cor_asp|index\(0) ) + ( VCC ) + ( !VCC ))
+-- \cor_asp|Add0~110\ = CARRY(( !\cor_asp|index\(0) ) + ( VCC ) + ( !VCC ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37096,12 +37237,12 @@ GENERIC MAP (
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(0),
 	cin => GND,
-	sumout => \cor_asp|Add0~53_sumout\,
-	cout => \cor_asp|Add0~54\);
+	sumout => \cor_asp|Add0~109_sumout\,
+	cout => \cor_asp|Add0~110\);
 
-\cor_asp|index~1\ : cyclonev_lcell_comb
+\cor_asp|index~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|index~1_combout\ = (!\cor_asp|Add0~53_sumout\) # ((!\calc~input_o\ & !\cor_asp|flag~q\))
+-- \cor_asp|index~0_combout\ = (!\cor_asp|Add0~109_sumout\) # ((!\calc~input_o\ & !\cor_asp|flag~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37112,8 +37253,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_Add0~53_sumout\,
-	combout => \cor_asp|index~1_combout\);
+	datac => \cor_asp|ALT_INV_Add0~109_sumout\,
+	combout => \cor_asp|index~0_combout\);
 
 \cor_asp|index[0]\ : dffeas
 -- pragma translate_off
@@ -37123,15 +37264,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|index~1_combout\,
+	d => \cor_asp|index~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(0));
 
-\cor_asp|Add0~65\ : cyclonev_lcell_comb
+\cor_asp|Add0~113\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~65_sumout\ = SUM(( !\cor_asp|index\(1) ) + ( VCC ) + ( \cor_asp|Add0~54\ ))
--- \cor_asp|Add0~66\ = CARRY(( !\cor_asp|index\(1) ) + ( VCC ) + ( \cor_asp|Add0~54\ ))
+-- \cor_asp|Add0~113_sumout\ = SUM(( !\cor_asp|index\(1) ) + ( VCC ) + ( \cor_asp|Add0~110\ ))
+-- \cor_asp|Add0~114\ = CARRY(( !\cor_asp|index\(1) ) + ( VCC ) + ( \cor_asp|Add0~110\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37141,13 +37283,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(1),
-	cin => \cor_asp|Add0~54\,
-	sumout => \cor_asp|Add0~65_sumout\,
-	cout => \cor_asp|Add0~66\);
+	cin => \cor_asp|Add0~110\,
+	sumout => \cor_asp|Add0~113_sumout\,
+	cout => \cor_asp|Add0~114\);
 
-\cor_asp|correlation[0]~7\ : cyclonev_lcell_comb
+\cor_asp|index~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~7_combout\ = (!\cor_asp|Add0~65_sumout\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))
+-- \cor_asp|index~1_combout\ = (!\cor_asp|Add0~113_sumout\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37158,8 +37300,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_Add0~65_sumout\,
-	combout => \cor_asp|correlation[0]~7_combout\);
+	datac => \cor_asp|ALT_INV_Add0~113_sumout\,
+	combout => \cor_asp|index~1_combout\);
 
 \cor_asp|index[1]\ : dffeas
 -- pragma translate_off
@@ -37169,15 +37311,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|correlation[0]~7_combout\,
+	d => \cor_asp|index~1_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(1));
 
-\cor_asp|Add0~57\ : cyclonev_lcell_comb
+\cor_asp|Add0~117\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~57_sumout\ = SUM(( \cor_asp|index\(2) ) + ( VCC ) + ( \cor_asp|Add0~66\ ))
--- \cor_asp|Add0~58\ = CARRY(( \cor_asp|index\(2) ) + ( VCC ) + ( \cor_asp|Add0~66\ ))
+-- \cor_asp|Add0~117_sumout\ = SUM(( \cor_asp|index\(2) ) + ( VCC ) + ( \cor_asp|Add0~114\ ))
+-- \cor_asp|Add0~118\ = CARRY(( \cor_asp|index\(2) ) + ( VCC ) + ( \cor_asp|Add0~114\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37187,9 +37330,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(2),
-	cin => \cor_asp|Add0~66\,
-	sumout => \cor_asp|Add0~57_sumout\,
-	cout => \cor_asp|Add0~58\);
+	cin => \cor_asp|Add0~114\,
+	sumout => \cor_asp|Add0~117_sumout\,
+	cout => \cor_asp|Add0~118\);
 
 \cor_asp|index[2]\ : dffeas
 -- pragma translate_off
@@ -37199,16 +37342,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~57_sumout\,
+	d => \cor_asp|Add0~117_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(2));
 
-\cor_asp|Add0~61\ : cyclonev_lcell_comb
+\cor_asp|Add0~121\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~61_sumout\ = SUM(( \cor_asp|index\(3) ) + ( VCC ) + ( \cor_asp|Add0~58\ ))
--- \cor_asp|Add0~62\ = CARRY(( \cor_asp|index\(3) ) + ( VCC ) + ( \cor_asp|Add0~58\ ))
+-- \cor_asp|Add0~121_sumout\ = SUM(( \cor_asp|index\(3) ) + ( VCC ) + ( \cor_asp|Add0~118\ ))
+-- \cor_asp|Add0~122\ = CARRY(( \cor_asp|index\(3) ) + ( VCC ) + ( \cor_asp|Add0~118\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37218,9 +37362,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(3),
-	cin => \cor_asp|Add0~58\,
-	sumout => \cor_asp|Add0~61_sumout\,
-	cout => \cor_asp|Add0~62\);
+	cin => \cor_asp|Add0~118\,
+	sumout => \cor_asp|Add0~121_sumout\,
+	cout => \cor_asp|Add0~122\);
 
 \cor_asp|index[3]\ : dffeas
 -- pragma translate_off
@@ -37230,16 +37374,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~61_sumout\,
+	d => \cor_asp|Add0~121_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(3));
 
-\cor_asp|Add0~33\ : cyclonev_lcell_comb
+\cor_asp|Add0~125\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~33_sumout\ = SUM(( !\cor_asp|index\(4) ) + ( VCC ) + ( \cor_asp|Add0~62\ ))
--- \cor_asp|Add0~34\ = CARRY(( !\cor_asp|index\(4) ) + ( VCC ) + ( \cor_asp|Add0~62\ ))
+-- \cor_asp|Add0~125_sumout\ = SUM(( !\cor_asp|index\(4) ) + ( VCC ) + ( \cor_asp|Add0~122\ ))
+-- \cor_asp|Add0~126\ = CARRY(( !\cor_asp|index\(4) ) + ( VCC ) + ( \cor_asp|Add0~122\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37249,13 +37394,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(4),
-	cin => \cor_asp|Add0~62\,
-	sumout => \cor_asp|Add0~33_sumout\,
-	cout => \cor_asp|Add0~34\);
+	cin => \cor_asp|Add0~122\,
+	sumout => \cor_asp|Add0~125_sumout\,
+	cout => \cor_asp|Add0~126\);
 
-\cor_asp|index~0\ : cyclonev_lcell_comb
+\cor_asp|index~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|index~0_combout\ = (!\cor_asp|Add0~33_sumout\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))
+-- \cor_asp|index~2_combout\ = (!\cor_asp|Add0~125_sumout\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37266,8 +37411,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_Add0~33_sumout\,
-	combout => \cor_asp|index~0_combout\);
+	datac => \cor_asp|ALT_INV_Add0~125_sumout\,
+	combout => \cor_asp|index~2_combout\);
 
 \cor_asp|index[4]\ : dffeas
 -- pragma translate_off
@@ -37277,46 +37422,47 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|index~0_combout\,
+	d => \cor_asp|index~2_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(4));
 
-\cor_asp|Decoder0~0\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[0][0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Decoder0~0_combout\ = (\cor_asp|index\(4) & \cor_asp|index\(0))
+-- \cor_asp|avgBuffer[0][0]~0_combout\ = (\cor_asp|index\(4) & (\cor_asp|index\(1) & \cor_asp|index\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000100010001000100010001000100010001000100010001000100010001",
+	lut_mask => "0000000100000001000000010000000100000001000000010000000100000001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \cor_asp|ALT_INV_index\(4),
-	datab => \cor_asp|ALT_INV_index\(0),
-	combout => \cor_asp|Decoder0~0_combout\);
+	datab => \cor_asp|ALT_INV_index\(1),
+	datac => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[0][0]~0_combout\);
 
-\cor_asp|avgBuffer[0][2]~0\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[0][0]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[0][2]~0_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) 
--- ) ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[0][0]~1_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\cor_asp|index\(3) & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001111100010001000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111100010001000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[0][2]~0_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\,
+	combout => \cor_asp|avgBuffer[0][0]~1_combout\);
 
 \cor_asp|avgBuffer[0][0]\ : dffeas
 -- pragma translate_off
@@ -37328,7 +37474,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][0]~q\);
@@ -37343,7 +37489,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][1]~q\);
@@ -37358,7 +37504,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][2]~q\);
@@ -37373,7 +37519,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][3]~q\);
@@ -37388,7 +37534,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][4]~q\);
@@ -37403,7 +37549,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][5]~q\);
@@ -37418,7 +37564,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][6]~q\);
@@ -37433,7 +37579,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][7]~q\);
@@ -37448,7 +37594,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][8]~q\);
@@ -37463,7 +37609,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][9]~q\);
@@ -37478,7 +37624,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][10]~q\);
@@ -37493,7 +37639,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][11]~q\);
@@ -37508,7 +37654,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][12]~q\);
@@ -37523,7 +37669,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][13]~q\);
@@ -37538,7 +37684,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][14]~q\);
@@ -37553,43 +37699,44 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[0][2]~0_combout\,
+	ena => \cor_asp|avgBuffer[0][0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[0][15]~q\);
 
-\cor_asp|Decoder0~1\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[19][0]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Decoder0~1_combout\ = (!\cor_asp|index\(3) & !\cor_asp|index\(2))
+-- \cor_asp|avgBuffer[19][0]~2_combout\ = (!\cor_asp|index\(4) & (!\cor_asp|index\(3) & (!\cor_asp|index\(2) & !\cor_asp|index\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100010001000",
+	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \cor_asp|ALT_INV_index\(3),
-	datab => \cor_asp|ALT_INV_index\(2),
-	combout => \cor_asp|Decoder0~1_combout\);
-
-\cor_asp|avgBuffer~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \cor_asp|avgBuffer~1_combout\ = ( \cor_asp|Decoder0~1_combout\ & ( ((!\cor_asp|index\(4) & (!\cor_asp|index\(1) & !\cor_asp|index\(0)))) # (\cor_asp|process_0~0_combout\) ) ) # ( !\cor_asp|Decoder0~1_combout\ & ( \cor_asp|process_0~0_combout\ ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101110101010101010101010101010101011101010101010101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \cor_asp|ALT_INV_process_0~0_combout\,
-	datab => \cor_asp|ALT_INV_index\(4),
-	datac => \cor_asp|ALT_INV_index\(1),
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
 	datad => \cor_asp|ALT_INV_index\(0),
-	datae => \cor_asp|ALT_INV_Decoder0~1_combout\,
-	combout => \cor_asp|avgBuffer~1_combout\);
+	combout => \cor_asp|avgBuffer[19][0]~2_combout\);
+
+\cor_asp|avgBuffer[19][0]~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[19][0]~3_combout\ = (\cor_asp|enable~q\ & (((!\cor_asp|index\(1) & \cor_asp|avgBuffer[19][0]~2_combout\)) # (\cor_asp|process_0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001100001011000000110000101100000011000010110000001100001011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(1),
+	datab => \cor_asp|ALT_INV_process_0~0_combout\,
+	datac => \cor_asp|ALT_INV_enable~q\,
+	datad => \cor_asp|ALT_INV_avgBuffer[19][0]~2_combout\,
+	combout => \cor_asp|avgBuffer[19][0]~3_combout\);
 
 \cor_asp|avgBuffer[19][0]\ : dffeas
 -- pragma translate_off
@@ -37600,7 +37747,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][0]~q\);
@@ -37614,7 +37761,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][1]~q\);
@@ -37628,7 +37775,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][2]~q\);
@@ -37642,7 +37789,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][3]~q\);
@@ -37656,7 +37803,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][4]~q\);
@@ -37670,7 +37817,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][5]~q\);
@@ -37684,7 +37831,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][6]~q\);
@@ -37698,7 +37845,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][7]~q\);
@@ -37712,7 +37859,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][8]~q\);
@@ -37726,7 +37873,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][9]~q\);
@@ -37740,7 +37887,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][10]~q\);
@@ -37754,7 +37901,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][11]~q\);
@@ -37768,7 +37915,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][12]~q\);
@@ -37782,7 +37929,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][13]~q\);
@@ -37796,7 +37943,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][14]~q\);
@@ -37810,14 +37957,14 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
-	ena => \cor_asp|avgBuffer~1_combout\,
+	ena => \cor_asp|avgBuffer[19][0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[19][15]~q\);
 
-\cor_asp|Decoder0~2\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[1][0]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Decoder0~2_combout\ = (\cor_asp|index\(4) & (\cor_asp|index\(1) & !\cor_asp|index\(0)))
+-- \cor_asp|avgBuffer[1][0]~4_combout\ = (\cor_asp|index\(4) & (\cor_asp|index\(1) & !\cor_asp|index\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -37829,26 +37976,27 @@ PORT MAP (
 	dataa => \cor_asp|ALT_INV_index\(4),
 	datab => \cor_asp|ALT_INV_index\(1),
 	datac => \cor_asp|ALT_INV_index\(0),
-	combout => \cor_asp|Decoder0~2_combout\);
+	combout => \cor_asp|avgBuffer[1][0]~4_combout\);
 
-\cor_asp|avgBuffer[1][7]~2\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[1][0]~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[1][7]~2_combout\ = ( \cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[1][0]~5_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\cor_asp|index\(3) & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000111110001000100010001000100010001111100010001000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111100010001000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~2_combout\,
-	combout => \cor_asp|avgBuffer[1][7]~2_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\,
+	combout => \cor_asp|avgBuffer[1][0]~5_combout\);
 
 \cor_asp|avgBuffer[1][0]\ : dffeas
 -- pragma translate_off
@@ -37860,7 +38008,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][0]~q\);
@@ -37875,7 +38023,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][1]~q\);
@@ -37890,7 +38038,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][2]~q\);
@@ -37905,7 +38053,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][3]~q\);
@@ -37920,7 +38068,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][4]~q\);
@@ -37935,7 +38083,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][5]~q\);
@@ -37950,7 +38098,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][6]~q\);
@@ -37965,7 +38113,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][7]~q\);
@@ -37980,7 +38128,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][8]~q\);
@@ -37995,7 +38143,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][9]~q\);
@@ -38010,7 +38158,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][10]~q\);
@@ -38025,7 +38173,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][11]~q\);
@@ -38040,7 +38188,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][12]~q\);
@@ -38055,7 +38203,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][13]~q\);
@@ -38070,7 +38218,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][14]~q\);
@@ -38085,31 +38233,46 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[1][7]~2_combout\,
+	ena => \cor_asp|avgBuffer[1][0]~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[1][15]~q\);
 
-\cor_asp|avgBuffer[18][2]~3\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[18][0]~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[18][2]~3_combout\ = ( \cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(4) & !\cor_asp|index\(1))))) # (\calc~input_o\ & (((!\cor_asp|index\(4) & !\cor_asp|index\(1))))) 
--- ) ) ) # ( !\cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(0) & ( !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(0) & ( 
--- !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[18][0]~6_combout\ = (!\cor_asp|index\(4) & (!\cor_asp|index\(3) & (!\cor_asp|index\(2) & \cor_asp|index\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001111100010001000",
+	lut_mask => "0000000010000000000000001000000000000000100000000000000010000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(4),
-	datad => \cor_asp|ALT_INV_index\(1),
-	datae => \cor_asp|ALT_INV_index\(0),
-	dataf => \cor_asp|ALT_INV_Decoder0~1_combout\,
-	combout => \cor_asp|avgBuffer[18][2]~3_combout\);
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
+	datad => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[18][0]~6_combout\);
+
+\cor_asp|avgBuffer[18][0]~7\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[18][0]~7_combout\ = ( \cor_asp|avgBuffer[18][0]~6_combout\ & ( (\cor_asp|enable~q\ & ((!\cor_asp|index\(1)) # ((!\calc~input_o\ & !\cor_asp|flag~q\)))) ) ) # ( !\cor_asp|avgBuffer[18][0]~6_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000011000000000000001110101000000000110000000000000011101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(1),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[18][0]~6_combout\,
+	combout => \cor_asp|avgBuffer[18][0]~7_combout\);
 
 \cor_asp|avgBuffer[18][0]\ : dffeas
 -- pragma translate_off
@@ -38121,7 +38284,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][0]~q\);
@@ -38136,7 +38299,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][1]~q\);
@@ -38151,7 +38314,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][2]~q\);
@@ -38166,7 +38329,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][3]~q\);
@@ -38181,7 +38344,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][4]~q\);
@@ -38196,7 +38359,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][5]~q\);
@@ -38211,7 +38374,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][6]~q\);
@@ -38226,7 +38389,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][7]~q\);
@@ -38241,7 +38404,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][8]~q\);
@@ -38256,7 +38419,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][9]~q\);
@@ -38271,7 +38434,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][10]~q\);
@@ -38286,7 +38449,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][11]~q\);
@@ -38301,7 +38464,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][12]~q\);
@@ -38316,7 +38479,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][13]~q\);
@@ -38331,7 +38494,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][14]~q\);
@@ -38346,31 +38509,45 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[18][2]~3_combout\,
+	ena => \cor_asp|avgBuffer[18][0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[18][15]~q\);
 
-\cor_asp|avgBuffer[2][1]~4\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[2][0]~8\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[2][1]~4_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # 
--- ((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[2][0]~8_combout\ = ( \cor_asp|index\(0) & ( (\cor_asp|index\(4) & (!\cor_asp|index\(3) & (!\cor_asp|index\(2) & !\cor_asp|index\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100011111000100010001000100010001000",
+	lut_mask => "0000000000000000010000000000000000000000000000000100000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
+	datad => \cor_asp|ALT_INV_index\(1),
+	datae => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[2][0]~8_combout\);
+
+\cor_asp|avgBuffer[2][0]~9\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[2][0]~9_combout\ = (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|avgBuffer[2][0]~8_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000100000001111000010000000111100001000000011110000100000001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[2][1]~4_combout\);
+	datac => \cor_asp|ALT_INV_enable~q\,
+	datad => \cor_asp|ALT_INV_avgBuffer[2][0]~8_combout\,
+	combout => \cor_asp|avgBuffer[2][0]~9_combout\);
 
 \cor_asp|avgBuffer[2][0]\ : dffeas
 -- pragma translate_off
@@ -38382,7 +38559,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][0]~q\);
@@ -38397,7 +38574,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][1]~q\);
@@ -38412,7 +38589,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][2]~q\);
@@ -38427,7 +38604,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][3]~q\);
@@ -38442,7 +38619,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][4]~q\);
@@ -38457,7 +38634,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][5]~q\);
@@ -38472,7 +38649,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][6]~q\);
@@ -38487,7 +38664,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][7]~q\);
@@ -38502,7 +38679,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][8]~q\);
@@ -38517,7 +38694,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][9]~q\);
@@ -38532,7 +38709,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][10]~q\);
@@ -38547,7 +38724,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][11]~q\);
@@ -38562,7 +38739,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][12]~q\);
@@ -38577,7 +38754,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][13]~q\);
@@ -38592,7 +38769,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][14]~q\);
@@ -38607,31 +38784,29 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[2][1]~4_combout\,
+	ena => \cor_asp|avgBuffer[2][0]~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[2][15]~q\);
 
-\cor_asp|avgBuffer[17][7]~5\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[17][0]~10\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[17][7]~5_combout\ = ( \cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # 
--- ((!\cor_asp|index\(4) & \cor_asp|index\(1))))) # (\calc~input_o\ & (((!\cor_asp|index\(4) & \cor_asp|index\(1))))) ) ) ) # ( \cor_asp|index\(0) & ( !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(0) & ( 
--- !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[17][0]~10_combout\ = ( \cor_asp|avgBuffer[19][0]~2_combout\ & ( (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(1)))) ) ) # ( !\cor_asp|avgBuffer[19][0]~2_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000111110001000100010001000",
+	lut_mask => "0000000011000000000000001101010100000000110000000000000011010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(4),
-	datad => \cor_asp|ALT_INV_index\(1),
-	datae => \cor_asp|ALT_INV_index\(0),
-	dataf => \cor_asp|ALT_INV_Decoder0~1_combout\,
-	combout => \cor_asp|avgBuffer[17][7]~5_combout\);
+	dataa => \cor_asp|ALT_INV_index\(1),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[19][0]~2_combout\,
+	combout => \cor_asp|avgBuffer[17][0]~10_combout\);
 
 \cor_asp|avgBuffer[17][0]\ : dffeas
 -- pragma translate_off
@@ -38643,7 +38818,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][0]~q\);
@@ -38658,7 +38833,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][1]~q\);
@@ -38673,7 +38848,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][2]~q\);
@@ -38688,7 +38863,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][3]~q\);
@@ -38703,7 +38878,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][4]~q\);
@@ -38718,7 +38893,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][5]~q\);
@@ -38733,7 +38908,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][6]~q\);
@@ -38748,7 +38923,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][7]~q\);
@@ -38763,7 +38938,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][8]~q\);
@@ -38778,7 +38953,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][9]~q\);
@@ -38793,7 +38968,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][10]~q\);
@@ -38808,7 +38983,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][11]~q\);
@@ -38823,7 +38998,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][12]~q\);
@@ -38838,7 +39013,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][13]~q\);
@@ -38853,7 +39028,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][14]~q\);
@@ -38868,45 +39043,45 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[17][7]~5_combout\,
+	ena => \cor_asp|avgBuffer[17][0]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[17][15]~q\);
 
-\cor_asp|Decoder0~3\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[3][0]~11\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Decoder0~3_combout\ = (\cor_asp|index\(4) & (!\cor_asp|index\(1) & !\cor_asp|index\(0)))
+-- \cor_asp|avgBuffer[3][0]~11_combout\ = ( !\cor_asp|index\(0) & ( (\cor_asp|index\(4) & (!\cor_asp|index\(3) & (!\cor_asp|index\(2) & !\cor_asp|index\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000001000000010000000100000001000000010000000100000001000000",
+	lut_mask => "0100000000000000000000000000000001000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \cor_asp|ALT_INV_index\(4),
-	datab => \cor_asp|ALT_INV_index\(1),
-	datac => \cor_asp|ALT_INV_index\(0),
-	combout => \cor_asp|Decoder0~3_combout\);
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
+	datad => \cor_asp|ALT_INV_index\(1),
+	datae => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[3][0]~11_combout\);
 
-\cor_asp|avgBuffer[3][13]~6\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[3][0]~12\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[3][13]~6_combout\ = ( \cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[3][0]~12_combout\ = (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|avgBuffer[3][0]~11_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000111110001000100010001000100010001111100010001000",
+	lut_mask => "0000100000001111000010000000111100001000000011110000100000001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~3_combout\,
-	combout => \cor_asp|avgBuffer[3][13]~6_combout\);
+	datac => \cor_asp|ALT_INV_enable~q\,
+	datad => \cor_asp|ALT_INV_avgBuffer[3][0]~11_combout\,
+	combout => \cor_asp|avgBuffer[3][0]~12_combout\);
 
 \cor_asp|avgBuffer[3][0]\ : dffeas
 -- pragma translate_off
@@ -38918,7 +39093,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][0]~q\);
@@ -38933,7 +39108,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][1]~q\);
@@ -38948,7 +39123,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][2]~q\);
@@ -38963,7 +39138,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][3]~q\);
@@ -38978,7 +39153,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][4]~q\);
@@ -38993,7 +39168,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][5]~q\);
@@ -39008,7 +39183,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][6]~q\);
@@ -39023,7 +39198,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][7]~q\);
@@ -39038,7 +39213,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][8]~q\);
@@ -39053,7 +39228,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][9]~q\);
@@ -39068,7 +39243,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][10]~q\);
@@ -39083,7 +39258,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][11]~q\);
@@ -39098,7 +39273,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][12]~q\);
@@ -39113,7 +39288,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][13]~q\);
@@ -39128,7 +39303,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][14]~q\);
@@ -39143,31 +39318,29 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[3][13]~6_combout\,
+	ena => \cor_asp|avgBuffer[3][0]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[3][15]~q\);
 
-\cor_asp|avgBuffer[16][1]~7\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[16][0]~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[16][1]~7_combout\ = ( \cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(4) & \cor_asp|index\(1))))) # (\calc~input_o\ & (((!\cor_asp|index\(4) & \cor_asp|index\(1))))) ) 
--- ) ) # ( !\cor_asp|index\(0) & ( \cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(0) & ( !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(0) & ( 
--- !\cor_asp|Decoder0~1_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[16][0]~13_combout\ = ( \cor_asp|avgBuffer[18][0]~6_combout\ & ( (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(1)))) ) ) # ( !\cor_asp|avgBuffer[18][0]~6_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100011111000",
+	lut_mask => "0000000011000000000000001101010100000000110000000000000011010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(4),
-	datad => \cor_asp|ALT_INV_index\(1),
-	datae => \cor_asp|ALT_INV_index\(0),
-	dataf => \cor_asp|ALT_INV_Decoder0~1_combout\,
-	combout => \cor_asp|avgBuffer[16][1]~7_combout\);
+	dataa => \cor_asp|ALT_INV_index\(1),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[18][0]~6_combout\,
+	combout => \cor_asp|avgBuffer[16][0]~13_combout\);
 
 \cor_asp|avgBuffer[16][0]\ : dffeas
 -- pragma translate_off
@@ -39179,7 +39352,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][0]~q\);
@@ -39194,7 +39367,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][1]~q\);
@@ -39209,7 +39382,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][2]~q\);
@@ -39224,7 +39397,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][3]~q\);
@@ -39239,7 +39412,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][4]~q\);
@@ -39254,7 +39427,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][5]~q\);
@@ -39269,7 +39442,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][6]~q\);
@@ -39284,7 +39457,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][7]~q\);
@@ -39299,7 +39472,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][8]~q\);
@@ -39314,7 +39487,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][9]~q\);
@@ -39329,7 +39502,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][10]~q\);
@@ -39344,7 +39517,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][11]~q\);
@@ -39359,7 +39532,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][12]~q\);
@@ -39374,7 +39547,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][13]~q\);
@@ -39389,7 +39562,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][14]~q\);
@@ -39404,31 +39577,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[16][1]~7_combout\,
+	ena => \cor_asp|avgBuffer[16][0]~13_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[16][15]~q\);
 
-\cor_asp|avgBuffer[4][9]~8\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[4][0]~14\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[4][9]~8_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & \cor_asp|index\(2))))) ) 
--- ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[4][0]~14_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(2)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100011111000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111001000100010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[4][9]~8_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\,
+	combout => \cor_asp|avgBuffer[4][0]~14_combout\);
 
 \cor_asp|avgBuffer[4][0]\ : dffeas
 -- pragma translate_off
@@ -39440,7 +39612,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][0]~q\);
@@ -39455,7 +39627,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][1]~q\);
@@ -39470,7 +39642,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][2]~q\);
@@ -39485,7 +39657,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][3]~q\);
@@ -39500,7 +39672,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][4]~q\);
@@ -39515,7 +39687,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][5]~q\);
@@ -39530,7 +39702,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][6]~q\);
@@ -39545,7 +39717,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][7]~q\);
@@ -39560,7 +39732,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][8]~q\);
@@ -39575,7 +39747,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][9]~q\);
@@ -39590,7 +39762,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][10]~q\);
@@ -39605,7 +39777,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][11]~q\);
@@ -39620,7 +39792,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][12]~q\);
@@ -39635,7 +39807,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][13]~q\);
@@ -39650,7 +39822,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][14]~q\);
@@ -39665,29 +39837,46 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[4][9]~8_combout\,
+	ena => \cor_asp|avgBuffer[4][0]~14_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[4][15]~q\);
 
-\cor_asp|avgBuffer[15][4]~9\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[15][0]~15\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[15][4]~9_combout\ = ( \cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[15][0]~15_combout\ = (\cor_asp|index\(4) & (\cor_asp|index\(3) & (!\cor_asp|index\(1) & !\cor_asp|index\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000111110001000100010001000100010001111",
+	lut_mask => "0001000000000000000100000000000000010000000000000001000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~3_combout\,
-	combout => \cor_asp|avgBuffer[15][4]~9_combout\);
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(1),
+	datad => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[15][0]~15_combout\);
+
+\cor_asp|avgBuffer[15][0]~16\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[15][0]~16_combout\ = ( \cor_asp|avgBuffer[15][0]~15_combout\ & ( (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(2)))) ) ) # ( !\cor_asp|avgBuffer[15][0]~15_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000011000000000000001101010100000000110000000000000011010101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(2),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[15][0]~15_combout\,
+	combout => \cor_asp|avgBuffer[15][0]~16_combout\);
 
 \cor_asp|avgBuffer[15][0]\ : dffeas
 -- pragma translate_off
@@ -39699,7 +39888,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][0]~q\);
@@ -39714,7 +39903,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][1]~q\);
@@ -39729,7 +39918,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][2]~q\);
@@ -39744,7 +39933,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][3]~q\);
@@ -39759,7 +39948,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][4]~q\);
@@ -39774,7 +39963,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][5]~q\);
@@ -39789,7 +39978,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][6]~q\);
@@ -39804,7 +39993,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][7]~q\);
@@ -39819,7 +40008,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][8]~q\);
@@ -39834,7 +40023,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][9]~q\);
@@ -39849,7 +40038,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][10]~q\);
@@ -39864,7 +40053,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][11]~q\);
@@ -39879,7 +40068,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][12]~q\);
@@ -39894,7 +40083,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][13]~q\);
@@ -39909,7 +40098,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][14]~q\);
@@ -39924,29 +40113,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[15][4]~9_combout\,
+	ena => \cor_asp|avgBuffer[15][0]~16_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[15][15]~q\);
 
-\cor_asp|avgBuffer[5][0]~10\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[5][0]~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[5][0]~10_combout\ = ( \cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[5][0]~17_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(2)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001111100010001000100010001000100011111000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111001000100010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~2_combout\,
-	combout => \cor_asp|avgBuffer[5][0]~10_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\,
+	combout => \cor_asp|avgBuffer[5][0]~17_combout\);
 
 \cor_asp|avgBuffer[5][0]\ : dffeas
 -- pragma translate_off
@@ -39958,7 +40148,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][0]~q\);
@@ -39973,7 +40163,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][1]~q\);
@@ -39988,7 +40178,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][2]~q\);
@@ -40003,7 +40193,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][3]~q\);
@@ -40018,7 +40208,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][4]~q\);
@@ -40033,7 +40223,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][5]~q\);
@@ -40048,7 +40238,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][6]~q\);
@@ -40063,7 +40253,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][7]~q\);
@@ -40078,7 +40268,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][8]~q\);
@@ -40093,7 +40283,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][9]~q\);
@@ -40108,7 +40298,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][10]~q\);
@@ -40123,7 +40313,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][11]~q\);
@@ -40138,7 +40328,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][12]~q\);
@@ -40153,7 +40343,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][13]~q\);
@@ -40168,7 +40358,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][14]~q\);
@@ -40183,31 +40373,46 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[5][0]~10_combout\,
+	ena => \cor_asp|avgBuffer[5][0]~17_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[5][15]~q\);
 
-\cor_asp|avgBuffer[14][14]~11\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[10][0]~18\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[14][14]~11_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # 
--- ((\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[10][0]~18_combout\ = (\cor_asp|index\(4) & (\cor_asp|index\(3) & (!\cor_asp|index\(1) & \cor_asp|index\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100011111000100010001000",
+	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[14][14]~11_combout\);
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(1),
+	datad => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[10][0]~18_combout\);
+
+\cor_asp|avgBuffer[14][0]~19\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[14][0]~19_combout\ = ( \cor_asp|avgBuffer[10][0]~18_combout\ & ( (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|index\(2)))) ) ) # ( !\cor_asp|avgBuffer[10][0]~18_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000011000000000000001101010100000000110000000000000011010101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(2),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[10][0]~18_combout\,
+	combout => \cor_asp|avgBuffer[14][0]~19_combout\);
 
 \cor_asp|avgBuffer[14][0]\ : dffeas
 -- pragma translate_off
@@ -40219,7 +40424,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][0]~q\);
@@ -40234,7 +40439,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][1]~q\);
@@ -40249,7 +40454,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][2]~q\);
@@ -40264,7 +40469,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][3]~q\);
@@ -40279,7 +40484,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][4]~q\);
@@ -40294,7 +40499,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][5]~q\);
@@ -40309,7 +40514,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][6]~q\);
@@ -40324,7 +40529,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][7]~q\);
@@ -40339,7 +40544,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][8]~q\);
@@ -40354,7 +40559,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][9]~q\);
@@ -40369,7 +40574,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][10]~q\);
@@ -40384,7 +40589,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][11]~q\);
@@ -40399,7 +40604,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][12]~q\);
@@ -40414,7 +40619,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][13]~q\);
@@ -40429,7 +40634,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][14]~q\);
@@ -40444,31 +40649,45 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[14][14]~11_combout\,
+	ena => \cor_asp|avgBuffer[14][0]~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[14][15]~q\);
 
-\cor_asp|avgBuffer[6][12]~12\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[6][0]~20\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[6][12]~12_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # 
--- ((!\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[6][0]~20_combout\ = ( \cor_asp|index\(0) & ( (\cor_asp|index\(4) & (!\cor_asp|index\(3) & (\cor_asp|index\(2) & !\cor_asp|index\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000111110001000100010001000",
+	lut_mask => "0000000000000000000001000000000000000000000000000000010000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
+	datad => \cor_asp|ALT_INV_index\(1),
+	datae => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[6][0]~20_combout\);
+
+\cor_asp|avgBuffer[6][0]~21\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[6][0]~21_combout\ = (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|avgBuffer[6][0]~20_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000100000001111000010000000111100001000000011110000100000001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[6][12]~12_combout\);
+	datac => \cor_asp|ALT_INV_enable~q\,
+	datad => \cor_asp|ALT_INV_avgBuffer[6][0]~20_combout\,
+	combout => \cor_asp|avgBuffer[6][0]~21_combout\);
 
 \cor_asp|avgBuffer[6][0]\ : dffeas
 -- pragma translate_off
@@ -40480,7 +40699,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][0]~q\);
@@ -40495,7 +40714,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][1]~q\);
@@ -40510,7 +40729,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][2]~q\);
@@ -40525,7 +40744,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][3]~q\);
@@ -40540,7 +40759,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][4]~q\);
@@ -40555,7 +40774,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][5]~q\);
@@ -40570,7 +40789,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][6]~q\);
@@ -40585,7 +40804,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][7]~q\);
@@ -40600,7 +40819,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][8]~q\);
@@ -40615,7 +40834,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][9]~q\);
@@ -40630,7 +40849,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][10]~q\);
@@ -40645,7 +40864,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][11]~q\);
@@ -40660,7 +40879,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][12]~q\);
@@ -40675,7 +40894,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][13]~q\);
@@ -40690,7 +40909,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][14]~q\);
@@ -40705,29 +40924,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[6][12]~12_combout\,
+	ena => \cor_asp|avgBuffer[6][0]~21_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[6][15]~q\);
 
-\cor_asp|avgBuffer[13][2]~13\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[13][0]~22\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[13][2]~13_combout\ = ( \cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[13][0]~22_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # 
+-- (\cor_asp|index\(2)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000111110001000100010001000100010001111",
+	lut_mask => "0000000000000000111100000000000000000000000000001111000100010001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~2_combout\,
-	combout => \cor_asp|avgBuffer[13][2]~13_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\,
+	combout => \cor_asp|avgBuffer[13][0]~22_combout\);
 
 \cor_asp|avgBuffer[13][0]\ : dffeas
 -- pragma translate_off
@@ -40739,7 +40959,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][0]~q\);
@@ -40754,7 +40974,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][1]~q\);
@@ -40769,7 +40989,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][2]~q\);
@@ -40784,7 +41004,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][3]~q\);
@@ -40799,7 +41019,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][4]~q\);
@@ -40814,7 +41034,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][5]~q\);
@@ -40829,7 +41049,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][6]~q\);
@@ -40844,7 +41064,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][7]~q\);
@@ -40859,7 +41079,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][8]~q\);
@@ -40874,7 +41094,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][9]~q\);
@@ -40889,7 +41109,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][10]~q\);
@@ -40904,7 +41124,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][11]~q\);
@@ -40919,7 +41139,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][12]~q\);
@@ -40934,7 +41154,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][13]~q\);
@@ -40949,7 +41169,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][14]~q\);
@@ -40964,29 +41184,45 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[13][2]~13_combout\,
+	ena => \cor_asp|avgBuffer[13][0]~22_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[13][15]~q\);
 
-\cor_asp|avgBuffer[7][0]~14\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[7][0]~23\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[7][0]~14_combout\ = ( \cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((!\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((!\cor_asp|index\(3) & \cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[7][0]~23_combout\ = ( !\cor_asp|index\(0) & ( (\cor_asp|index\(4) & (!\cor_asp|index\(3) & (\cor_asp|index\(2) & !\cor_asp|index\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001111100010001000100010001000100011111000",
+	lut_mask => "0000010000000000000000000000000000000100000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_index\(4),
+	datab => \cor_asp|ALT_INV_index\(3),
+	datac => \cor_asp|ALT_INV_index\(2),
+	datad => \cor_asp|ALT_INV_index\(1),
+	datae => \cor_asp|ALT_INV_index\(0),
+	combout => \cor_asp|avgBuffer[7][0]~23_combout\);
+
+\cor_asp|avgBuffer[7][0]~24\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|avgBuffer[7][0]~24_combout\ = (\cor_asp|enable~q\ & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # (\cor_asp|avgBuffer[7][0]~23_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000100000001111000010000000111100001000000011110000100000001111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~3_combout\,
-	combout => \cor_asp|avgBuffer[7][0]~14_combout\);
+	datac => \cor_asp|ALT_INV_enable~q\,
+	datad => \cor_asp|ALT_INV_avgBuffer[7][0]~23_combout\,
+	combout => \cor_asp|avgBuffer[7][0]~24_combout\);
 
 \cor_asp|avgBuffer[7][0]\ : dffeas
 -- pragma translate_off
@@ -40998,7 +41234,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][0]~q\);
@@ -41013,7 +41249,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][1]~q\);
@@ -41028,7 +41264,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][2]~q\);
@@ -41043,7 +41279,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][3]~q\);
@@ -41058,7 +41294,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][4]~q\);
@@ -41073,7 +41309,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][5]~q\);
@@ -41088,7 +41324,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][6]~q\);
@@ -41103,7 +41339,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][7]~q\);
@@ -41118,7 +41354,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][8]~q\);
@@ -41133,7 +41369,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][9]~q\);
@@ -41148,7 +41384,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][10]~q\);
@@ -41163,7 +41399,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][11]~q\);
@@ -41178,7 +41414,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][12]~q\);
@@ -41193,7 +41429,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][13]~q\);
@@ -41208,7 +41444,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][14]~q\);
@@ -41223,31 +41459,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[7][0]~14_combout\,
+	ena => \cor_asp|avgBuffer[7][0]~24_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[7][15]~q\);
 
-\cor_asp|avgBuffer[12][0]~15\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[12][0]~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[12][0]~15_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & \cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & \cor_asp|index\(2))))) ) 
--- ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[12][0]~25_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)) # 
+-- (\cor_asp|index\(2)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100010001111",
+	lut_mask => "0000000000000000111100000000000000000000000000001111000100010001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[12][0]~15_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\,
+	combout => \cor_asp|avgBuffer[12][0]~25_combout\);
 
 \cor_asp|avgBuffer[12][0]\ : dffeas
 -- pragma translate_off
@@ -41259,7 +41494,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][0]~q\);
@@ -41274,7 +41509,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][1]~q\);
@@ -41289,7 +41524,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][2]~q\);
@@ -41304,7 +41539,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][3]~q\);
@@ -41319,7 +41554,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][4]~q\);
@@ -41334,7 +41569,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][5]~q\);
@@ -41349,7 +41584,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][6]~q\);
@@ -41364,7 +41599,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][7]~q\);
@@ -41379,7 +41614,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][8]~q\);
@@ -41394,7 +41629,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][9]~q\);
@@ -41409,7 +41644,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][10]~q\);
@@ -41424,7 +41659,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][11]~q\);
@@ -41439,7 +41674,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][12]~q\);
@@ -41454,7 +41689,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][13]~q\);
@@ -41469,7 +41704,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][14]~q\);
@@ -41484,31 +41719,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[12][0]~15_combout\,
+	ena => \cor_asp|avgBuffer[12][0]~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[12][15]~q\);
 
-\cor_asp|avgBuffer[8][2]~16\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[8][0]~26\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[8][2]~16_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) 
--- ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[8][0]~26_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[0][0]~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000111110001000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111010001000100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[8][2]~16_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[0][0]~0_combout\,
+	combout => \cor_asp|avgBuffer[8][0]~26_combout\);
 
 \cor_asp|avgBuffer[8][0]\ : dffeas
 -- pragma translate_off
@@ -41520,7 +41754,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][0]~q\);
@@ -41535,7 +41769,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][1]~q\);
@@ -41550,7 +41784,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][2]~q\);
@@ -41565,7 +41799,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][3]~q\);
@@ -41580,7 +41814,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][4]~q\);
@@ -41595,7 +41829,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][5]~q\);
@@ -41610,7 +41844,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][6]~q\);
@@ -41625,7 +41859,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][7]~q\);
@@ -41640,7 +41874,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][8]~q\);
@@ -41655,7 +41889,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][9]~q\);
@@ -41670,7 +41904,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][10]~q\);
@@ -41685,7 +41919,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][11]~q\);
@@ -41700,7 +41934,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][12]~q\);
@@ -41715,7 +41949,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][13]~q\);
@@ -41730,7 +41964,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][14]~q\);
@@ -41745,29 +41979,29 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[8][2]~16_combout\,
+	ena => \cor_asp|avgBuffer[8][0]~26_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[8][15]~q\);
 
-\cor_asp|avgBuffer[11][5]~17\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[11][0]~27\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[11][5]~17_combout\ = ( \cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~3_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[11][0]~27_combout\ = ( \cor_asp|avgBuffer[15][0]~15_combout\ & ( (\cor_asp|enable~q\ & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & !\cor_asp|flag~q\)))) ) ) # ( !\cor_asp|avgBuffer[15][0]~15_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100011111000100010001000100010001000111110001000",
+	lut_mask => "0000000011000000000000001110101000000000110000000000000011101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~3_combout\,
-	combout => \cor_asp|avgBuffer[11][5]~17_combout\);
+	dataa => \cor_asp|ALT_INV_index\(2),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[15][0]~15_combout\,
+	combout => \cor_asp|avgBuffer[11][0]~27_combout\);
 
 \cor_asp|avgBuffer[11][0]\ : dffeas
 -- pragma translate_off
@@ -41779,7 +42013,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][0]~q\);
@@ -41794,7 +42028,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][1]~q\);
@@ -41809,7 +42043,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][2]~q\);
@@ -41824,7 +42058,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][3]~q\);
@@ -41839,7 +42073,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][4]~q\);
@@ -41854,7 +42088,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][5]~q\);
@@ -41869,7 +42103,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][6]~q\);
@@ -41884,7 +42118,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][7]~q\);
@@ -41899,7 +42133,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][8]~q\);
@@ -41914,7 +42148,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][9]~q\);
@@ -41929,7 +42163,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][10]~q\);
@@ -41944,7 +42178,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][11]~q\);
@@ -41959,7 +42193,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][12]~q\);
@@ -41974,7 +42208,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][13]~q\);
@@ -41989,7 +42223,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][14]~q\);
@@ -42004,29 +42238,30 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[11][5]~17_combout\,
+	ena => \cor_asp|avgBuffer[11][0]~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[11][15]~q\);
 
-\cor_asp|avgBuffer[9][5]~18\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[9][0]~28\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[9][5]~18_combout\ = ( \cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # ((\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) # ( 
--- !\cor_asp|Decoder0~2_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) )
+-- \cor_asp|avgBuffer[9][0]~28_combout\ = ( \cor_asp|enable~q\ & ( \cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\cor_asp|index\(3) & (((!\calc~input_o\ & !\cor_asp|flag~q\)))) # (\cor_asp|index\(3) & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & 
+-- !\cor_asp|flag~q\)))) ) ) ) # ( \cor_asp|enable~q\ & ( !\cor_asp|avgBuffer[1][0]~4_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100011111000100010001000100010001000111110001000",
+	lut_mask => "0000000000000000111100000000000000000000000000001111010001000100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_Decoder0~2_combout\,
-	combout => \cor_asp|avgBuffer[9][5]~18_combout\);
+	dataa => \cor_asp|ALT_INV_index\(3),
+	datab => \cor_asp|ALT_INV_index\(2),
+	datac => \ALT_INV_calc~input_o\,
+	datad => \cor_asp|ALT_INV_flag~q\,
+	datae => \cor_asp|ALT_INV_enable~q\,
+	dataf => \cor_asp|ALT_INV_avgBuffer[1][0]~4_combout\,
+	combout => \cor_asp|avgBuffer[9][0]~28_combout\);
 
 \cor_asp|avgBuffer[9][0]\ : dffeas
 -- pragma translate_off
@@ -42038,7 +42273,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][0]~q\);
@@ -42053,7 +42288,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][1]~q\);
@@ -42068,7 +42303,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][2]~q\);
@@ -42083,7 +42318,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][3]~q\);
@@ -42098,7 +42333,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][4]~q\);
@@ -42113,7 +42348,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][5]~q\);
@@ -42128,7 +42363,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][6]~q\);
@@ -42143,7 +42378,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][7]~q\);
@@ -42158,7 +42393,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][8]~q\);
@@ -42173,7 +42408,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][9]~q\);
@@ -42188,7 +42423,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][10]~q\);
@@ -42203,7 +42438,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][11]~q\);
@@ -42218,7 +42453,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][12]~q\);
@@ -42233,7 +42468,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][13]~q\);
@@ -42248,7 +42483,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][14]~q\);
@@ -42263,31 +42498,29 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[9][5]~18_combout\,
+	ena => \cor_asp|avgBuffer[9][0]~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[9][15]~q\);
 
-\cor_asp|avgBuffer[10][15]~19\ : cyclonev_lcell_comb
+\cor_asp|avgBuffer[10][0]~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|avgBuffer[10][15]~19_combout\ = ( \cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( \cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & ((!\cor_asp|flag~q\) # 
--- ((\cor_asp|index\(3) & !\cor_asp|index\(2))))) # (\calc~input_o\ & (((\cor_asp|index\(3) & !\cor_asp|index\(2))))) ) ) ) # ( \cor_asp|index\(1) & ( !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) ) # ( !\cor_asp|index\(1) & ( 
--- !\cor_asp|Decoder0~0_combout\ & ( (!\calc~input_o\ & !\cor_asp|flag~q\) ) ) )
+-- \cor_asp|avgBuffer[10][0]~29_combout\ = ( \cor_asp|avgBuffer[10][0]~18_combout\ & ( (\cor_asp|enable~q\ & ((!\cor_asp|index\(2)) # ((!\calc~input_o\ & !\cor_asp|flag~q\)))) ) ) # ( !\cor_asp|avgBuffer[10][0]~18_combout\ & ( (!\calc~input_o\ & 
+-- (!\cor_asp|flag~q\ & \cor_asp|enable~q\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001111100010001000100010001000",
+	lut_mask => "0000000011000000000000001110101000000000110000000000000011101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_calc~input_o\,
-	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_index\(3),
-	datad => \cor_asp|ALT_INV_index\(2),
-	datae => \cor_asp|ALT_INV_index\(1),
-	dataf => \cor_asp|ALT_INV_Decoder0~0_combout\,
-	combout => \cor_asp|avgBuffer[10][15]~19_combout\);
+	dataa => \cor_asp|ALT_INV_index\(2),
+	datab => \ALT_INV_calc~input_o\,
+	datac => \cor_asp|ALT_INV_flag~q\,
+	datad => \cor_asp|ALT_INV_enable~q\,
+	datae => \cor_asp|ALT_INV_avgBuffer[10][0]~18_combout\,
+	combout => \cor_asp|avgBuffer[10][0]~29_combout\);
 
 \cor_asp|avgBuffer[10][0]\ : dffeas
 -- pragma translate_off
@@ -42299,7 +42532,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[0]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][0]~q\);
@@ -42314,7 +42547,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[1]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][1]~q\);
@@ -42329,7 +42562,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[2]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][2]~q\);
@@ -42344,7 +42577,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[3]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][3]~q\);
@@ -42359,7 +42592,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[4]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][4]~q\);
@@ -42374,7 +42607,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[5]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][5]~q\);
@@ -42389,7 +42622,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[6]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][6]~q\);
@@ -42404,7 +42637,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[7]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][7]~q\);
@@ -42419,7 +42652,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[8]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][8]~q\);
@@ -42434,7 +42667,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[9]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][9]~q\);
@@ -42449,7 +42682,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[10]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][10]~q\);
@@ -42464,7 +42697,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[11]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][11]~q\);
@@ -42479,7 +42712,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[12]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][12]~q\);
@@ -42494,7 +42727,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[13]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][13]~q\);
@@ -42509,7 +42742,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[14]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][14]~q\);
@@ -42524,7 +42757,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \avgVal[15]~input_o\,
 	sclr => \cor_asp|process_0~0_combout\,
-	ena => \cor_asp|avgBuffer[10][15]~19_combout\,
+	ena => \cor_asp|avgBuffer[10][0]~29_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|avgBuffer[10][15]~q\);
@@ -43133,14 +43366,15 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Add0~1_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(31));
 
-\cor_asp|Add0~109\ : cyclonev_lcell_comb
+\cor_asp|Add0~53\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~109_sumout\ = SUM(( \cor_asp|index\(5) ) + ( VCC ) + ( \cor_asp|Add0~34\ ))
--- \cor_asp|Add0~110\ = CARRY(( \cor_asp|index\(5) ) + ( VCC ) + ( \cor_asp|Add0~34\ ))
+-- \cor_asp|Add0~53_sumout\ = SUM(( \cor_asp|index\(5) ) + ( VCC ) + ( \cor_asp|Add0~126\ ))
+-- \cor_asp|Add0~54\ = CARRY(( \cor_asp|index\(5) ) + ( VCC ) + ( \cor_asp|Add0~126\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43150,9 +43384,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(5),
-	cin => \cor_asp|Add0~34\,
-	sumout => \cor_asp|Add0~109_sumout\,
-	cout => \cor_asp|Add0~110\);
+	cin => \cor_asp|Add0~126\,
+	sumout => \cor_asp|Add0~53_sumout\,
+	cout => \cor_asp|Add0~54\);
 
 \cor_asp|index[5]\ : dffeas
 -- pragma translate_off
@@ -43162,16 +43396,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~109_sumout\,
+	d => \cor_asp|Add0~53_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(5));
 
-\cor_asp|Add0~113\ : cyclonev_lcell_comb
+\cor_asp|Add0~57\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~113_sumout\ = SUM(( \cor_asp|index\(6) ) + ( VCC ) + ( \cor_asp|Add0~110\ ))
--- \cor_asp|Add0~114\ = CARRY(( \cor_asp|index\(6) ) + ( VCC ) + ( \cor_asp|Add0~110\ ))
+-- \cor_asp|Add0~57_sumout\ = SUM(( \cor_asp|index\(6) ) + ( VCC ) + ( \cor_asp|Add0~54\ ))
+-- \cor_asp|Add0~58\ = CARRY(( \cor_asp|index\(6) ) + ( VCC ) + ( \cor_asp|Add0~54\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43181,9 +43416,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(6),
-	cin => \cor_asp|Add0~110\,
-	sumout => \cor_asp|Add0~113_sumout\,
-	cout => \cor_asp|Add0~114\);
+	cin => \cor_asp|Add0~54\,
+	sumout => \cor_asp|Add0~57_sumout\,
+	cout => \cor_asp|Add0~58\);
 
 \cor_asp|index[6]\ : dffeas
 -- pragma translate_off
@@ -43193,16 +43428,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~113_sumout\,
+	d => \cor_asp|Add0~57_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(6));
 
-\cor_asp|Add0~117\ : cyclonev_lcell_comb
+\cor_asp|Add0~61\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~117_sumout\ = SUM(( \cor_asp|index\(7) ) + ( VCC ) + ( \cor_asp|Add0~114\ ))
--- \cor_asp|Add0~118\ = CARRY(( \cor_asp|index\(7) ) + ( VCC ) + ( \cor_asp|Add0~114\ ))
+-- \cor_asp|Add0~61_sumout\ = SUM(( \cor_asp|index\(7) ) + ( VCC ) + ( \cor_asp|Add0~58\ ))
+-- \cor_asp|Add0~62\ = CARRY(( \cor_asp|index\(7) ) + ( VCC ) + ( \cor_asp|Add0~58\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43212,9 +43448,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(7),
-	cin => \cor_asp|Add0~114\,
-	sumout => \cor_asp|Add0~117_sumout\,
-	cout => \cor_asp|Add0~118\);
+	cin => \cor_asp|Add0~58\,
+	sumout => \cor_asp|Add0~61_sumout\,
+	cout => \cor_asp|Add0~62\);
 
 \cor_asp|index[7]\ : dffeas
 -- pragma translate_off
@@ -43224,16 +43460,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~117_sumout\,
+	d => \cor_asp|Add0~61_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(7));
 
-\cor_asp|Add0~121\ : cyclonev_lcell_comb
+\cor_asp|Add0~65\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~121_sumout\ = SUM(( \cor_asp|index\(8) ) + ( VCC ) + ( \cor_asp|Add0~118\ ))
--- \cor_asp|Add0~122\ = CARRY(( \cor_asp|index\(8) ) + ( VCC ) + ( \cor_asp|Add0~118\ ))
+-- \cor_asp|Add0~65_sumout\ = SUM(( \cor_asp|index\(8) ) + ( VCC ) + ( \cor_asp|Add0~62\ ))
+-- \cor_asp|Add0~66\ = CARRY(( \cor_asp|index\(8) ) + ( VCC ) + ( \cor_asp|Add0~62\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43243,9 +43480,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(8),
-	cin => \cor_asp|Add0~118\,
-	sumout => \cor_asp|Add0~121_sumout\,
-	cout => \cor_asp|Add0~122\);
+	cin => \cor_asp|Add0~62\,
+	sumout => \cor_asp|Add0~65_sumout\,
+	cout => \cor_asp|Add0~66\);
 
 \cor_asp|index[8]\ : dffeas
 -- pragma translate_off
@@ -43255,16 +43492,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~121_sumout\,
+	d => \cor_asp|Add0~65_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(8));
 
-\cor_asp|Add0~125\ : cyclonev_lcell_comb
+\cor_asp|Add0~33\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~125_sumout\ = SUM(( \cor_asp|index\(9) ) + ( VCC ) + ( \cor_asp|Add0~122\ ))
--- \cor_asp|Add0~126\ = CARRY(( \cor_asp|index\(9) ) + ( VCC ) + ( \cor_asp|Add0~122\ ))
+-- \cor_asp|Add0~33_sumout\ = SUM(( \cor_asp|index\(9) ) + ( VCC ) + ( \cor_asp|Add0~66\ ))
+-- \cor_asp|Add0~34\ = CARRY(( \cor_asp|index\(9) ) + ( VCC ) + ( \cor_asp|Add0~66\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43274,9 +43512,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(9),
-	cin => \cor_asp|Add0~122\,
-	sumout => \cor_asp|Add0~125_sumout\,
-	cout => \cor_asp|Add0~126\);
+	cin => \cor_asp|Add0~66\,
+	sumout => \cor_asp|Add0~33_sumout\,
+	cout => \cor_asp|Add0~34\);
 
 \cor_asp|index[9]\ : dffeas
 -- pragma translate_off
@@ -43286,16 +43524,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~125_sumout\,
+	d => \cor_asp|Add0~33_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(9));
 
 \cor_asp|Add0~89\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~89_sumout\ = SUM(( \cor_asp|index\(10) ) + ( VCC ) + ( \cor_asp|Add0~126\ ))
--- \cor_asp|Add0~90\ = CARRY(( \cor_asp|index\(10) ) + ( VCC ) + ( \cor_asp|Add0~126\ ))
+-- \cor_asp|Add0~89_sumout\ = SUM(( \cor_asp|index\(10) ) + ( VCC ) + ( \cor_asp|Add0~34\ ))
+-- \cor_asp|Add0~90\ = CARRY(( \cor_asp|index\(10) ) + ( VCC ) + ( \cor_asp|Add0~34\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43305,7 +43544,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(10),
-	cin => \cor_asp|Add0~126\,
+	cin => \cor_asp|Add0~34\,
 	sumout => \cor_asp|Add0~89_sumout\,
 	cout => \cor_asp|Add0~90\);
 
@@ -43319,14 +43558,15 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Add0~89_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(10));
 
-\cor_asp|Add0~37\ : cyclonev_lcell_comb
+\cor_asp|Add0~93\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~37_sumout\ = SUM(( \cor_asp|index\(11) ) + ( VCC ) + ( \cor_asp|Add0~90\ ))
--- \cor_asp|Add0~38\ = CARRY(( \cor_asp|index\(11) ) + ( VCC ) + ( \cor_asp|Add0~90\ ))
+-- \cor_asp|Add0~93_sumout\ = SUM(( \cor_asp|index\(11) ) + ( VCC ) + ( \cor_asp|Add0~90\ ))
+-- \cor_asp|Add0~94\ = CARRY(( \cor_asp|index\(11) ) + ( VCC ) + ( \cor_asp|Add0~90\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43337,8 +43577,8 @@ GENERIC MAP (
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(11),
 	cin => \cor_asp|Add0~90\,
-	sumout => \cor_asp|Add0~37_sumout\,
-	cout => \cor_asp|Add0~38\);
+	sumout => \cor_asp|Add0~93_sumout\,
+	cout => \cor_asp|Add0~94\);
 
 \cor_asp|index[11]\ : dffeas
 -- pragma translate_off
@@ -43348,16 +43588,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~37_sumout\,
+	d => \cor_asp|Add0~93_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(11));
 
-\cor_asp|Add0~41\ : cyclonev_lcell_comb
+\cor_asp|Add0~97\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~41_sumout\ = SUM(( \cor_asp|index\(12) ) + ( VCC ) + ( \cor_asp|Add0~38\ ))
--- \cor_asp|Add0~42\ = CARRY(( \cor_asp|index\(12) ) + ( VCC ) + ( \cor_asp|Add0~38\ ))
+-- \cor_asp|Add0~97_sumout\ = SUM(( \cor_asp|index\(12) ) + ( VCC ) + ( \cor_asp|Add0~94\ ))
+-- \cor_asp|Add0~98\ = CARRY(( \cor_asp|index\(12) ) + ( VCC ) + ( \cor_asp|Add0~94\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43367,9 +43608,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(12),
-	cin => \cor_asp|Add0~38\,
-	sumout => \cor_asp|Add0~41_sumout\,
-	cout => \cor_asp|Add0~42\);
+	cin => \cor_asp|Add0~94\,
+	sumout => \cor_asp|Add0~97_sumout\,
+	cout => \cor_asp|Add0~98\);
 
 \cor_asp|index[12]\ : dffeas
 -- pragma translate_off
@@ -43379,16 +43620,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~41_sumout\,
+	d => \cor_asp|Add0~97_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(12));
 
-\cor_asp|Add0~45\ : cyclonev_lcell_comb
+\cor_asp|Add0~101\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~45_sumout\ = SUM(( \cor_asp|index\(13) ) + ( VCC ) + ( \cor_asp|Add0~42\ ))
--- \cor_asp|Add0~46\ = CARRY(( \cor_asp|index\(13) ) + ( VCC ) + ( \cor_asp|Add0~42\ ))
+-- \cor_asp|Add0~101_sumout\ = SUM(( \cor_asp|index\(13) ) + ( VCC ) + ( \cor_asp|Add0~98\ ))
+-- \cor_asp|Add0~102\ = CARRY(( \cor_asp|index\(13) ) + ( VCC ) + ( \cor_asp|Add0~98\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43398,9 +43640,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(13),
-	cin => \cor_asp|Add0~42\,
-	sumout => \cor_asp|Add0~45_sumout\,
-	cout => \cor_asp|Add0~46\);
+	cin => \cor_asp|Add0~98\,
+	sumout => \cor_asp|Add0~101_sumout\,
+	cout => \cor_asp|Add0~102\);
 
 \cor_asp|index[13]\ : dffeas
 -- pragma translate_off
@@ -43410,16 +43652,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~45_sumout\,
+	d => \cor_asp|Add0~101_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(13));
 
-\cor_asp|Add0~49\ : cyclonev_lcell_comb
+\cor_asp|Add0~37\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~49_sumout\ = SUM(( \cor_asp|index\(14) ) + ( VCC ) + ( \cor_asp|Add0~46\ ))
--- \cor_asp|Add0~50\ = CARRY(( \cor_asp|index\(14) ) + ( VCC ) + ( \cor_asp|Add0~46\ ))
+-- \cor_asp|Add0~37_sumout\ = SUM(( \cor_asp|index\(14) ) + ( VCC ) + ( \cor_asp|Add0~102\ ))
+-- \cor_asp|Add0~38\ = CARRY(( \cor_asp|index\(14) ) + ( VCC ) + ( \cor_asp|Add0~102\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43429,9 +43672,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(14),
-	cin => \cor_asp|Add0~46\,
-	sumout => \cor_asp|Add0~49_sumout\,
-	cout => \cor_asp|Add0~50\);
+	cin => \cor_asp|Add0~102\,
+	sumout => \cor_asp|Add0~37_sumout\,
+	cout => \cor_asp|Add0~38\);
 
 \cor_asp|index[14]\ : dffeas
 -- pragma translate_off
@@ -43441,16 +43684,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~49_sumout\,
+	d => \cor_asp|Add0~37_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(14));
 
-\cor_asp|Add0~13\ : cyclonev_lcell_comb
+\cor_asp|Add0~105\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~13_sumout\ = SUM(( \cor_asp|index\(15) ) + ( VCC ) + ( \cor_asp|Add0~50\ ))
--- \cor_asp|Add0~14\ = CARRY(( \cor_asp|index\(15) ) + ( VCC ) + ( \cor_asp|Add0~50\ ))
+-- \cor_asp|Add0~105_sumout\ = SUM(( \cor_asp|index\(15) ) + ( VCC ) + ( \cor_asp|Add0~38\ ))
+-- \cor_asp|Add0~106\ = CARRY(( \cor_asp|index\(15) ) + ( VCC ) + ( \cor_asp|Add0~38\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43460,9 +43704,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(15),
-	cin => \cor_asp|Add0~50\,
-	sumout => \cor_asp|Add0~13_sumout\,
-	cout => \cor_asp|Add0~14\);
+	cin => \cor_asp|Add0~38\,
+	sumout => \cor_asp|Add0~105_sumout\,
+	cout => \cor_asp|Add0~106\);
 
 \cor_asp|index[15]\ : dffeas
 -- pragma translate_off
@@ -43472,16 +43716,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~13_sumout\,
+	d => \cor_asp|Add0~105_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(15));
 
-\cor_asp|Add0~93\ : cyclonev_lcell_comb
+\cor_asp|Add0~41\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~93_sumout\ = SUM(( \cor_asp|index\(16) ) + ( VCC ) + ( \cor_asp|Add0~14\ ))
--- \cor_asp|Add0~94\ = CARRY(( \cor_asp|index\(16) ) + ( VCC ) + ( \cor_asp|Add0~14\ ))
+-- \cor_asp|Add0~41_sumout\ = SUM(( \cor_asp|index\(16) ) + ( VCC ) + ( \cor_asp|Add0~106\ ))
+-- \cor_asp|Add0~42\ = CARRY(( \cor_asp|index\(16) ) + ( VCC ) + ( \cor_asp|Add0~106\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43491,9 +43736,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(16),
-	cin => \cor_asp|Add0~14\,
-	sumout => \cor_asp|Add0~93_sumout\,
-	cout => \cor_asp|Add0~94\);
+	cin => \cor_asp|Add0~106\,
+	sumout => \cor_asp|Add0~41_sumout\,
+	cout => \cor_asp|Add0~42\);
 
 \cor_asp|index[16]\ : dffeas
 -- pragma translate_off
@@ -43503,16 +43748,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~93_sumout\,
+	d => \cor_asp|Add0~41_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(16));
 
-\cor_asp|Add0~97\ : cyclonev_lcell_comb
+\cor_asp|Add0~45\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~97_sumout\ = SUM(( \cor_asp|index\(17) ) + ( VCC ) + ( \cor_asp|Add0~94\ ))
--- \cor_asp|Add0~98\ = CARRY(( \cor_asp|index\(17) ) + ( VCC ) + ( \cor_asp|Add0~94\ ))
+-- \cor_asp|Add0~45_sumout\ = SUM(( \cor_asp|index\(17) ) + ( VCC ) + ( \cor_asp|Add0~42\ ))
+-- \cor_asp|Add0~46\ = CARRY(( \cor_asp|index\(17) ) + ( VCC ) + ( \cor_asp|Add0~42\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43522,9 +43768,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(17),
-	cin => \cor_asp|Add0~94\,
-	sumout => \cor_asp|Add0~97_sumout\,
-	cout => \cor_asp|Add0~98\);
+	cin => \cor_asp|Add0~42\,
+	sumout => \cor_asp|Add0~45_sumout\,
+	cout => \cor_asp|Add0~46\);
 
 \cor_asp|index[17]\ : dffeas
 -- pragma translate_off
@@ -43534,16 +43780,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~97_sumout\,
+	d => \cor_asp|Add0~45_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(17));
 
-\cor_asp|Add0~101\ : cyclonev_lcell_comb
+\cor_asp|Add0~49\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~101_sumout\ = SUM(( \cor_asp|index\(18) ) + ( VCC ) + ( \cor_asp|Add0~98\ ))
--- \cor_asp|Add0~102\ = CARRY(( \cor_asp|index\(18) ) + ( VCC ) + ( \cor_asp|Add0~98\ ))
+-- \cor_asp|Add0~49_sumout\ = SUM(( \cor_asp|index\(18) ) + ( VCC ) + ( \cor_asp|Add0~46\ ))
+-- \cor_asp|Add0~50\ = CARRY(( \cor_asp|index\(18) ) + ( VCC ) + ( \cor_asp|Add0~46\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43553,9 +43800,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(18),
-	cin => \cor_asp|Add0~98\,
-	sumout => \cor_asp|Add0~101_sumout\,
-	cout => \cor_asp|Add0~102\);
+	cin => \cor_asp|Add0~46\,
+	sumout => \cor_asp|Add0~49_sumout\,
+	cout => \cor_asp|Add0~50\);
 
 \cor_asp|index[18]\ : dffeas
 -- pragma translate_off
@@ -43565,16 +43812,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~101_sumout\,
+	d => \cor_asp|Add0~49_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(18));
 
-\cor_asp|Add0~105\ : cyclonev_lcell_comb
+\cor_asp|Add0~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~105_sumout\ = SUM(( \cor_asp|index\(19) ) + ( VCC ) + ( \cor_asp|Add0~102\ ))
--- \cor_asp|Add0~106\ = CARRY(( \cor_asp|index\(19) ) + ( VCC ) + ( \cor_asp|Add0~102\ ))
+-- \cor_asp|Add0~13_sumout\ = SUM(( \cor_asp|index\(19) ) + ( VCC ) + ( \cor_asp|Add0~50\ ))
+-- \cor_asp|Add0~14\ = CARRY(( \cor_asp|index\(19) ) + ( VCC ) + ( \cor_asp|Add0~50\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43584,9 +43832,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(19),
-	cin => \cor_asp|Add0~102\,
-	sumout => \cor_asp|Add0~105_sumout\,
-	cout => \cor_asp|Add0~106\);
+	cin => \cor_asp|Add0~50\,
+	sumout => \cor_asp|Add0~13_sumout\,
+	cout => \cor_asp|Add0~14\);
 
 \cor_asp|index[19]\ : dffeas
 -- pragma translate_off
@@ -43596,16 +43844,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~105_sumout\,
+	d => \cor_asp|Add0~13_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(19));
 
 \cor_asp|Add0~69\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~69_sumout\ = SUM(( \cor_asp|index\(20) ) + ( VCC ) + ( \cor_asp|Add0~106\ ))
--- \cor_asp|Add0~70\ = CARRY(( \cor_asp|index\(20) ) + ( VCC ) + ( \cor_asp|Add0~106\ ))
+-- \cor_asp|Add0~69_sumout\ = SUM(( \cor_asp|index\(20) ) + ( VCC ) + ( \cor_asp|Add0~14\ ))
+-- \cor_asp|Add0~70\ = CARRY(( \cor_asp|index\(20) ) + ( VCC ) + ( \cor_asp|Add0~14\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43615,7 +43864,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(20),
-	cin => \cor_asp|Add0~106\,
+	cin => \cor_asp|Add0~14\,
 	sumout => \cor_asp|Add0~69_sumout\,
 	cout => \cor_asp|Add0~70\);
 
@@ -43629,14 +43878,15 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Add0~69_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(20));
 
-\cor_asp|Add0~17\ : cyclonev_lcell_comb
+\cor_asp|Add0~73\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~17_sumout\ = SUM(( \cor_asp|index\(21) ) + ( VCC ) + ( \cor_asp|Add0~70\ ))
--- \cor_asp|Add0~18\ = CARRY(( \cor_asp|index\(21) ) + ( VCC ) + ( \cor_asp|Add0~70\ ))
+-- \cor_asp|Add0~73_sumout\ = SUM(( \cor_asp|index\(21) ) + ( VCC ) + ( \cor_asp|Add0~70\ ))
+-- \cor_asp|Add0~74\ = CARRY(( \cor_asp|index\(21) ) + ( VCC ) + ( \cor_asp|Add0~70\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43647,8 +43897,8 @@ GENERIC MAP (
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(21),
 	cin => \cor_asp|Add0~70\,
-	sumout => \cor_asp|Add0~17_sumout\,
-	cout => \cor_asp|Add0~18\);
+	sumout => \cor_asp|Add0~73_sumout\,
+	cout => \cor_asp|Add0~74\);
 
 \cor_asp|index[21]\ : dffeas
 -- pragma translate_off
@@ -43658,16 +43908,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~17_sumout\,
+	d => \cor_asp|Add0~73_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(21));
 
-\cor_asp|Add0~21\ : cyclonev_lcell_comb
+\cor_asp|Add0~77\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~21_sumout\ = SUM(( \cor_asp|index\(22) ) + ( VCC ) + ( \cor_asp|Add0~18\ ))
--- \cor_asp|Add0~22\ = CARRY(( \cor_asp|index\(22) ) + ( VCC ) + ( \cor_asp|Add0~18\ ))
+-- \cor_asp|Add0~77_sumout\ = SUM(( \cor_asp|index\(22) ) + ( VCC ) + ( \cor_asp|Add0~74\ ))
+-- \cor_asp|Add0~78\ = CARRY(( \cor_asp|index\(22) ) + ( VCC ) + ( \cor_asp|Add0~74\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43677,9 +43928,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(22),
-	cin => \cor_asp|Add0~18\,
-	sumout => \cor_asp|Add0~21_sumout\,
-	cout => \cor_asp|Add0~22\);
+	cin => \cor_asp|Add0~74\,
+	sumout => \cor_asp|Add0~77_sumout\,
+	cout => \cor_asp|Add0~78\);
 
 \cor_asp|index[22]\ : dffeas
 -- pragma translate_off
@@ -43689,16 +43940,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~21_sumout\,
+	d => \cor_asp|Add0~77_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(22));
 
-\cor_asp|Add0~25\ : cyclonev_lcell_comb
+\cor_asp|Add0~81\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~25_sumout\ = SUM(( \cor_asp|index\(23) ) + ( VCC ) + ( \cor_asp|Add0~22\ ))
--- \cor_asp|Add0~26\ = CARRY(( \cor_asp|index\(23) ) + ( VCC ) + ( \cor_asp|Add0~22\ ))
+-- \cor_asp|Add0~81_sumout\ = SUM(( \cor_asp|index\(23) ) + ( VCC ) + ( \cor_asp|Add0~78\ ))
+-- \cor_asp|Add0~82\ = CARRY(( \cor_asp|index\(23) ) + ( VCC ) + ( \cor_asp|Add0~78\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43708,9 +43960,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(23),
-	cin => \cor_asp|Add0~22\,
-	sumout => \cor_asp|Add0~25_sumout\,
-	cout => \cor_asp|Add0~26\);
+	cin => \cor_asp|Add0~78\,
+	sumout => \cor_asp|Add0~81_sumout\,
+	cout => \cor_asp|Add0~82\);
 
 \cor_asp|index[23]\ : dffeas
 -- pragma translate_off
@@ -43720,16 +43972,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~25_sumout\,
+	d => \cor_asp|Add0~81_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(23));
 
-\cor_asp|Add0~29\ : cyclonev_lcell_comb
+\cor_asp|Add0~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~29_sumout\ = SUM(( \cor_asp|index\(24) ) + ( VCC ) + ( \cor_asp|Add0~26\ ))
--- \cor_asp|Add0~30\ = CARRY(( \cor_asp|index\(24) ) + ( VCC ) + ( \cor_asp|Add0~26\ ))
+-- \cor_asp|Add0~17_sumout\ = SUM(( \cor_asp|index\(24) ) + ( VCC ) + ( \cor_asp|Add0~82\ ))
+-- \cor_asp|Add0~18\ = CARRY(( \cor_asp|index\(24) ) + ( VCC ) + ( \cor_asp|Add0~82\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43739,9 +43992,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(24),
-	cin => \cor_asp|Add0~26\,
-	sumout => \cor_asp|Add0~29_sumout\,
-	cout => \cor_asp|Add0~30\);
+	cin => \cor_asp|Add0~82\,
+	sumout => \cor_asp|Add0~17_sumout\,
+	cout => \cor_asp|Add0~18\);
 
 \cor_asp|index[24]\ : dffeas
 -- pragma translate_off
@@ -43751,16 +44004,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~29_sumout\,
+	d => \cor_asp|Add0~17_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(24));
 
-\cor_asp|Add0~5\ : cyclonev_lcell_comb
+\cor_asp|Add0~85\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~5_sumout\ = SUM(( \cor_asp|index\(25) ) + ( VCC ) + ( \cor_asp|Add0~30\ ))
--- \cor_asp|Add0~6\ = CARRY(( \cor_asp|index\(25) ) + ( VCC ) + ( \cor_asp|Add0~30\ ))
+-- \cor_asp|Add0~85_sumout\ = SUM(( \cor_asp|index\(25) ) + ( VCC ) + ( \cor_asp|Add0~18\ ))
+-- \cor_asp|Add0~86\ = CARRY(( \cor_asp|index\(25) ) + ( VCC ) + ( \cor_asp|Add0~18\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43770,9 +44024,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(25),
-	cin => \cor_asp|Add0~30\,
-	sumout => \cor_asp|Add0~5_sumout\,
-	cout => \cor_asp|Add0~6\);
+	cin => \cor_asp|Add0~18\,
+	sumout => \cor_asp|Add0~85_sumout\,
+	cout => \cor_asp|Add0~86\);
 
 \cor_asp|index[25]\ : dffeas
 -- pragma translate_off
@@ -43782,16 +44036,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~5_sumout\,
+	d => \cor_asp|Add0~85_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(25));
 
-\cor_asp|Add0~73\ : cyclonev_lcell_comb
+\cor_asp|Add0~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~73_sumout\ = SUM(( \cor_asp|index\(26) ) + ( VCC ) + ( \cor_asp|Add0~6\ ))
--- \cor_asp|Add0~74\ = CARRY(( \cor_asp|index\(26) ) + ( VCC ) + ( \cor_asp|Add0~6\ ))
+-- \cor_asp|Add0~21_sumout\ = SUM(( \cor_asp|index\(26) ) + ( VCC ) + ( \cor_asp|Add0~86\ ))
+-- \cor_asp|Add0~22\ = CARRY(( \cor_asp|index\(26) ) + ( VCC ) + ( \cor_asp|Add0~86\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43801,9 +44056,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(26),
-	cin => \cor_asp|Add0~6\,
-	sumout => \cor_asp|Add0~73_sumout\,
-	cout => \cor_asp|Add0~74\);
+	cin => \cor_asp|Add0~86\,
+	sumout => \cor_asp|Add0~21_sumout\,
+	cout => \cor_asp|Add0~22\);
 
 \cor_asp|index[26]\ : dffeas
 -- pragma translate_off
@@ -43813,16 +44068,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~73_sumout\,
+	d => \cor_asp|Add0~21_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(26));
 
-\cor_asp|Add0~77\ : cyclonev_lcell_comb
+\cor_asp|Add0~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~77_sumout\ = SUM(( \cor_asp|index\(27) ) + ( VCC ) + ( \cor_asp|Add0~74\ ))
--- \cor_asp|Add0~78\ = CARRY(( \cor_asp|index\(27) ) + ( VCC ) + ( \cor_asp|Add0~74\ ))
+-- \cor_asp|Add0~25_sumout\ = SUM(( \cor_asp|index\(27) ) + ( VCC ) + ( \cor_asp|Add0~22\ ))
+-- \cor_asp|Add0~26\ = CARRY(( \cor_asp|index\(27) ) + ( VCC ) + ( \cor_asp|Add0~22\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43832,9 +44088,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(27),
-	cin => \cor_asp|Add0~74\,
-	sumout => \cor_asp|Add0~77_sumout\,
-	cout => \cor_asp|Add0~78\);
+	cin => \cor_asp|Add0~22\,
+	sumout => \cor_asp|Add0~25_sumout\,
+	cout => \cor_asp|Add0~26\);
 
 \cor_asp|index[27]\ : dffeas
 -- pragma translate_off
@@ -43844,16 +44100,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~77_sumout\,
+	d => \cor_asp|Add0~25_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(27));
 
-\cor_asp|Add0~81\ : cyclonev_lcell_comb
+\cor_asp|Add0~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~81_sumout\ = SUM(( \cor_asp|index\(28) ) + ( VCC ) + ( \cor_asp|Add0~78\ ))
--- \cor_asp|Add0~82\ = CARRY(( \cor_asp|index\(28) ) + ( VCC ) + ( \cor_asp|Add0~78\ ))
+-- \cor_asp|Add0~29_sumout\ = SUM(( \cor_asp|index\(28) ) + ( VCC ) + ( \cor_asp|Add0~26\ ))
+-- \cor_asp|Add0~30\ = CARRY(( \cor_asp|index\(28) ) + ( VCC ) + ( \cor_asp|Add0~26\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43863,9 +44120,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(28),
-	cin => \cor_asp|Add0~78\,
-	sumout => \cor_asp|Add0~81_sumout\,
-	cout => \cor_asp|Add0~82\);
+	cin => \cor_asp|Add0~26\,
+	sumout => \cor_asp|Add0~29_sumout\,
+	cout => \cor_asp|Add0~30\);
 
 \cor_asp|index[28]\ : dffeas
 -- pragma translate_off
@@ -43875,16 +44132,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~81_sumout\,
+	d => \cor_asp|Add0~29_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(28));
 
-\cor_asp|Add0~85\ : cyclonev_lcell_comb
+\cor_asp|Add0~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~85_sumout\ = SUM(( \cor_asp|index\(29) ) + ( VCC ) + ( \cor_asp|Add0~82\ ))
--- \cor_asp|Add0~86\ = CARRY(( \cor_asp|index\(29) ) + ( VCC ) + ( \cor_asp|Add0~82\ ))
+-- \cor_asp|Add0~5_sumout\ = SUM(( \cor_asp|index\(29) ) + ( VCC ) + ( \cor_asp|Add0~30\ ))
+-- \cor_asp|Add0~6\ = CARRY(( \cor_asp|index\(29) ) + ( VCC ) + ( \cor_asp|Add0~30\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43894,9 +44152,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(29),
-	cin => \cor_asp|Add0~82\,
-	sumout => \cor_asp|Add0~85_sumout\,
-	cout => \cor_asp|Add0~86\);
+	cin => \cor_asp|Add0~30\,
+	sumout => \cor_asp|Add0~5_sumout\,
+	cout => \cor_asp|Add0~6\);
 
 \cor_asp|index[29]\ : dffeas
 -- pragma translate_off
@@ -43906,16 +44164,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clock~input_o\,
-	d => \cor_asp|Add0~85_sumout\,
+	d => \cor_asp|Add0~5_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(29));
 
 \cor_asp|Add0~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|Add0~9_sumout\ = SUM(( \cor_asp|index\(30) ) + ( VCC ) + ( \cor_asp|Add0~86\ ))
--- \cor_asp|Add0~10\ = CARRY(( \cor_asp|index\(30) ) + ( VCC ) + ( \cor_asp|Add0~86\ ))
+-- \cor_asp|Add0~9_sumout\ = SUM(( \cor_asp|index\(30) ) + ( VCC ) + ( \cor_asp|Add0~6\ ))
+-- \cor_asp|Add0~10\ = CARRY(( \cor_asp|index\(30) ) + ( VCC ) + ( \cor_asp|Add0~6\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43925,7 +44184,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => \cor_asp|ALT_INV_index\(30),
-	cin => \cor_asp|Add0~86\,
+	cin => \cor_asp|Add0~6\,
 	sumout => \cor_asp|Add0~9_sumout\,
 	cout => \cor_asp|Add0~10\);
 
@@ -43939,6 +44198,7 @@ PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Add0~9_sumout\,
 	sclr => \cor_asp|process_0~0_combout\,
+	ena => \cor_asp|enable~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|index\(30));
@@ -43960,26 +44220,40 @@ PORT MAP (
 
 \cor_asp|correlation[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~0_combout\ = ( !\cor_asp|Add0~61_sumout\ & ( !\cor_asp|Add0~65_sumout\ & ( (!\cor_asp|Add0~53_sumout\ & (!\cor_asp|Add0~57_sumout\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))) ) ) )
+-- \cor_asp|correlation[0]~0_combout\ = (\cor_asp|enable~q\ & ((\cor_asp|flag~q\) # (\calc~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0111000000000000000000000000000000000000000000000000000000000000",
+	lut_mask => "0000011100000111000001110000011100000111000001110000011100000111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_calc~input_o\,
 	datab => \cor_asp|ALT_INV_flag~q\,
-	datac => \cor_asp|ALT_INV_Add0~53_sumout\,
-	datad => \cor_asp|ALT_INV_Add0~57_sumout\,
-	datae => \cor_asp|ALT_INV_Add0~61_sumout\,
-	dataf => \cor_asp|ALT_INV_Add0~65_sumout\,
+	datac => \cor_asp|ALT_INV_enable~q\,
 	combout => \cor_asp|correlation[0]~0_combout\);
 
 \cor_asp|correlation[0]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~1_combout\ = ( !\cor_asp|Add0~49_sumout\ & ( \cor_asp|correlation[0]~0_combout\ & ( (!\cor_asp|Add0~33_sumout\ & (!\cor_asp|Add0~37_sumout\ & (!\cor_asp|Add0~41_sumout\ & !\cor_asp|Add0~45_sumout\))) ) ) )
+-- \cor_asp|correlation[0]~1_combout\ = (!\cor_asp|Add0~53_sumout\ & (!\cor_asp|Add0~57_sumout\ & (!\cor_asp|Add0~61_sumout\ & !\cor_asp|Add0~65_sumout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_Add0~53_sumout\,
+	datab => \cor_asp|ALT_INV_Add0~57_sumout\,
+	datac => \cor_asp|ALT_INV_Add0~61_sumout\,
+	datad => \cor_asp|ALT_INV_Add0~65_sumout\,
+	combout => \cor_asp|correlation[0]~1_combout\);
+
+\cor_asp|correlation[0]~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|correlation[0]~2_combout\ = ( !\cor_asp|Add0~49_sumout\ & ( \cor_asp|correlation[0]~1_combout\ & ( (!\cor_asp|Add0~33_sumout\ & (!\cor_asp|Add0~37_sumout\ & (!\cor_asp|Add0~41_sumout\ & !\cor_asp|Add0~45_sumout\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -43993,12 +44267,12 @@ PORT MAP (
 	datac => \cor_asp|ALT_INV_Add0~41_sumout\,
 	datad => \cor_asp|ALT_INV_Add0~45_sumout\,
 	datae => \cor_asp|ALT_INV_Add0~49_sumout\,
-	dataf => \cor_asp|ALT_INV_correlation[0]~0_combout\,
-	combout => \cor_asp|correlation[0]~1_combout\);
+	dataf => \cor_asp|ALT_INV_correlation[0]~1_combout\,
+	combout => \cor_asp|correlation[0]~2_combout\);
 
-\cor_asp|correlation[0]~2\ : cyclonev_lcell_comb
+\cor_asp|correlation[0]~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~2_combout\ = ( !\cor_asp|Add0~29_sumout\ & ( \cor_asp|correlation[0]~1_combout\ & ( (!\cor_asp|Add0~13_sumout\ & (!\cor_asp|Add0~17_sumout\ & (!\cor_asp|Add0~21_sumout\ & !\cor_asp|Add0~25_sumout\))) ) ) )
+-- \cor_asp|correlation[0]~3_combout\ = ( !\cor_asp|Add0~29_sumout\ & ( \cor_asp|correlation[0]~2_combout\ & ( (!\cor_asp|Add0~13_sumout\ & (!\cor_asp|Add0~17_sumout\ & (!\cor_asp|Add0~21_sumout\ & !\cor_asp|Add0~25_sumout\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -44012,30 +44286,31 @@ PORT MAP (
 	datac => \cor_asp|ALT_INV_Add0~21_sumout\,
 	datad => \cor_asp|ALT_INV_Add0~25_sumout\,
 	datae => \cor_asp|ALT_INV_Add0~29_sumout\,
-	dataf => \cor_asp|ALT_INV_correlation[0]~1_combout\,
-	combout => \cor_asp|correlation[0]~2_combout\);
-
-\cor_asp|correlation[0]~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \cor_asp|correlation[0]~3_combout\ = ( !\cor_asp|Add0~125_sumout\ & ( (!\cor_asp|Add0~109_sumout\ & (!\cor_asp|Add0~113_sumout\ & (!\cor_asp|Add0~117_sumout\ & !\cor_asp|Add0~121_sumout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000000000000000000000000000000010000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \cor_asp|ALT_INV_Add0~109_sumout\,
-	datab => \cor_asp|ALT_INV_Add0~113_sumout\,
-	datac => \cor_asp|ALT_INV_Add0~117_sumout\,
-	datad => \cor_asp|ALT_INV_Add0~121_sumout\,
-	datae => \cor_asp|ALT_INV_Add0~125_sumout\,
+	dataf => \cor_asp|ALT_INV_correlation[0]~2_combout\,
 	combout => \cor_asp|correlation[0]~3_combout\);
 
 \cor_asp|correlation[0]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~4_combout\ = ( !\cor_asp|Add0~105_sumout\ & ( \cor_asp|correlation[0]~3_combout\ & ( (!\cor_asp|Add0~89_sumout\ & (!\cor_asp|Add0~93_sumout\ & (!\cor_asp|Add0~97_sumout\ & !\cor_asp|Add0~101_sumout\))) ) ) )
+-- \cor_asp|correlation[0]~4_combout\ = ( !\cor_asp|Add0~121_sumout\ & ( !\cor_asp|Add0~125_sumout\ & ( (\cor_asp|correlation[0]~0_combout\ & (!\cor_asp|Add0~109_sumout\ & (!\cor_asp|Add0~113_sumout\ & !\cor_asp|Add0~117_sumout\))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100000000000000000000000000000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \cor_asp|ALT_INV_correlation[0]~0_combout\,
+	datab => \cor_asp|ALT_INV_Add0~109_sumout\,
+	datac => \cor_asp|ALT_INV_Add0~113_sumout\,
+	datad => \cor_asp|ALT_INV_Add0~117_sumout\,
+	datae => \cor_asp|ALT_INV_Add0~121_sumout\,
+	dataf => \cor_asp|ALT_INV_Add0~125_sumout\,
+	combout => \cor_asp|correlation[0]~4_combout\);
+
+\cor_asp|correlation[0]~5\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \cor_asp|correlation[0]~5_combout\ = ( !\cor_asp|Add0~105_sumout\ & ( \cor_asp|correlation[0]~4_combout\ & ( (!\cor_asp|Add0~89_sumout\ & (!\cor_asp|Add0~93_sumout\ & (!\cor_asp|Add0~97_sumout\ & !\cor_asp|Add0~101_sumout\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -44049,12 +44324,12 @@ PORT MAP (
 	datac => \cor_asp|ALT_INV_Add0~97_sumout\,
 	datad => \cor_asp|ALT_INV_Add0~101_sumout\,
 	datae => \cor_asp|ALT_INV_Add0~105_sumout\,
-	dataf => \cor_asp|ALT_INV_correlation[0]~3_combout\,
-	combout => \cor_asp|correlation[0]~4_combout\);
+	dataf => \cor_asp|ALT_INV_correlation[0]~4_combout\,
+	combout => \cor_asp|correlation[0]~5_combout\);
 
-\cor_asp|correlation[0]~5\ : cyclonev_lcell_comb
+\cor_asp|correlation[0]~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~5_combout\ = ( !\cor_asp|Add0~85_sumout\ & ( \cor_asp|correlation[0]~4_combout\ & ( (!\cor_asp|Add0~69_sumout\ & (!\cor_asp|Add0~73_sumout\ & (!\cor_asp|Add0~77_sumout\ & !\cor_asp|Add0~81_sumout\))) ) ) )
+-- \cor_asp|correlation[0]~6_combout\ = ( !\cor_asp|Add0~85_sumout\ & ( \cor_asp|correlation[0]~5_combout\ & ( (!\cor_asp|Add0~69_sumout\ & (!\cor_asp|Add0~73_sumout\ & (!\cor_asp|Add0~77_sumout\ & !\cor_asp|Add0~81_sumout\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -44068,30 +44343,30 @@ PORT MAP (
 	datac => \cor_asp|ALT_INV_Add0~77_sumout\,
 	datad => \cor_asp|ALT_INV_Add0~81_sumout\,
 	datae => \cor_asp|ALT_INV_Add0~85_sumout\,
-	dataf => \cor_asp|ALT_INV_correlation[0]~4_combout\,
-	combout => \cor_asp|correlation[0]~5_combout\);
+	dataf => \cor_asp|ALT_INV_correlation[0]~5_combout\,
+	combout => \cor_asp|correlation[0]~6_combout\);
 
-\cor_asp|correlation[0]~6\ : cyclonev_lcell_comb
+\cor_asp|correlation[0]~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \cor_asp|correlation[0]~6_combout\ = ( \cor_asp|correlation[0]~2_combout\ & ( \cor_asp|correlation[0]~5_combout\ & ( (!\cor_asp|process_0~0_combout\ & (((!\cor_asp|Add0~5_sumout\ & !\cor_asp|Add0~9_sumout\)) # (\cor_asp|Add0~1_sumout\))) # 
--- (\cor_asp|process_0~0_combout\ & (((!\cor_asp|Add0~5_sumout\ & !\cor_asp|Add0~9_sumout\)))) ) ) ) # ( !\cor_asp|correlation[0]~2_combout\ & ( \cor_asp|correlation[0]~5_combout\ & ( (!\cor_asp|process_0~0_combout\ & \cor_asp|Add0~1_sumout\) ) ) ) # ( 
--- \cor_asp|correlation[0]~2_combout\ & ( !\cor_asp|correlation[0]~5_combout\ & ( (!\cor_asp|process_0~0_combout\ & \cor_asp|Add0~1_sumout\) ) ) ) # ( !\cor_asp|correlation[0]~2_combout\ & ( !\cor_asp|correlation[0]~5_combout\ & ( 
--- (!\cor_asp|process_0~0_combout\ & \cor_asp|Add0~1_sumout\) ) ) )
+-- \cor_asp|correlation[0]~7_combout\ = ( \cor_asp|correlation[0]~3_combout\ & ( \cor_asp|correlation[0]~6_combout\ & ( (!\cor_asp|Add0~1_sumout\ & (((!\cor_asp|Add0~5_sumout\ & !\cor_asp|Add0~9_sumout\)))) # (\cor_asp|Add0~1_sumout\ & 
+-- (((!\cor_asp|Add0~5_sumout\ & !\cor_asp|Add0~9_sumout\)) # (\cor_asp|correlation[0]~0_combout\))) ) ) ) # ( !\cor_asp|correlation[0]~3_combout\ & ( \cor_asp|correlation[0]~6_combout\ & ( (\cor_asp|Add0~1_sumout\ & \cor_asp|correlation[0]~0_combout\) ) ) ) 
+-- # ( \cor_asp|correlation[0]~3_combout\ & ( !\cor_asp|correlation[0]~6_combout\ & ( (\cor_asp|Add0~1_sumout\ & \cor_asp|correlation[0]~0_combout\) ) ) ) # ( !\cor_asp|correlation[0]~3_combout\ & ( !\cor_asp|correlation[0]~6_combout\ & ( 
+-- (\cor_asp|Add0~1_sumout\ & \cor_asp|correlation[0]~0_combout\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010001000100010001000100010001000100010001000101111001000100010",
+	lut_mask => "0001000100010001000100010001000100010001000100011111000100010001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \cor_asp|ALT_INV_process_0~0_combout\,
-	datab => \cor_asp|ALT_INV_Add0~1_sumout\,
+	dataa => \cor_asp|ALT_INV_Add0~1_sumout\,
+	datab => \cor_asp|ALT_INV_correlation[0]~0_combout\,
 	datac => \cor_asp|ALT_INV_Add0~5_sumout\,
 	datad => \cor_asp|ALT_INV_Add0~9_sumout\,
-	datae => \cor_asp|ALT_INV_correlation[0]~2_combout\,
-	dataf => \cor_asp|ALT_INV_correlation[0]~5_combout\,
-	combout => \cor_asp|correlation[0]~6_combout\);
+	datae => \cor_asp|ALT_INV_correlation[0]~3_combout\,
+	dataf => \cor_asp|ALT_INV_correlation[0]~6_combout\,
+	combout => \cor_asp|correlation[0]~7_combout\);
 
 \cor_asp|correlation[0]\ : dffeas
 -- pragma translate_off
@@ -44102,7 +44377,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~mac_resulta\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(0));
@@ -44116,7 +44391,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~309\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(1));
@@ -44130,7 +44405,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~310\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(2));
@@ -44144,7 +44419,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~311\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(3));
@@ -44158,7 +44433,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~312\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(4));
@@ -44172,7 +44447,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~313\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(5));
@@ -44186,7 +44461,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~314\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(6));
@@ -44200,7 +44475,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~315\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(7));
@@ -44214,7 +44489,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~316\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(8));
@@ -44228,7 +44503,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~317\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(9));
@@ -44242,7 +44517,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~318\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(10));
@@ -44256,7 +44531,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~319\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(11));
@@ -44270,7 +44545,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~320\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(12));
@@ -44284,7 +44559,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~321\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(13));
@@ -44298,7 +44573,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~322\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(14));
@@ -44312,7 +44587,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~323\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(15));
@@ -44326,7 +44601,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~324\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(16));
@@ -44340,7 +44615,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~325\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(17));
@@ -44354,7 +44629,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~326\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(18));
@@ -44368,7 +44643,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~327\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(19));
@@ -44382,7 +44657,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~328\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(20));
@@ -44396,7 +44671,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~329\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(21));
@@ -44410,7 +44685,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~330\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(22));
@@ -44424,7 +44699,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~331\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(23));
@@ -44438,7 +44713,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~332\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(24));
@@ -44452,7 +44727,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~333\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(25));
@@ -44466,7 +44741,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~334\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(26));
@@ -44480,7 +44755,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~335\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(27));
@@ -44494,7 +44769,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~336\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(28));
@@ -44508,7 +44783,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~337\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(29));
@@ -44522,7 +44797,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~338\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(30));
@@ -44536,7 +44811,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clock~input_o\,
 	d => \cor_asp|Mult9~339\,
-	ena => \cor_asp|correlation[0]~6_combout\,
+	ena => \cor_asp|correlation[0]~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \cor_asp|correlation\(31));

@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/21/2024 23:55:02"
+-- Generated on "05/23/2024 19:11:46"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          CORASP_Wave_Test
 -- 
@@ -36,6 +36,7 @@ ARCHITECTURE CORASP_Wave_Test_arch OF CORASP_Wave_Test_vhd_vec_tst IS
 SIGNAL avgVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL calc : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
+SIGNAL flag : STD_LOGIC;
 SIGNAL recvOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL sendCorr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT CORASP_Wave_Test
@@ -43,6 +44,7 @@ COMPONENT CORASP_Wave_Test
 	avgVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	calc : IN STD_LOGIC;
 	clock : IN STD_LOGIC;
+	flag : IN STD_LOGIC;
 	recvOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	sendCorr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
@@ -54,6 +56,7 @@ BEGIN
 	avgVal => avgVal,
 	calc => calc,
 	clock => clock,
+	flag => flag,
 	recvOut => recvOut,
 	sendCorr => sendCorr
 	);
@@ -74,21 +77,13 @@ END PROCESS t_prcs_clock;
 t_prcs_calc: PROCESS
 BEGIN
 	calc <= '0';
-	WAIT FOR 200000 ps;
+	WAIT FOR 380000 ps;
 	calc <= '1';
-	WAIT FOR 10000 ps;
+	WAIT FOR 30000 ps;
 	calc <= '0';
-	WAIT FOR 190000 ps;
+	WAIT FOR 340000 ps;
 	calc <= '1';
-	WAIT FOR 10000 ps;
-	calc <= '0';
-	WAIT FOR 190000 ps;
-	calc <= '1';
-	WAIT FOR 10000 ps;
-	calc <= '0';
-	WAIT FOR 190000 ps;
-	calc <= '1';
-	WAIT FOR 10000 ps;
+	WAIT FOR 60000 ps;
 	calc <= '0';
 WAIT;
 END PROCESS t_prcs_calc;
@@ -96,7 +91,19 @@ END PROCESS t_prcs_calc;
 t_prcs_avgVal_15: PROCESS
 BEGIN
 	avgVal(15) <= '0';
-	WAIT FOR 620000 ps;
+	WAIT FOR 330000 ps;
+	avgVal(15) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(15) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(15) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(15) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(15) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(15) <= '0';
+	WAIT FOR 240000 ps;
 	avgVal(15) <= '1';
 	WAIT FOR 30000 ps;
 	avgVal(15) <= '0';
@@ -138,7 +145,11 @@ END PROCESS t_prcs_avgVal_15;
 t_prcs_avgVal_14: PROCESS
 BEGIN
 	avgVal(14) <= '0';
-	WAIT FOR 620000 ps;
+	WAIT FOR 360000 ps;
+	avgVal(14) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(14) <= '0';
+	WAIT FOR 250000 ps;
 	avgVal(14) <= '1';
 	WAIT FOR 10000 ps;
 	avgVal(14) <= '0';
@@ -184,7 +195,11 @@ END PROCESS t_prcs_avgVal_14;
 t_prcs_avgVal_13: PROCESS
 BEGIN
 	avgVal(13) <= '0';
-	WAIT FOR 650000 ps;
+	WAIT FOR 340000 ps;
+	avgVal(13) <= '1';
+	WAIT FOR 40000 ps;
+	avgVal(13) <= '0';
+	WAIT FOR 270000 ps;
 	avgVal(13) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(13) <= '0';
@@ -234,7 +249,15 @@ END PROCESS t_prcs_avgVal_13;
 t_prcs_avgVal_12: PROCESS
 BEGIN
 	avgVal(12) <= '0';
-	WAIT FOR 630000 ps;
+	WAIT FOR 350000 ps;
+	avgVal(12) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(12) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(12) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(12) <= '0';
+	WAIT FOR 250000 ps;
 	avgVal(12) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(12) <= '0';
@@ -272,7 +295,15 @@ END PROCESS t_prcs_avgVal_12;
 t_prcs_avgVal_11: PROCESS
 BEGIN
 	avgVal(11) <= '0';
-	WAIT FOR 640000 ps;
+	WAIT FOR 340000 ps;
+	avgVal(11) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(11) <= '0';
+	WAIT FOR 20000 ps;
+	avgVal(11) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(11) <= '0';
+	WAIT FOR 260000 ps;
 	avgVal(11) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(11) <= '0';
@@ -322,7 +353,15 @@ END PROCESS t_prcs_avgVal_11;
 t_prcs_avgVal_10: PROCESS
 BEGIN
 	avgVal(10) <= '0';
-	WAIT FOR 630000 ps;
+	WAIT FOR 330000 ps;
+	avgVal(10) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(10) <= '0';
+	WAIT FOR 20000 ps;
+	avgVal(10) <= '1';
+	WAIT FOR 20000 ps;
+	avgVal(10) <= '0';
+	WAIT FOR 250000 ps;
 	avgVal(10) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(10) <= '0';
@@ -366,7 +405,19 @@ END PROCESS t_prcs_avgVal_10;
 t_prcs_avgVal_9: PROCESS
 BEGIN
 	avgVal(9) <= '0';
-	WAIT FOR 630000 ps;
+	WAIT FOR 330000 ps;
+	avgVal(9) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(9) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(9) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(9) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(9) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(9) <= '0';
+	WAIT FOR 250000 ps;
 	avgVal(9) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(9) <= '0';
@@ -418,7 +469,15 @@ END PROCESS t_prcs_avgVal_9;
 t_prcs_avgVal_8: PROCESS
 BEGIN
 	avgVal(8) <= '0';
-	WAIT FOR 620000 ps;
+	WAIT FOR 330000 ps;
+	avgVal(8) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(8) <= '0';
+	WAIT FOR 30000 ps;
+	avgVal(8) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(8) <= '0';
+	WAIT FOR 240000 ps;
 	avgVal(8) <= '1';
 	WAIT FOR 10000 ps;
 	avgVal(8) <= '0';
@@ -468,11 +527,15 @@ END PROCESS t_prcs_avgVal_8;
 t_prcs_avgVal_7: PROCESS
 BEGIN
 	avgVal(7) <= '0';
-	WAIT FOR 370000 ps;
-	avgVal(7) <= 'X';
+	WAIT FOR 330000 ps;
+	avgVal(7) <= '1';
 	WAIT FOR 10000 ps;
 	avgVal(7) <= '0';
-	WAIT FOR 310000 ps;
+	WAIT FOR 20000 ps;
+	avgVal(7) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(7) <= '0';
+	WAIT FOR 320000 ps;
 	avgVal(7) <= '1';
 	WAIT FOR 10000 ps;
 	avgVal(7) <= '0';
@@ -510,11 +573,13 @@ BEGIN
 	avgVal(6) <= '0';
 	WAIT FOR 320000 ps;
 	avgVal(6) <= '1';
-	WAIT FOR 50000 ps;
-	avgVal(6) <= 'X';
 	WAIT FOR 10000 ps;
 	avgVal(6) <= '0';
-	WAIT FOR 220000 ps;
+	WAIT FOR 20000 ps;
+	avgVal(6) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(6) <= '0';
+	WAIT FOR 240000 ps;
 	avgVal(6) <= '1';
 	WAIT FOR 30000 ps;
 	avgVal(6) <= '0';
@@ -568,11 +633,11 @@ END PROCESS t_prcs_avgVal_6;
 t_prcs_avgVal_5: PROCESS
 BEGIN
 	avgVal(5) <= '0';
-	WAIT FOR 360000 ps;
-	avgVal(5) <= 'X';
+	WAIT FOR 350000 ps;
+	avgVal(5) <= '1';
 	WAIT FOR 20000 ps;
 	avgVal(5) <= '0';
-	WAIT FOR 110000 ps;
+	WAIT FOR 120000 ps;
 	avgVal(5) <= '1';
 	WAIT FOR 110000 ps;
 	avgVal(5) <= '0';
@@ -622,11 +687,15 @@ BEGIN
 	avgVal(4) <= '1';
 	WAIT FOR 160000 ps;
 	avgVal(4) <= '0';
-	WAIT FOR 30000 ps;
-	avgVal(4) <= 'X';
-	WAIT FOR 30000 ps;
+	WAIT FOR 10000 ps;
+	avgVal(4) <= '1';
+	WAIT FOR 10000 ps;
 	avgVal(4) <= '0';
-	WAIT FOR 60000 ps;
+	WAIT FOR 10000 ps;
+	avgVal(4) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(4) <= '0';
+	WAIT FOR 80000 ps;
 	avgVal(4) <= '1';
 	WAIT FOR 50000 ps;
 	avgVal(4) <= '0';
@@ -686,8 +755,12 @@ BEGIN
 	END LOOP;
 	avgVal(3) <= '0';
 	WAIT FOR 20000 ps;
-	avgVal(3) <= 'X';
-	WAIT FOR 40000 ps;
+	avgVal(3) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(3) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(3) <= '1';
+	WAIT FOR 20000 ps;
 	avgVal(3) <= '0';
 	WAIT FOR 30000 ps;
 	avgVal(3) <= '1';
@@ -752,24 +825,33 @@ BEGIN
 		WAIT FOR 40000 ps;
 	END LOOP;
 	avgVal(2) <= '0';
-	WAIT FOR 10000 ps;
-	avgVal(2) <= 'X';
 	WAIT FOR 50000 ps;
-	FOR i IN 1 TO 2
-	LOOP
-		avgVal(2) <= '0';
-		WAIT FOR 20000 ps;
-		avgVal(2) <= '1';
-		WAIT FOR 10000 ps;
-		avgVal(2) <= '0';
-		WAIT FOR 10000 ps;
-		avgVal(2) <= '1';
-		WAIT FOR 20000 ps;
-		avgVal(2) <= '0';
-		WAIT FOR 10000 ps;
-		avgVal(2) <= '1';
-		WAIT FOR 10000 ps;
-	END LOOP;
+	avgVal(2) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 20000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 20000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 20000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 20000 ps;
+	avgVal(2) <= '0';
+	WAIT FOR 10000 ps;
+	avgVal(2) <= '1';
+	WAIT FOR 10000 ps;
 	avgVal(2) <= '0';
 	WAIT FOR 20000 ps;
 	avgVal(2) <= '1';
@@ -817,16 +899,17 @@ BEGIN
 		avgVal(1) <= '1';
 		WAIT FOR 20000 ps;
 	END LOOP;
-	FOR i IN 1 TO 3
-	LOOP
-		avgVal(1) <= '0';
-		WAIT FOR 10000 ps;
-		avgVal(1) <= '1';
-		WAIT FOR 10000 ps;
-	END LOOP;
 	avgVal(1) <= '0';
 	WAIT FOR 10000 ps;
-	FOR i IN 1 TO 5
+	avgVal(1) <= '1';
+	WAIT FOR 30000 ps;
+	avgVal(1) <= '0';
+	WAIT FOR 30000 ps;
+	avgVal(1) <= '1';
+	WAIT FOR 20000 ps;
+	avgVal(1) <= '0';
+	WAIT FOR 20000 ps;
+	FOR i IN 1 TO 4
 	LOOP
 		avgVal(1) <= '1';
 		WAIT FOR 20000 ps;
@@ -885,7 +968,11 @@ BEGIN
 		WAIT FOR 10000 ps;
 	END LOOP;
 	avgVal(0) <= '0';
-	WAIT FOR 70000 ps;
+	WAIT FOR 50000 ps;
+	avgVal(0) <= '1';
+	WAIT FOR 10000 ps;
+	avgVal(0) <= '0';
+	WAIT FOR 10000 ps;
 	avgVal(0) <= '1';
 	WAIT FOR 10000 ps;
 	FOR i IN 1 TO 10
@@ -942,4 +1029,13 @@ BEGIN
 	avgVal(0) <= '0';
 WAIT;
 END PROCESS t_prcs_avgVal_0;
+
+-- flag
+t_prcs_flag: PROCESS
+BEGIN
+	flag <= '0';
+	WAIT FOR 980000 ps;
+	flag <= '1';
+WAIT;
+END PROCESS t_prcs_flag;
 END CORASP_Wave_Test_arch;

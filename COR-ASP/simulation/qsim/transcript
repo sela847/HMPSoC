@@ -1,7 +1,7 @@
 # do COR_ASP.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:29:40 on May 22,2024
+# Start time: 19:12:19 on May 23,2024
 # vcom -work work COR_ASP_TopLevel.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,20 +15,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity CORASP_Wave_Test
 # -- Compiling architecture structure of CORASP_Wave_Test
-# End time: 00:29:41 on May 22,2024, Elapsed time: 0:00:01
+# End time: 19:12:19 on May 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:29:41 on May 22,2024
+# Start time: 19:12:19 on May 23,2024
 # vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity CORASP_Wave_Test_vhd_vec_tst
 # -- Compiling architecture CORASP_Wave_Test_arch of CORASP_Wave_Test_vhd_vec_tst
-# End time: 00:29:41 on May 22,2024, Elapsed time: 0:00:00
+# End time: 19:12:20 on May 23,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.CORASP_Wave_Test_vhd_vec_tst 
-# Start time: 00:29:41 on May 22,2024
+# Start time: 19:12:20 on May 23,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -86,7 +86,7 @@
 #    Time: 0 ps  Iteration: 0  Protected: /corasp_wave_test_vhd_vec_tst/i1/\cor_asp|Mult9~mac\/inst/<protected> File: nofile
 # ** Warning: (vsim-3015) <protected>(<protected>): [PCDPC] - Port size (<protected>) does not match connection size (<protected>) for <protected>.<protected>
 #    Time: 0 ps  Iteration: 0  Protected: /corasp_wave_test_vhd_vec_tst/i1/\cor_asp|Mult9~mac\/inst/<protected> File: nofile
-# ** Warning: Design size of 295006 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 297268 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 # Simulation time: 0 ps
@@ -95,5 +95,5 @@
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
-# End time: 00:30:00 on May 22,2024, Elapsed time: 0:00:19
+# End time: 19:12:36 on May 23,2024, Elapsed time: 0:00:16
 # Errors: 0, Warnings: 17
