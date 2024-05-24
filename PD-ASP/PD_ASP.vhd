@@ -1,0 +1,152 @@
+library ieee;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+library work;
+use work.TdmaMinTypes.all;
+
+entity PD_ASP is
+	port (
+		clk 							: in std_logic;
+		recv 							: in tdma_min_port; --Address will contain either from COR_ASP or from NIOS. Data, 31st is always set to 1, 30th is correlation rdy, 29 - 0 is the correlation value itself
+		correlation_count_read 	: in std_logic;
+		send 							: out tdma_min_port; --Data is 32 bits, addr is 8 bits. Also used to send out the correlation count. 
+		interrupt 					: out std_logic,
+		state_is						: out std_logic; --0 for rising, 1 for falling
+		
+		
+	);
+end PD_ASP;
+
+architecture PD_RTL of PD_ASP is
+	type STATE is (start,rising, falling);
+	signal current_state 		: STATE;
+	signal next_state 			: STATE := start
+	signal correlation_count 	: std_logic_vector(31 downto 0); 
+	signal corre_curr 			: std_logic_vector(29 downto 0) := (others => '0'); --Buffer for curr correlation val
+	signal corre_prev				: std_logic_vector(29 downto 0) := (others => '0');
+	
+begin
+
+	UPDATE_STATE: process(clk) 
+	begin
+		if rising_edge(clk) then
+			case recv.addr is 
+				when x"00" => --from port 0, assume it to be from NIOS. 
+					if recv.data(31 downto 28) = "1100" then --Can configure the PD_RTL
+						send.addr <= x"0" & recv.data(23 downto 20);
+					end if;
+				when x"01" =>  --From port 1, assume it to be from COR_ASP
+					if recv.data(31 downto 30) = "11" then --first correlation value received
+						corre_prev <= corre_curr 
+						corre_curr <= recv.data(29 downto 0); --1st cycle will be first correlation compared with 0, then next cycle is the 2nd correlation compared with 1st correlation
+																		  --, then the cycle after would be third with 2nd.
+					end if;
+				when others =>
+				
+					
+			end case;
+			current_state <= next_state;      --very first and 2nd should be at start state. 			
+					
+					
+		end if;
+	end process UPDATE_STATE;
+	
+	PD: process(current_state)
+		variable counter : std_logic_vector(20 downto 0);
+		variable state_count : std_logic_vector(1 downto 0); --2 bits for 4 options. 
+	begin
+		case current_state is 
+			when start =>
+			
+				if corre_prev = x"00000" then
+					next_state <= start; --so that it can grab the 2nd correlation value. 
+				else
+					if corre_curr > corr_prev then
+						state_count := state_count + 1; --to keep track how many state changes there are. 
+						counter <= counter + 1; 			--to keep track how many times it comparisons has been made until a peak is detected. 
+						next_state <= rising; 
+					elsif corre_curr < corr_prev then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						next_state <= falling;
+					end if;
+				end if;
+				
+			when rising =>
+			
+				if state_count = "11" then --1 peak detected, if started with rising. 
+					state_count := "00";
+					correlation_count <= x"80"&"01"&counter; --31st set to 1 for valid packet, 21st bit is interrupt, rest the count
+					counter <= x"00000";					
+					--When peak detected, reset the counts and restart peak detection. 
+					if corre_curr > corre_prev then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						next_state <= rising;
+					elsif corre_curr < corre_prev then
+						state_count <= state_count + 1;
+						coutner <= counter + 1;
+						next_state <= falling;
+					end if;
+				else
+					if corre_curr >= corre_prev then
+						counter <= counter + 1;
+						next_state <= rising; --not sure if this needs to be included. 
+					elsif corr_curr < corre_prev then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						next_state <= falling;
+					end if;
+				end if;
+				
+			when falling => 
+			
+				if state_count = "11"' then --1 peak has been detected, if started with falling 
+					state_count := "00";
+					correlation_count <= x"80"&"01"&counter; --31st set to 1 for valid packet, 21st bit is interrupt, rest the count
+					counter <= x"00000";					
+					--When peak detected, reset the counts and restart peak detection. 
+					if corre_curr > corre_prev then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						next_state <= rising;
+					elsif corre_curr < corre_prev then
+						state_count <= state_count + 1;
+						coutner <= counter + 1;
+						next_state <= falling;
+					end if;
+				else
+					if corre_curr <= corre_prev then
+						counter <= counter + 1;
+						next_state <= falling;
+					elsif corre_curr > corre_prev then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						next_state <= rising;
+					end if;
+					
+				end if;
+				
+		end case;
+	end process PD;	
+	
+end architecture PD_RTL;
+					
+				
+	
+					
+				
+			
+	
+	
+					
+						
+						
+						
+						
+				
+	 
+				
+					
+		
