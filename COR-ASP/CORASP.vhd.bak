@@ -31,9 +31,10 @@ signal avgBuffer: buffer_array;  -- Buffer containing all the vals we need
 signal enable : std_logic;
 
 begin
-    send.addr <= x"01";
+    --send.addr <= x"01"; -- Send to address 1, assumed to be the peak detecting ASP
 
     process(clock, flag, calc)
+        variable validCor : std_logic := '0';
         variable readPacket : std_logic_vector(15 downto 0);
         variable casted : std_logic_vector(15 downto 0);
         variable recvdata: signed(15 downto 0);
@@ -47,21 +48,23 @@ begin
                 else
                     enable <= '0';
                 end if;
+		send.addr <= x"0" & recv.data(23 downto 20); -- part of config packet related to what address to send data to
             end if;
-
-            recvdata := signed(avgVal(15 downto 0));
+	 if recv.data(31 downto 28) = "1000" then -- Is a valid data packet
+            recvdata := signed(recv.data(15 downto 0));
 
             if (flag = '0' or enable = '0') then
                 flag <= '1';
                 avgBuffer <= ((others => (others => '0')));
                 index := 2*N-1;
-                avgBuffer(index) <= avgVal;
+                avgBuffer(index) <= recv.data(15 downto 0);
                 index := index - 1;
             elsif (enable = '1') then
-                avgBuffer(index) <= avgVal;
+                avgBuffer(index) <= recv.data(15 downto 0);
                 index := index - 1;
-                if (index < 1) then
-                    flag <= '1';
+                if (index < 0) then
+                    flag <= '0';
+		    validCor := '1';
                     corrVar := x"00000000";
                     for i in 0 to N-1 loop
                         corrVar := corrVar + (signed(avgBuffer(N + i)) * signed(avgBuffer(N - (i+1))));
@@ -71,11 +74,10 @@ begin
             end if;
 
             -- Passing regular values through, as well as correlation concurrently
-            if recv.data(16) = '0' then -- Send to channel 0
-                send.data <= x"8000" & std_logic_vector(recvdata);
-            else -- Send to channel 1
-                send.data <= x"8001" & std_logic_vector(recvdata);
-            end if;     
+	    send.data(31 downto 0) <= '1' & validCor & std_logic_vector(correlation(29 downto 0));
+            validCor := '0';
+	end if;   
+	    
         end if;
     end process;
 

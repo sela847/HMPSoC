@@ -15,7 +15,7 @@ entity testCor is
 end entity;
 
 architecture rtl of testCor is
-
+ signal avgVal : STD_LOGIC_VECTOR(15 downto 0) := (OTHERS => '0');
 begin
 	send.addr <= x"02";
 	process(clock,flag)
@@ -23,9 +23,11 @@ begin
 		if rising_edge(clock) then
 			
 			if flag = '0' then
-				send.data <= "11010000000000100000000000000000"; -- enabling
+				--send.data <= "11010000000000100000000000000000"; -- enabling
+				send.data <= x"D0120000"; -- enabling
 			else
-				send.data <= "11010000000000000000000000000001"; -- disabling
+				avgVal <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
+				send.data <= "1000" & x"000" & avgVal;
 			end if;
 		end if;
 	end process;

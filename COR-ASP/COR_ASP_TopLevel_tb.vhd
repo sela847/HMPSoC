@@ -81,9 +81,11 @@ begin
     begin
         while True loop
             wait for 20 ns; -- Total wait time per iteration
-            avgVal <= sine_wave_lut(lut_index);
+            -- avgVal <= sine_wave_lut(lut_index); If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
+	    avgVal <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
             lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
             calc <= NOT calc after 200 ns; -- Toggle calc every 200 ns
+	    flag <= '1';
         end loop;
     end process stimulus_process;
 
