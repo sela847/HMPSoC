@@ -1,5 +1,5 @@
 Analysis & Synthesis report for COR_ASP_TopLevel
-Wed May 22 00:27:49 2024
+Thu May 23 19:10:24 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -89,14 +89,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 22 00:27:49 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 23 19:10:24 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; COR_ASP_TopLevel                            ;
 ; Top-level Entity Name           ; CORASP_Wave_Test                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 673                                         ;
-; Total pins                      ; 82                                          ;
+; Total registers                 ; 676                                         ;
+; Total pins                      ; 83                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 81,920                                      ;
 ; Total DSP Blocks                ; 9                                           ;
@@ -255,27 +255,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 400         ;
+; Estimate of Logic utilization (ALMs needed) ; 402         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 446         ;
+; Combinational ALUT usage for logic          ; 455         ;
 ;     -- 7 input functions                    ; 2           ;
-;     -- 6 input functions                    ; 99          ;
-;     -- 5 input functions                    ; 76          ;
-;     -- 4 input functions                    ; 36          ;
+;     -- 6 input functions                    ; 97          ;
+;     -- 5 input functions                    ; 77          ;
+;     -- 4 input functions                    ; 46          ;
 ;     -- <=3 input functions                  ; 233         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 673         ;
+; Dedicated logic registers                   ; 676         ;
 ;                                             ;             ;
-; I/O pins                                    ; 82          ;
+; I/O pins                                    ; 83          ;
 ; Total MLAB memory bits                      ; 0           ;
 ; Total block memory bits                     ; 81920       ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 9           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 993         ;
-; Total fan-out                               ; 8239        ;
-; Average fan-out                             ; 5.11        ;
+; Maximum fan-out                             ; 996         ;
+; Total fan-out                               ; 8327        ;
+; Average fan-out                             ; 5.12        ;
 +---------------------------------------------+-------------+
 
 
@@ -284,8 +284,8 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                            ; Entity Name      ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |CORASP_Wave_Test                                ; 446 (1)             ; 673 (0)                   ; 81920             ; 9          ; 82   ; 0            ; |CORASP_Wave_Test                                                                                                                                                                              ; CORASP_Wave_Test ; work         ;
-;    |CORASP:cor_asp|                              ; 68 (68)             ; 402 (402)                 ; 0                 ; 9          ; 0    ; 0            ; |CORASP_Wave_Test|CORASP:cor_asp                                                                                                                                                               ; CORASP           ; work         ;
+; |CORASP_Wave_Test                                ; 455 (1)             ; 676 (0)                   ; 81920             ; 9          ; 83   ; 0            ; |CORASP_Wave_Test                                                                                                                                                                              ; CORASP_Wave_Test ; work         ;
+;    |CORASP:cor_asp|                              ; 76 (76)             ; 403 (403)                 ; 0                 ; 9          ; 0    ; 0            ; |CORASP_Wave_Test|CORASP:cor_asp                                                                                                                                                               ; CORASP           ; work         ;
 ;    |TdmaMin:tdma_min|                            ; 377 (0)             ; 271 (0)                   ; 81920             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min                                                                                                                                                             ; TdmaMin          ; work         ;
 ;       |TdmaMinFabric:fabric|                     ; 96 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinFabric:fabric                                                                                                                                        ; TdmaMinFabric    ; work         ;
 ;          |TdmaMinStage:\staging:0:stage|         ; 96 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage                                                                                                          ; TdmaMinStage     ; work         ;
@@ -363,6 +363,7 @@ refer to the applicable agreement for further details.
 ;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
 ;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
 ;       |TdmaMinSlots:slots|                       ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinSlots:slots                                                                                                                                          ; TdmaMinSlots     ; work         ;
+;    |testCor:test_cor|                            ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|testCor:test_cor                                                                                                                                                             ; testCor          ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -401,11 +402,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                                                                            ; Reason for Removal                                                                                                                                                       ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; testCor:test_cor|send.addr[2..7]                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.addr[1]                                                                                                                                                            ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.addr[0]                                                                                                                                                            ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.data[31]                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.data[0..30]                                                                                                                                                        ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
+; testCor:test_cor|send.data[30,31]                                                                                                                                                        ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
+; testCor:test_cor|send.data[29]                                                                                                                                                           ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
+; testCor:test_cor|send.data[28]                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
+; testCor:test_cor|send.data[1..16,18..27]                                                                                                                                                 ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
 ; CORASP:cor_asp|send.data[31]                                                                                                                                                             ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
 ; CORASP:cor_asp|send.data[17..30]                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
@@ -426,7 +426,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; Total Number of Removed Registers = 115                                                                                                                                                  ;                                                                                                                                                                          ;
+; Total Number of Removed Registers = 105                                                                                                                                                  ;                                                                                                                                                                          ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -435,7 +435,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                      ;
 +--------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; testCor:test_cor|send.data[30] ; Stuck at GND              ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff ;
+; testCor:test_cor|send.data[30] ; Stuck at VCC              ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff ;
 ;                                ; due to stuck port data_in ;                                                                                                                                                             ;
 ; CORASP:cor_asp|send.data[30]   ; Stuck at GND              ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff ;
 ;                                ; due to stuck port data_in ;                                                                                                                                                             ;
@@ -447,12 +447,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 673   ;
+; Total registers                              ; 676   ;
 ; Number of registers using Synchronous Clear  ; 365   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 508   ;
+; Number of registers using Clock Enable       ; 557   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -462,9 +462,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; CORASP:cor_asp|index[4]                ; 8       ;
-; CORASP:cor_asp|index[0]                ; 8       ;
-; CORASP:cor_asp|index[1]                ; 15      ;
+; CORASP:cor_asp|index[0]                ; 11      ;
+; CORASP:cor_asp|index[1]                ; 13      ;
+; CORASP:cor_asp|index[4]                ; 11      ;
 ; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
@@ -1106,31 +1106,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 673                         ;
-;     ENA               ; 204                         ;
-;     ENA SCLR          ; 304                         ;
-;     SCLR              ; 61                          ;
-;     plain             ; 104                         ;
-; arriav_lcell_comb     ; 446                         ;
+; arriav_ff             ; 676                         ;
+;     ENA               ; 224                         ;
+;     ENA SCLR          ; 333                         ;
+;     SCLR              ; 32                          ;
+;     plain             ; 87                          ;
+; arriav_lcell_comb     ; 455                         ;
 ;     arith             ; 168                         ;
 ;         1 data inputs ; 154                         ;
 ;         2 data inputs ; 14                          ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 276                         ;
+;     normal            ; 285                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 48                          ;
-;         4 data inputs ; 36                          ;
-;         5 data inputs ; 76                          ;
-;         6 data inputs ; 99                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 50                          ;
+;         4 data inputs ; 46                          ;
+;         5 data inputs ; 77                          ;
+;         6 data inputs ; 97                          ;
 ; arriav_mac            ; 9                           ;
-; boundary_port         ; 82                          ;
+; boundary_port         ; 83                          ;
 ; stratixv_ram_block    ; 320                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.90                        ;
-; Average LUT depth     ; 1.35                        ;
+; Max LUT depth         ; 5.80                        ;
+; Average LUT depth     ; 1.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1149,7 +1149,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 22 00:27:36 2024
+    Info: Processing started: Thu May 23 19:10:10 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1198,15 +1198,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file cor_asp
     Info (12022): Found design unit 1: COR_ASP_TopLevel_tb-tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 8
     Info (12023): Found entity 1: COR_ASP_TopLevel_tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file corasp_wave_test.vhd
-    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 21
+    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 22
     Info (12023): Found entity 1: CORASP_Wave_Test File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file testcor.vhd
     Info (12022): Found design unit 1: testCor-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 17
     Info (12023): Found entity 1: testCor File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 8
 Info (12127): Elaborating entity "CORASP_Wave_Test" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "send_port[0]" at CORASP_Wave_Test.vhd(23) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 23
-Warning (10873): Using initial value X (don't care) for net "send_port[3..7]" at CORASP_Wave_Test.vhd(23) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 23
-Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 28
+Warning (10873): Using initial value X (don't care) for net "send_port[0]" at CORASP_Wave_Test.vhd(24) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 24
+Warning (10873): Using initial value X (don't care) for net "send_port[3..7]" at CORASP_Wave_Test.vhd(24) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 24
+Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 29
 Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 29
 Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 38
 Warning (10445): VHDL Subtype or Type Declaration warning at TdmaMinFabric.vhd(29): subtype or type has null range File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 29
@@ -1258,22 +1258,22 @@ Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "CORASP" for hierarchy "CORASP:cor_asp" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 38
-Info (12128): Elaborating entity "testCor" for hierarchy "testCor:test_cor" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 48
+Info (12128): Elaborating entity "CORASP" for hierarchy "CORASP:cor_asp" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 39
+Info (12128): Elaborating entity "testCor" for hierarchy "testCor:test_cor" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 49
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1325 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
+Info (21057): Implemented 1336 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 914 logic cells
+    Info (21061): Implemented 924 logic cells
     Info (21064): Implemented 320 RAM segments
     Info (21062): Implemented 9 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4922 megabytes
-    Info: Processing ended: Wed May 22 00:27:49 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4924 megabytes
+    Info: Processing ended: Thu May 23 19:10:24 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:24
 
 

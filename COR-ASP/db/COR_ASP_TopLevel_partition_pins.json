@@ -272,6 +272,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "flag",
+					"strict" : false
+				},
+				{
 					"name" : "avgVal[1]",
 					"strict" : false
 				},

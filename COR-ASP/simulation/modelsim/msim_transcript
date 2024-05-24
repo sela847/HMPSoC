@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity TdmaMinFifo
 # -- Compiling architecture SYN of tdmaminfifo
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -32,11 +32,11 @@
 # -- Compiling package TdmaMinTypes
 # -- Compiling package body TdmaMinTypes
 # -- Loading package TdmaMinTypes
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -44,11 +44,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TdmaMinSlots
 # -- Compiling architecture rtl of TdmaMinSlots
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -57,11 +57,11 @@
 # -- Loading package TdmaMinTypes
 # -- Compiling entity TdmaMinSwitch
 # -- Compiling architecture rtl of TdmaMinSwitch
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -71,11 +71,11 @@
 # -- Compiling entity TdmaMinInterface
 # -- Compiling architecture rtl of TdmaMinInterface
 # -- Loading entity TdmaMinFifo
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -84,11 +84,24 @@
 # -- Loading package TdmaMinTypes
 # -- Compiling entity CORASP
 # -- Compiling architecture rtl of CORASP
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:31:50 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity testCor
+# -- Compiling architecture rtl of testCor
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -98,11 +111,11 @@
 # -- Compiling entity TdmaMinStage
 # -- Compiling architecture rtl of TdmaMinStage
 # -- Loading entity TdmaMinSwitch
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:50 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:50 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -112,11 +125,11 @@
 # -- Compiling entity TdmaMinFabric
 # -- Compiling architecture rtl of TdmaMinFabric
 # -- Loading entity TdmaMinStage
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:51 on May 24,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
+# Start time: 12:31:51 on May 24,2024
 # vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -128,12 +141,266 @@
 # -- Loading entity TdmaMinSlots
 # -- Loading entity TdmaMinFabric
 # -- Loading entity TdmaMinInterface
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:31:51 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd}
+# vcom -93 -work work {C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:35 on May 21,2024
-# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# Start time: 12:31:51 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP_Wave_Test
+# -- Compiling architecture sim of CORASP_Wave_Test
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 12:31:51 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:32:21 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 12:32:21 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.corasp_wave_test
+# vsim work.corasp_wave_test 
+# Start time: 12:32:32 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.corasp_wave_test(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/corasp_wave_test/ports \
+sim:/corasp_wave_test/clock \
+sim:/corasp_wave_test/avgVal \
+sim:/corasp_wave_test/calc \
+sim:/corasp_wave_test/flag \
+sim:/corasp_wave_test/recvOut
+run 1us
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:23 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 12:33:24 on May 24,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:26 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP_Wave_Test
+# -- Compiling architecture sim of CORASP_Wave_Test
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 12:33:26 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:30 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMin
+# -- Compiling architecture rtl of TdmaMin
+# -- Loading entity TdmaMinSlots
+# -- Loading entity TdmaMinFabric
+# -- Loading entity TdmaMinInterface
+# End time: 12:33:30 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:32 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinFabric
+# -- Compiling architecture rtl of TdmaMinFabric
+# -- Loading entity TdmaMinStage
+# End time: 12:33:32 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:34 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TdmaMinFifo
+# -- Compiling architecture SYN of tdmaminfifo
+# End time: 12:33:34 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:35 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinInterface
+# -- Compiling architecture rtl of TdmaMinInterface
+# -- Loading entity TdmaMinFifo
+# End time: 12:33:35 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:37 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TdmaMinSlots
+# -- Compiling architecture rtl of TdmaMinSlots
+# End time: 12:33:38 on May 24,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:40 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinStage
+# -- Compiling architecture rtl of TdmaMinStage
+# -- Loading entity TdmaMinSwitch
+# End time: 12:33:40 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:41 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinSwitch
+# -- Compiling architecture rtl of TdmaMinSwitch
+# End time: 12:33:41 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:43 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package TdmaMinTypes
+# -- Compiling package body TdmaMinTypes
+# -- Loading package TdmaMinTypes
+# End time: 12:33:43 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:45 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity testCor
+# -- Compiling architecture rtl of testCor
+# End time: 12:33:45 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:33:55 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# ** Error: (vcom-11) Could not find work.cor_asp_toplevel.
+# ** Error (suppressible): C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(56): (vcom-1195) Cannot find expanded name "work.COR_ASP_TopLevel".
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(56): Unknown expanded name.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(90): VHDL Compiler exiting
+# End time: 12:33:55 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:34:11 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 12:34:11 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:34:13 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# ** Error: (vcom-11) Could not find work.cor_asp_toplevel.
+# ** Error (suppressible): C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(56): (vcom-1195) Cannot find expanded name "work.COR_ASP_TopLevel".
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(56): Unknown expanded name.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd(90): VHDL Compiler exiting
+# End time: 12:34:13 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:34:16 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -143,12 +410,12 @@
 # -- Compiling architecture sim of COR_ASP_TopLevel
 # -- Loading entity TdmaMin
 # -- Loading entity CORASP
-# End time: 23:22:35 on May 21,2024, Elapsed time: 0:00:00
+# -- Loading entity testCor
+# End time: 12:34:16 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
 vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:22:47 on May 21,2024
+# Start time: 12:34:18 on May 24,2024
 # vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -158,11 +425,13 @@ vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_
 # -- Compiling architecture tb of COR_ASP_TopLevel_tb
 # -- Loading package TdmaMinTypes
 # -- Loading entity COR_ASP_TopLevel
-# End time: 23:22:47 on May 21,2024, Elapsed time: 0:00:00
+# End time: 12:34:18 on May 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.cor_asp_toplevel_tb
+# End time: 12:34:27 on May 24,2024, Elapsed time: 0:01:55
+# Errors: 6, Warnings: 0
 # vsim work.cor_asp_toplevel_tb 
-# Start time: 23:22:52 on May 21,2024
+# Start time: 12:34:27 on May 24,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -176,9 +445,1096 @@ vsim work.cor_asp_toplevel_tb
 # Loading work.tdmaminstage(rtl)
 # Loading work.tdmaminswitch(rtl)
 # Loading work.tdmamininterface(rtl)
-# ** Fatal: (vsim-3382) New library format is incompatible with this version of the simulator.  Design unit 'C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/modelsim/ip.tdmaminfifo(syn)'
-#    Time: 0 ps  Iteration: 0  Instance: /cor_asp_toplevel_tb/uut/tdma_min/interfaces(0)/interface/fifo File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 53
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 23:22:53 on May 21,2024, Elapsed time: 0:00:01
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/avgVal \
+sim:/cor_asp_toplevel_tb/calc \
+sim:/cor_asp_toplevel_tb/sendCorr \
+sim:/cor_asp_toplevel_tb/flag
+run 4us
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/flag
+restart -f
+run 4us
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:46:34 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 12:46:34 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 12:46:39 on May 24,2024, Elapsed time: 0:12:12
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 12:46:39 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/avgVal \
+sim:/cor_asp_toplevel_tb/calc \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/correlation
+run 5us
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/correlation
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:13:17 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 13:13:17 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:13:21 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP_Wave_Test
+# -- Compiling architecture sim of CORASP_Wave_Test
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 13:13:21 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.corasp_wave_test
+# End time: 13:13:25 on May 24,2024, Elapsed time: 0:26:46
+# Errors: 0, Warnings: 0
+# vsim work.corasp_wave_test 
+# Start time: 13:13:25 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.corasp_wave_test(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+vsim work.cor_asp_toplevel_tb
+# End time: 13:14:12 on May 24,2024, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 13:14:12 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/avgVal \
+sim:/cor_asp_toplevel_tb/calc \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/flag
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+run 5us
+# ** Fatal: (vsim-3734) Index value 20 is out of range 19 downto 0.
+#    Time: 470 ns  Iteration: 1  Process: /cor_asp_toplevel_tb/uut/cor_asp/line__36 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Fatal error in ForLoop loop at C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd line 67
+# 
+# HDL call sequence:
+# Stopped at C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 67 ForLoop loop
+# 
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:16:27 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 13:16:27 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:16:30 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 13:16:30 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:16:33 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 13:16:33 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 13:16:37 on May 24,2024, Elapsed time: 0:02:25
+# Errors: 2, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 13:16:37 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/avgVal \
+sim:/cor_asp_toplevel_tb/calc \
+sim:/cor_asp_toplevel_tb/sendCorr \
+sim:/cor_asp_toplevel_tb/flag
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/flag
+run 5us
+restart -f
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/recv
+run 5us
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:25:11 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(58): Target type ieee.std_logic_1164.STD_LOGIC_VECTOR in signal assignment is different from expression type ieee.NUMERIC_STD.SIGNED.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(61): Target type ieee.std_logic_1164.STD_LOGIC_VECTOR in signal assignment is different from expression type ieee.NUMERIC_STD.SIGNED.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(74): (vcom-1136) Unknown identifier "dowto".
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(74): near "0": (vcom-1576) expecting ')'.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(81): VHDL Compiler exiting
+# End time: 14:25:11 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:26:13 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(74): Prefix of slice name cannot be type conversion (STD_LOGIC_VECTOR) expression.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(81): VHDL Compiler exiting
+# End time: 14:26:13 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:26:46 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 14:26:46 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:32:08 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 14:32:08 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:32:10 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 14:32:10 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.testcor
+# End time: 14:32:48 on May 24,2024, Elapsed time: 1:16:11
+# Errors: 9, Warnings: 0
+# vsim work.testcor 
+# Start time: 14:32:48 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.testcor(rtl)
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:45 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity testCor
+# -- Compiling architecture rtl of testCor
+# End time: 14:38:45 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:50 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 14:38:50 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:52 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 14:38:52 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:54 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 14:38:54 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 14:39:00 on May 24,2024, Elapsed time: 0:06:12
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 14:39:00 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+# ** Warning: (vsim-8684) No drivers exist on out port /cor_asp_toplevel_tb/uut/cor_asp/send.data(31), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /cor_asp_toplevel_tb/uut/send_port(2).data(31).
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/flag
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+run 5us
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/recv
+restart -f
+# ** Warning: (vsim-8684) No drivers exist on out port /cor_asp_toplevel_tb/uut/cor_asp/send.data(31), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /cor_asp_toplevel_tb/uut/send_port(2).data(31).
+run 5us
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:41:57 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 14:41:57 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 14:42:02 on May 24,2024, Elapsed time: 0:03:02
+# Errors: 0, Warnings: 2
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 14:42:02 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+# ** Warning: (vsim-8684) No drivers exist on out port /cor_asp_toplevel_tb/uut/cor_asp/send.data(31), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /cor_asp_toplevel_tb/uut/send_port(2).data(31).
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:05 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(74): near "'": syntax error
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(81): VHDL Compiler exiting
+# End time: 14:43:05 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:15 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 14:43:15 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:18 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 14:43:18 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:20 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 14:43:20 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 14:43:24 on May 24,2024, Elapsed time: 0:01:22
+# Errors: 3, Warnings: 1
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 14:43:24 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/recv
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+run 5us
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+restart -f
+run 5us
+run 1 ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:24:43 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(50): near "0": syntax error
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd(82): VHDL Compiler exiting
+# End time: 15:24:43 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:24:54 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 15:24:54 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:24:56 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 15:24:57 on May 24,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:02 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity testCor
+# -- Compiling architecture rtl of testCor
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd(28): near "else": (vcom-1576) expecting ';'.
+# ** Error: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd(36): VHDL Compiler exiting
+# End time: 15:25:02 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+vcom -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:26 on May 24,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity testCor
+# -- Compiling architecture rtl of testCor
+# End time: 15:25:26 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:29 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity COR_ASP_TopLevel
+# -- Compiling architecture sim of COR_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity CORASP
+# -- Loading entity testCor
+# End time: 15:25:29 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:31 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 15:25:31 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 15:25:35 on May 24,2024, Elapsed time: 0:42:11
+# Errors: 6, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 15:25:35 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/flag
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send.addr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send.data
+run 1ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:47:27 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 15:47:27 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:47:37 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 15:47:37 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 15:47:42 on May 24,2024, Elapsed time: 0:22:07
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 15:47:42 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+run 1ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:51:01 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 15:51:01 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:51:04 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 15:51:04 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 15:51:08 on May 24,2024, Elapsed time: 0:03:26
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 15:51:08 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+vsim work.cor_asp_toplevel_tb
+# End time: 15:51:30 on May 24,2024, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 15:51:30 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+run 1ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:44 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 15:59:44 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:46 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 15:59:46 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 15:59:50 on May 24,2024, Elapsed time: 0:08:20
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 15:59:50 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/sendCorr
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send.data
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/correlation
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+run 1ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:03:17 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 16:03:17 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:03:21 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 16:03:21 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:03:23 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 16:03:23 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 16:03:28 on May 24,2024, Elapsed time: 0:03:38
+# Errors: 0, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 16:03:28 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send.data
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv.data
+run 1ms
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:06:23 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity COR_ASP_TopLevel_tb
+# -- Compiling architecture tb of COR_ASP_TopLevel_tb
+# -- Loading package TdmaMinTypes
+# -- Loading entity COR_ASP_TopLevel
+# End time: 16:06:23 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:06:26 on May 24,2024
+# vcom -reportprogress 300 -work work C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity CORASP
+# -- Compiling architecture rtl of CORASP
+# End time: 16:06:26 on May 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.cor_asp_toplevel_tb
+# End time: 16:06:30 on May 24,2024, Elapsed time: 0:03:02
 # Errors: 1, Warnings: 0
+# vsim work.cor_asp_toplevel_tb 
+# Start time: 16:06:30 on May 24,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.cor_asp_toplevel_tb(tb)
+# Loading work.cor_asp_toplevel(sim)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.corasp(rtl)
+# Loading work.testcor(rtl)
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/clock
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/avgBuffer
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/cor_asp/send.data
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv \
+sim:/cor_asp_toplevel_tb/uut/test_cor/avgVal
+add wave -position insertpoint  \
+sim:/cor_asp_toplevel_tb/uut/test_cor/recv.data
+run 1ms
+# End time: 16:13:25 on May 24,2024, Elapsed time: 0:06:55
+# Errors: 0, Warnings: 0

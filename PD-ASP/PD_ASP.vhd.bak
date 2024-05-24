@@ -1,0 +1,132 @@
+library ieee;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+library work;
+use work.TdmaMinTypes.all;
+
+entity PD_ASP is
+	port (
+		clk 							: in std_logic;
+		store_sec 					: in std_logic; --control unit signal to indicate the coming correlation is the 2nd one. 
+		recv 							: in tdma_min_port; --Correlation values
+		correlation_rdy 			: in std_logic;
+		correlation_count_read 	: in std_logic;
+		correlation 				: in std_logic_vector(32 downto 0);
+		store_first 				: out std_logic; --send to control unit to indicate one correlation has been passed into here
+		send 							: out tdma_min_port; --Data is 32 bits, addr is 8 bits. Also used to send out the correlation count. 
+		interrupt 					: out std_logic,
+		state_is						: out std_logic; --0 for rising, 1 for falling
+		
+		
+	);
+end PD_ASP;
+
+architecture PD_RTL of PD_ASP is
+	type STATE is (start,rising, falling, finish);
+	signal current_state : STATE;
+	signal next_state 	: STATE := start
+	correlation_count 	: std_logic_vector(31 downto 0);
+	signal corre_first 	: std_logic_vector(31 downto 0); --Temp buffer for the 1st correlation value
+begin
+
+	UPDATE_STATE: process(clk) 
+	begin
+		if rising_edge(clk) then
+			if recv.data(31) = '0' then
+				current_state <= start; --Keep in start state until valid config packets is received
+			
+			elsif recv.data(31 downto 28) = "1001" then
+				send.addr <= x"0" & recv.data(23 downto 20); --direct where the data should go
+			elsif store_sec = '0' then
+				corre_first <= correlation; --Store the first correlation to a buffer
+				store_first <= '1';
+			else 
+				store_first <= '0';
+				current_state <= next_state;
+			end if;
+		end if;
+	end process UPDATE_STATE;
+	
+	PD: process(current_state, store_sec)
+		variable counter : std_logic_vector(31 downto 0);
+		variable state_count : std_logic_vector(1 downto 0); --2 bits for 4 options. 
+	begin
+		case current_state is 
+			when start =>
+				--Assumption: Theres almost no chance both 1st and 2nd correlation is exactly same
+				if correlation > corre_first then
+					state_count := state_count + 1;
+					counter <= counter + 1;
+					store_first <= '1';			 -- Ensures that the current correlation value is kept during next cycle
+					corre_first <= correlation; --The current correlation becomes previvous correlation
+					next_state <= rising;
+				elsif correlation < corre_first then
+					state_count := state_count + 1;
+					counter <= counter + 1;
+					store_first <= '1';
+					corre_first <= correlation;
+					next_state <= falling;
+				end if;
+			when rising =>
+				if state_count = "11" then--1 peak detected, if started with rising. 
+					state_count :=  0;
+					next_state <= finish;
+				else
+					if correlation >= corre_first then
+						counter <= counter + 1;
+						store_first <= '1';
+						corre_first <= correlation;
+					elsif correlation < corre_first then
+						counter <= counter + 1;
+						store_first <= '1';
+						corre_first <= correlation;
+						next_state <= falling;
+					end if;
+				end if;
+			when falling => 
+				if state_count = "11"' then --1 peak has been detected, if started with falling 
+					state_count := 0;
+					next_state <= finish;
+				else
+					if correlation <= corre_first then
+						counter <= counter + 1;
+						store_first <= '1';
+						corre_first <= correlation;
+					elsif correlation > corre_first then
+						state_count := state_count + 1;
+						counter <= counter + 1;
+						corre_first <= correlation;
+						next_state <= rising;
+					end if;
+					
+				end if;
+			when finish =>
+				interrupt <= '1'; --Raises the interrupt (apparently used i think in nios or ReCOP
+				if correlation_count_read = '1' then --Set by control signal im guessing, which then allow the NIOS to access the correlation values
+					send.addr <=  x"00" --This NEEDS to be changed to whatever our NIOS port is gonna be
+					correlation <= counter; --Returns the count of reaching a peak. 
+					state_count := 0; --Reset the peak detection
+					next_state <= start --Go back to start after count is read. 
+				end if;
+				--Also need to add the functionality for when the correlation_count_read is set (where it will return the current count 
+		end case;
+	end process PD;	
+					
+				
+	
+					
+				
+			
+	
+	
+					
+						
+						
+						
+						
+				
+	 
+				
+					
+		

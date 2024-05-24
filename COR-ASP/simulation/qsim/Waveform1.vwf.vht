@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/22/2024 00:29:38"
+-- Generated on "05/23/2024 19:12:17"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          CORASP_Wave_Test
 -- 
@@ -36,6 +36,7 @@ ARCHITECTURE CORASP_Wave_Test_arch OF CORASP_Wave_Test_vhd_vec_tst IS
 SIGNAL avgVal : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL calc : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
+SIGNAL flag : STD_LOGIC;
 SIGNAL recvOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL sendCorr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT CORASP_Wave_Test
@@ -43,6 +44,7 @@ COMPONENT CORASP_Wave_Test
 	avgVal : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	calc : IN STD_LOGIC;
 	clock : IN STD_LOGIC;
+	flag : IN STD_LOGIC;
 	recvOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	sendCorr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
@@ -54,6 +56,7 @@ BEGIN
 	avgVal => avgVal,
 	calc => calc,
 	clock => clock,
+	flag => flag,
 	recvOut => recvOut,
 	sendCorr => sendCorr
 	);
@@ -1026,4 +1029,13 @@ BEGIN
 	avgVal(0) <= '0';
 WAIT;
 END PROCESS t_prcs_avgVal_0;
+
+-- flag
+t_prcs_flag: PROCESS
+BEGIN
+	flag <= '0';
+	WAIT FOR 980000 ps;
+	flag <= '1';
+WAIT;
+END PROCESS t_prcs_flag;
 END CORASP_Wave_Test_arch;
