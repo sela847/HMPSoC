@@ -1,5 +1,5 @@
 Flow report for AveragingFilter
-Thu May 23 21:40:33 2024
+Fri May 24 17:31:11 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu May 23 21:40:33 2024       ;
+; Flow Status                     ; Successful - Fri May 24 17:31:11 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; AveragingFilter                             ;
-; Top-level Entity Name           ; AVGASP_Wave_Test                            ;
+; Top-level Entity Name           ; TopLevel                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 269                                         ;
-; Total pins                      ; 39                                          ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 78                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 26,624                                      ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,31 +67,31 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/23/2024 21:40:21 ;
+; Start date & time ; 05/24/2024 17:31:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AveragingFilter     ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                   ;
-+-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name      ; Section Id     ;
-+-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 268582418701205.171645722109596        ; --              ; --               ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --              ; --               ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                        ; <None>          ; --               ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --               ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --               ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --               ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; AVGASP_Wave_Test ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; AVGASP_Wave_Test ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; AVGASP_Wave_Test ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --              ; --               ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --               ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --               ; --             ;
-; TOP_LEVEL_ENTITY                    ; AVGASP_Wave_Test                       ; AveragingFilter ; --               ; --             ;
-+-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                              ;
++-------------------------------------+----------------------------------------+-----------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+-----------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 268582418701205.171652866233536        ; --              ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --              ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                        ; <None>          ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; TopLevel    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; TopLevel    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; TopLevel    ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --              ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; TopLevel                               ; AveragingFilter ; --          ; --             ;
++-------------------------------------+----------------------------------------+-----------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -99,8 +99,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4891 MB             ; 00:00:06                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4881 MB             ; 00:00:07                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:07                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

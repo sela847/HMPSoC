@@ -7,28 +7,22 @@ use work.TdmaMinTypes.all;
 
 entity AVGASP_Wave_Test is
     generic (
-        ports : positive := 9
-    );
-    port (
-		  adc_data    : in  STD_LOGIC_VECTOR(15 downto 0);
-        adc_data_rdy: in  STD_LOGIC;
-        clk         : in  STD_LOGIC;
-        reset       : in  STD_LOGIC;
-        L_sel       : in  STD_LOGIC;  -- '0' for L=4 and '1' for L=8
-        avg_result  : out STD_LOGIC_VECTOR(15 downto 0);
-        avg_rdy     : out STD_LOGIC;
-        recv     	  : in  tdma_min_port;    -- Config mode from tdamin, possibly from Avg-Asp, still have to sus out
-		  enable_out  : out STD_LOGIC
+        ports : positive := 8
     );
 end entity;
 
 architecture sim of AVGASP_Wave_Test is
-
+    signal clock: STD_LOGIC:='1';
     signal send_port : tdma_min_ports(0 to ports-1);
     signal recv_port : tdma_min_ports(0 to ports-1);
+    signal flag: STD_LOGIC:='0';
 
 begin
 
+    clock<= not clock after 10 ns;
+    flag<= '1' after 50 ns;
+	 
+	 
     tdma_min: entity work.TdmaMin
         generic map (
             ports => ports
@@ -39,23 +33,31 @@ begin
             recvs => recv_port
         );
 
-    cor_asp: entity work.AverageCalculator
-        port map(	
-				adc_data => adc_data,
-            clock    => clk,
-            send     => send_port(2),
-            recv     => recv_port(2),
-            avgVal   => avgVal,
-            calc     => calc,
-            sendCorr => sendCorr
+    avgCalc_ASP: entity work.AverageCalculator
+        port map(
+             clk    => clock,
+				 reset  => '0',
+		  
+				 recv   => recv_port(2),  	  
+		       send	  => send_port(2)
         );
-          
-     test_cor: entity work.testCor
-            port map(
-                clock => clock,
-                send => send_port(1),
-                recv => recv_port(1)
-            );
-            
-    recvOut <= recv_port(2).data;
+
+--     test_Config: entity work.TestConfig
+--        port map(
+--			  clock => clock,
+--			  send  => send_port(1),
+--			  recv  => recv_port(1),
+--			  flag => flag
+--        );
+		  
+      test_ADC: entity work.TestAdc
+	generic map(
+		forward => 2
+		)
+        port map(
+			  clock => clock,
+			  send  => send_port(0),
+			  recv  => recv_port(0)
+        );
+	 
 end architecture;

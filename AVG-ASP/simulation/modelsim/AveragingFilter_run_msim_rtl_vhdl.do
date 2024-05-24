@@ -50,9 +50,8 @@ vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMinSlo
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMinSwitch.vhd}
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMinInterface.vhd}
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/AverageCalculator.vhd}
-vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/sendAVG.vhd}
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMinStage.vhd}
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMinFabric.vhd}
 vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TdmaMin/TdmaMin.vhd}
-vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/AVGASP_Wave_Test.vhd}
+vcom -93 -work work {C:/COMPSYS701/ASSIGNMENTS/HMPSoC/AVG-ASP/TopLevel.vhd}
 
