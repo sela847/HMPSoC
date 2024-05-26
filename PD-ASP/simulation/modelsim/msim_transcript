@@ -1,0 +1,295 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do PD_ASP_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlib ip
+# ** Warning: (vlib-34) Library already exists at "ip".
+# vmap ip ip
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap ip ip 
+# Modifying modelsim.ini
+# vcom -93 -work ip {C:/Users/brian/Documents/HMPSoC/PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work ip C:/Users/brian/Documents/HMPSoC/PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TdmaMinFifo
+# -- Compiling architecture SYN of tdmaminfifo
+# End time: 03:07:11 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinTypes.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinTypes.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package TdmaMinTypes
+# -- Compiling package body TdmaMinTypes
+# -- Loading package TdmaMinTypes
+# End time: 03:07:11 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinSlots.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinSlots.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TdmaMinSlots
+# -- Compiling architecture rtl of TdmaMinSlots
+# End time: 03:07:11 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinSwitch.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinSwitch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinSwitch
+# -- Compiling architecture rtl of TdmaMinSwitch
+# End time: 03:07:11 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinInterface.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinInterface.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinInterface
+# -- Compiling architecture rtl of TdmaMinInterface
+# -- Loading entity TdmaMinFifo
+# End time: 03:07:11 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:11 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PD_ASP
+# -- Compiling architecture PD_RTL of PD_ASP
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity in_PD
+# -- Compiling architecture behaviour of in_PD
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity nios_to_PD
+# -- Compiling architecture behaviour of nios_to_PD
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinStage.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinStage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinStage
+# -- Compiling architecture rtl of TdmaMinStage
+# -- Loading entity TdmaMinSwitch
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinFabric.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinFabric.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinFabric
+# -- Compiling architecture rtl of TdmaMinFabric
+# -- Loading entity TdmaMinStage
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMin
+# -- Compiling architecture rtl of TdmaMin
+# -- Loading entity TdmaMinSlots
+# -- Loading entity TdmaMinFabric
+# -- Loading entity TdmaMinInterface
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:12 on May 27,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PD_ASP_TopLevel
+# -- Compiling architecture rtl of PD_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity PD_ASP
+# -- Loading entity in_PD
+# -- Loading entity nios_to_PD
+# End time: 03:07:12 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:37 on May 27,2024
+# vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity in_PD
+# -- Compiling architecture behaviour of in_PD
+# End time: 03:07:37 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:38 on May 27,2024
+# vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity nios_to_PD
+# -- Compiling architecture behaviour of nios_to_PD
+# End time: 03:07:38 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:39 on May 27,2024
+# vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PD_ASP
+# -- Compiling architecture PD_RTL of PD_ASP
+# End time: 03:07:39 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:40 on May 27,2024
+# vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PD_ASP_TopLevel
+# -- Compiling architecture rtl of PD_ASP_TopLevel
+# -- Loading entity TdmaMin
+# -- Loading entity PD_ASP
+# -- Loading entity in_PD
+# -- Loading entity nios_to_PD
+# End time: 03:07:40 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 03:07:41 on May 27,2024
+# vcom -reportprogress 300 -work work C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PD_ASP_TopLevel_tb
+# -- Compiling architecture tb of PD_ASP_TopLevel_tb
+# -- Loading entity PD_ASP_TopLevel
+# End time: 03:07:41 on May 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.pd_asp_toplevel_tb
+# vsim -gui -l msim_transcript work.pd_asp_toplevel_tb 
+# Start time: 03:07:58 on May 27,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.pd_asp_toplevel_tb(tb)
+# Loading work.pd_asp_toplevel(rtl)
+# Loading work.tdmamin(rtl)
+# Loading work.tdmaminslots(rtl)
+# Loading work.tdmaminfabric(rtl)
+# Loading work.tdmaminstage(rtl)
+# Loading work.tdmaminswitch(rtl)
+# Loading work.tdmamininterface(rtl)
+# Loading ip.tdmaminfifo(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.scfifo(behavior)
+# Loading work.pd_asp(pd_rtl)
+# Loading work.in_pd(behaviour)
+# Loading work.nios_to_pd(behaviour)
+add wave -position insertpoint  \
+sim:/pd_asp_toplevel_tb/in_PD/in_PD/send
+add wave -position insertpoint  \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/recv
+add wave -position insertpoint  \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/clk \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/send \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/counter \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/enable \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/switch \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/corre_curr \
+sim:/pd_asp_toplevel_tb/in_PD/PD_ASP/corre_prev
+run 46330169ps
+run 1ms
+# Break in Process line__31 at C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd line 51
+run 1ms
+run 1ms
+# End time: 03:44:39 on May 27,2024, Elapsed time: 0:36:41
+# Errors: 0, Warnings: 0

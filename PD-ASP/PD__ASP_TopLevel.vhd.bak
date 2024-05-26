@@ -1,0 +1,60 @@
+library ieee;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+library work;
+use work.TdmaMinTypes.all;
+
+entity PD_TopLevel is
+	generic (
+		ports : positive := 8
+	);
+	port (
+		clock 						: in std_logic;
+		correlation					: in std_logic_vector(31 downto 0);
+		correlation_count_read 	: in std_logic;	
+		state_is						: out std_logic;
+		enable_config				: in std_logic;	
+		
+	);
+end entity;
+
+architecture rtl of TopLevel is
+
+
+	signal send_port : tdma_min_ports(0 to ports-1);
+	signal recv_port : tdma_min_ports(0 to ports-1);
+	
+	
+begin
+
+	tdma_min : entity work.TdmaMin
+	generic map (
+		ports => ports
+	)
+	port map (
+		clock => clock,
+		sends => send_port,
+		recvs => recv_port
+	);
+
+	PD_ASP: entity work.PD_ASP
+		port map(
+			clk 	=> clock,
+			recv 	=> 
+			correlation_count_read => correlation_count_read
+			send 	=> send_port(2),
+			state_is => state_is,
+			recv => recv_port(2)			
+		);
+	
+	in_PD: entity work.in_PD
+		port map(
+			clk => clock,
+			enable_config => enable_config,
+			send => send_port(1),
+			recv => recv_port(1)
+		);
+	
+
+end architecture;

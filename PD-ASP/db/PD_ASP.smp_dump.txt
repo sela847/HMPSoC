@@ -1,0 +1,6 @@
+
+State Machine - |PD_ASP_TopLevel|PD_ASP:PD_ASP|current_state
+Name current_state.falling current_state.rising current_state.start 
+current_state.start 0 0 0 
+current_state.rising 0 1 1 
+current_state.falling 1 0 1 
