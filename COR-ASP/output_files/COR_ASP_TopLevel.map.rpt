@@ -1,5 +1,5 @@
 Analysis & Synthesis report for COR_ASP_TopLevel
-Thu May 23 19:10:24 2024
+Tue May 28 21:51:51 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,57 +13,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis DSP Block Usage Summary
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 16. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 17. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 18. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 19. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 20. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 21. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 22. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
- 23. Parameter Settings for User Entity Instance: Top-level Entity: |CORASP_Wave_Test
- 24. Parameter Settings for User Entity Instance: TdmaMin:tdma_min
- 25. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinSlots:slots
- 26. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric
- 27. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage
- 28. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage
- 29. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage
- 30. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface
- 31. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 32. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface
- 33. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 34. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface
- 35. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 36. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface
- 37. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 38. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface
- 39. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 40. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface
- 41. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 42. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface
- 43. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 44. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface
- 45. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
- 46. scfifo Parameter Settings by Entity Instance
- 47. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo"
- 48. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo"
- 49. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo"
- 50. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo"
- 51. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo"
- 52. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo"
- 53. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo"
- 54. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo"
- 55. Port Connectivity Checks: "TdmaMin:tdma_min"
- 56. Post-Synthesis Netlist Statistics for Top Partition
- 57. Elapsed Time Per Partition
- 58. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -89,16 +46,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 23 19:10:24 2024       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 28 21:51:51 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; COR_ASP_TopLevel                            ;
-; Top-level Entity Name           ; CORASP_Wave_Test                            ;
+; Top-level Entity Name           ; CORASP                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 676                                         ;
-; Total pins                      ; 83                                          ;
+; Total registers                 ; 451                                         ;
+; Total pins                      ; 130                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 81,920                                      ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 9                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -115,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; CORASP_Wave_Test   ; COR_ASP_TopLevel   ;
+; Top-level entity name                                                           ; CORASP             ; COR_ASP_TopLevel   ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -217,37 +174,14 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; ip/TdmaMinFifo/TdmaMinFifo.vhd   ; yes             ; User Wizard-Generated File   ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd ;         ;
-; TdmaMin/TdmaMinTypes.vhd         ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd       ;         ;
-; TdmaMin/TdmaMinSwitch.vhd        ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd      ;         ;
-; TdmaMin/TdmaMinStage.vhd         ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd       ;         ;
-; TdmaMin/TdmaMinSlots.vhd         ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd       ;         ;
-; TdmaMin/TdmaMinInterface.vhd     ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd   ;         ;
-; TdmaMin/TdmaMinFabric.vhd        ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd      ;         ;
-; TdmaMin/TdmaMin.vhd              ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd            ;         ;
-; CORASP.vhd                       ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd                     ;         ;
-; CORASP_Wave_Test.vhd             ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd           ;         ;
-; testCor.vhd                      ; yes             ; User VHDL File               ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd                    ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf      ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_regfifo.inc   ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_dpfifo.inc    ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_i2fifo.inc    ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_fffifo.inc    ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_f2fifo.inc    ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc  ;         ;
-; db/scfifo_l191.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/scfifo_l191.tdf             ;         ;
-; db/a_dpfifo_s791.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf           ;         ;
-; db/altsyncram_r3i1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/altsyncram_r3i1.tdf         ;         ;
-; db/cmpr_7l8.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cmpr_7l8.tdf                ;         ;
-; db/cntr_i2b.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_i2b.tdf                ;         ;
-; db/cntr_v27.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_v27.tdf                ;         ;
-; db/cntr_j2b.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_j2b.tdf                ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; TdmaMin/TdmaMinTypes.vhd         ; yes             ; User VHDL File  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd ;         ;
+; CORASP.vhd                       ; yes             ; User VHDL File  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd               ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -255,133 +189,36 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 402         ;
+; Estimate of Logic utilization (ALMs needed) ; 243         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 455         ;
-;     -- 7 input functions                    ; 2           ;
-;     -- 6 input functions                    ; 97          ;
-;     -- 5 input functions                    ; 77          ;
-;     -- 4 input functions                    ; 46          ;
-;     -- <=3 input functions                  ; 233         ;
+; Combinational ALUT usage for logic          ; 118         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 1           ;
+;     -- 5 input functions                    ; 22          ;
+;     -- 4 input functions                    ; 53          ;
+;     -- <=3 input functions                  ; 42          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 676         ;
+; Dedicated logic registers                   ; 451         ;
 ;                                             ;             ;
-; I/O pins                                    ; 83          ;
-; Total MLAB memory bits                      ; 0           ;
-; Total block memory bits                     ; 81920       ;
+; I/O pins                                    ; 130         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 9           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 996         ;
-; Total fan-out                               ; 8327        ;
-; Average fan-out                             ; 5.12        ;
+; Maximum fan-out                             ; 451         ;
+; Total fan-out                               ; 2629        ;
+; Average fan-out                             ; 3.14        ;
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                          ;
-+--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                            ; Entity Name      ; Library Name ;
-+--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |CORASP_Wave_Test                                ; 455 (1)             ; 676 (0)                   ; 81920             ; 9          ; 83   ; 0            ; |CORASP_Wave_Test                                                                                                                                                                              ; CORASP_Wave_Test ; work         ;
-;    |CORASP:cor_asp|                              ; 76 (76)             ; 403 (403)                 ; 0                 ; 9          ; 0    ; 0            ; |CORASP_Wave_Test|CORASP:cor_asp                                                                                                                                                               ; CORASP           ; work         ;
-;    |TdmaMin:tdma_min|                            ; 377 (0)             ; 271 (0)                   ; 81920             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min                                                                                                                                                             ; TdmaMin          ; work         ;
-;       |TdmaMinFabric:fabric|                     ; 96 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinFabric:fabric                                                                                                                                        ; TdmaMinFabric    ; work         ;
-;          |TdmaMinStage:\staging:0:stage|         ; 96 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage                                                                                                          ; TdmaMinStage     ; work         ;
-;             |TdmaMinSwitch:\switches:1:switch|   ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage|TdmaMinSwitch:\switches:1:switch                                                                         ; TdmaMinSwitch    ; work         ;
-;       |TdmaMinInterface:\interfaces:0:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:1:interface| ; 45 (3)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 42 (19)             ; 37 (14)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_j2b:wr_ptr|           ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr           ; cntr_j2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:2:interface| ; 47 (5)              ; 69 (32)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 42 (0)              ; 37 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 42 (19)             ; 37 (14)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_j2b:wr_ptr|           ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr           ; cntr_j2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:3:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:4:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:5:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:6:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinInterface:\interfaces:7:interface| ; 31 (3)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface                                                                                                                    ; TdmaMinInterface ; work         ;
-;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; work         ;
-;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
-;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
-;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
-;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 10240             ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
-;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
-;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
-;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
-;       |TdmaMinSlots:slots|                       ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinSlots:slots                                                                                                                                          ; TdmaMinSlots     ; work         ;
-;    |testCor:test_cor|                            ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |CORASP_Wave_Test|testCor:test_cor                                                                                                                                                             ; testCor          ; work         ;
-+--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |CORASP                    ; 118 (118)           ; 451 (451)                 ; 0                 ; 9          ; 130  ; 0            ; |CORASP             ; CORASP      ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                           ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; Name                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 +----------------------------------------------+
@@ -397,49 +234,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                  ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                                            ; Reason for Removal                                                                                                                                                       ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; testCor:test_cor|send.data[30,31]                                                                                                                                                        ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.data[29]                                                                                                                                                           ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.data[28]                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
-; testCor:test_cor|send.data[1..16,18..27]                                                                                                                                                 ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
-; CORASP:cor_asp|send.data[31]                                                                                                                                                             ; Stuck at VCC due to stuck port data_in                                                                                                                                   ;
-; CORASP:cor_asp|send.data[17..30]                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
-; Total Number of Removed Registers = 105                                                                                                                                                  ;                                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                              ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                      ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; testCor:test_cor|send.data[30] ; Stuck at VCC              ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff ;
-;                                ; due to stuck port data_in ;                                                                                                                                                             ;
-; CORASP:cor_asp|send.data[30]   ; Stuck at GND              ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff ;
-;                                ; due to stuck port data_in ;                                                                                                                                                             ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; send.data[31]~reg0                    ; Stuck at VCC due to stuck port data_in ;
+; send.addr[4]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; send.addr[5]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; send.addr[6]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; send.addr[7]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; validCor                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -447,12 +254,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 676   ;
-; Number of registers using Synchronous Clear  ; 365   ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 451   ;
+; Number of registers using Synchronous Clear  ; 334   ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 557   ;
+; Number of registers using Clock Enable       ; 451   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -462,643 +269,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; CORASP:cor_asp|index[0]                ; 11      ;
-; CORASP:cor_asp|index[1]                ; 13      ;
-; CORASP:cor_asp|index[4]                ; 11      ;
+; index[1]                               ; 19      ;
+; index[0]                               ; 19      ;
+; index[4]                               ; 8       ;
 ; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[18][2]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[17][7]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[16][1]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[15][4]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[14][14]                                       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[13][2]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[12][0]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[11][5]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[10][15]                                       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[9][5]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[8][2]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[7][0]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[6][12]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[5][0]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[4][9]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[3][13]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[2][1]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[1][7]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP_Wave_Test|CORASP:cor_asp|avgBuffer[0][2]                                         ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 160 LEs              ; 160 LEs                ; Yes        ; |CORASP_Wave_Test|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|recv.data[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |CORASP_Wave_Test ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; ports          ; 8     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; ports          ; 8     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinSlots:slots ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                            ;
-; ports          ; 8     ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                    ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; terminals      ; 8     ; Signed Integer                                                                          ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                    ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; terminals      ; 8     ; Signed Integer                                                                          ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                    ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-; terminals      ; 8     ; Signed Integer                                                                          ;
-+----------------+-------+-----------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 0     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 1     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 2     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 3     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 4     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 5     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 6     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------+
-; stages         ; 3     ; Signed Integer                                                                ;
-; identity       ; 7     ; Signed Integer                                                                ;
-+----------------+-------+-------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; Parameter Name          ; Value       ; Type                                                                                                    ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
-; lpm_width               ; 40          ; Signed Integer                                                                                          ;
-; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
-; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
-; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
-; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
-; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
-; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
-; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
-+-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; scfifo Parameter Settings by Entity Instance                                                                                    ;
-+----------------------------+----------------------------------------------------------------------------------------------------+
-; Name                       ; Value                                                                                              ;
-+----------------------------+----------------------------------------------------------------------------------------------------+
-; Number of entity instances ; 8                                                                                                  ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                                                                                       ;
-;     -- lpm_width           ; 40                                                                                                 ;
-;     -- LPM_NUMWORDS        ; 256                                                                                                ;
-;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
-;     -- USE_EAB             ; ON                                                                                                 ;
-+----------------------------+----------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo"         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "TdmaMin:tdma_min"                                                                          ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; sends[3..7] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; sends[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; recvs[3..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; recvs[0]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 29 bits   ; 58 LEs        ; 0 LEs                ; 58 LEs                 ; Yes        ; |CORASP|index[16]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[0][0]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[1][14]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[2][15]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[3][7]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[4][2]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[5][1]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[6][0]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[7][0]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[8][14]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[9][0]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[10][15]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[11][1]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[12][8]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[13][6]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[14][0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[15][15]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[16][0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[17][15]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |CORASP|avgBuffer[18][0]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |CORASP|index[0]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -1106,31 +310,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 676                         ;
-;     ENA               ; 224                         ;
-;     ENA SCLR          ; 333                         ;
-;     SCLR              ; 32                          ;
-;     plain             ; 87                          ;
-; arriav_lcell_comb     ; 455                         ;
-;     arith             ; 168                         ;
-;         1 data inputs ; 154                         ;
-;         2 data inputs ; 14                          ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 285                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 50                          ;
-;         4 data inputs ; 46                          ;
-;         5 data inputs ; 77                          ;
-;         6 data inputs ; 97                          ;
+; arriav_ff             ; 451                         ;
+;     ENA               ; 116                         ;
+;     ENA SCLR          ; 334                         ;
+;     ENA SLD           ; 1                           ;
+; arriav_lcell_comb     ; 120                         ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     normal            ; 88                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 53                          ;
+;         5 data inputs ; 22                          ;
+;         6 data inputs ; 1                           ;
 ; arriav_mac            ; 9                           ;
-; boundary_port         ; 83                          ;
-; stratixv_ram_block    ; 320                         ;
+; boundary_port         ; 130                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.80                        ;
-; Average LUT depth     ; 1.36                        ;
+; Max LUT depth         ; 5.10                        ;
+; Average LUT depth     ; 0.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1139,7 +337,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1149,10 +347,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 23 19:10:10 2024
+    Info: Processing started: Tue May 28 21:51:40 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/shaar/downloads/hmpsoc/avg-asp/averagecalculator.vhd
+    Info (12022): Found design unit 1: AverageCalculator-Behavioral File: C:/Users/shaar/Downloads/HMPSoC/AVG-ASP/AverageCalculator.vhd Line: 18
+    Info (12023): Found entity 1: AverageCalculator File: C:/Users/shaar/Downloads/HMPSoC/AVG-ASP/AverageCalculator.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file ip/audiorom/audiorom.vhd
     Info (12022): Found design unit 1: audiorom-SYN File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 53
     Info (12023): Found entity 1: AudioRom File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 43
@@ -1192,88 +393,73 @@ Info (12021): Found 2 design units, including 1 entities, in source file corasp.
     Info (12022): Found design unit 1: CORASP-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 19
     Info (12023): Found entity 1: CORASP File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file cor_asp_toplevel.vhd
-    Info (12022): Found design unit 1: COR_ASP_TopLevel-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 20
+    Info (12022): Found design unit 1: COR_ASP_TopLevel-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 22
     Info (12023): Found entity 1: COR_ASP_TopLevel File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file cor_asp_toplevel_tb.vhd
     Info (12022): Found design unit 1: COR_ASP_TopLevel_tb-tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 8
     Info (12023): Found entity 1: COR_ASP_TopLevel_tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file corasp_wave_test.vhd
-    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 22
+    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 23
     Info (12023): Found entity 1: CORASP_Wave_Test File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file testcor.vhd
-    Info (12022): Found design unit 1: testCor-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 17
+    Info (12022): Found design unit 1: testCor-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 18
     Info (12023): Found entity 1: testCor File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 8
-Info (12127): Elaborating entity "CORASP_Wave_Test" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "send_port[0]" at CORASP_Wave_Test.vhd(24) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 24
-Warning (10873): Using initial value X (don't care) for net "send_port[3..7]" at CORASP_Wave_Test.vhd(24) File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 24
-Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 29
-Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 29
-Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 38
-Warning (10445): VHDL Subtype or Type Declaration warning at TdmaMinFabric.vhd(29): subtype or type has null range File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 29
-Warning (10296): VHDL warning at TdmaMinFabric.vhd(29): ignored assignment of value to null range File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 29
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "links" into its bus
-Info (12128): Elaborating entity "TdmaMinStage" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 34
-Info (12128): Elaborating entity "TdmaMinSwitch" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage|TdmaMinSwitch:\switches:0:switch" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd Line: 23
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinFifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 44
-Info (12128): Elaborating entity "scfifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
-Info (12130): Elaborated megafunction instantiation "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
-Info (12133): Instantiated megafunction "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
-    Info (12134): Parameter "add_ram_output_register" = "OFF"
-    Info (12134): Parameter "intended_device_family" = "Cyclone V"
-    Info (12134): Parameter "lpm_numwords" = "256"
-    Info (12134): Parameter "lpm_showahead" = "ON"
-    Info (12134): Parameter "lpm_type" = "scfifo"
-    Info (12134): Parameter "lpm_width" = "40"
-    Info (12134): Parameter "lpm_widthu" = "8"
-    Info (12134): Parameter "overflow_checking" = "ON"
-    Info (12134): Parameter "underflow_checking" = "ON"
-    Info (12134): Parameter "use_eab" = "ON"
-Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_l191.tdf
-    Info (12023): Found entity 1: scfifo_l191 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/scfifo_l191.tdf Line: 24
-Info (12128): Elaborating entity "scfifo_l191" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
-Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_s791.tdf
-    Info (12023): Found entity 1: a_dpfifo_s791 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 32
-Info (12128): Elaborating entity "a_dpfifo_s791" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/scfifo_l191.tdf Line: 35
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r3i1.tdf
-    Info (12023): Found entity 1: altsyncram_r3i1 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/altsyncram_r3i1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_r3i1" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 44
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7l8.tdf
-    Info (12023): Found entity 1: cmpr_7l8 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cmpr_7l8.tdf Line: 22
-Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:almost_full_comparer" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 53
-Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 54
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_i2b.tdf
-    Info (12023): Found entity 1: cntr_i2b File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_i2b.tdf Line: 25
-Info (12128): Elaborating entity "cntr_i2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 55
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_v27.tdf
-    Info (12023): Found entity 1: cntr_v27 File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_v27.tdf Line: 25
-Info (12128): Elaborating entity "cntr_v27" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 56
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_j2b.tdf
-    Info (12023): Found entity 1: cntr_j2b File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/cntr_j2b.tdf Line: 25
-Info (12128): Elaborating entity "cntr_j2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/db/a_dpfifo_s791.tdf Line: 57
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:6:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:7:interface" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "CORASP" for hierarchy "CORASP:cor_asp" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 39
-Info (12128): Elaborating entity "testCor" for hierarchy "testCor:test_cor" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 49
+Info (12021): Found 2 design units, including 1 entities, in source file pd_asp.vhd
+    Info (12022): Found design unit 1: PD_ASP-PD_RTL File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/PD_ASP.vhd Line: 17
+    Info (12023): Found entity 1: PD_ASP File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/PD_ASP.vhd Line: 8
+Info (12127): Elaborating entity "CORASP" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at CORASP.vhd(40): object "recvdata" assigned a value but never read File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 40
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "send.data[31]" is stuck at VCC File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[4]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[5]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[6]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[7]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1336 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 924 logic cells
-    Info (21064): Implemented 320 RAM segments
+Warning (21074): Design contains 32 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "recv.data[16]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[18]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[19]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[24]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[25]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[26]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[27]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[0]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[1]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[2]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[3]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[4]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[5]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[6]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[7]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "avgVal[0]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[1]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[2]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[3]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[4]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[5]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[6]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[7]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[8]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[9]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[10]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[11]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[12]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[13]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[14]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[15]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "calc" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 14
+Info (21057): Implemented 675 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 58 input pins
+    Info (21059): Implemented 72 output pins
+    Info (21061): Implemented 536 logic cells
     Info (21062): Implemented 9 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4924 megabytes
-    Info: Processing ended: Thu May 23 19:10:24 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Tue May 28 21:51:51 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
 
 

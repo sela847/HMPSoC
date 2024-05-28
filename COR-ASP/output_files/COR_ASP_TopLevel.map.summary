@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu May 23 19:10:24 2024
+Analysis & Synthesis Status : Successful - Tue May 28 21:51:51 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : COR_ASP_TopLevel
-Top-level Entity Name : CORASP_Wave_Test
+Top-level Entity Name : CORASP
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 676
-Total pins : 83
+Total registers : 451
+Total pins : 130
 Total virtual pins : 0
-Total block memory bits : 81,920
+Total block memory bits : 0
 Total DSP Blocks : 9
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

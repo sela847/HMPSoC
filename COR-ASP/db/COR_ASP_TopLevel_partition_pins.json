@@ -4,131 +4,143 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "recvOut[0]",
+					"name" : "send.data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[1]",
+					"name" : "send.data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[2]",
+					"name" : "send.data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[3]",
+					"name" : "send.data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[4]",
+					"name" : "send.data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[5]",
+					"name" : "send.data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[6]",
+					"name" : "send.data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[7]",
+					"name" : "send.data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[8]",
+					"name" : "send.data[8]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[9]",
+					"name" : "send.data[9]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[10]",
+					"name" : "send.data[10]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[11]",
+					"name" : "send.data[11]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[12]",
+					"name" : "send.data[12]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[13]",
+					"name" : "send.data[13]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[14]",
+					"name" : "send.data[14]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[15]",
+					"name" : "send.data[15]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[16]",
+					"name" : "send.data[16]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[17]",
+					"name" : "send.data[17]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[18]",
+					"name" : "send.data[18]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[19]",
+					"name" : "send.data[19]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[20]",
+					"name" : "send.data[20]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[21]",
+					"name" : "send.data[21]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[22]",
+					"name" : "send.data[22]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[23]",
+					"name" : "send.data[23]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[24]",
+					"name" : "send.data[24]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[25]",
+					"name" : "send.data[25]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[26]",
+					"name" : "send.data[26]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[27]",
+					"name" : "send.data[27]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[28]",
+					"name" : "send.data[28]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[29]",
+					"name" : "send.data[29]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[30]",
+					"name" : "send.data[30]",
 					"strict" : false
 				},
 				{
-					"name" : "recvOut[31]",
+					"name" : "send.addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "send.addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "send.addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "send.addr[3]",
 					"strict" : false
 				},
 				{
@@ -264,75 +276,103 @@
 					"strict" : false
 				},
 				{
-					"name" : "calc",
+					"name" : "recv.data[28]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[0]",
+					"name" : "recv.data[30]",
 					"strict" : false
 				},
 				{
-					"name" : "flag",
+					"name" : "recv.data[29]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[1]",
+					"name" : "recv.data[31]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[2]",
+					"name" : "recv.data[20]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[3]",
+					"name" : "recv.data[21]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[4]",
+					"name" : "recv.data[22]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[5]",
+					"name" : "recv.data[23]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[6]",
+					"name" : "recv.data[17]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[7]",
+					"name" : "recv.data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[8]",
+					"name" : "recv.data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[9]",
+					"name" : "recv.data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[10]",
+					"name" : "recv.data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[11]",
+					"name" : "recv.data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[12]",
+					"name" : "recv.data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[13]",
+					"name" : "recv.data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[14]",
+					"name" : "recv.data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "avgVal[15]",
+					"name" : "recv.data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "recv.data[15]",
 					"strict" : false
 				}
 			]
