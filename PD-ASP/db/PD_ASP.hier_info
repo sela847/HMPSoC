@@ -20,6 +20,7 @@ correlation[13] => in_pd:in_PD.correlation[13]
 correlation[14] => in_pd:in_PD.correlation[14]
 correlation[15] => in_pd:in_PD.correlation[15]
 enable_config => nios_to_pd:nios_to_PD.enable_config
+flag => in_pd:in_PD.flag
 
 
 |PD_ASP_TopLevel|TdmaMin:tdma_min
@@ -9792,6 +9793,7 @@ clk => send.data[28]~reg0.CLK
 clk => send.data[29]~reg0.CLK
 clk => send.data[30]~reg0.CLK
 clk => send.data[31]~reg0.CLK
+flag => send.data[30]~reg0.DATAIN
 send.data[0] <= send.data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 send.data[1] <= send.data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 send.data[2] <= send.data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

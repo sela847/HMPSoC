@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PD_ASP
-Mon May 27 03:06:42 2024
+Tue May 28 17:31:43 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -70,14 +70,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 27 03:06:42 2024       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 28 17:31:42 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PD_ASP                                      ;
 ; Top-level Entity Name           ; PD_ASP_TopLevel                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 18                                          ;
+; Total pins                      ; 19                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -243,13 +243,13 @@ refer to the applicable agreement for further details.
 ;                                             ;       ;
 ; Dedicated logic registers                   ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 18    ;
+; I/O pins                                    ; 19    ;
 ;                                             ;       ;
 ; Total DSP Blocks                            ; 0     ;
 ;                                             ;       ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 18    ;
+; Total fan-out                               ; 19    ;
 ; Average fan-out                             ; 0.50  ;
 +---------------------------------------------+-------+
 
@@ -259,7 +259,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; |PD_ASP_TopLevel           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 18   ; 0            ; |PD_ASP_TopLevel    ; PD_ASP_TopLevel ; work         ;
+; |PD_ASP_TopLevel           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 19   ; 0            ; |PD_ASP_TopLevel    ; PD_ASP_TopLevel ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -285,12 +285,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; nios_to_PD:nios_to_PD|send.data[21..27]                                                                                                                                                         ; Stuck at GND due to stuck port data_in      ;
 ; nios_to_PD:nios_to_PD|send.data[20]                                                                                                                                                             ; Stuck at VCC due to stuck port data_in      ;
 ; nios_to_PD:nios_to_PD|send.data[0..16,18,19]                                                                                                                                                    ; Stuck at GND due to stuck port data_in      ;
-; in_PD:in_PD|send.data[30,31]                                                                                                                                                                    ; Stuck at VCC due to stuck port data_in      ;
+; in_PD:in_PD|send.data[31]                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in      ;
 ; in_PD:in_PD|send.data[16..29]                                                                                                                                                                   ; Stuck at GND due to stuck port data_in      ;
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|recv.addr[2..7]                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
 ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7]        ; Stuck at GND due to stuck port clock_enable ;
 ; nios_to_PD:nios_to_PD|send.data[17]                                                                                                                                                             ; Lost fanout                                 ;
-; in_PD:in_PD|send.data[0..15]                                                                                                                                                                    ; Lost fanout                                 ;
+; in_PD:in_PD|send.data[0..15,30]                                                                                                                                                                 ; Lost fanout                                 ;
 ; PD_ASP:PD_ASP|switch                                                                                                                                                                            ; Lost fanout                                 ;
 ; PD_ASP:PD_ASP|counter[0..19]                                                                                                                                                                    ; Lost fanout                                 ;
 ; PD_ASP:PD_ASP|corre_curr[0..29]                                                                                                                                                                 ; Lost fanout                                 ;
@@ -405,12 +405,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|recv.data[31],                                                                                                               ;
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|recv.addr[0],                                                                                                                ;
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|recv.addr[1]                                                                                                                 ;
-; in_PD:in_PD|send.data[31]                                                                                                                                                             ; Stuck at VCC                   ; in_PD:in_PD|send.data[15], in_PD:in_PD|send.data[14], in_PD:in_PD|send.data[13],                                                                                                       ;
-;                                                                                                                                                                                       ; due to stuck port data_in      ; in_PD:in_PD|send.data[12], in_PD:in_PD|send.data[11], in_PD:in_PD|send.data[10],                                                                                                       ;
-;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[9], in_PD:in_PD|send.data[8], in_PD:in_PD|send.data[7],                                                                                                          ;
-;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[6], in_PD:in_PD|send.data[5], in_PD:in_PD|send.data[4],                                                                                                          ;
-;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[3], in_PD:in_PD|send.data[2], in_PD:in_PD|send.data[1],                                                                                                          ;
-;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[0],                                                                                                                                                              ;
+; in_PD:in_PD|send.data[31]                                                                                                                                                             ; Stuck at VCC                   ; in_PD:in_PD|send.data[30], in_PD:in_PD|send.data[15], in_PD:in_PD|send.data[14],                                                                                                       ;
+;                                                                                                                                                                                       ; due to stuck port data_in      ; in_PD:in_PD|send.data[13], in_PD:in_PD|send.data[12], in_PD:in_PD|send.data[11],                                                                                                       ;
+;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[10], in_PD:in_PD|send.data[9], in_PD:in_PD|send.data[8],                                                                                                         ;
+;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[7], in_PD:in_PD|send.data[6], in_PD:in_PD|send.data[5],                                                                                                          ;
+;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[4], in_PD:in_PD|send.data[3], in_PD:in_PD|send.data[2],                                                                                                          ;
+;                                                                                                                                                                                       ;                                ; in_PD:in_PD|send.data[1], in_PD:in_PD|send.data[0],                                                                                                                                    ;
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_1_dff,                     ;
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_2_dff,                     ;
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[1], ;
@@ -431,7 +431,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                                                                                                                                       ;                                ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff                           ;
 ; nios_to_PD:nios_to_PD|send.data[30]                                                                                                                                                   ; Stuck at VCC                   ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[2], ;
 ;                                                                                                                                                                                       ; due to stuck port data_in      ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                            ;
-; in_PD:in_PD|send.data[30]                                                                                                                                                             ; Stuck at VCC                   ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[2]  ;
+; in_PD:in_PD|send.data[29]                                                                                                                                                             ; Stuck at GND                   ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[2]  ;
 ;                                                                                                                                                                                       ; due to stuck port data_in      ;                                                                                                                                                                                        ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -801,7 +801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+---------------------------------+
 ; Type              ; Count                           ;
 +-------------------+---------------------------------+
-; boundary_port     ; 18                              ;
+; boundary_port     ; 19                              ;
 ;                   ;                                 ;
 ; Max LUT depth     ; 0.00                            ;
 ; Average LUT depth ; 0.00                            ;
@@ -823,12 +823,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 27 03:06:31 2024
+    Info: Processing started: Tue May 28 17:31:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PD_ASP -c PD_ASP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pd_asp_toplevel.vhd
-    Info (12022): Found design unit 1: PD_ASP_TopLevel-rtl File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 21
+    Info (12022): Found design unit 1: PD_ASP_TopLevel-rtl File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 22
     Info (12023): Found entity 1: PD_ASP_TopLevel File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file ip/tdmaminfifo/tdmaminfifo.vhd
     Info (12022): Found design unit 1: tdmaminfifo-SYN File: C:/Users/brian/Documents/HMPSoC/PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
@@ -861,14 +861,14 @@ Info (12021): Found 2 design units, including 1 entities, in source file pd_asp.
     Info (12022): Found design unit 1: PD_ASP-PD_RTL File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd Line: 18
     Info (12023): Found entity 1: PD_ASP File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file in_pd.vhd
-    Info (12022): Found design unit 1: in_PD-behaviour File: C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd Line: 18
+    Info (12022): Found design unit 1: in_PD-behaviour File: C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd Line: 19
     Info (12023): Found entity 1: in_PD File: C:/Users/brian/Documents/HMPSoC/PD-ASP/in_PD.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file nios_to_pd.vhd
     Info (12022): Found design unit 1: nios_to_PD-behaviour File: C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd Line: 18
     Info (12023): Found entity 1: nios_to_PD File: C:/Users/brian/Documents/HMPSoC/PD-ASP/nios_to_PD.vhd Line: 8
 Info (12127): Elaborating entity "PD_ASP_TopLevel" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "send_port[0]" at PD_ASP_TopLevel.vhd(24) File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 24
-Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 30
+Warning (10873): Using initial value X (don't care) for net "send_port[0]" at PD_ASP_TopLevel.vhd(25) File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 25
+Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 31
 Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd Line: 29
 Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd Line: 38
 Warning (10445): VHDL Subtype or Type Declaration warning at TdmaMinFabric.vhd(29): subtype or type has null range File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 29
@@ -916,9 +916,9 @@ Info (12128): Elaborating entity "cntr_j2b" for hierarchy "TdmaMin:tdma_min|Tdma
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
 Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "PD_ASP" for hierarchy "PD_ASP:PD_ASP" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 40
-Info (12128): Elaborating entity "in_PD" for hierarchy "in_PD:in_PD" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 50
-Info (12128): Elaborating entity "nios_to_PD" for hierarchy "nios_to_PD:nios_to_PD" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 58
+Info (12128): Elaborating entity "PD_ASP" for hierarchy "PD_ASP:PD_ASP" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 41
+Info (12128): Elaborating entity "in_PD" for hierarchy "in_PD:in_PD" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 51
+Info (12128): Elaborating entity "nios_to_PD" for hierarchy "nios_to_PD:nios_to_PD" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 60
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[0]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/db/altsyncram_r3i1.tdf Line: 37
@@ -1081,10 +1081,10 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[37]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/db/altsyncram_r3i1.tdf Line: 1147
         Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[38]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/db/altsyncram_r3i1.tdf Line: 1177
         Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[39]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/db/altsyncram_r3i1.tdf Line: 1207
-Info (17049): 315 registers lost all their fanouts during netlist optimizations.
+Info (17049): 316 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
+Warning (21074): Design contains 19 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "clock" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 13
     Warning (15610): No output dependent on input pin "correlation[0]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 14
     Warning (15610): No output dependent on input pin "correlation[1]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 14
@@ -1103,13 +1103,14 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "correlation[14]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 14
     Warning (15610): No output dependent on input pin "correlation[15]" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 14
     Warning (15610): No output dependent on input pin "enable_config" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 16
-Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
+    Warning (15610): No output dependent on input pin "flag" File: C:/Users/brian/Documents/HMPSoC/PD-ASP/PD_ASP_TopLevel.vhd Line: 17
+Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 185 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Mon May 27 03:06:42 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 186 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Tue May 28 17:31:43 2024
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:13
 
 

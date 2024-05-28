@@ -13,7 +13,8 @@ entity PD_ASP_TopLevel is
 		clock 						: in std_logic;
 		correlation					: in std_logic_vector(15 downto 0);
 		--correlation_count_read 	: in std_logic;
-		enable_config				: in std_logic	
+		enable_config				: in std_logic;
+		flag 							: in std_logic
 		
 	);
 end entity PD_ASP_TopLevel;
@@ -50,6 +51,7 @@ begin
 	in_PD: entity work.in_PD
 		port map(
 			clk => clock,
+			flag => flag,
 			correlation => correlation,
 			send => send_port(1),
 			recv => recv_port(1)

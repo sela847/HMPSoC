@@ -15,6 +15,7 @@ ARCHITECTURE tb OF PD_ASP_TopLevel_tb IS
     SIGNAL correlation_count_read : STD_LOGIC := '0';
    -- SIGNAL sendCorr : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL enable_config : STD_LOGIC := '1';
+	 SIGNAL flag			 : STD_LOGIC := '0';
 
     TYPE sine_wave_array IS ARRAY (0 TO 31) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
     CONSTANT sine_wave_lut : sine_wave_array := (
@@ -63,7 +64,8 @@ BEGIN
             clock => clock,
             correlation => correlation,
 				--correlation_count_read => correlation_count_read,	
-				enable_config => enable_config
+				enable_config => enable_config,
+				flag => flag
 				
         );
 
@@ -82,11 +84,15 @@ BEGIN
     stimulus_process : PROCESS
     BEGIN
         WHILE True LOOP
-            WAIT FOR 20 ns; -- Total wait time per iteration
+				WAIT FOR 180 ns; -- Total wait time per iteration
+				flag <= flag xor '1';
             correlation <= sine_wave_lut(lut_index);
+				WAIT FOR 20 ns;
+				flag <= flag xor '1';
 				
             lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
             enable_config <= NOT enable_config AFTER 1 ms; -- Toggle count_read every 200 ns, which should expect 
+				--WAIT FOR 180 ns; -- Total wait time per iteration
         END LOOP;
     END PROCESS stimulus_process;
 
