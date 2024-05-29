@@ -7,7 +7,7 @@ use work.TdmaMinTypes.all;
 
 entity COR_ASP_TopLevel is
     generic (
-        ports : positive := 8
+        ports : positive :=4 
     );
     port (
         clock   : in std_logic;
@@ -35,6 +35,7 @@ begin
             sends => send_port,
             recvs => recv_port
         );
+		 
 
     cor_asp: entity work.CORASP
         port map(
@@ -59,5 +60,9 @@ begin
 		clk => clock,
 		recv => recv_port(3),
 		send => send_port(3)
+	);
+    avg_asp: entity work.AverageCalculator
+	port map(
+
 	);
 end architecture;

@@ -68,16 +68,16 @@ begin
 			elsif pd_flag = '0' then
 				send.addr <= x"03";
 				send.data <= x"F0120000"; -- enabling pd
-			elsif delay_count < 15 then
+			elsif delay_count < 150 then -- 150 works
 				delay_count <= delay_count + 1; -- delay for 150 clock cycles
 		
 			else
 				--avgVal <= sine_wave_lut(lut_index);
-				avgVal <= std_logic_vector(shift_right(unsigned(sine_wave_lut(lut_index)),8)); --If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
+				--avgVal <= std_logic_vector(shift_right(unsigned(sine_wave_lut(lut_index)),8)); --If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
 				delay_count <= 0;
-				--avgVal <= std_logic_vector((unsigned(avgVal) + 1) MOD 255);
-				
-				lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT valuesl <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
+				avgVal <= std_logic_vector((unsigned(avgVal) + 1) MOD 255);
+				--avgVal <= std_logic_vector(unsigned(avgVal) + 1);
+				--lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT valuesl <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
 				send.addr <= x"02";
 				send.data <= "1000" & x"000" & avgVal;
 				--wait for 300 ns; -- likkle delay
