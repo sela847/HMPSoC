@@ -10,6 +10,7 @@ entity testCor is
 		clock : in  std_logic;
 		flag 	: in std_logic;
 		pd_flag : in std_logic;
+		avg_flag : in std_logic;
 		send  : out tdma_min_port;
 		recv  : in  tdma_min_port
 	);
@@ -57,11 +58,13 @@ type sine_wave_array is array (0 to 31) of STD_LOGIC_VECTOR(15 downto 0);
     signal lut_index : INTEGER := 0;
 begin
 	
-	process(clock,flag,pd_flag,delay_count)
+	process(clock,flag,pd_flag,delay_count,avg_flag)
 	begin
 		if rising_edge(clock) then
-			
-			if flag = '0' then
+			if avg_flag = '0' then
+				send.addr <= x"00";
+				send.data <= x"C0260000"; -- enabling avg
+			elsif flag = '0' then
 				--send.data <= "11010000000000100000000000000000"; -- enabling
 				send.addr <= x"02";
 				send.data <= x"D0320000"; -- enabling
@@ -73,12 +76,13 @@ begin
 		
 			else
 				--avgVal <= sine_wave_lut(lut_index);
-				--avgVal <= std_logic_vector(shift_right(unsigned(sine_wave_lut(lut_index)),8)); --If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
+				avgVal <= std_logic_vector(shift_right(unsigned(sine_wave_lut(lut_index)),8)); --If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
 				delay_count <= 0;
-				avgVal <= std_logic_vector((unsigned(avgVal) + 1) MOD 255);
+				--avgVal <= std_logic_vector((unsigned(avgVal) + 1) MOD 255);
 				--avgVal <= std_logic_vector(unsigned(avgVal) + 1);
-				--lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT valuesl <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
-				send.addr <= x"02";
+				lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT valuesl <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
+				
+				send.addr <= x"00"; -- send to avg asp
 				send.data <= "1000" & x"000" & avgVal;
 				--wait for 300 ns; -- likkle delay
 			end if;

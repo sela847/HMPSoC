@@ -33,7 +33,7 @@ begin
 	begin
 		if rising_edge(clk) then
 			case recv.addr is 
-				when x"03" => --from port 0, assume it to be from NIOS. 
+				when x"01" => --from port 0, assume it to be from NIOS. 
 					if recv.data(31 downto 28) = "1111" then --Can configure the PD_RTL
 						--Will add configuration features here
 						--|Identify (4)| no clue (4) | Next Des (4) | No clue (2)| Enable (1) | no clue (16)|
@@ -44,7 +44,7 @@ begin
 						end if;
 						send.addr <= x"0" & recv.data(23 downto 20); --Go to address 1 
 					end if;
-				when x"01" =>  --From port 1, assume it to be from COR_ASP
+				when x"02" =>  --From port 1, assume it to be from COR_ASP
 					if enable = '1' then
 						if recv.data(31 downto 30) = "11" then --first correlation value received
 							corre_prev <= corre_curr; 

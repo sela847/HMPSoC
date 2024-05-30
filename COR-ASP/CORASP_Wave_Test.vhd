@@ -15,6 +15,7 @@ entity CORASP_Wave_Test is
         calc    : in std_logic;
 	flag	 : in std_logic;
 	pd_flag : in std_logic;
+	avg_flag : in std_logic;
 	recvOut : out std_logic_vector(31 downto 0);
         sendCorr: out std_logic_vector(31 downto 0)
     );
@@ -52,6 +53,7 @@ begin
 				clock => clock,
 				flag => flag,
 				pd_flag => pd_flag,
+				avg_flag => avg_flag,
 				send => send_port(1),
 				recv => recv_port(1)
 			);

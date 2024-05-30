@@ -7,7 +7,7 @@ use work.TdmaMinTypes.all;
 
 entity COR_ASP_TopLevel is
     generic (
-        ports : positive :=4 
+        ports : positive :=5 
     );
     port (
         clock   : in std_logic;
@@ -15,6 +15,8 @@ entity COR_ASP_TopLevel is
         calc    : in std_logic;
 	flag	: in std_logic;
 	pd_flag : in std_logic;
+	avg_flag : in std_logic;
+	reset : in std_logic;
         sendCorr: out std_logic_vector(31 downto 0)
     );
 end entity;
@@ -52,6 +54,7 @@ begin
 	    clock => clock,
 	    flag => flag,
 		 pd_flag => pd_flag,
+		 avg_flag => avg_flag,
 	    send => send_port(1),
 	    recv => recv_port(1)
 	);
@@ -63,6 +66,9 @@ begin
 	);
     avg_asp: entity work.AverageCalculator
 	port map(
-
+		  clk=>clock,
+        reset=> reset,
+        recv=> recv_port(0),
+        send=> send_port(0)
 	);
 end architecture;

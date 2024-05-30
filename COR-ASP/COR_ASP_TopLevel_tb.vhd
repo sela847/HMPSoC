@@ -13,6 +13,8 @@ architecture tb of COR_ASP_TopLevel_tb is
     signal sendCorr : STD_LOGIC_VECTOR(31 downto 0);
     signal flag : STD_LOGIC := '0';
 	 signal pd_flag : std_logic := '0';
+	 signal avg_flag : std_logic := '0';
+	 signal reset : std_logic := '0';
     type sine_wave_array is array (0 to 31) of STD_LOGIC_VECTOR(15 downto 0);
     constant sine_wave_lut : sine_wave_array := (
         0 => "0111111111111111",
@@ -64,6 +66,8 @@ begin
             calc => calc,
             flag => flag,
 				pd_flag => pd_flag,
+				avg_flag => avg_flag,
+				reset => reset,
             sendCorr => sendCorr
         );
 
@@ -87,8 +91,11 @@ begin
 --	    avgVal <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
             lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
             calc <= NOT calc after 200 ns; -- Toggle calc every 200 ns
-	    flag <= '1';
-			if pd_flag = '0' then
+	    avg_flag <= '1';
+			if flag = '0' then
+				wait for 20 ns;
+				flag <= '1';
+			elsif pd_flag = '0' then
 				wait for 20 ns;
 				pd_flag <= '1';
 			end if;

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for COR_ASP_TopLevel
-Wed May 29 16:13:14 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Thu May 30 23:08:54 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -43,27 +43,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 29 16:13:13 2024           ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name                   ; COR_ASP_TopLevel                                ;
-; Top-level Entity Name           ; CORASP                                          ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 451                                             ;
-; Total pins                      ; 130                                             ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 9                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu May 30 23:08:54 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; COR_ASP_TopLevel                            ;
+; Top-level Entity Name           ; CORASP                                      ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 451                                         ;
+; Total pins                      ; 130                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 9                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -158,11 +158,11 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 24          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -171,20 +171,17 @@ refer to the applicable agreement for further details.
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; TdmaMin/TdmaMinTypes.vhd         ; yes             ; User VHDL File  ; H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd ;         ;
-; CORASP.vhd                       ; yes             ; User VHDL File  ; H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; TdmaMin/TdmaMinTypes.vhd         ; yes             ; User VHDL File  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd ;         ;
+; CORASP.vhd                       ; yes             ; User VHDL File  ; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd               ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -349,120 +346,120 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Wed May 29 16:13:04 2024
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu May 30 23:08:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /documents/701/hmpsoc/avg-asp/averagecalculator.vhd
-    Info (12022): Found design unit 1: AverageCalculator-Behavioral File: H:/Documents/701/HMPSoC/AVG-ASP/AverageCalculator.vhd Line: 18
-    Info (12023): Found entity 1: AverageCalculator File: H:/Documents/701/HMPSoC/AVG-ASP/AverageCalculator.vhd Line: 9
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file averagecalculator.vhd
+    Info (12022): Found design unit 1: AverageCalculator-Behavioral File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/AverageCalculator.vhd Line: 18
+    Info (12023): Found entity 1: AverageCalculator File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/AverageCalculator.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file ip/audiorom/audiorom.vhd
-    Info (12022): Found design unit 1: audiorom-SYN File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 53
-    Info (12023): Found entity 1: AudioRom File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 43
+    Info (12022): Found design unit 1: audiorom-SYN File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 53
+    Info (12023): Found entity 1: AudioRom File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioRom/AudioRom.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file ip/audiofifo/audiofifo.vhd
-    Info (12022): Found design unit 1: audiofifo-SYN File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioFifo/AudioFifo.vhd Line: 58
-    Info (12023): Found entity 1: AudioFifo File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioFifo/AudioFifo.vhd Line: 43
+    Info (12022): Found design unit 1: audiofifo-SYN File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioFifo/AudioFifo.vhd Line: 58
+    Info (12023): Found entity 1: AudioFifo File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioFifo/AudioFifo.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file ip/audioclock_2/audioclock.vhd
-    Info (12022): Found design unit 1: AudioClock-rtl File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd Line: 18
-    Info (12023): Found entity 1: AudioClock File: H:/Documents/701/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd Line: 9
-Info (15248): File "H:/Documents/701/HMPSoC/COR-ASP/ip/AudioClock_1/AudioClock.vhd" is a duplicate of already analyzed file "H:/Documents/701/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+    Info (12022): Found design unit 1: AudioClock-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd Line: 18
+    Info (12023): Found entity 1: AudioClock File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd Line: 9
+Info (15248): File "C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioClock_1/AudioClock.vhd" is a duplicate of already analyzed file "C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/AudioClock_2/AudioClock.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file ip/audioclock_1/audioclock.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file ip/tdmaminfifo/tdmaminfifo.vhd
-    Info (12022): Found design unit 1: tdmaminfifo-SYN File: H:/Documents/701/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
-    Info (12023): Found entity 1: TdmaMinFifo File: H:/Documents/701/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 43
+    Info (12022): Found design unit 1: tdmaminfifo-SYN File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
+    Info (12023): Found entity 1: TdmaMinFifo File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 43
 Info (12021): Found 2 design units, including 0 entities, in source file tdmamin/tdmamintypes.vhd
-    Info (12022): Found design unit 1: TdmaMinTypes File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd Line: 5
-    Info (12022): Found design unit 2: TdmaMinTypes-body File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd Line: 23
+    Info (12022): Found design unit 1: TdmaMinTypes File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd Line: 5
+    Info (12022): Found design unit 2: TdmaMinTypes-body File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminswitch.vhd
-    Info (12022): Found design unit 1: TdmaMinSwitch-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 18
-    Info (12023): Found entity 1: TdmaMinSwitch File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinSwitch-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 18
+    Info (12023): Found entity 1: TdmaMinSwitch File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminstage.vhd
-    Info (12022): Found design unit 1: TdmaMinStage-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd Line: 19
-    Info (12023): Found entity 1: TdmaMinStage File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinStage-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMinStage File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminslots.vhd
-    Info (12022): Found design unit 1: TdmaMinSlots-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd Line: 15
-    Info (12023): Found entity 1: TdmaMinSlots File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd Line: 5
+    Info (12022): Found design unit 1: TdmaMinSlots-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd Line: 15
+    Info (12023): Found entity 1: TdmaMinSlots File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamininterface.vhd
-    Info (12022): Found design unit 1: TdmaMinInterface-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 26
-    Info (12023): Found entity 1: TdmaMinInterface File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 10
+    Info (12022): Found design unit 1: TdmaMinInterface-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 26
+    Info (12023): Found entity 1: TdmaMinInterface File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminfabric.vhd
-    Info (12022): Found design unit 1: TdmaMinFabric-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 20
-    Info (12023): Found entity 1: TdmaMinFabric File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinFabric-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 20
+    Info (12023): Found entity 1: TdmaMinFabric File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamin.vhd
-    Info (12022): Found design unit 1: TdmaMin-rtl File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 19
-    Info (12023): Found entity 1: TdmaMin File: H:/Documents/701/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMin-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMin File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file corasp.vhd
-    Info (12022): Found design unit 1: CORASP-rtl File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 19
-    Info (12023): Found entity 1: CORASP File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 8
+    Info (12022): Found design unit 1: CORASP-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 19
+    Info (12023): Found entity 1: CORASP File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file cor_asp_toplevel.vhd
-    Info (12022): Found design unit 1: COR_ASP_TopLevel-sim File: H:/Documents/701/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 22
-    Info (12023): Found entity 1: COR_ASP_TopLevel File: H:/Documents/701/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 8
+    Info (12022): Found design unit 1: COR_ASP_TopLevel-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 24
+    Info (12023): Found entity 1: COR_ASP_TopLevel File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file cor_asp_toplevel_tb.vhd
-    Info (12022): Found design unit 1: COR_ASP_TopLevel_tb-tb File: H:/Documents/701/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 8
-    Info (12023): Found entity 1: COR_ASP_TopLevel_tb File: H:/Documents/701/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 5
+    Info (12022): Found design unit 1: COR_ASP_TopLevel_tb-tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 8
+    Info (12023): Found entity 1: COR_ASP_TopLevel_tb File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file corasp_wave_test.vhd
-    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: H:/Documents/701/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 23
-    Info (12023): Found entity 1: CORASP_Wave_Test File: H:/Documents/701/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 8
+    Info (12022): Found design unit 1: CORASP_Wave_Test-sim File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 24
+    Info (12023): Found entity 1: CORASP_Wave_Test File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file testcor.vhd
-    Info (12022): Found design unit 1: testCor-rtl File: H:/Documents/701/HMPSoC/COR-ASP/testCor.vhd Line: 18
-    Info (12023): Found entity 1: testCor File: H:/Documents/701/HMPSoC/COR-ASP/testCor.vhd Line: 8
+    Info (12022): Found design unit 1: testCor-rtl File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 19
+    Info (12023): Found entity 1: testCor File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file pd_asp.vhd
-    Info (12022): Found design unit 1: PD_ASP-PD_RTL File: H:/Documents/701/HMPSoC/COR-ASP/PD_ASP.vhd Line: 17
-    Info (12023): Found entity 1: PD_ASP File: H:/Documents/701/HMPSoC/COR-ASP/PD_ASP.vhd Line: 8
+    Info (12022): Found design unit 1: PD_ASP-PD_RTL File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/PD_ASP.vhd Line: 17
+    Info (12023): Found entity 1: PD_ASP File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/PD_ASP.vhd Line: 8
 Info (12127): Elaborating entity "CORASP" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at CORASP.vhd(40): object "recvdata" assigned a value but never read File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at CORASP.vhd(40): object "recvdata" assigned a value but never read File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 40
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "send.data[31]" is stuck at VCC File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 11
-    Warning (13410): Pin "send.addr[4]" is stuck at GND File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 11
-    Warning (13410): Pin "send.addr[5]" is stuck at GND File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 11
-    Warning (13410): Pin "send.addr[6]" is stuck at GND File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 11
-    Warning (13410): Pin "send.addr[7]" is stuck at GND File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.data[31]" is stuck at VCC File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[4]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[5]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[6]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
+    Warning (13410): Pin "send.addr[7]" is stuck at GND File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "recv.data[16]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[18]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[19]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[24]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[25]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[26]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.data[27]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[0]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[1]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[2]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[3]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[4]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[5]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[6]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "recv.addr[7]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 12
-    Warning (15610): No output dependent on input pin "avgVal[0]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[1]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[2]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[3]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[4]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[5]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[6]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[7]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[8]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[9]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[10]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[11]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[12]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[13]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[14]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "avgVal[15]" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 13
-    Warning (15610): No output dependent on input pin "calc" File: H:/Documents/701/HMPSoC/COR-ASP/CORASP.vhd Line: 14
+    Warning (15610): No output dependent on input pin "recv.data[16]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[18]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[19]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[24]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[25]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[26]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.data[27]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[0]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[1]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[2]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[3]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[4]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[5]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[6]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "recv.addr[7]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 12
+    Warning (15610): No output dependent on input pin "avgVal[0]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[1]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[2]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[3]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[4]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[5]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[6]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[7]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[8]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[9]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[10]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[11]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[12]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[13]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[14]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "avgVal[15]" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 13
+    Warning (15610): No output dependent on input pin "calc" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd Line: 14
 Info (21057): Implemented 675 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 58 input pins
     Info (21059): Implemented 72 output pins
     Info (21061): Implemented 536 logic cells
     Info (21062): Implemented 9 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4957 megabytes
-    Info: Processing ended: Wed May 29 16:13:14 2024
+    Info: Peak virtual memory: 4884 megabytes
+    Info: Processing ended: Thu May 30 23:08:54 2024
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:20
 
 

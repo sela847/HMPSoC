@@ -1,0 +1,574 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/modelsim
+Ecor_asp_toplevel
+Z1 w1716451469
+Z2 DPx4 work 12 tdmamintypes 0 22 n5Yl9VNj39^hDh^=]VmTO1
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R0
+Z6 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+Z7 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd
+l0
+L8
+VRSGJRNI?1<e1HM@W54VE90
+!s100 4LHfkCTecKKQ@JX>Y`lcE3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1716539828
+!i10b 1
+Z10 !s108 1716539828.000000
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd|
+Z12 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel.vhd|
+!i113 1
+Z13 o-work work
+Z14 tExplicit 1 CvgOpt 0
+Asim
+Z15 DEx4 work 7 testcor 0 22 dO3j?D_Y>m>_N>e<iZ?jl3
+Z16 DEx4 work 6 corasp 0 22 1fA_o9M8KZ^DH7aaG4cko0
+Z17 DEx4 work 7 tdmamin 0 22 KGLe9BE[QUnf^ZogdePRW0
+R2
+R3
+R4
+R5
+Z18 DEx4 work 16 cor_asp_toplevel 0 22 RSGJRNI?1<e1HM@W54VE90
+l26
+L21
+VRRo;QHKjdRmnXjJ8m?`6i2
+!s100 jefa>U^DFB@V3N>ETC_7g3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ecor_asp_toplevel_tb
+Z19 w1716518512
+R3
+R4
+R5
+R0
+Z20 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+Z21 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd
+l0
+L5
+V<@9<<zQUGH[1Wz1WU5zB71
+!s100 kzdWMeoHaH_CeN@>nBFV<3
+R8
+32
+Z22 !s110 1716539830
+!i10b 1
+Z23 !s108 1716539829.000000
+Z24 !s90 -reportprogress|300|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd|
+Z25 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/COR_ASP_TopLevel_tb.vhd|
+!i113 1
+R13
+R14
+Atb
+R2
+R18
+R3
+R4
+R5
+DEx4 work 19 cor_asp_toplevel_tb 0 22 <@9<<zQUGH[1Wz1WU5zB71
+l54
+L8
+VlXnhL:FXCAEoBBzm7AL0k1
+!s100 nZeDod=WWI:^Bo17^7H4`0
+R8
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R13
+R14
+Ecorasp
+Z26 w1716523573
+R2
+R3
+R4
+R5
+R0
+Z27 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+Z28 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd
+l0
+L8
+V1fA_o9M8KZ^DH7aaG4cko0
+!s100 <XXb]9J?NJUoFLhAFS9^[3
+R8
+32
+Z29 !s110 1716539823
+!i10b 1
+Z30 !s108 1716539823.000000
+Z31 !s90 -reportprogress|300|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd|
+Z32 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R3
+R4
+R5
+R16
+l33
+L19
+V?nKh?F[DCO?_gbQga_WK13
+!s100 R[=O9;L0[jQdeOU^:cJUC3
+R8
+32
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R13
+R14
+Ecorasp_wave_test
+Z33 w1716517900
+R2
+R3
+R4
+R5
+R0
+Z34 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd
+Z35 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd
+l0
+L8
+VjXzM3alGF_nGmDQ_S`ZIc2
+!s100 ?Qo08ikClfL7n`VKB0BC]3
+R8
+31
+Z36 !s110 1716539804
+!i10b 1
+Z37 !s108 1716539804.000000
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd|
+Z39 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/CORASP_Wave_Test.vhd|
+!i113 1
+Z40 o-93 -work work
+R14
+Asim
+DEx4 work 7 testcor 0 22 CGZNG`86Y:3Z[Z@UPM_dk0
+DEx4 work 6 corasp 0 22 l_HA2=[E7UPTcY@;:SA210
+R17
+R2
+R3
+R4
+R5
+DEx4 work 16 corasp_wave_test 0 22 jXzM3alGF_nGmDQ_S`ZIc2
+l27
+L22
+VmlGECUDK4dKbA_1ddDLMZ1
+!s100 o@D8JacM5zdf]WQ4>ScHk0
+R8
+31
+R36
+!i10b 1
+R37
+R38
+R39
+!i113 1
+R40
+R14
+Etdmamin
+Z41 w1640998800
+R2
+R3
+R4
+R5
+R0
+Z42 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd
+Z43 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd
+l0
+L8
+VKGLe9BE[QUnf^ZogdePRW0
+!s100 6;L8z`bBSW^j[_>G_J?Gd2
+R8
+31
+R36
+!i10b 1
+R37
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd|
+Z45 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMin.vhd|
+!i113 1
+R40
+R14
+Artl
+Z46 DEx4 work 16 tdmamininterface 0 22 WdejCG[[h8mUmG8OCO<Xa3
+Z47 DEx4 work 13 tdmaminfabric 0 22 Q7S9zc6_19cC<jfBHzd3d3
+Z48 DEx4 work 12 tdmaminslots 0 22 V=@@hFU5L?W<No?YQC5g63
+R2
+R3
+R4
+R5
+R17
+l27
+L19
+VXjSHdPzCW5RbY?nI4V=EI2
+!s100 <5<>>iFjPXUU82XzWAI403
+R8
+31
+R36
+!i10b 1
+R37
+R44
+R45
+!i113 1
+R40
+R14
+Etdmaminfabric
+R41
+R2
+R3
+R4
+R5
+R0
+Z49 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd
+Z50 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd
+l0
+L8
+VQ7S9zc6_19cC<jfBHzd3d3
+!s100 gPIDA1YCE:[;DEnj@Y>0i3
+R8
+31
+R36
+!i10b 1
+R37
+Z51 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd|
+Z52 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinFabric.vhd|
+!i113 1
+R40
+R14
+Artl
+Z53 DEx4 work 12 tdmaminstage 0 22 7P1>ohMXX38BIJRe8BB]63
+R2
+R3
+R4
+R5
+R47
+l27
+L20
+VL`kK0IHeA=]kdhHNXIEkH0
+!s100 JSmh>bieLZoMlenZQ0T<:1
+R8
+31
+R36
+!i10b 1
+R37
+R51
+R52
+!i113 1
+R40
+R14
+Etdmaminfifo
+R41
+R4
+R3
+R0
+Z54 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd
+Z55 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd
+l0
+L43
+VNKDK1:KSeJdCbJ``O`OcP1
+!s100 8FemG`GCM5dSE;ZO1MWzf2
+R8
+31
+R36
+!i10b 1
+R37
+Z56 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd|
+Z57 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd|
+!i113 1
+R40
+R14
+Asyn
+R4
+R3
+DEx4 work 11 tdmaminfifo 0 22 NKDK1:KSeJdCbJ``O`OcP1
+l89
+L57
+V>QKVhg6Yl<8J573ESlhNi1
+!s100 nV:U_b?O:ZbYEG97<H`3G1
+R8
+31
+R36
+!i10b 1
+R37
+R56
+R57
+!i113 1
+R40
+R14
+Etdmamininterface
+R41
+R2
+R3
+R4
+R5
+R0
+Z58 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd
+Z59 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd
+l0
+L10
+VWdejCG[[h8mUmG8OCO<Xa3
+!s100 0G4AkKgOe4CjO1]3Jm9A`2
+R8
+31
+R36
+!i10b 1
+R37
+Z60 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd|
+Z61 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinInterface.vhd|
+!i113 1
+R40
+R14
+Artl
+DEx2 ip 11 tdmaminfifo 0 22 Nk?TlPcP_[9g3Kn[mNkNJ1
+R2
+R3
+R4
+R5
+R46
+l40
+L26
+VQAR:1H;[mLJi7]TccVe?;0
+!s100 ]KF`FTm9V>KHP;NU1g7G_3
+R8
+31
+R36
+!i10b 1
+R37
+R60
+R61
+!i113 1
+R40
+R14
+Etdmaminslots
+R41
+R3
+R4
+R5
+R0
+Z62 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd
+Z63 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd
+l0
+L5
+VV=@@hFU5L?W<No?YQC5g63
+!s100 bY70hkiSWIonW84Wkb5=Y2
+R8
+31
+R36
+!i10b 1
+R37
+Z64 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd|
+Z65 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSlots.vhd|
+!i113 1
+R40
+R14
+Artl
+R3
+R4
+R5
+R48
+l19
+L15
+V`faHP[UCG0E3lXoK@IYV20
+!s100 8ZE?LJj4zV?JVY`ITHFDQ1
+R8
+31
+R36
+!i10b 1
+R37
+R64
+R65
+!i113 1
+R40
+R14
+Etdmaminstage
+R41
+R2
+R3
+R4
+R5
+R0
+Z66 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd
+Z67 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd
+l0
+L8
+V7P1>ohMXX38BIJRe8BB]63
+!s100 FF_3G3M34h_O0k2e3RoCo2
+R8
+31
+R36
+!i10b 1
+R37
+Z68 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd|
+Z69 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinStage.vhd|
+!i113 1
+R40
+R14
+Artl
+Z70 DEx4 work 13 tdmaminswitch 0 22 ;A_9k4DoFGeb?QHA96nGQ0
+R2
+R3
+R4
+R5
+R53
+l20
+L19
+VKe;8;@I;Sc50`IMEHHmP>2
+!s100 S;h7UbjJAC@j?j@O3^C@D1
+R8
+31
+R36
+!i10b 1
+R37
+R68
+R69
+!i113 1
+R40
+R14
+Etdmaminswitch
+R41
+R2
+R3
+R4
+R5
+R0
+Z71 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd
+Z72 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd
+l0
+L8
+V;A_9k4DoFGeb?QHA96nGQ0
+!s100 h[e;lEbjCXFWZ]MK6d]=d1
+R8
+31
+R36
+!i10b 1
+R37
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd|
+Z74 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinSwitch.vhd|
+!i113 1
+R40
+R14
+Artl
+R2
+R3
+R4
+R5
+R70
+l19
+L18
+Vf<TSoKE6TYPE26Zz6[9`70
+!s100 1a`QCVX^=HfRSbXEgSbnN1
+R8
+31
+R36
+!i10b 1
+R37
+R73
+R74
+!i113 1
+R40
+R14
+Ptdmamintypes
+R3
+R4
+R5
+R41
+R0
+Z75 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd
+Z76 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd
+l0
+L5
+Vn5Yl9VNj39^hDh^=]VmTO1
+!s100 RO]^LXRIn]Gj8NO>kodKH0
+R8
+31
+b1
+R36
+!i10b 1
+R37
+Z77 !s90 -reportprogress|300|-93|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd|
+Z78 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/TdmaMin/TdmaMinTypes.vhd|
+!i113 1
+R40
+R14
+Bbody
+R2
+R3
+R4
+R5
+l0
+L23
+VN<U8ZAm]jD;Pg265H2Ro;2
+!s100 0>WOSehlFYi]icGfEjD0:1
+R8
+31
+R36
+!i10b 1
+R37
+R77
+R78
+!i113 1
+R40
+R14
+Etestcor
+Z79 w1716521120
+R2
+R3
+R4
+R5
+R0
+Z80 8C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+Z81 FC:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd
+l0
+L8
+VdO3j?D_Y>m>_N>e<iZ?jl3
+!s100 dGSUT`5egDNLhmM8mWg3M0
+R8
+32
+Z82 !s110 1716539825
+!i10b 1
+Z83 !s108 1716539825.000000
+Z84 !s90 -reportprogress|300|-work|work|C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd|
+Z85 !s107 C:/Users/shaar/Downloads/HMPSoC/COR-ASP/testCor.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R3
+R4
+R5
+R15
+l19
+L17
+V3gL;62AoBQl5A_ag7Mc<l1
+!s100 9N[j`a>ZU^WQ]52F@B<Ml2
+R8
+32
+R82
+!i10b 1
+R83
+R84
+R85
+!i113 1
+R13
+R14
