@@ -1,0 +1,27 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY adc_tb IS
+END adc_tb;
+
+ARCHITECTURE behavior OF adc_tb IS     
+    -- Signals to connect to the UUT
+    signal enable : std_logic := '0';
+	 signal sd:integer:=0;
+    signal q      : std_logic_vector(11 downto 0);
+	 signal clk : STD_LOGIC := '0';
+ 
+BEGIN
+	 clk <= not clk after 5 ns;  -- clock every 5 ns
+    enable <= '1';
+    -- Instantiate the Unit Under Test (UUT)
+    uut: entity work.ADCASP 
+	 PORT MAP (
+          enable => enable,
+			 clock => clk,
+			 sd=>3125,
+          q => q
+        );
+
+END;

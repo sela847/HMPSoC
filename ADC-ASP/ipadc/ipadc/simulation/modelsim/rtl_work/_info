@@ -1,0 +1,251 @@
+m255
+K4
+z2
+!s11e vcom 2020.2 2020.04, Apr 19 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/ipadc/ipadc/simulation/modelsim
+T_opt
+!s110 1716868176
+V[e3iSXi;Z8CnI@MaGVg:11
+04 7 3 work tdma_tb sim 1
+=1-cc96e530ef0e-6655544f-339-3260
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OE;O;2020.2;71
+Eadc
+Z1 w1716866691
+Z2 DPx9 altera_mf 20 altera_mf_components 0 22 z693OcI2YmSdfbRXMZge[3
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 3
+R0
+Z8 8H:/ipadc/ipadc/adc.vhd
+Z9 FH:/ipadc/ipadc/adc.vhd
+l0
+L8 1
+VYKEK<@nj_3Jm9YBNk[HFk0
+!s100 [bSY5anhCB23<o6OOzQzX1
+Z10 OE;C;2020.2;71
+32
+Z11 !s110 1716868165
+!i10b 1
+Z12 !s108 1716868165.000000
+Z13 !s90 -reportprogress|300|-work|work|H:/ipadc/ipadc/adc.vhd|
+Z14 !s107 H:/ipadc/ipadc/adc.vhd|
+!i113 0
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Abeh
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 DEx4 work 3 adc 0 22 YKEK<@nj_3Jm9YBNk[HFk0
+!i122 3
+l27
+L20 60
+VFlNcWAMlA_QJzIa1UREPL2
+!s100 YXzRBN70zzBC8nlnlm^=S1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16
+Eadc_tb
+Z18 w1716864341
+R3
+R6
+R7
+!i122 4
+R0
+Z19 8H:/ipadc/ipadc/adc_tb.vhd
+Z20 FH:/ipadc/ipadc/adc_tb.vhd
+l0
+L5 1
+V2=hE4fnIS9PX:j]7@UV3P2
+!s100 4@ZO[ai8Vae]@LKkzlP8i2
+R10
+32
+R11
+!i10b 1
+R12
+Z21 !s90 -reportprogress|300|-work|work|H:/ipadc/ipadc/adc_tb.vhd|
+Z22 !s107 H:/ipadc/ipadc/adc_tb.vhd|
+!i113 0
+R15
+R16
+Abehavior
+R2
+R4
+R5
+R17
+R3
+R6
+R7
+DEx4 work 6 adc_tb 0 22 2=hE4fnIS9PX:j]7@UV3P2
+!i122 4
+l15
+L8 20
+V5PB95ilRoECY?i7QMLE6Y2
+!s100 b_BC>2_F89TnYC`XV61Hg1
+R10
+32
+R11
+!i10b 1
+R12
+R21
+R22
+!i113 0
+R15
+R16
+Enodeadc
+Z23 w1716864414
+Z24 DPx4 work 12 tdmamintypes 0 22 n5Yl9VNj39^hDh^=]VmTO1
+R7
+R6
+R3
+!i122 5
+R0
+Z25 8H:/ipadc/ipadc/nodeadc.vhd
+Z26 FH:/ipadc/ipadc/nodeadc.vhd
+l0
+L8 1
+VzX5XRAlYc5VjW4XkE1mgl1
+!s100 n<9c6?2PfZ5jOEOGYRGWh2
+R10
+32
+Z27 !s110 1716868166
+!i10b 1
+R12
+Z28 !s90 -reportprogress|300|-work|work|H:/ipadc/ipadc/nodeadc.vhd|
+Z29 !s107 H:/ipadc/ipadc/nodeadc.vhd|
+!i113 0
+R15
+R16
+Artl
+R24
+R7
+R6
+R3
+Z30 DEx4 work 7 nodeadc 0 22 zX5XRAlYc5VjW4XkE1mgl1
+!i122 5
+l34
+L16 49
+V3NV[EmXGX^OJ71z0_dFU80
+!s100 ?F;[:PCfnzffXZXg67Z6a3
+R10
+32
+R27
+!i10b 1
+R12
+R28
+R29
+!i113 0
+R15
+R16
+Etdma_tb
+Z31 w1716868086
+R24
+R7
+R6
+R3
+!i122 6
+R0
+Z32 8H:/ipadc/ipadc/tdma_tb.vhd
+Z33 FH:/ipadc/ipadc/tdma_tb.vhd
+l0
+L8 1
+VeKO;IA05he1MnWGEQ<Yc]1
+!s100 Vn?GlTZN@MZRlNIl:ZJXP1
+R10
+32
+R27
+!i10b 1
+Z34 !s108 1716868166.000000
+Z35 !s90 -reportprogress|300|-work|work|H:/ipadc/ipadc/tdma_tb.vhd|
+Z36 !s107 H:/ipadc/ipadc/tdma_tb.vhd|
+!i113 0
+R15
+R16
+Asim
+R30
+R24
+R7
+R6
+R3
+DEx4 work 7 tdma_tb 0 22 eKO;IA05he1MnWGEQ<Yc]1
+!i122 6
+l21
+L14 19
+VcTC9^mA>?N`c5Of6YBF_[2
+!s100 1ebJiciIU:]7>WI8Hk^R^0
+R10
+32
+R27
+!i10b 1
+R34
+R35
+R36
+!i113 0
+R15
+R16
+Ptdmamintypes
+R7
+R6
+R3
+!i122 0
+Z37 w1716861809
+R0
+Z38 8H:/ipadc/ipadc/TDMA/TdmaMin/TdmaMinTypes.vhd
+Z39 FH:/ipadc/ipadc/TDMA/TdmaMin/TdmaMinTypes.vhd
+l0
+L5 1
+Vn5Yl9VNj39^hDh^=]VmTO1
+!s100 RO]^LXRIn]Gj8NO>kodKH0
+R10
+31
+b1
+Z40 !s110 1716868153
+!i10b 1
+Z41 !s108 1716868152.000000
+Z42 !s90 -reportprogress|300|-93|-work|work|H:/ipadc/ipadc/TDMA/TdmaMin/TdmaMinTypes.vhd|
+Z43 !s107 H:/ipadc/ipadc/TDMA/TdmaMin/TdmaMinTypes.vhd|
+!i113 0
+Z44 o-93 -work work
+R16
+Bbody
+R24
+R7
+R6
+R3
+!i122 0
+l0
+L23 1
+VN<U8ZAm]jD;Pg265H2Ro;2
+!s100 0>WOSehlFYi]icGfEjD0:1
+R10
+31
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 0
+R44
+R16

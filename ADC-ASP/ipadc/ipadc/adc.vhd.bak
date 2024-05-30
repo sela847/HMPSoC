@@ -1,0 +1,81 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use IEEE.NUMERIC_STD.ALL;
+LIBRARY altera_mf;
+USE altera_mf.altera_mf_components.all;
+
+ENTITY ADCASP IS
+    GENERIC (
+        DATA_WIDTH : INTEGER := 12  -- Width of the output data, can be 8 to 12
+    );
+    PORT (
+        enable  : IN STD_LOGIC;   -- Enable signal
+        clock   : IN STD_LOGIC;   -- Clock signal
+		  sd		 : IN INTEGER;
+        q       : OUT STD_LOGIC_VECTOR (DATA_WIDTH - 1 DOWNTO 0)  -- Output data
+		  --ready	 : out std_logic
+    );
+END ADCASP;
+
+ARCHITECTURE Beh OF ADCASP IS
+
+    SIGNAL sub_wire0  : STD_LOGIC_VECTOR (DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL address    : STD_LOGIC_VECTOR (10 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL clock_div  : STD_LOGIC := '0';
+    SIGNAL counter    : INTEGER := 0;
+
+BEGIN
+    q <= sub_wire0(DATA_WIDTH - 1 DOWNTO 0);
+
+    altsyncram_component : altsyncram
+    GENERIC MAP (
+        clock_enable_input_a => "BYPASS",
+        clock_enable_output_a => "BYPASS",
+        init_file => "C:\Users\minwo\Desktop\ADC\ADC\submission\adc12.mif",
+        intended_device_family => "Cyclone V",
+        lpm_hint => "ENABLE_RUNTIME_MOD=NO",
+        lpm_type => "altsyncram",
+        numwords_a => 1601,
+        operation_mode => "ROM",
+        outdata_aclr_a => "NONE",
+        outdata_reg_a => "CLOCK0",
+        widthad_a => 11,
+        width_a => 12,
+        width_byteena_a => 1
+    )
+	
+    PORT MAP (
+        address_a => address,
+        clock0 => clock_div,
+        q_a => sub_wire0
+    );
+
+    -- Clock divider process
+    PROCESS (clock)
+    BEGIN
+        IF (clock'EVENT AND clock = '1') THEN
+            IF (counter = (sd-1)) THEN --For 100MHz clock convert to 16KHz 100M/16K = 6250/2 = 3125
+                counter <= 0;
+                clock_div <= NOT clock_div;
+            ELSE
+                counter <= counter + 1;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    -- Address increment process
+    PROCESS (clock_div)
+    BEGIN
+        IF (clock_div'EVENT AND clock_div = '1') THEN
+            IF (enable = '1') THEN
+                address <= address + 1;
+            END IF;
+            IF (address = "11000111111") THEN
+                address <= (OTHERS => '0');
+            END IF;
+				--ready 
+        END IF;
+    END PROCESS;
+
+END Beh;
