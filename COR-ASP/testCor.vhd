@@ -82,8 +82,8 @@ begin
 				--avgVal <= std_logic_vector(unsigned(avgVal) + 1);
 				lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT valuesl <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
 				
-				send.addr <= x"00"; -- send to avg asp
-				send.data <= "1000" & x"000" & avgVal;
+				--send.addr <= x"00"; -- send to avg asp
+				--send.data <= "1000" & x"000" & avgVal;
 				--wait for 300 ns; -- likkle delay
 			end if;
 		end if;

@@ -71,4 +71,10 @@ begin
         recv=> recv_port(0),
         send=> send_port(0)
 	);
+	adc_asp: entity work.nodeadc
+	port map(
+	clock => clock,
+	recv => recv_port(4),
+	send => send_port(4)
+	);
 end architecture;

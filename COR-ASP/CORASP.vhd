@@ -24,7 +24,7 @@ signal correlation: signed(31 downto 0) := (others => '0'); -- Correlation resul
 signal addr_0   : std_logic_vector(3 downto 0) := "0010"; -- Change to whatever Peak Detector would be
 signal addr_1   : std_logic_vector(3 downto 0) := "0010"; -- Change to whatever Peak Detector would be
 signal flag     : std_logic := '0'; -- Flag for knowing to clear the buffer
-
+signal oldVal	 : std_logic_vector(15 downto 0);
 type buffer_array is array (2*N-1 downto 0) of std_logic_vector(15 downto 0);
 signal avgBuffer: buffer_array;  -- Buffer containing all the vals we need
 
@@ -52,33 +52,36 @@ begin
             end if;
 	 if recv.data(31 downto 28) = "1000" then -- Is a valid data packet
             recvdata := signed(recv.data(15 downto 0));
-
-            if (flag = '0' or enable = '0') then
-                flag <= '1';
-                avgBuffer <= ((others => (others => '0')));
-                index := 2*N-1;
-                avgBuffer(index) <= recv.data(15 downto 0);
-                index := index - 1;
-            elsif (enable = '1') then
-                avgBuffer(index) <= recv.data(15 downto 0);
-                index := index - 1;
-                if (index < 0) then
-                    flag <= '0';
-		    validCor := '1';
-                    corrVar := x"00000000";
-                    for i in 0 to N-1 loop
-                        corrVar := corrVar + (signed(avgBuffer(N + i)) * signed(avgBuffer(N - (i+1))));
-                    end loop;
-                    correlation <= corrVar;
-                end if;
-            end if;
-
+				if oldVal /= recv.data(15 downto 0) then
+				
+						if (flag = '0' or enable = '0') then
+								flag <= '1';
+								avgBuffer <= ((others => (others => '0')));
+								index := 2*N-1;
+								avgBuffer(index) <= recv.data(15 downto 0);
+								index := index - 1;
+						elsif (enable = '1') then
+								avgBuffer(index) <= recv.data(15 downto 0);
+								index := index - 1;
+								if (index < 0) then
+										flag <= '0';
+										validCor := '1';
+										corrVar := x"00000000";
+										for i in 0 to N-1 loop
+											corrVar := corrVar + (signed(avgBuffer(N + i)) * signed(avgBuffer(N - (i+1))));
+										end loop;
+										correlation <= corrVar;
+								end if;
+						end if;
+				end if;
             -- Passing regular values through, as well as correlation concurrently
 	    send.data(31 downto 0) <= '1' & validCor & std_logic_vector(corrVar(29 downto 0));
             validCor := '0';
+	    oldVal <= recv.data(15 downto 0);
 	end if;   
 	    
         end if;
+		  
     end process;
 
     sendCorr <= std_logic_vector(correlation);

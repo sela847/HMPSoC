@@ -58,7 +58,7 @@ begin
 
     uut : entity work.COR_ASP_TopLevel
         GENERIC MAP(
-            ports => 4
+            ports => 5
         )
         port map(
             clock => clock,

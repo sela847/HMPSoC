@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu May 30 23:08:54 2024
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Fri May 31 15:32:23 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : COR_ASP_TopLevel
-Top-level Entity Name : CORASP
+Top-level Entity Name : COR_ASP_TopLevel
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 451
-Total pins : 130
+Total registers : 0
+Total pins : 54
 Total virtual pins : 0
 Total block memory bits : 0
-Total DSP Blocks : 9
+Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

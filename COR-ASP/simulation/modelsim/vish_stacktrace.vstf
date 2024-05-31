@@ -7,3 +7,41 @@
 # Platform = win32pe
 
 Exception c0000005 has occurred at address 0065d4f5. Traceback:
+# Current time Fri May 31 15:24:34 2024
+# ModelSim SE Stack Trace
+# Program = vish
+# Id = "2020.2"
+# Version = "2020.04"
+# Date = "Apr 19 2020"
+# Platform = win32
+
+Exception c0000005 has occurred at address 007954f4. Traceback:
+# 0    0x007954f4: 'win_tb_CoreExceptionFilter + 0x16154'
+# 1    0x007755fa: 'WlfContextItem::`vector deleting destructor' + 0x69bfa'
+# 2    0x007789cc: 'WlfContextItem::`vector deleting destructor' + 0x6cfcc'
+# 3    0x0077946e: 'WlfContextItem::`vector deleting destructor' + 0x6da6e'
+# 4    0x00777765: 'WlfContextItem::`vector deleting destructor' + 0x6bd65'
+# 5    0x0077586e: 'WlfContextItem::`vector deleting destructor' + 0x69e6e'
+# 6    0x0067f1ad: 'WinMain + 0x123f6d'
+# 7    0x004f8779: 'EnumDispProc + 0x1779'
+# 8    0x55ca1fae: 'TclInvokeStringCommand + 0xbe'
+# 9    0x55ca39f1: 'TclNREvalObjv + 0x3e1'
+# 10   0x55ca3a49: 'TclNRRunCallbacks + 0x49'
+# 11   0x55ca563c: 'Tcl_EvalObjEx + 0x2c'
+# 12   0x55ed0400: 'Itcl_EvalMemberCode + 0x300'
+# 13   0x11a14160: '<unknown (@0x11a14160)>'
+# 14   0xcccccccc: '<unknown (@0xcccccccc)>'
+# 15   0x0266edfc: '<unknown (@0x266edfc)>'
+# 16   0x0266e694: '<unknown (@0x266e694)>'
+# 17   0x55ca39f1: 'TclNREvalObjv + 0x3e1'
+# 18   0x55ca3a49: 'TclNRRunCallbacks + 0x49'
+# 19   0x55ca4ef9: 'Tcl_EvalEx + 0x8b9'
+# 20   0x55ca465a: 'Tcl_EvalEx + 0x1a'
+# 21   0x55a81dd9: 'TkBindEventProc + 0x1b9'
+# 22   0x55a8ec67: 'Tk_HandleEvent + 0x247'
+# 23   0x55a8de5c: 'TkDeleteThreadExitHandler + 0x24c'
+# 24   0x55d3acb5: 'Tcl_ServiceEvent + 0xc5'
+# 25   0x55d3b072: 'Tcl_DoOneEvent + 0x162'
+StackWalk failed 0
+# End of Stack Trace
+
