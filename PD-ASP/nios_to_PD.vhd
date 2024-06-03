@@ -17,6 +17,7 @@ end entity nios_to_PD;
 
 architecture behaviour of nios_to_PD is
 	signal in_PD_Data : std_logic_vector(31 downto 0);
+	signal empty : integer := 50000;
 begin
 	
 	send.addr <= x"02";
@@ -24,11 +25,19 @@ begin
 	process(clk)
 	begin
 		if rising_edge(clk) then
-			if enable_config = '1' then
-				send.data <= x"F0120000"; --When finish enabling in PD_ASP, start getting items from in_PD
+			if empty = 0 then
+				send.data <= x"00000000";
+				empty <= empty + 1;
+			elsif empty < 50000 then --Should be equal to 1ms which by then enable_config is flipped. 
+				send.data <= x"00000000";
+				empty <= empty + 1;
+			elsif enable_config = '1' then
+				send.data <= x"F0120000";
+				empty <= 0;
 			else
-				send.data <= x"F0100000"; --Disables; 
-			end if;
+				send.data <= x"F0100000";
+				empty <= 0;
+			end if;						
 		end if;
 	end process;
 	

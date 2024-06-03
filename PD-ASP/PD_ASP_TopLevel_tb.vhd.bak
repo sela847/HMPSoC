@@ -1,20 +1,22 @@
-LIBRARY ieee;
-USE ieee.numeric_std.ALL;
-USE ieee.std_logic_1164.ALL;
 
-ENTITY PD_ASP_TopLevel_tb IS
-END ENTITY;
+library ieee;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
 
-ARCHITECTURE tb OF PD_ASP_TopLevel_tb IS
+entity PD_ASP_TopLevel_tb is
+end entity;
 
-    SIGNAL clock : STD_LOGIC := '0';
-    SIGNAL avgVal : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL calc : STD_LOGIC := '0';
-    SIGNAL sendCorr : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL flag : STD_LOGIC := '0';
+architecture tb of PD_ASP_TopLevel_tb is
 
-    TYPE sine_wave_array IS ARRAY (0 TO 31) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
-    CONSTANT sine_wave_lut : sine_wave_array := (
+    signal clock : STD_LOGIC := '0';
+    signal correlation : STD_LOGIC_VECTOR(15 downto 0) := (OTHERS => '0');
+    signal calc : STD_LOGIC := '0';
+    --signal sendCorr : STD_LOGIC_VECTOR(31 downto 0);
+    signal flag : STD_LOGIC := '0';
+	 signal delay : integer := 0;
+
+    type sine_wave_array is array (0 to 31) of STD_LOGIC_VECTOR(15 downto 0);
+    constant sine_wave_lut : sine_wave_array := (
         0 => "0111111111111111",
         1 => "1001100011111000",
         2 => "1011000011111011",
@@ -49,42 +51,50 @@ ARCHITECTURE tb OF PD_ASP_TopLevel_tb IS
         31 => "0110011100000110"
     );
 
-    SIGNAL lut_index : INTEGER := 0;
+    signal lut_index : INTEGER := 0;
 
-BEGIN
+begin
 
-    uut : ENTITY work.COR_ASP_TopLevel
+    uut : entity work.PD_ASP_TopLevel
         GENERIC MAP(
-            ports => 8
+            ports => 4
         )
-        PORT MAP(
+        port map(
             clock => clock,
-            avgVal => avgVal,
-            calc => calc,
-            flag => flag,
-            sendCorr => sendCorr
+            correlation => correlation,
+            enable_config => calc,
+            flag => flag
+            --sendCorr => sendCorr
         );
 
     -- Clock generation process
-    clock_process : PROCESS
-    BEGIN
-        WHILE True LOOP
+    clock_process : process
+    begin
+        while True loop
             clock <= '0';
-            WAIT FOR 10 ns;
+            wait for 10 ns;
             clock <= '1';
-            WAIT FOR 10 ns;
-        END LOOP;
-    END PROCESS clock_process;
+            wait for 10 ns;
+        end loop;
+    end process clock_process;
 
     -- Stimulus process
-    stimulus_process : PROCESS
-    BEGIN
-        WHILE True LOOP
-            WAIT FOR 20 ns; -- Total wait time per iteration
-            avgVal <= sine_wave_lut(lut_index);
-            lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
-            calc <= NOT calc AFTER 200 ns; -- Toggle calc every 200 ns
-        END LOOP;
-    END PROCESS stimulus_process;
+    stimulus_process : process
+    begin
+		  calc <= not calc;
+        while True loop
+            wait for 20 ns; -- Total wait time per iteration
+				if delay < 10 then
+					delay <= delay + 1;
+				else
+					correlation <= sine_wave_lut(lut_index); --If user wants to test with a sine wave, they can uncomment this line and comment out the line underneath
+					--avgVal <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
+					lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
+					--calc <= NOT calc after 200 ns; -- Toggle calc every 200 ns
+					flag <= '1', '0' after 3ms;
+					--delay <= 0;
+				end if;
+        end loop;
+    end process stimulus_process;
 
 END ARCHITECTURE;
