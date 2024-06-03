@@ -10,7 +10,7 @@ entity COR_ASP_TopLevel is
         ports : positive := 6
     );
     port (
-        clock   : in std_logic;
+        CLOCK_50   : in std_logic;
         avgVal  : in std_logic_vector(15 downto 0);
         calc    : in std_logic;
         flag    : in std_logic;
@@ -23,7 +23,10 @@ entity COR_ASP_TopLevel is
         HEX2    : out std_logic_vector(6 downto 0);
         HEX3    : out std_logic_vector(6 downto 0);
         HEX4    : out std_logic_vector(6 downto 0);
-        HEX5    : out std_logic_vector(6 downto 0)
+		  HEX5    : out std_logic_vector(6 downto 0);
+		  LEDR         : out std_logic_vector(9 downto 0);
+        SW            : in std_logic_vector(9 downto 0);
+        KEY            : in std_logic_vector(3 downto 0)
     );
 end entity;
 
@@ -51,14 +54,14 @@ begin
             ports => ports
         )
         port map (
-            clock => clock,
+            clock => CLOCK_50,
             sends => send_port,
             recvs => recv_port
         );
        
     cor_asp: entity work.CORASP
         port map(
-            clock    => clock,
+            clock    => CLOCK_50,
             send     => send_port(2),
             recv     => recv_port(2),
             avgVal   => avgVal,
@@ -66,26 +69,26 @@ begin
             sendCorr => sendCorr
         );
 
-    test_cor: entity work.testCor
-        port map(
-            clock => clock,
-            flag => flag,
-            pd_flag => pd_flag,
-            avg_flag => avg_flag,
-            send => send_port(1),
-            recv => recv_port(1)
-        );
+--    test_cor: entity work.testCor
+--        port map(
+--            clock => clock,
+--            flag => flag,
+--            pd_flag => pd_flag,
+--            avg_flag => avg_flag,
+--            send => send_port(1),
+--            recv => recv_port(1)
+--        );
    
     PD_ASP: entity work.PD_ASP
         port map(
-            clk => clock,
+            clk => CLOCK_50,
             recv => recv_port(3),
             send => send_port(3)
         );
    
     avg_asp: entity work.AverageCalculator
         port map(
-            clk => clock,
+            clk => CLOCK_50,
             reset => reset,
             recv => recv_port(0),
             send => send_port(0)
@@ -93,14 +96,14 @@ begin
    
     adc_asp: entity work.nodeadc
         port map(
-            clock => clock,
+            clock => CLOCK_50,
             recv => recv_port(4),
             send => send_port(4)
         );
    
     nios_example: Nios_System_2A
         port map (
-            clk_clk => clock,
+            clk_clk => CLOCK_50,
             seg_0_external_connection_export(6 downto 0) => HEX0(6 downto 0),
             seg_1_external_connection_export(6 downto 0) => HEX1(6 downto 0),
             seg_2_external_connection_export(6 downto 0) => HEX2(6 downto 0),
@@ -111,4 +114,13 @@ begin
             recv_external_connection_export  => recv_port(5).data,
             addr_external_connection_export  => send_port(5).addr
         );
+	RECOP: entity work.TopLevel
+    port map (
+        clock => CLOCK_50,
+        KEY => KEY,
+        SW => SW,
+        send => send_port(1),
+        recv => recv_port(1),
+        LEDR => LEDR
+    );
 end architecture;

@@ -1,6 +1,9 @@
-22:15:21 **** Clean-only build of configuration Nios II for project freqAnal ****
-make clean 
-[freqAnal clean complete]
+04:50:26 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
 
-22:15:21 Build Finished (took 209ms)
+04:50:27 Build Finished (took 849ms)
 

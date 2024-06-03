@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>3/06/2024 10:15:16 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1717409716298</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>4/06/2024 4:48:33 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1717433313562</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\shaar\Downloads\HMPSoC\COR-ASP\software\freqAnal_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios_System_2A.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>

@@ -20,13 +20,14 @@ int main(){
     uint32_t numADC = 0;
     uint64_t secondsTaken = 0;
     int segments[6] = {0};
-
     printf("running \n");
     while(1){
         received = IORD_ALTERA_AVALON_PIO_DATA(RECV_BASE);
-        
+        //printf("Received data: %u\n", (unsigned int) received);
+
         // For Averaging
         if ((((received >> 28) & 0x0F) == 0b1100)){
+        	printf("received datata \n");
             if(((received >> 18) & 0x01) == 1) {
                 fifoWidth = 8;
             } else {
@@ -36,6 +37,7 @@ int main(){
 
         // For correlation
         if ((((received >> 28) & 0x0F) == 0b1101)){
+        	printf("received corr pack \n");
             if(((received >> 18) & 0x01) == 1) {
                 corrWindow = 20;
             } else {
@@ -46,6 +48,7 @@ int main(){
         // Checking if we are receiving a valid data packet from PeD
         if ((((received >> 28) & 0x0F) == 0b1001) && (((received >> 27) & 0x01) == 1)) {
             // Analyze the freq
+        	printf("correlation found \n");
             numberOfCorrelations = received & 0xFFFFF;
             
             // Now we begin our frequency analysis

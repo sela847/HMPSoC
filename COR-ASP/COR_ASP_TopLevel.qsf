@@ -51,32 +51,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name QIP_FILE Nios_System_2A/synthesis/Nios_System_2A.qip
-set_global_assignment -name VHDL_FILE tdma_tb.vhd
-set_global_assignment -name VHDL_FILE nodeadc.vhd
-set_global_assignment -name VHDL_FILE adc_tb.vhd
-set_global_assignment -name VHDL_FILE adc.vhd
-set_global_assignment -name VHDL_FILE AverageCalculator.vhd
-set_global_assignment -name VHDL_FILE ip/AudioRom/AudioRom.vhd
-set_global_assignment -name VHDL_FILE ip/AudioFifo/AudioFifo.vhd
-set_global_assignment -name VHDL_FILE ip/AudioClock_2/AudioClock.vhd
-set_global_assignment -name VHDL_FILE ip/AudioClock_1/AudioClock.vhd
-set_global_assignment -name VHDL_FILE ip/TdmaMinFifo/TdmaMinFifo.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinTypes.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSwitch.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinStage.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSlots.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinInterface.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinFabric.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMin.vhd
-set_global_assignment -name VHDL_FILE CORASP.vhd
-set_global_assignment -name VHDL_FILE COR_ASP_TopLevel.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VHDL_FILE COR_ASP_TopLevel_tb.vhd
-set_global_assignment -name VHDL_FILE CORASP_Wave_Test.vhd
-set_global_assignment -name VHDL_FILE testCor.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
-set_global_assignment -name VHDL_FILE PD_ASP.vhd
 set_location_assignment PIN_AJ4 -to ADC_CS_N
 set_location_assignment PIN_AK4 -to ADC_DIN
 set_location_assignment PIN_AK3 -to ADC_DOUT
@@ -338,4 +312,57 @@ set_location_assignment PIN_D11 -to VGA_VS
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/various_constants.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registers.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registerfile.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/regfile.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/reg_32.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/reg_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/recop_types.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/recop_pll.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/prog_mem.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/pll.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/PC.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/opcodes.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX4_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX3_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX2_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/memory_model.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/memory_arbiter.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/Max.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/instruction_reg.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/dprr.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/dpcr.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/data_mem.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/control_unit.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/ALU.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/address_reg.vhd"
+set_global_assignment -name QIP_FILE Nios_System_2A/synthesis/Nios_System_2A.qip
+set_global_assignment -name VHDL_FILE tdma_tb.vhd
+set_global_assignment -name VHDL_FILE nodeadc.vhd
+set_global_assignment -name VHDL_FILE adc_tb.vhd
+set_global_assignment -name VHDL_FILE adc.vhd
+set_global_assignment -name VHDL_FILE AverageCalculator.vhd
+set_global_assignment -name VHDL_FILE ip/AudioRom/AudioRom.vhd
+set_global_assignment -name VHDL_FILE ip/AudioFifo/AudioFifo.vhd
+set_global_assignment -name VHDL_FILE ip/AudioClock_2/AudioClock.vhd
+set_global_assignment -name VHDL_FILE ip/AudioClock_1/AudioClock.vhd
+set_global_assignment -name VHDL_FILE ip/TdmaMinFifo/TdmaMinFifo.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinTypes.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSwitch.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinStage.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSlots.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinInterface.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinFabric.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMin.vhd
+set_global_assignment -name VHDL_FILE CORASP.vhd
+set_global_assignment -name VHDL_FILE COR_ASP_TopLevel.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE COR_ASP_TopLevel_tb.vhd
+set_global_assignment -name VHDL_FILE CORASP_Wave_Test.vhd
+set_global_assignment -name VHDL_FILE testCor.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VHDL_FILE PD_ASP.vhd
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/pc_test.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/TopLevel.vhd"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
