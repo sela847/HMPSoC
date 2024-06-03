@@ -91,7 +91,7 @@ begin
 --	    avgVal <= std_logic_vector(signed(avgVal) + 1); -- Increment avgVal by 1
             lut_index <= (lut_index + 1) MOD 32; -- Cycle through LUT values
             calc <= NOT calc after 200 ns; -- Toggle calc every 200 ns
-	    avg_flag <= '1';
+				avg_flag <= '1';
 			if flag = '0' then
 				wait for 20 ns;
 				flag <= '1';

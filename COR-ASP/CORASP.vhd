@@ -18,14 +18,14 @@ end CORASP;
 
 architecture rtl of CORASP is
 
-constant N : integer := 10;
+signal N : integer := 10;
 
 signal correlation: signed(31 downto 0) := (others => '0'); -- Correlation result
 signal addr_0   : std_logic_vector(3 downto 0) := "0010"; -- Change to whatever Peak Detector would be
 signal addr_1   : std_logic_vector(3 downto 0) := "0010"; -- Change to whatever Peak Detector would be
 signal flag     : std_logic := '0'; -- Flag for knowing to clear the buffer
 signal oldVal	 : std_logic_vector(15 downto 0);
-type buffer_array is array (2*N-1 downto 0) of std_logic_vector(15 downto 0);
+type buffer_array is array (19 downto 0) of std_logic_vector(15 downto 0);
 signal avgBuffer: buffer_array;  -- Buffer containing all the vals we need
 
 signal enable : std_logic;
@@ -39,7 +39,7 @@ begin
         variable casted : std_logic_vector(15 downto 0);
         variable recvdata: signed(15 downto 0);
         variable corrVar : signed(31 downto 0);
-        variable index : integer := (2*N) -1; -- Index for the buffer
+        variable index : integer := 19; -- Index for the buffer
     begin
         if rising_edge(clock) then
             if recv.data(31 downto 28) = "1101" then -- Is a valid configuration packet
@@ -48,7 +48,13 @@ begin
                 else
                     enable <= '0';
                 end if;
-		send.addr <= x"0" & recv.data(23 downto 20); -- part of config packet related to what address to send data to
+					 if recv.data(18) = '1' then
+						  N <= 10;
+					 else
+						  N <= 8;
+					 end if;
+					 index := N;
+					send.addr <= x"0" & recv.data(23 downto 20); -- part of config packet related to what address to send data to
             end if;
 	 if recv.data(31 downto 28) = "1000" then -- Is a valid data packet
             recvdata := signed(recv.data(15 downto 0));
@@ -67,8 +73,10 @@ begin
 										flag <= '0';
 										validCor := '1';
 										corrVar := x"00000000";
-										for i in 0 to N-1 loop
-											corrVar := corrVar + (signed(avgBuffer(N + i)) * signed(avgBuffer(N - (i+1))));
+										for i in 0 to 9 loop
+											if (i <= N-1) then
+												corrVar := corrVar + (signed(avgBuffer(N + i)) * signed(avgBuffer(N - (i+1))));
+											end if;
 										end loop;
 										correlation <= corrVar;
 								end if;
@@ -87,4 +95,3 @@ begin
     sendCorr <= std_logic_vector(correlation);
 
 end architecture;
-
