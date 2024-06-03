@@ -2,6 +2,7 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+<<<<<<< Updated upstream
 Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
 Slack : 11.959
 TNS   : 0.000
@@ -81,5 +82,134 @@ TNS   : 0.000
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
 Slack : 15.781
 TNS   : 0.000
+=======
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -38.396
+TNS   : -16386.137
+
+Type  : Slow 1100mV 85C Model Setup 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -1.866
+TNS   : -106.453
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.561
+TNS   : -380.571
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.819
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.225
+TNS   : -5735.050
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -2.174
+TNS   : -169.295
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -38.482
+TNS   : -16007.965
+
+Type  : Slow 1100mV 0C Model Setup 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -1.870
+TNS   : -102.275
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.478
+TNS   : -353.530
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.764
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.225
+TNS   : -5785.529
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -2.174
+TNS   : -168.788
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -21.481
+TNS   : -9028.238
+
+Type  : Fast 1100mV 85C Model Setup 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -0.914
+TNS   : -44.823
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.679
+TNS   : -142.247
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.174
+TNS   : -4988.342
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -2.174
+TNS   : -158.135
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -19.854
+TNS   : -7957.940
+
+Type  : Fast 1100mV 0C Model Setup 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -0.716
+TNS   : -37.350
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : 0.150
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.515
+TNS   : -101.910
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.174
+TNS   : -4988.639
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'nodeadc:adc_asp|adc:uut|clk_sample'
+Slack : -2.174
+TNS   : -157.753
+>>>>>>> Stashed changes
 
 ------------------------------------------------------------

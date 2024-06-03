@@ -132,6 +132,7 @@
 					"strict" : false
 				},
 				{
+<<<<<<< Updated upstream
 					"name" : "HEX0[0]",
 					"strict" : false
 				},
@@ -301,6 +302,53 @@
 				},
 				{
 					"name" : "clock",
+=======
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+>>>>>>> Stashed changes
 					"strict" : false
 				},
 				{
@@ -312,11 +360,62 @@
 					"strict" : false
 				},
 				{
+<<<<<<< Updated upstream
+=======
+					"name" : "flag",
+					"strict" : false
+				},
+				{
+>>>>>>> Stashed changes
 					"name" : "pd_flag",
 					"strict" : false
 				},
 				{
+<<<<<<< Updated upstream
 					"name" : "flag",
+=======
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+>>>>>>> Stashed changes
 					"strict" : false
 				}
 			]

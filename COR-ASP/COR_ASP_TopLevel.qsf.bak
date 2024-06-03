@@ -38,7 +38,11 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
+<<<<<<< Updated upstream
 set_global_assignment -name TOP_LEVEL_ENTITY Nios_System_2A_inst
+=======
+set_global_assignment -name TOP_LEVEL_ENTITY COR_ASP_TopLevel
+>>>>>>> Stashed changes
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:00:53  MAY 21, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -51,7 +55,69 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+<<<<<<< Updated upstream
 set_global_assignment -name QIP_FILE Nios_System_2A/synthesis/Nios_System_2A.qip
+=======
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE BSF_BDF_files/TopLevel.vhd
+set_global_assignment -name BSF_FILE BSF_BDF_files/pc_test.bsf
+set_global_assignment -name BDF_FILE BSF_BDF_files/pc_test.bdf
+set_global_assignment -name BSF_FILE BSF_BDF_files/Toplevel.bsf
+set_global_assignment -name BDF_FILE BSF_BDF_files/TopLevel.bdf
+set_global_assignment -name BSF_FILE BSF_BDF_files/registers.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/regfile.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/reg_32.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/reg_16.bsf
+set_global_assignment -name BDF_FILE BSF_BDF_files/RecopBlockDiagram.bdf
+set_global_assignment -name BSF_FILE BSF_BDF_files/recop_pll.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/prog_mem.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/pll.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/PC.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/MUX4_32.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/MUX4_16.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/MUX3_16.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/MUX2_16.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/memory_model.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/memory_arbiter.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/memory.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/Max.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/instruction_reg.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/instr_combine.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/dprr.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/dpcr.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/data_mem.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/control_unit.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/alu.bsf
+set_global_assignment -name BSF_FILE BSF_BDF_files/address_reg.bsf
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/various_constants.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registers.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registerfile.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/regfile.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/reg_32.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/reg_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/recop_types.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/recop_pll.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/prog_mem.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/pll.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/PC.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/opcodes.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX4_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX3_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/MUX2_16.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/memory_model.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/memory_arbiter.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/Max.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/instruction_reg.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/dprr.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/dpcr.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/data_mem.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/control_unit.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/ALU.vhd"
+set_global_assignment -name VHDL_FILE "Selected VHDL source design files/address_reg.vhd"
+>>>>>>> Stashed changes
 set_global_assignment -name VHDL_FILE tdma_tb.vhd
 set_global_assignment -name VHDL_FILE nodeadc.vhd
 set_global_assignment -name VHDL_FILE adc_tb.vhd
@@ -76,8 +142,12 @@ set_global_assignment -name VHDL_FILE COR_ASP_TopLevel_tb.vhd
 set_global_assignment -name VHDL_FILE CORASP_Wave_Test.vhd
 set_global_assignment -name VHDL_FILE testCor.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+<<<<<<< Updated upstream
 set_global_assignment -name VHDL_FILE PD_ASP.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+=======
+set_global_assignment -name VHDL_FILE PD_ASP.vhd
+>>>>>>> Stashed changes

@@ -56,20 +56,20 @@ architecture tb of COR_ASP_TopLevel_tb is
 
 begin
 
-    uut : entity work.COR_ASP_TopLevel
-        GENERIC MAP(
-            ports => 5
-        )
-        port map(
-            clock => clock,
-            avgVal => avgVal,
-            calc => calc,
-            flag => flag,
-				pd_flag => pd_flag,
-				avg_flag => avg_flag,
-				reset => reset,
-            sendCorr => sendCorr
-        );
+--    uut : entity work.COR_ASP_TopLevel
+--        GENERIC MAP(
+--            ports => 5
+--        )
+--        port map(
+--            clock => clock,
+--            avgVal => avgVal,
+--            calc => calc,
+--            flag => flag,
+--				pd_flag => pd_flag,
+--				avg_flag => avg_flag,
+--				reset => reset,
+--            sendCorr => sendCorr
+--        );
 
     -- Clock generation process
     clock_process : process

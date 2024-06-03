@@ -1,6 +1,6 @@
 MIF/HEX Update report for COR_ASP_TopLevel
-Fri May 31 13:27:57 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Tue Jun 04 01:44:54 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Fri May 31 13:27:57 2024 ;
+; MIF/HEX Update Status ; Successful - Tue Jun 04 01:44:54 2024 ;
 ; Revision Name         ; COR_ASP_TopLevel                      ;
 ; Top-level Entity Name ; COR_ASP_TopLevel                      ;
 ; Family                ; Cyclone V                             ;
@@ -43,13 +43,14 @@ refer to the applicable agreement for further details.
 +-----------------------+---------------------------------------+
 
 
-+-------------------------------------------+
-; MIF/HEX Update Processed Files            ;
-+-------------------------------------------+
-; File Name                                 ;
-+-------------------------------------------+
-; H:/Documents/701/HMPSoC/COR-ASP/12bit.mif ;
-+-------------------------------------------+
++-------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                          ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; C:/Users/brian/Documents/HMPSoC/COR-ASP/12bit.mif                       ;
+; C:/Users/brian/Documents/HMPSoC/COR-ASP/recop-asm package/rawoutput.mif ;
++-------------------------------------------------------------------------+
 
 
 +-------------------------+
@@ -57,16 +58,24 @@ refer to the applicable agreement for further details.
 +-------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri May 31 13:27:56 2024
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jun 04 01:44:49 2024
 Info: Command: quartus_cdb COR_ASP -c COR_ASP_TopLevel --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (113031): 5 out of 1024 addresses are reinitialized. The latest initialized data will replace the existing data. There are 5 warnings found, and 5 warnings are reported. File: C:/Users/brian/Documents/HMPSoC/COR-ASP/recop-asm package/rawoutput.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/brian/Documents/HMPSoC/COR-ASP/ Line: 10
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/brian/Documents/HMPSoC/COR-ASP/ Line: 11
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/brian/Documents/HMPSoC/COR-ASP/ Line: 12
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/brian/Documents/HMPSoC/COR-ASP/ Line: 13
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/brian/Documents/HMPSoC/COR-ASP/ Line: 14
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "C:/Users/brian/Documents/HMPSoC/COR-ASP/recop-asm package/rawoutput.mif" -- setting initial value for remaining addresses to 0
 Info (39024): Processed the following Memory Initialization File(s)
-    Info (39025): Processed Memory Initialization File H:/Documents/701/HMPSoC/COR-ASP/12bit.mif File: H:/Documents/701/HMPSoC/COR-ASP/12bit.mif Line: 0
-Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Fri May 31 13:27:57 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info (39025): Processed Memory Initialization File C:/Users/brian/Documents/HMPSoC/COR-ASP/12bit.mif File: C:/Users/brian/Documents/HMPSoC/COR-ASP/12bit.mif Line: 0
+    Info (39025): Processed Memory Initialization File C:/Users/brian/Documents/HMPSoC/COR-ASP/recop-asm package/rawoutput.mif File: C:/Users/brian/Documents/HMPSoC/COR-ASP/recop-asm package/rawoutput.mif Line: 0
+Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4902 megabytes
+    Info: Processing ended: Tue Jun 04 01:44:54 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

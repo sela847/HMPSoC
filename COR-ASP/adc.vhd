@@ -31,7 +31,11 @@ begin
     generic map (
         clock_enable_input_a => "BYPASS",
         clock_enable_output_a => "BYPASS",
+<<<<<<< Updated upstream
 		  init_file => "12bit.mif",
+=======
+		  init_file => "C:\Users\brian\Documents\HMPSoC\COR-ASP\12bit.mif",
+>>>>>>> Stashed changes
         intended_device_family => "Cyclone V",
         lpm_hint => "ENABLE_RUNTIME_MOD=NO",
         lpm_type => "altsyncram",

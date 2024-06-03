@@ -1,0 +1,110 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+
+-- PROGRAM		"Quartus Prime"
+-- VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+-- CREATED		"Mon Jun 03 20:35:50 2024"
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY TopLevel IS 
+	PORT
+	(
+		CLOCK_50 :  IN  STD_LOGIC;
+		KEY :  IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		SW :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		HEX0 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX1 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX2 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX3 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX4 :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		LEDR :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0)
+	);
+END TopLevel;
+
+ARCHITECTURE bdf_type OF TopLevel IS 
+
+COMPONENT pc_test
+	PORT(reset_in : IN STD_LOGIC;
+		 CLOCK_50 : IN STD_LOGIC;
+		 sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 write_pc : OUT STD_LOGIC;
+		 reset_pc : OUT STD_LOGIC;
+		 pc_mux_sel : OUT STD_LOGIC;
+		 ir_wr : OUT STD_LOGIC;
+		 ir_reset : OUT STD_LOGIC;
+		 ir_operand_set : OUT STD_LOGIC;
+		 load_reg : OUT STD_LOGIC;
+		 op1_wr : OUT STD_LOGIC;
+		 op2_wr : OUT STD_LOGIC;
+		 z_flag : OUT STD_LOGIC;
+		 alu_op_sel : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 alu_outputpin : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 AM : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+		 currentState : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 dm_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+		 incrAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 instAddr : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 instruction : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 op1OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 op2OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 OPCode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		 Operand : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 prog_mem_instruct : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 r7_outputData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 reg4_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 Rx : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 rx_outputData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 Rz : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 rz_outputData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 sop_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	DPCR :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	SIP :  STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL	SOP :  STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC;
+
+
+BEGIN 
+
+
+
+b2v_inst : pc_test
+PORT MAP(reset_in => SYNTHESIZED_WIRE_0,
+		 CLOCK_50 => CLOCK_50,
+		 sip => SIP,
+		 dpcr => DPCR,
+		 sop_out => SOP);
+
+
+SYNTHESIZED_WIRE_0 <= NOT(KEY(0));
+
+
+HEX0(6 DOWNTO 0) <= DPCR(6 DOWNTO 0);
+HEX1(6 DOWNTO 0) <= DPCR(13 DOWNTO 7);
+HEX2(6 DOWNTO 0) <= DPCR(20 DOWNTO 14);
+HEX3(6 DOWNTO 0) <= DPCR(27 DOWNTO 21);
+HEX4(3 DOWNTO 0) <= DPCR(31 DOWNTO 28);
+LEDR(9 DOWNTO 0) <= SOP(9 DOWNTO 0);
+
+SIP(9 DOWNTO 0) <= SW;
+SIP(12 DOWNTO 10) <= KEY(3 DOWNTO 1);
+END bdf_type;

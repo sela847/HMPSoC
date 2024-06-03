@@ -10,9 +10,10 @@ entity COR_ASP_TopLevel is
         ports : positive := 6
     );
     port (
-        clock   : in std_logic;
+        CLOCK_50   : in std_logic;
         avgVal  : in std_logic_vector(15 downto 0);
         calc    : in std_logic;
+<<<<<<< Updated upstream
         flag    : in std_logic;
         pd_flag : in std_logic;
         avg_flag : in std_logic;
@@ -24,10 +25,21 @@ entity COR_ASP_TopLevel is
         HEX3    : out std_logic_vector(6 downto 0);
         HEX4    : out std_logic_vector(6 downto 0);
         HEX5    : out std_logic_vector(6 downto 0)
+=======
+			flag	: in std_logic;
+			pd_flag : in std_logic;
+			avg_flag : in std_logic;
+			reset : in std_logic;
+        sendCorr: out std_logic_vector(31 downto 0);
+		  LEDR 		: out std_logic_vector(9 downto 0);
+		  SW			: in std_logic_vector(9 downto 0);
+		  KEY			: in std_logic_vector(3 downto 0)
+>>>>>>> Stashed changes
     );
 end entity;
 
 architecture sim of COR_ASP_TopLevel is
+<<<<<<< Updated upstream
     signal send_port : tdma_min_ports(0 to ports - 1);
     signal recv_port : tdma_min_ports(0 to ports - 1);
     
@@ -45,20 +57,27 @@ architecture sim of COR_ASP_TopLevel is
             seg_5_external_connection_export : out std_logic_vector(7 downto 0)                      -- export
         );
     end component Nios_System_2A;
+=======
+
+    signal send_port : tdma_min_ports(0 to ports-1);
+    signal recv_port : tdma_min_ports(0 to ports-1);
+	
+
+>>>>>>> Stashed changes
 begin
     tdma_min: entity work.TdmaMin
         generic map (
             ports => ports
         )
         port map (
-            clock => clock,
+            clock => CLOCK_50,
             sends => send_port,
             recvs => recv_port
         );
        
     cor_asp: entity work.CORASP
         port map(
-            clock    => clock,
+            clock    => CLOCK_50,
             send     => send_port(2),
             recv     => recv_port(2),
             avgVal   => avgVal,
@@ -67,6 +86,7 @@ begin
         );
 
     test_cor: entity work.testCor
+<<<<<<< Updated upstream
         port map(
             clock => clock,
             flag => flag,
@@ -111,4 +131,49 @@ begin
             recv_external_connection_export  => recv_port(5).data,
             addr_external_connection_export  => send_port(5).addr
         );
+=======
+	port map(
+	    clock => Clock_50,
+	    flag => flag,
+		 pd_flag => pd_flag,
+		 avg_flag => avg_flag,
+	    send => send_port(5),
+	    recv => recv_port(5)
+	);
+	PD_ASP: entity work.PD_ASP
+	port map(
+		clk => CLOCK_50,
+		recv => recv_port(3),
+		send => send_port(3)
+	);
+    avg_asp: entity work.AverageCalculator
+	port map(
+		  clk=> CLOCK_50,
+        reset=> reset,
+        recv=> recv_port(0),
+        send=> send_port(0)
+	);
+	adc_asp: entity work.nodeadc
+	port map(
+	clock => CLOCK_50,
+	recv => recv_port(4),
+	send => send_port(4)
+	);
+	
+	RECOP: entity work.TopLevel
+	port map (
+		clock => CLOCK_50,
+		KEY => KEY,
+		SW => SW,
+		send => send_port(1),
+		recv => recv_port(1),
+		LEDR => LEDR
+	);
+--	
+--	NIOS: entity work.NIOS
+--	port map (
+--	
+--	);
+	
+>>>>>>> Stashed changes
 end architecture;
