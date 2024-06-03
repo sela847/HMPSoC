@@ -1,5 +1,5 @@
 Analysis & Synthesis report for COR_ASP_TopLevel
-Tue Jun 04 01:36:34 2024
+Tue Jun 04 02:28:20 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -263,7 +263,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 04 01:36:34 2024       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 04 02:28:20 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; COR_ASP_TopLevel                            ;
 ; Top-level Entity Name           ; COR_ASP_TopLevel                            ;
@@ -6227,7 +6227,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 04 01:35:33 2024
+    Info: Processing started: Tue Jun 04 02:27:20 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -6751,7 +6751,7 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "Nios
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "Nios_System_2A:nios_example|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/Nios_System_2A/synthesis/submodules/altera_reset_controller.v Line: 220
 Warning (12020): Port "jdo" on the entity instantiation of "the_Nios_System_2A_cpu_cpu_nios2_oci_itrace" is connected to a signal of width 38. The formal width of the signal in the module is 16.  The extra bits will be ignored. File: C:/Users/shaar/Downloads/HMPSoC/COR-ASP/Nios_System_2A/synthesis/submodules/Nios_System_2A_cpu_cpu.v Line: 3216
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.06.04.01:36:07 Progress: Loading sldffc3c5d7/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.06.04.02:27:54 Progress: Loading sldffc3c5d7/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -6830,10 +6830,10 @@ Info (21057): Implemented 6893 device resources after synthesis - the final reso
     Info (21064): Implemented 581 RAM segments
     Info (21062): Implemented 13 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 5091 megabytes
-    Info: Processing ended: Tue Jun 04 01:36:34 2024
-    Info: Elapsed time: 00:01:01
-    Info: Total CPU time (on all processors): 00:01:21
+    Info: Peak virtual memory: 5105 megabytes
+    Info: Processing ended: Tue Jun 04 02:28:20 2024
+    Info: Elapsed time: 00:01:00
+    Info: Total CPU time (on all processors): 00:01:20
 
 
 +------------------------------------------+
