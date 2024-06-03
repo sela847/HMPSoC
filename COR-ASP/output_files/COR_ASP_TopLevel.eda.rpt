@@ -1,5 +1,5 @@
 EDA Netlist Writer report for COR_ASP_TopLevel
-Tue May 28 21:53:08 2024
+Mon Jun 03 22:02:52 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -8,9 +8,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -33,46 +31,14 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                        ;
-+---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue May 28 21:53:08 2024 ;
-; Revision Name             ; COR_ASP_TopLevel                      ;
-; Top-level Entity Name     ; CORASP                                ;
-; Family                    ; Cyclone V                             ;
-; Simulation Files Creation ; Successful                            ;
-+---------------------------+---------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate functional simulation netlist                                                            ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-
-
 +----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                       ;
-+----------------------------------------------------------------------------------+
-; Generated Files                                                                  ;
-+----------------------------------------------------------------------------------+
-; C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/modelsim/COR_ASP_TopLevel.vho ;
-+----------------------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                                       ;
++---------------------------+------------------------------------------------------+
+; EDA Netlist Writer Status ; No Output Files Generated - Mon Jun 03 22:02:52 2024 ;
+; Revision Name             ; COR_ASP_TopLevel                                     ;
+; Top-level Entity Name     ; COR_ASP_TopLevel                                     ;
+; Family                    ; Cyclone V                                            ;
++---------------------------+------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,15 +47,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 28 21:53:07 2024
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
+    Info: Processing started: Mon Jun 03 22:02:50 2024
+Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off COR_ASP -c COR_ASP_TopLevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file COR_ASP_TopLevel.vho in folder "C:/Users/shaar/Downloads/HMPSoC/COR-ASP/simulation/modelsim/" for EDA simulation tool
+Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Tue May 28 21:53:09 2024
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4754 megabytes
+    Info: Processing ended: Mon Jun 03 22:02:54 2024
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

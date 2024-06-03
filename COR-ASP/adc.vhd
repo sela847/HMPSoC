@@ -31,7 +31,7 @@ begin
     generic map (
         clock_enable_input_a => "BYPASS",
         clock_enable_output_a => "BYPASS",
-		  init_file => "H:\Documents\701\HMPSoC\COR-ASP\12bit.mif",
+		  init_file => "12bit.mif",
         intended_device_family => "Cyclone V",
         lpm_hint => "ENABLE_RUNTIME_MOD=NO",
         lpm_type => "altsyncram",
@@ -54,7 +54,7 @@ begin
     process (clock)
     begin
         if (clock'EVENT AND clock = '1') then
-            if (counter = (sd-1)) then -- For 100MHz clock convert to 16KHz 100M/16K = 6250/2 = 3125
+            if (counter = (sd-1)) then -- For 50MHz clock convert to 16KHz 50M/32KHz = 15625/2 = 781 halfclock
                 counter <= 0;
                 clk_sample <= NOT clk_sample;
             else

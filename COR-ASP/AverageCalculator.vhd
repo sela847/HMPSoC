@@ -35,6 +35,7 @@ BEGIN
         VARIABLE enable : STD_LOGIC := '0';
         VARIABLE L_sel : STD_LOGIC := '0'; -- '0' for L=4 and '1' for L=8
         VARIABLE nextAddr : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+		  --VARIABLE freqAddr : STD_LOGIC_VECTOR(3 DOWNTO 0) := x"05";
     BEGIN
         IF reset = '1' THEN
             sum := (OTHERS => '0');
@@ -48,6 +49,7 @@ BEGIN
                 enable := recv.data(17);
                 L_sel := recv.data(18);
                 nextAddr := recv.data(23 DOWNTO 20);
+
             END IF;
 
             IF enable = '1' THEN

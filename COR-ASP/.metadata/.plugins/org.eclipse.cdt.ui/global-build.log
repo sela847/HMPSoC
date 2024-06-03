@@ -1,0 +1,6 @@
+22:15:18 **** Clean-only build of configuration Nios II for project freqAnal_bsp ****
+make clean 
+[BSP clean complete]
+22:15:21 **** Clean-only build of configuration Nios II for project freqAnal ****
+make clean 
+[freqAnal clean complete]

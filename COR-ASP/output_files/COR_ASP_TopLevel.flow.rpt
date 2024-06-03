@@ -1,5 +1,5 @@
 Flow report for COR_ASP_TopLevel
-Mon Jun 03 16:43:37 2024
+Tue Jun 04 01:36:34 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,24 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Mon Jun 03 16:43:37 2024      ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; COR_ASP_TopLevel                            ;
-; Top-level Entity Name       ; COR_ASP_TopLevel                            ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSEMA5F31C6                                ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Tue Jun 04 01:36:34 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; COR_ASP_TopLevel                            ;
+; Top-level Entity Name           ; COR_ASP_TopLevel                            ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 3486                                        ;
+; Total pins                      ; 96                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 851,084                                     ;
+; Total DSP Blocks                ; 13                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,30 +67,36 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/03/2024 16:43:27 ;
+; Start date & time ; 06/04/2024 01:35:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; COR_ASP_TopLevel    ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 49410870269666.171738980714216         ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                        ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                         ;
++-------------------------------------+------------------------------------------------------------------+---------------+----------------+----------------+
+; Assignment Name                     ; Value                                                            ; Default Value ; Entity Name    ; Section Id     ;
++-------------------------------------+------------------------------------------------------------------+---------------+----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 49410870269666.171742173317624                                   ; --            ; --             ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; None                                                             ; --            ; --             ; eda_simulation ;
+; EDA_TIME_SCALE                      ; 1 ps                                                             ; --            ; --             ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                               ; --            ; --             ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                ; --            ; --             ; --             ;
+; MISC_FILE                           ; Nios_System_2A/synthesis/../Nios_System_2A.cmp                   ; --            ; --             ; --             ;
+; MISC_FILE                           ; Nios_System_2A/synthesis/../../Nios_System_2A.qsys               ; --            ; --             ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                           ; --            ; --             ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                           ; --            ; --             ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                           ; --            ; --             ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                              ; --            ; --             ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                            ; --            ; --             ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                     ; --            ; --             ; --             ;
+; SLD_FILE                            ; Nios_System_2A/synthesis/Nios_System_2A.regmap                   ; --            ; --             ; --             ;
+; SLD_FILE                            ; Nios_System_2A/synthesis/Nios_System_2A.debuginfo                ; --            ; --             ; --             ;
+; SLD_INFO                            ; QSYS_NAME Nios_System_2A HAS_SOPCINFO 1 GENERATION_ID 1717406575 ; --            ; Nios_System_2A ; --             ;
+; SOPCINFO_FILE                       ; Nios_System_2A/synthesis/../../Nios_System_2A.sopcinfo           ; --            ; --             ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                               ; --            ; --             ; --             ;
++-------------------------------------+------------------------------------------------------------------+---------------+----------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -93,8 +104,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4877 MB             ; 00:00:19                           ;
-; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis ; 00:00:55     ; 1.0                     ; 5091 MB             ; 00:01:16                           ;
+; Total                ; 00:00:55     ; --                      ; --                  ; 00:01:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -29,7 +29,7 @@ architecture rtl of nodeadc is
     signal q      		: std_logic_vector(11 downto 0);
     signal prev_q 		: std_logic_vector(11 downto 0):= (OTHERS => '0');
 	 signal pacwidth		: std_logic_vector(1 downto 0):= (OTHERS => '0');
-	 signal sd 				: integer := 3125;
+	 signal sd 				: integer := 781; -- used to be 3125
     signal sent : std_logic := '0';
 signal counter : integer := 0;
 begin
