@@ -1,0 +1,17 @@
+
+State Machine - |COR_ASP_TopLevel|TopLevel:RECOP|pc_test:b2v_inst|control_unit:b2v_inst1|state
+Name state.T3 state.T2 state.T1A state.T1 state.T0 
+state.T0 0 0 0 0 0 
+state.T1 0 0 0 1 1 
+state.T1A 0 0 1 0 1 
+state.T2 0 1 0 0 1 
+state.T3 1 0 0 0 1 
+
+State Machine - |COR_ASP_TopLevel|Nios_System_2A:nios_example|Nios_System_2A_cpu:cpu|Nios_System_2A_cpu_cpu:cpu|Nios_System_2A_cpu_cpu_nios2_oci:the_Nios_System_2A_cpu_cpu_nios2_oci|Nios_System_2A_cpu_cpu_debug_slave_wrapper:the_Nios_System_2A_cpu_cpu_debug_slave_wrapper|Nios_System_2A_cpu_cpu_debug_slave_tck:the_Nios_System_2A_cpu_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

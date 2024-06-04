@@ -1,0 +1,1755 @@
+!SESSION 2024-06-03 22:12:38.665 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -data C:\Users\shaar\Downloads\HMPSoC\COR-ASP -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-03 22:12:46.807
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-03 22:15:19.595
+!MESSAGE Indexed 'freqAnal_bsp' (79 sources, 60 headers) in 1.32 sec: 1,197 declarations; 2,544 references; 110 unresolved inclusions; 6 syntax errors; 195 unresolved names (5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-03 22:15:21.032
+!MESSAGE Indexed 'freqAnal' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2024-06-04 03:02:28.746 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 03:02:31.114
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 03:02:45.544
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:11:47.200
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:11:48.881
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:34:37.618
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:34:39.266
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY org.eclipse.ui 4 0 2024-06-04 03:38:29.473
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Control.isVisible(Control.java:1953)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.verifyName(LaunchConfigurationTabGroupViewer.java:1286)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.canLaunch(LaunchConfigurationTabGroupViewer.java:1095)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.updateButtons(LaunchConfigurationsDialog.java:1544)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.updateLaunchConfigurationDialog(AbstractLaunchConfigurationTab.java:113)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab.access$0(AbstractEmbeddedAwtLaunchConfigurationTab.java:1)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab$1$1.run(AbstractEmbeddedAwtLaunchConfigurationTab.java:77)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 24 more
+
+!ENTRY org.eclipse.ui 4 0 2024-06-04 03:38:29.486
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Control.isVisible(Control.java:1953)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.verifyName(LaunchConfigurationTabGroupViewer.java:1286)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.canLaunch(LaunchConfigurationTabGroupViewer.java:1095)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.updateButtons(LaunchConfigurationsDialog.java:1544)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.updateLaunchConfigurationDialog(AbstractLaunchConfigurationTab.java:113)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab.access$0(AbstractEmbeddedAwtLaunchConfigurationTab.java:1)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab$1$1.run(AbstractEmbeddedAwtLaunchConfigurationTab.java:77)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 24 more
+
+!ENTRY org.eclipse.ui 4 0 2024-06-04 03:38:29.487
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Control.isVisible(Control.java:1953)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.verifyName(LaunchConfigurationTabGroupViewer.java:1286)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.canLaunch(LaunchConfigurationTabGroupViewer.java:1095)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.updateButtons(LaunchConfigurationsDialog.java:1544)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.updateLaunchConfigurationDialog(AbstractLaunchConfigurationTab.java:113)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab.access$0(AbstractEmbeddedAwtLaunchConfigurationTab.java:1)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab$1$1.run(AbstractEmbeddedAwtLaunchConfigurationTab.java:77)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 24 more
+
+!ENTRY org.eclipse.ui 4 0 2024-06-04 03:38:29.488
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Control.isVisible(Control.java:1953)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.verifyName(LaunchConfigurationTabGroupViewer.java:1286)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.canLaunch(LaunchConfigurationTabGroupViewer.java:1095)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.updateButtons(LaunchConfigurationsDialog.java:1544)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.updateLaunchConfigurationDialog(AbstractLaunchConfigurationTab.java:113)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab.access$0(AbstractEmbeddedAwtLaunchConfigurationTab.java:1)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab$1$1.run(AbstractEmbeddedAwtLaunchConfigurationTab.java:77)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 24 more
+
+!ENTRY org.eclipse.ui 4 0 2024-06-04 03:38:29.489
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:354)
+	at org.eclipse.swt.widgets.Control.isVisible(Control.java:1953)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.verifyName(LaunchConfigurationTabGroupViewer.java:1286)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.canLaunch(LaunchConfigurationTabGroupViewer.java:1095)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.updateButtons(LaunchConfigurationsDialog.java:1544)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.updateLaunchConfigurationDialog(AbstractLaunchConfigurationTab.java:113)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab.access$0(AbstractEmbeddedAwtLaunchConfigurationTab.java:1)
+	at com.altera.sbtgui.launch.AbstractEmbeddedAwtLaunchConfigurationTab$1$1.run(AbstractEmbeddedAwtLaunchConfigurationTab.java:77)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 24 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:38:30.755
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:38:32.417
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:54:11.383
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:54:13.042
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:59:13.867
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 03:59:15.466
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:08:51.526
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:08:53.189
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:22:30.983
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:22:32.637
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:32:57.543
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:32:59.194
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:38:55.976
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:38:57.705
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 04:47:38.355 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 04:47:48.626
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 04:47:54.648
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 04:47:54.664
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 04:48:12.411
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 04:48:12.412
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:50:27.502
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 04:50:29.430
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 04:50:29.437
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 09:22:46.535 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 09:22:56.581
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:24:00.077
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:24:02.025
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:24:02.045
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:34:42.480
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:34:42.716
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:34:44.706
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:34:44.712
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:42:47.912
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:42:48.211
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:42:50.145
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:42:50.151
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:43:05.207
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:43:07.172
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:43:07.179
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:44:40.830
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:44:42.763
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:44:42.766
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:08.046
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:08.285
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:45:10.188
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:10.192
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:38.344
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:38.636
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:45:40.518
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:45:40.525
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 09:45:59.837 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 09:46:08.188
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:46:17.674
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:46:19.621
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:46:19.648
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:53:09.557
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 09:53:11.503
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 09:53:11.508
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 10:10:32.319 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 10:10:41.273
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:11:05.997
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 10:11:07.924
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:11:07.942
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:11:23.014
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:11:23.299
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 10:11:25.291
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:11:25.296
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 10:21:51.346 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 10:22:08.523
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:22:12.243
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 10:22:14.317
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:22:14.335
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 10:43:05.807 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 10:43:14.453
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:43:21.134
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 10:43:23.088
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 10:43:23.104
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:00:51.949
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:00:52.217
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:00:54.168
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:00:54.174
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 11:21:11.731 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 11:21:20.795
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+!SESSION 2024-06-04 11:22:17.342 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 11:22:25.702
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:23:16.355
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:23:18.241
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:23:18.259
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 11:48:00.433 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 11:48:09.184
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:48:11.561
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:48:13.486
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:48:13.502
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:49:14.005
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:49:15.947
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:49:15.953
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:53:24.275
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:53:26.265
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:53:26.273
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:54:56.059
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:54:58.109
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:54:58.117
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 11:58:05.437 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 11:58:14.306
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:59:00.719
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:59:02.610
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:59:02.628
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:59:45.320
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:59:45.574
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 11:59:47.554
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 11:59:47.560
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:08:23.274
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:08:25.115
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:08:25.122
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:10:55.611
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:10:57.557
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:10:57.563
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:12:42.698
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:12:42.996
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:12:44.963
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:12:44.970
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:30:17.245
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:30:19.318
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:30:19.325
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:40:55.303
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:40:57.199
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:40:57.206
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:47:16.929
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:47:18.799
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:47:18.807
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:48:05.257
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:48:07.227
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:48:07.232
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:51:00.550
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:51:00.826
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:51:02.760
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:51:02.767
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:51:48.017
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:51:49.968
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:51:49.975
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:54:04.967
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:54:05.230
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:54:07.128
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:54:07.134
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:55:42.784
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:55:44.717
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:55:44.723
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:57:45.091
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:57:45.344
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:57:47.319
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:57:47.639
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:58:05.635
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 12:58:07.500
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 12:58:07.505
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:05:10.027
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:05:11.927
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:05:11.933
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:07:25.260
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:07:25.532
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:07:27.489
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:07:27.502
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:08:09.151
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:08:11.099
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:08:11.106
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:10:03.806
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:10:05.658
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:10:05.665
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 13:17:37.798 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 13:17:52.933
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:18:13.975
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:18:15.852
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:18:15.873
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:19:49.522
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:19:51.411
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:19:51.422
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:21:35.838
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:21:36.099
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:21:38.034
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:21:38.051
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:26:36.729
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:26:37.003
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:26:38.930
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:26:38.942
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:32:50.010
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:32:51.996
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:32:52.002
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 13:35:24.365 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 13:35:25.377
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 13:35:33.403
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:35:53.446
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:35:55.340
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:35:55.359
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:45:50.382
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:45:52.356
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:45:52.362
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:54:53.037
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 13:54:54.945
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 13:54:54.951
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 14:03:32.793 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 14:03:41.637
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:03:48.808
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:03:50.776
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:03:50.792
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 14:10:48.552 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 14:10:58.094
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:11:07.929
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:11:09.826
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:11:09.843
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:18:32.278
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:18:34.177
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:18:34.183
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 14:33:35.528 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 14:33:36.555
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 14:33:44.417
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:34:08.894
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:34:10.800
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:34:10.820
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:42:50.972
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:42:52.838
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:42:52.844
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:48:52.521
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:48:54.372
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:48:54.378
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:50:09.001
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 14:50:10.872
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 14:50:10.878
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:06:17.609
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:06:19.532
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:06:19.537
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:16:29.802
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:16:31.688
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:16:31.694
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:27:11.776
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:27:13.637
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:27:13.644
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:27:48.858
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:27:50.752
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:27:50.758
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:35:35.319
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:35:37.208
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:35:37.214
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 15:48:10.123 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 15:48:11.160
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 15:48:19.157
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:48:29.915
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:48:31.840
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:48:31.858
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:49:04.135
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:49:06.077
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:49:06.082
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:56:04.010
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:56:05.912
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:56:05.920
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:56:46.283
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 15:56:48.197
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 15:56:48.203
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:05:08.741
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:05:10.652
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:05:10.659
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 16:14:19.671 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 16:14:20.665
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 16:14:28.354
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:14:49.262
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:14:51.191
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:14:51.212
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 16:18:26.959 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 16:18:27.928
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 16:18:35.016
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:20:00.649
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:20:02.625
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:20:02.644
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:25:18.679
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:25:20.559
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:25:20.570
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:26:05.577
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:26:07.568
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:26:07.581
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:27:05.199
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:27:07.095
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:27:07.104
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:34:23.402
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:34:25.303
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:34:25.309
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+!SESSION 2024-06-04 16:37:43.891 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-06-04 16:37:45.023
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-06-04 16:37:53.265
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:44:03.783
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:44:05.799
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:44:05.819
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:45:55.344
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:45:57.266
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:45:57.272
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:52:53.586
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:52:55.448
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:52:55.453
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:53:27.354
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:53:27.594
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:53:29.507
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:53:29.513
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:55:55.706
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:55:57.611
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:55:57.617
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:56:48.725
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:56:48.988
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:56:50.885
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:56:50.891
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:57:53.144
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:57:55.124
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:57:55.130
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:59:31.899
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:59:32.144
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 16:59:34.023
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 16:59:34.030
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:00:10.136
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:00:12.061
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:00:12.067
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:00:44.382
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:00:44.632
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:00:46.540
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:00:46.546
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:02:35.487
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:02:37.407
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:02:37.414
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:04:30.127
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:04:32.011
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:04:32.017
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:15:33.119
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:15:35.029
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:15:35.035
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:16:43.291
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:16:45.231
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:16:45.238
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:20:21.679
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:20:23.573
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:20:23.582
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:21:33.842
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2024-06-04 17:21:35.755
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2024-06-04 17:21:35.761
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal/freqAnal.elf]

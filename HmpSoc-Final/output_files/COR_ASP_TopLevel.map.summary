@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Tue Jun 04 16:09:31 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : COR_ASP_TopLevel
+Top-level Entity Name : COR_ASP_TopLevel
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 3951
+Total pins : 119
+Total virtual pins : 0
+Total block memory bits : 2,065,932
+Total DSP Blocks : 13
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

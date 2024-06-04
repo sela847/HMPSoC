@@ -1,0 +1,576 @@
+16:14:38 **** Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:78:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:78:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:31:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 85 KBytes program size (code + initialized data).
+Info:                64 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:14:47 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+16:19:57 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:78:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:78:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:31:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 87 KBytes program size (code + initialized data).
+Info:                62 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:25:16 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:85:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t {aka long long unsigned int}' [-Wformat=]
+             printf("seconds taken %u , ns: %.2f \n", secondsTaken,nSecsTaken);
+                    ^
+main.c:85:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t {aka long long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 87 KBytes program size (code + initialized data).
+Info:                62 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:26:03 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:86:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t {aka long long unsigned int}' [-Wformat=]
+             printf("seconds taken %u , ns: %.2f \n", secondsTaken,nSecsTaken);
+                    ^
+main.c:86:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t {aka long long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 87 KBytes program size (code + initialized data).
+Info:                62 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:27:04 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+16:34:20 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                62 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:42:07 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:34:10: error: both 'long' and 'float' in declaration specifiers
+     long float secondsTaken = 0;
+          ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:87:34: error: both 'long' and 'float' in declaration specifiers
+             secondsTaken = (long float) nSecsTaken * 0.000000001f;
+                                  ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+make: *** [obj/default/main.o] Error 1
+16:44:00 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:86:20: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'double' [-Wformat=]
+             printf("seconds taken %lu , ns: %.2f \n", secondsTaken,nSecsTaken);
+                    ^
+main.c:86:20: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'double' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:45:54 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+16:52:34 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:52:37 **** Build of configuration Nios II for project freqAnal_bsp ****
+make all 
+[BSP build complete]
+16:52:52 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+16:53:25 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:55:53 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:56:46 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:57:50 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+16:59:29 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:00:08 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+17:00:42 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("Num corr: %u \n",numberOfCorrelations);
+                    ^
+main.c:79:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+             printf("numADC: %u \n",numADC);
+                    ^
+main.c:83:20: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 86 KBytes program size (code + initialized data).
+Info:                63 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:02:33 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 70 KBytes program size (code + initialized data).
+Info:                79 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:04:27 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 70 KBytes program size (code + initialized data).
+Info:                79 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:14:16 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:37:14: warning: unused variable 'count' [-Wunused-variable]
+     uint64_t count = 0;
+              ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+main.c: In function 'determineValue':
+main.c:156:10: error: called object 'freqConvert' is not a function or function pointer
+      if (freqConvert(i) ==
+          ^
+main.c:146:10: note: declared here
+     char freqConvert[6];
+          ^
+main.c:157:9: error: expected expression before 'int'
+         int digit = freqConvert[i] - '0'; // Convert character to digit
+         ^
+main.c:159:5: error: expected expression before '}' token
+     }
+     ^
+main.c:133:9: warning: unused variable 'numberMap' [-Wunused-variable]
+     int numberMap[] = {
+         ^
+make: *** [obj/default/main.o] Error 1
+17:15:20 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:37:14: warning: unused variable 'count' [-Wunused-variable]
+     uint64_t count = 0;
+              ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 32 KBytes program size (code + initialized data).
+Info:                117 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:15:22 **** Incremental Build of configuration Nios II for project freqAnal_bsp ****
+make all 
+[BSP build complete]
+17:15:31 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+[freqAnal build complete]
+17:16:41 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:37:14: warning: unused variable 'count' [-Wunused-variable]
+     uint64_t count = 0;
+              ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 32 KBytes program size (code + initialized data).
+Info:                117 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:20:19 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:37:14: warning: unused variable 'count' [-Wunused-variable]
+     uint64_t count = 0;
+              ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 32 KBytes program size (code + initialized data).
+Info:                117 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
+17:21:31 **** Incremental Build of configuration Nios II for project freqAnal ****
+make all 
+Info: Building ../freqAnal_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../freqAnal_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../freqAnal_bsp//HAL/inc -I../freqAnal_bsp/ -I../freqAnal_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:37:14: warning: unused variable 'count' [-Wunused-variable]
+     uint64_t count = 0;
+              ^
+main.c:32:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+     int num = 0;
+         ^
+Info: Linking freqAnal.elf
+nios2-elf-g++  -T'../freqAnal_bsp//linker.x' -msys-crt0='../freqAnal_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../freqAnal_bsp/   -Wl,-Map=freqAnal.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o freqAnal.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert freqAnal.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios_System_2A --quartus_project_dir "C:/Users/shaar/Downloads/HMPSoC/COR-ASP" --jdi ../..//output_files/COR_ASP_TopLevel.jdi --sopcinfo C:/Users/shaar/Downloads/HMPSoC/COR-ASP/software/freqAnal_bsp/../../Nios_System_2A.sopcinfo
+Info: (freqAnal.elf) 32 KBytes program size (code + initialized data).
+Info:                117 KBytes free for stack + heap.
+Info: Creating freqAnal.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source freqAnal.elf >freqAnal.objdump
+[freqAnal build complete]
