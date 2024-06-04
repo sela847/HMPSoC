@@ -312,6 +312,7 @@ set_location_assignment PIN_D11 -to VGA_VS
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE Nios_System_2A/synthesis/Nios_System_2A.qip
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/various_constants.vhd"
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registers.vhd"
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/registerfile.vhd"
@@ -337,7 +338,6 @@ set_global_assignment -name VHDL_FILE "Selected VHDL source design files/data_me
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/control_unit.vhd"
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/ALU.vhd"
 set_global_assignment -name VHDL_FILE "Selected VHDL source design files/address_reg.vhd"
-set_global_assignment -name QIP_FILE Nios_System_2A/synthesis/Nios_System_2A.qip
 set_global_assignment -name VHDL_FILE tdma_tb.vhd
 set_global_assignment -name VHDL_FILE nodeadc.vhd
 set_global_assignment -name VHDL_FILE adc_tb.vhd

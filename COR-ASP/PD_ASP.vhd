@@ -31,6 +31,7 @@ begin
 
 	process(clk) 
 		variable counter : unsigned(19 downto 0) := x"00000";
+		variable validBit : std_logic := '0';
 	begin
 		if rising_edge(clk) then
 			case recv.addr is 
@@ -47,24 +48,31 @@ begin
 					end if;
 				when x"02" =>  --From port 1, assume it to be from COR_ASP
 					if enable = '1' then
+						validBit := '0';
 						if recv.data(31 downto 30) = "11" then --first correlation value received
 							corre_prev <= corre_curr; 
 							corre_curr <= recv.data(29 downto 0); --1st cycle will be first correlation compared with 0, then next cycle is the 2nd correlation compared with 1st correlation
 																		  --, then the cycle after would be third with 2nd.
+							send.data <= x"880"& corre_curr(19 downto 0);--std_logic_vector(counter);
 							if corre_prev /= "00" & x"0000000" and first = '0' then						
 								if corre_curr >= corre_prev then
 									counter := counter + 1;
 									switch <= '1';
+									validBit := '0';
+									--send.data <= x"800"& std_logic_vector(counter);
 								elsif (corre_curr <= corre_prev) and (switch = '1') then
 									counter := counter + 1;
 									counter_sig <= counter;
 									switch <= '0';
 									--Format: |Valid (1)|Empty (11)| Counter (20)|
-									send.addr <= x"01";
-									send.data <= x"800"& std_logic_vector(counter);
+									--send.addr <= x"01";
+									send.data <= x"880"& std_logic_vector(counter);
+									validBit := '1';
 									counter := x"00000"; --Reset counter
 								elsif corre_curr <= corre_prev then
 									counter := counter + 1;
+									validBit := '0';
+									--send.data <= x"800"& std_logic_vector(counter);
 								end if;
 							end if;		
 							first <= '0';
@@ -74,6 +82,7 @@ begin
 			end case; 						
 		end if;
 	counter_T <= counter;
+	--send.data <= x"8"& validBit & "000" & x"0" & std_logic_vector(counter);
 	end process;
 		
 end architecture PD_RTL;

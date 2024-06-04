@@ -40,7 +40,7 @@ architecture rtl of Nios_System_2A is
 			clk                                 : in  std_logic                     := 'X';             -- clk
 			reset_n                             : in  std_logic                     := 'X';             -- reset_n
 			reset_req                           : in  std_logic                     := 'X';             -- reset_req
-			d_address                           : out std_logic_vector(18 downto 0);                    -- address
+			d_address                           : out std_logic_vector(19 downto 0);                    -- address
 			d_byteenable                        : out std_logic_vector(3 downto 0);                     -- byteenable
 			d_read                              : out std_logic;                                        -- read
 			d_readdata                          : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
@@ -49,7 +49,7 @@ architecture rtl of Nios_System_2A is
 			d_writedata                         : out std_logic_vector(31 downto 0);                    -- writedata
 			d_readdatavalid                     : in  std_logic                     := 'X';             -- readdatavalid
 			debug_mem_slave_debugaccess_to_roms : out std_logic;                                        -- debugaccess
-			i_address                           : out std_logic_vector(18 downto 0);                    -- address
+			i_address                           : out std_logic_vector(19 downto 0);                    -- address
 			i_read                              : out std_logic;                                        -- read
 			i_readdata                          : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			i_waitrequest                       : in  std_logic                     := 'X';             -- waitrequest
@@ -86,7 +86,7 @@ architecture rtl of Nios_System_2A is
 	component Nios_System_2A_onchip_memory is
 		port (
 			clk        : in  std_logic                     := 'X';             -- clk
-			address    : in  std_logic_vector(14 downto 0) := (others => 'X'); -- address
+			address    : in  std_logic_vector(15 downto 0) := (others => 'X'); -- address
 			clken      : in  std_logic                     := 'X';             -- clken
 			chipselect : in  std_logic                     := 'X';             -- chipselect
 			write      : in  std_logic                     := 'X';             -- write
@@ -127,7 +127,7 @@ architecture rtl of Nios_System_2A is
 			clk_0_clk_clk                               : in  std_logic                     := 'X';             -- clk
 			cpu_reset_reset_bridge_in_reset_reset       : in  std_logic                     := 'X';             -- reset
 			jtag_uart_reset_reset_bridge_in_reset_reset : in  std_logic                     := 'X';             -- reset
-			cpu_data_master_address                     : in  std_logic_vector(18 downto 0) := (others => 'X'); -- address
+			cpu_data_master_address                     : in  std_logic_vector(19 downto 0) := (others => 'X'); -- address
 			cpu_data_master_waitrequest                 : out std_logic;                                        -- waitrequest
 			cpu_data_master_byteenable                  : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
 			cpu_data_master_read                        : in  std_logic                     := 'X';             -- read
@@ -136,7 +136,7 @@ architecture rtl of Nios_System_2A is
 			cpu_data_master_write                       : in  std_logic                     := 'X';             -- write
 			cpu_data_master_writedata                   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			cpu_data_master_debugaccess                 : in  std_logic                     := 'X';             -- debugaccess
-			cpu_instruction_master_address              : in  std_logic_vector(18 downto 0) := (others => 'X'); -- address
+			cpu_instruction_master_address              : in  std_logic_vector(19 downto 0) := (others => 'X'); -- address
 			cpu_instruction_master_waitrequest          : out std_logic;                                        -- waitrequest
 			cpu_instruction_master_read                 : in  std_logic                     := 'X';             -- read
 			cpu_instruction_master_readdata             : out std_logic_vector(31 downto 0);                    -- readdata
@@ -161,7 +161,7 @@ architecture rtl of Nios_System_2A is
 			jtag_uart_avalon_jtag_slave_writedata       : out std_logic_vector(31 downto 0);                    -- writedata
 			jtag_uart_avalon_jtag_slave_waitrequest     : in  std_logic                     := 'X';             -- waitrequest
 			jtag_uart_avalon_jtag_slave_chipselect      : out std_logic;                                        -- chipselect
-			onchip_memory_s1_address                    : out std_logic_vector(14 downto 0);                    -- address
+			onchip_memory_s1_address                    : out std_logic_vector(15 downto 0);                    -- address
 			onchip_memory_s1_write                      : out std_logic;                                        -- write
 			onchip_memory_s1_readdata                   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			onchip_memory_s1_writedata                  : out std_logic_vector(31 downto 0);                    -- writedata
@@ -287,7 +287,7 @@ architecture rtl of Nios_System_2A is
 	signal cpu_data_master_readdata                                      : std_logic_vector(31 downto 0); -- mm_interconnect_0:cpu_data_master_readdata -> cpu:d_readdata
 	signal cpu_data_master_waitrequest                                   : std_logic;                     -- mm_interconnect_0:cpu_data_master_waitrequest -> cpu:d_waitrequest
 	signal cpu_data_master_debugaccess                                   : std_logic;                     -- cpu:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:cpu_data_master_debugaccess
-	signal cpu_data_master_address                                       : std_logic_vector(18 downto 0); -- cpu:d_address -> mm_interconnect_0:cpu_data_master_address
+	signal cpu_data_master_address                                       : std_logic_vector(19 downto 0); -- cpu:d_address -> mm_interconnect_0:cpu_data_master_address
 	signal cpu_data_master_byteenable                                    : std_logic_vector(3 downto 0);  -- cpu:d_byteenable -> mm_interconnect_0:cpu_data_master_byteenable
 	signal cpu_data_master_read                                          : std_logic;                     -- cpu:d_read -> mm_interconnect_0:cpu_data_master_read
 	signal cpu_data_master_readdatavalid                                 : std_logic;                     -- mm_interconnect_0:cpu_data_master_readdatavalid -> cpu:d_readdatavalid
@@ -295,7 +295,7 @@ architecture rtl of Nios_System_2A is
 	signal cpu_data_master_writedata                                     : std_logic_vector(31 downto 0); -- cpu:d_writedata -> mm_interconnect_0:cpu_data_master_writedata
 	signal cpu_instruction_master_readdata                               : std_logic_vector(31 downto 0); -- mm_interconnect_0:cpu_instruction_master_readdata -> cpu:i_readdata
 	signal cpu_instruction_master_waitrequest                            : std_logic;                     -- mm_interconnect_0:cpu_instruction_master_waitrequest -> cpu:i_waitrequest
-	signal cpu_instruction_master_address                                : std_logic_vector(18 downto 0); -- cpu:i_address -> mm_interconnect_0:cpu_instruction_master_address
+	signal cpu_instruction_master_address                                : std_logic_vector(19 downto 0); -- cpu:i_address -> mm_interconnect_0:cpu_instruction_master_address
 	signal cpu_instruction_master_read                                   : std_logic;                     -- cpu:i_read -> mm_interconnect_0:cpu_instruction_master_read
 	signal cpu_instruction_master_readdatavalid                          : std_logic;                     -- mm_interconnect_0:cpu_instruction_master_readdatavalid -> cpu:i_readdatavalid
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect      : std_logic;                     -- mm_interconnect_0:jtag_uart_avalon_jtag_slave_chipselect -> jtag_uart:av_chipselect
@@ -315,7 +315,7 @@ architecture rtl of Nios_System_2A is
 	signal mm_interconnect_0_cpu_debug_mem_slave_writedata               : std_logic_vector(31 downto 0); -- mm_interconnect_0:cpu_debug_mem_slave_writedata -> cpu:debug_mem_slave_writedata
 	signal mm_interconnect_0_onchip_memory_s1_chipselect                 : std_logic;                     -- mm_interconnect_0:onchip_memory_s1_chipselect -> onchip_memory:chipselect
 	signal mm_interconnect_0_onchip_memory_s1_readdata                   : std_logic_vector(31 downto 0); -- onchip_memory:readdata -> mm_interconnect_0:onchip_memory_s1_readdata
-	signal mm_interconnect_0_onchip_memory_s1_address                    : std_logic_vector(14 downto 0); -- mm_interconnect_0:onchip_memory_s1_address -> onchip_memory:address
+	signal mm_interconnect_0_onchip_memory_s1_address                    : std_logic_vector(15 downto 0); -- mm_interconnect_0:onchip_memory_s1_address -> onchip_memory:address
 	signal mm_interconnect_0_onchip_memory_s1_byteenable                 : std_logic_vector(3 downto 0);  -- mm_interconnect_0:onchip_memory_s1_byteenable -> onchip_memory:byteenable
 	signal mm_interconnect_0_onchip_memory_s1_write                      : std_logic;                     -- mm_interconnect_0:onchip_memory_s1_write -> onchip_memory:write
 	signal mm_interconnect_0_onchip_memory_s1_writedata                  : std_logic_vector(31 downto 0); -- mm_interconnect_0:onchip_memory_s1_writedata -> onchip_memory:writedata

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>4/06/2024 4:48:33 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1717433313562</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>4/06/2024 11:22:46 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1717456966348</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\shaar\Downloads\HMPSoC\COR-ASP\software\freqAnal_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios_System_2A.sopcinfo</SopcDesignFile>
@@ -900,67 +900,67 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>onchip_memory</slaveDescriptor>
-                <addressRange>0x00020000 - 0x00033FFF</addressRange>
-                <addressSpan>81920</addressSpan>
+                <addressRange>0x00040000 - 0x000670FF</addressRange>
+                <addressSpan>160000</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_5</slaveDescriptor>
-                <addressRange>0x00041000 - 0x0004100F</addressRange>
+                <addressRange>0x00081000 - 0x0008100F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_4</slaveDescriptor>
-                <addressRange>0x00041010 - 0x0004101F</addressRange>
+                <addressRange>0x00081010 - 0x0008101F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_3</slaveDescriptor>
-                <addressRange>0x00041020 - 0x0004102F</addressRange>
+                <addressRange>0x00081020 - 0x0008102F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_2</slaveDescriptor>
-                <addressRange>0x00041030 - 0x0004103F</addressRange>
+                <addressRange>0x00081030 - 0x0008103F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_1</slaveDescriptor>
-                <addressRange>0x00041040 - 0x0004104F</addressRange>
+                <addressRange>0x00081040 - 0x0008104F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>seg_0</slaveDescriptor>
-                <addressRange>0x00041050 - 0x0004105F</addressRange>
+                <addressRange>0x00081050 - 0x0008105F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>addr</slaveDescriptor>
-                <addressRange>0x00041060 - 0x0004106F</addressRange>
+                <addressRange>0x00081060 - 0x0008106F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>recv</slaveDescriptor>
-                <addressRange>0x00041070 - 0x0004107F</addressRange>
+                <addressRange>0x00081070 - 0x0008107F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>send</slaveDescriptor>
-                <addressRange>0x00041080 - 0x0004108F</addressRange>
+                <addressRange>0x00081080 - 0x0008108F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
-                <addressRange>0x00041090 - 0x00041097</addressRange>
+                <addressRange>0x00081090 - 0x00081097</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

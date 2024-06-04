@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'Nios_System_2A'
  * SOPC Builder design path: ../../Nios_System_2A.sopcinfo
  *
- * Generated: Tue Jun 04 03:03:28 NZST 2024
+ * Generated: Tue Jun 04 11:22:47 NZST 2024
  */
 
 /*
@@ -65,9 +65,9 @@
  *
  */
 
-#define ONCHIP_MEMORY_REGION_BASE 0x20020
-#define ONCHIP_MEMORY_REGION_SPAN 81888
-#define RESET_REGION_BASE 0x20000
+#define ONCHIP_MEMORY_REGION_BASE 0x40020
+#define ONCHIP_MEMORY_REGION_SPAN 159968
+#define RESET_REGION_BASE 0x40000
 #define RESET_REGION_SPAN 32
 
 
